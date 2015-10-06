@@ -22,6 +22,9 @@
 		1BD76E411BC406C900A2EDE1 /* StatusList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD76E401BC406C900A2EDE1 /* StatusList.swift */; settings = {ASSET_TAGS = (); }; };
 		1BD76E431BC4080D00A2EDE1 /* ItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD76E421BC4080D00A2EDE1 /* ItemType.swift */; settings = {ASSET_TAGS = (); }; };
 		1BD76E451BC4093900A2EDE1 /* PlayerStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD76E441BC4093900A2EDE1 /* PlayerStatus.swift */; settings = {ASSET_TAGS = (); }; };
+		1BD76E481BC40DA500A2EDE1 /* DamageSkill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD76E471BC40DA500A2EDE1 /* DamageSkill.swift */; settings = {ASSET_TAGS = (); }; };
+		1BD76E4E1BC4135900A2EDE1 /* BaseSkill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD76E4D1BC4135900A2EDE1 /* BaseSkill.swift */; settings = {ASSET_TAGS = (); }; };
+		1BD76E501BC4148100A2EDE1 /* RestoreSkill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD76E4F1BC4148100A2EDE1 /* RestoreSkill.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +66,9 @@
 		1BD76E401BC406C900A2EDE1 /* StatusList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusList.swift; sourceTree = "<group>"; };
 		1BD76E421BC4080D00A2EDE1 /* ItemType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemType.swift; sourceTree = "<group>"; };
 		1BD76E441BC4093900A2EDE1 /* PlayerStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerStatus.swift; sourceTree = "<group>"; };
+		1BD76E471BC40DA500A2EDE1 /* DamageSkill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DamageSkill.swift; sourceTree = "<group>"; };
+		1BD76E4D1BC4135900A2EDE1 /* BaseSkill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseSkill.swift; sourceTree = "<group>"; };
+		1BD76E4F1BC4148100A2EDE1 /* RestoreSkill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestoreSkill.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				1B8EDC381BC2B959009603B6 /* Status.swift */,
+				1BD76E461BC40D7E00A2EDE1 /* Skill */,
 				1BD76E3D1BC401B400A2EDE1 /* Equipments */,
 				1B8EDC371BC2B11A009603B6 /* Attibutes */,
 			);
@@ -179,6 +186,16 @@
 				1BD76E421BC4080D00A2EDE1 /* ItemType.swift */,
 			);
 			name = Equipments;
+			sourceTree = "<group>";
+		};
+		1BD76E461BC40D7E00A2EDE1 /* Skill */ = {
+			isa = PBXGroup;
+			children = (
+				1BD76E471BC40DA500A2EDE1 /* DamageSkill.swift */,
+				1BD76E4D1BC4135900A2EDE1 /* BaseSkill.swift */,
+				1BD76E4F1BC4148100A2EDE1 /* RestoreSkill.swift */,
+			);
+			name = Skill;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,13 +329,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BD76E4E1BC4135900A2EDE1 /* BaseSkill.swift in Sources */,
 				1BD76E411BC406C900A2EDE1 /* StatusList.swift in Sources */,
 				1B8EDC3B1BC2C506009603B6 /* PlayersRace.swift in Sources */,
 				1BD76E431BC4080D00A2EDE1 /* ItemType.swift in Sources */,
+				1BD76E501BC4148100A2EDE1 /* RestoreSkill.swift in Sources */,
 				1B8EDC091BC2B074009603B6 /* GameScene.swift in Sources */,
 				1B8EDC0B1BC2B074009603B6 /* GameViewController.swift in Sources */,
 				1BD76E451BC4093900A2EDE1 /* PlayerStatus.swift in Sources */,
 				1B8EDC051BC2B074009603B6 /* AppDelegate.swift in Sources */,
+				1BD76E481BC40DA500A2EDE1 /* DamageSkill.swift in Sources */,
 				1BD76E3F1BC401CF00A2EDE1 /* Item.swift in Sources */,
 				1B8EDC391BC2B959009603B6 /* Status.swift in Sources */,
 			);
