@@ -9,7 +9,6 @@
 import UIKit
 
 public enum DamageSkillType: String {
-    case HP = "DamageHP"
     case Speed = "DamageSpeed"
     case Atk = "DamageAtk"
     case Def = "DamageDef"
