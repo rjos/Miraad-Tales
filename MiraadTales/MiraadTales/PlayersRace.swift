@@ -8,10 +8,10 @@
 
 import UIKit
 
-enum PlayersRace {
+public enum PlayersRace: String {
     
-    case Swordsman
-    case Mage
-    case Bard
-    case Paladin
+    case Swordsman = "Swordsman"
+    case Mage = "Mage"
+    case Bard = "Bard"
+    case Paladin = "Paladin"
 }
