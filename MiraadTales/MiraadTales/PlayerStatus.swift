@@ -54,7 +54,7 @@ public class PlayerStatus: Status {
         self.Speed = Int(tempSpeed)
     }
     
-    // MARK: -Functions increment XP
+    // MARK: -Functions increment/decrement XP
     public func incrementXP() {
         
         let powXP = pow(Double(self.lvl),2.0)
@@ -70,7 +70,13 @@ public class PlayerStatus: Status {
         self.currentXP += winXP
         
         if self.currentXP >= self.XP {
+            self.currentXP -= self.XP
             self.incrementLvl()
         }
+    }
+    
+    public func deathPenalty() {
+        let subCurrentXP = Double(self.currentXP) * 0.05
+        self.currentXP = max(0, (self.currentXP - Int(subCurrentXP)))
     }
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-public enum ItemType: String {
+public enum EquipType: String {
 
     case Armor = "TypeArmor"
     case Weapon = "TypeWeapon"

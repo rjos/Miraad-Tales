@@ -18,12 +18,11 @@
 		1B8EDC291BC2B074009603B6 /* MiraadTalesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8EDC281BC2B074009603B6 /* MiraadTalesUITests.swift */; };
 		1B8EDC391BC2B959009603B6 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8EDC381BC2B959009603B6 /* Status.swift */; settings = {ASSET_TAGS = (); }; };
 		1B8EDC3B1BC2C506009603B6 /* PlayersRace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8EDC3A1BC2C506009603B6 /* PlayersRace.swift */; settings = {ASSET_TAGS = (); }; };
-		1BD76E3F1BC401CF00A2EDE1 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD76E3E1BC401CF00A2EDE1 /* Item.swift */; settings = {ASSET_TAGS = (); }; };
-		1BD76E431BC4080D00A2EDE1 /* ItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD76E421BC4080D00A2EDE1 /* ItemType.swift */; settings = {ASSET_TAGS = (); }; };
+		1BA00EB11BC69F3F00B8972A /* Effect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA00EB01BC69F3F00B8972A /* Effect.swift */; settings = {ASSET_TAGS = (); }; };
+		1BD76E3F1BC401CF00A2EDE1 /* Equip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD76E3E1BC401CF00A2EDE1 /* Equip.swift */; settings = {ASSET_TAGS = (); }; };
+		1BD76E431BC4080D00A2EDE1 /* EquipType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD76E421BC4080D00A2EDE1 /* EquipType.swift */; settings = {ASSET_TAGS = (); }; };
 		1BD76E451BC4093900A2EDE1 /* PlayerStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD76E441BC4093900A2EDE1 /* PlayerStatus.swift */; settings = {ASSET_TAGS = (); }; };
-		1BD76E481BC40DA500A2EDE1 /* DamageSkill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD76E471BC40DA500A2EDE1 /* DamageSkill.swift */; settings = {ASSET_TAGS = (); }; };
 		1BD76E4E1BC4135900A2EDE1 /* BaseSkill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD76E4D1BC4135900A2EDE1 /* BaseSkill.swift */; settings = {ASSET_TAGS = (); }; };
-		1BD76E501BC4148100A2EDE1 /* RestoreSkill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD76E4F1BC4148100A2EDE1 /* RestoreSkill.swift */; settings = {ASSET_TAGS = (); }; };
 		1BECB4CB1BC55CB000EDBB8F /* GeneralRace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BECB4CA1BC55CB000EDBB8F /* GeneralRace.swift */; settings = {ASSET_TAGS = (); }; };
 		1BECB4CD1BC55E2200EDBB8F /* Swordsman.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BECB4CC1BC55E2200EDBB8F /* Swordsman.swift */; settings = {ASSET_TAGS = (); }; };
 		1BECB4CF1BC55EB300EDBB8F /* Mage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BECB4CE1BC55EB300EDBB8F /* Mage.swift */; settings = {ASSET_TAGS = (); }; };
@@ -67,12 +66,11 @@
 		1B8EDC2A1BC2B074009603B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B8EDC381BC2B959009603B6 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		1B8EDC3A1BC2C506009603B6 /* PlayersRace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersRace.swift; sourceTree = "<group>"; };
-		1BD76E3E1BC401CF00A2EDE1 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
-		1BD76E421BC4080D00A2EDE1 /* ItemType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemType.swift; sourceTree = "<group>"; };
+		1BA00EB01BC69F3F00B8972A /* Effect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Effect.swift; sourceTree = "<group>"; };
+		1BD76E3E1BC401CF00A2EDE1 /* Equip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Equip.swift; sourceTree = "<group>"; };
+		1BD76E421BC4080D00A2EDE1 /* EquipType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquipType.swift; sourceTree = "<group>"; };
 		1BD76E441BC4093900A2EDE1 /* PlayerStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerStatus.swift; sourceTree = "<group>"; };
-		1BD76E471BC40DA500A2EDE1 /* DamageSkill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DamageSkill.swift; sourceTree = "<group>"; };
 		1BD76E4D1BC4135900A2EDE1 /* BaseSkill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseSkill.swift; sourceTree = "<group>"; };
-		1BD76E4F1BC4148100A2EDE1 /* RestoreSkill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestoreSkill.swift; sourceTree = "<group>"; };
 		1BECB4CA1BC55CB000EDBB8F /* GeneralRace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralRace.swift; sourceTree = "<group>"; };
 		1BECB4CC1BC55E2200EDBB8F /* Swordsman.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swordsman.swift; sourceTree = "<group>"; };
 		1BECB4CE1BC55EB300EDBB8F /* Mage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mage.swift; sourceTree = "<group>"; };
@@ -193,8 +191,8 @@
 		1BD76E3D1BC401B400A2EDE1 /* Equipments */ = {
 			isa = PBXGroup;
 			children = (
-				1BD76E3E1BC401CF00A2EDE1 /* Item.swift */,
-				1BD76E421BC4080D00A2EDE1 /* ItemType.swift */,
+				1BD76E3E1BC401CF00A2EDE1 /* Equip.swift */,
+				1BD76E421BC4080D00A2EDE1 /* EquipType.swift */,
 			);
 			name = Equipments;
 			sourceTree = "<group>";
@@ -202,9 +200,8 @@
 		1BD76E461BC40D7E00A2EDE1 /* Skill */ = {
 			isa = PBXGroup;
 			children = (
-				1BD76E471BC40DA500A2EDE1 /* DamageSkill.swift */,
 				1BD76E4D1BC4135900A2EDE1 /* BaseSkill.swift */,
-				1BD76E4F1BC4148100A2EDE1 /* RestoreSkill.swift */,
+				1BA00EB01BC69F3F00B8972A /* Effect.swift */,
 			);
 			name = Skill;
 			sourceTree = "<group>";
@@ -356,17 +353,16 @@
 				1BD76E4E1BC4135900A2EDE1 /* BaseSkill.swift in Sources */,
 				1BECB4CB1BC55CB000EDBB8F /* GeneralRace.swift in Sources */,
 				1B8EDC3B1BC2C506009603B6 /* PlayersRace.swift in Sources */,
-				1BD76E431BC4080D00A2EDE1 /* ItemType.swift in Sources */,
-				1BD76E501BC4148100A2EDE1 /* RestoreSkill.swift in Sources */,
+				1BD76E431BC4080D00A2EDE1 /* EquipType.swift in Sources */,
 				1B8EDC091BC2B074009603B6 /* GameScene.swift in Sources */,
 				1BECB4D31BC55F2600EDBB8F /* Paladin.swift in Sources */,
 				1B8EDC0B1BC2B074009603B6 /* GameViewController.swift in Sources */,
 				1BECB4CD1BC55E2200EDBB8F /* Swordsman.swift in Sources */,
 				1BD76E451BC4093900A2EDE1 /* PlayerStatus.swift in Sources */,
 				1B8EDC051BC2B074009603B6 /* AppDelegate.swift in Sources */,
-				1BD76E481BC40DA500A2EDE1 /* DamageSkill.swift in Sources */,
+				1BA00EB11BC69F3F00B8972A /* Effect.swift in Sources */,
 				1BECB4D51BC563F700EDBB8F /* StatusList.swift in Sources */,
-				1BD76E3F1BC401CF00A2EDE1 /* Item.swift in Sources */,
+				1BD76E3F1BC401CF00A2EDE1 /* Equip.swift in Sources */,
 				1BECB4D11BC55EF700EDBB8F /* Bard.swift in Sources */,
 				1B8EDC391BC2B959009603B6 /* Status.swift in Sources */,
 			);

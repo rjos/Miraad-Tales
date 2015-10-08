@@ -8,19 +8,21 @@
 
 import UIKit
 
-public class Item: NSObject {
+public class Equip: NSObject {
     
     public let name: String
     public let ownerRace: PlayersRace
     public let status: Status
-    public let type: ItemType
+    public let type: EquipType
     public let requiredLevel: NSNumber
+    public let skill: BaseSkill
     
-    public init(name: String, ownerRace: PlayersRace, status: Status, type:ItemType, requiredLevel: NSNumber) {
+    public init(name: String, ownerRace: PlayersRace, status: Status, type:EquipType, requiredLevel: NSNumber, skill: BaseSkill) {
         self.name = name
         self.ownerRace = ownerRace
         self.status = status
         self.type = type
         self.requiredLevel = requiredLevel
+        self.skill = skill
     }
 }

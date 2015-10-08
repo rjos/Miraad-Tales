@@ -8,37 +8,37 @@
 
 import UIKit
 
-public class Paladin: GeneralRace, StatusList {
+public class Paladin: GeneralRace {
 
-    public override init(name: String, status: PlayerStatus, equipments: [Item], skills: [BaseSkill]) {
+    public override init(name: String, status: PlayerStatus, equipments: [Equip], skills: [BaseSkill]) {
         super.init(name: name, status: status, equipments: equipments, skills: skills)
     }
     
-    public func incrementHP() {
+    public override func incrementHP() {
         self.status.incrementHP(0.25)
     }
     
-    public func incrementMP() {
+    public override func incrementMP() {
         self.status.incrementMP(0.2)
     }
     
-    public func incrementPAtk() {
+    public override func incrementPAtk() {
         self.status.incrementPAtk(0.2)
     }
     
-    public func incrementMAtk() {
+    public override func incrementMAtk() {
         self.status.incrementMAtk(0.15)
     }
     
-    public func incrementPDef() {
+    public override func incrementPDef() {
         self.status.incrementPDef(0.25)
     }
     
-    public func incrementMDef() {
+    public override func incrementMDef() {
         self.status.incrementMDef(0.15)
     }
     
-    public func incremmentSpeed() {
+    public override func incremmentSpeed() {
         self.status.incrementSpeed(0.1)
     }
 }
