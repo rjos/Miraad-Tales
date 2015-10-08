@@ -14,4 +14,5 @@ public enum PlayersRace: String {
     case Mage = "Mage"
     case Bard = "Bard"
     case Paladin = "Paladin"
+    case General = "General"
 }

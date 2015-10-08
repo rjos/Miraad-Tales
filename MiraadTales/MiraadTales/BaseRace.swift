@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class GeneralRace: NSObject, StatusList {
+public class BaseRace: NSObject, StatusList {
 
     public let name: String
     public let status: PlayerStatus
@@ -23,30 +23,30 @@ public class GeneralRace: NSObject, StatusList {
     }
     
     public func incrementHP() {
-        preconditionFailure("Function have bee implement for Sub Classes")
+        preconditionFailure("Function must be implemented by Sub Classes")
     }
     
     public func incrementMP() {
-        preconditionFailure("Function have bee implement for Sub Classes")
+        preconditionFailure("Function must be implemented by Sub Classes")
     }
     
     public func incrementPAtk() {
-        preconditionFailure("Function have bee implement for Sub Classes")
+        preconditionFailure("Function must be implemented by Sub Classes")
     }
     
     public func incrementMAtk() {
-        preconditionFailure("Function have bee implement for Sub Classes")
+        preconditionFailure("Function must be implemented by Sub Classes")
     }
     
     public func incrementPDef() {
-        preconditionFailure("Function have bee implement for Sub Classes")
+        preconditionFailure("Function must be implemented by Sub Classes")
     }
     
     public func incrementMDef() {
-        preconditionFailure("Function have bee implement for Sub Classes")
+        preconditionFailure("Function must be implemented by Sub Classes")
     }
     
     public func incremmentSpeed() {
-        preconditionFailure("Function have bee implement for Sub Classes")
+        preconditionFailure("Function must be implemented by Sub Classes")
     }
 }
