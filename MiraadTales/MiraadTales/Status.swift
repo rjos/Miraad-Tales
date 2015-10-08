@@ -11,13 +11,13 @@ import UIKit
 public class Status: NSObject {
     
     // MARK: -Attributes
-    public var HP: Int = 0
-    public var MP: Int = 0
-    public var Speed: Int = 0
-    public var pAtk: Int = 0
-    public var mAtk: Int = 0
-    public var pDef: Int = 0
-    public var mDef: Int = 0
+    public var HP: Int
+    public var MP: Int
+    public var Speed: Int
+    public var pAtk: Int
+    public var mAtk: Int
+    public var pDef: Int
+    public var mDef: Int
     
     public init(HP:Int, MP:Int, Speed:Int, pAtk: Int, mAtk:Int, pDef: Int, mDef:Int) {
         self.HP = HP
