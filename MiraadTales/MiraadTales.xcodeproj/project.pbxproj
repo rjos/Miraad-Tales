@@ -27,6 +27,8 @@
 		1BD76E431BC4080D00A2EDE1 /* ItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD76E421BC4080D00A2EDE1 /* ItemType.swift */; settings = {ASSET_TAGS = (); }; };
 		1BD76E451BC4093900A2EDE1 /* PlayerStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD76E441BC4093900A2EDE1 /* PlayerStatus.swift */; settings = {ASSET_TAGS = (); }; };
 		1BD76E4E1BC4135900A2EDE1 /* BaseSkill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD76E4D1BC4135900A2EDE1 /* BaseSkill.swift */; settings = {ASSET_TAGS = (); }; };
+		1BE7D8011BC7F855000FA60C /* Joystick.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BE7D8001BC7F855000FA60C /* Joystick.m */; settings = {ASSET_TAGS = (); }; };
+		1BE7D8051BC7FEDA000FA60C /* Ylla.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1BE7D8041BC7FEDA000FA60C /* Ylla.atlas */; settings = {ASSET_TAGS = (); }; };
 		1BECB4CB1BC55CB000EDBB8F /* BaseRace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BECB4CA1BC55CB000EDBB8F /* BaseRace.swift */; settings = {ASSET_TAGS = (); }; };
 		1BECB4CD1BC55E2200EDBB8F /* Swordsman.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BECB4CC1BC55E2200EDBB8F /* Swordsman.swift */; settings = {ASSET_TAGS = (); }; };
 		1BECB4CF1BC55EB300EDBB8F /* Mage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BECB4CE1BC55EB300EDBB8F /* Mage.swift */; settings = {ASSET_TAGS = (); }; };
@@ -79,6 +81,10 @@
 		1BD76E421BC4080D00A2EDE1 /* ItemType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemType.swift; sourceTree = "<group>"; };
 		1BD76E441BC4093900A2EDE1 /* PlayerStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerStatus.swift; sourceTree = "<group>"; };
 		1BD76E4D1BC4135900A2EDE1 /* BaseSkill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseSkill.swift; sourceTree = "<group>"; };
+		1BE7D7FE1BC7F854000FA60C /* MiraadTales-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MiraadTales-Bridging-Header.h"; sourceTree = "<group>"; };
+		1BE7D7FF1BC7F855000FA60C /* Joystick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Joystick.h; sourceTree = "<group>"; };
+		1BE7D8001BC7F855000FA60C /* Joystick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Joystick.m; sourceTree = "<group>"; };
+		1BE7D8041BC7FEDA000FA60C /* Ylla.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Ylla.atlas; sourceTree = "<group>"; };
 		1BECB4CA1BC55CB000EDBB8F /* BaseRace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRace.swift; sourceTree = "<group>"; };
 		1BECB4CC1BC55E2200EDBB8F /* Swordsman.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swordsman.swift; sourceTree = "<group>"; };
 		1BECB4CE1BC55EB300EDBB8F /* Mage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mage.swift; sourceTree = "<group>"; };
@@ -135,6 +141,7 @@
 		1B8EDC031BC2B074009603B6 /* MiraadTales */ = {
 			isa = PBXGroup;
 			children = (
+				1BE7D7E31BC7E2EB000FA60C /* Assets */,
 				1B8EDC361BC2B0FC009603B6 /* Library */,
 				1B8EDC061BC2B074009603B6 /* GameScene.sks */,
 				1B8EDC041BC2B074009603B6 /* AppDelegate.swift */,
@@ -169,6 +176,7 @@
 		1B8EDC361BC2B0FC009603B6 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				1BE7D7FD1BC7F834000FA60C /* Joystick */,
 				1BD76E3C1BC4003800A2EDE1 /* Character */,
 			);
 			name = Library;
@@ -214,6 +222,24 @@
 				1BA00EB01BC69F3F00B8972A /* Effect.swift */,
 			);
 			name = Skill;
+			sourceTree = "<group>";
+		};
+		1BE7D7E31BC7E2EB000FA60C /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				1BE7D8041BC7FEDA000FA60C /* Ylla.atlas */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		1BE7D7FD1BC7F834000FA60C /* Joystick */ = {
+			isa = PBXGroup;
+			children = (
+				1BE7D7FF1BC7F855000FA60C /* Joystick.h */,
+				1BE7D8001BC7F855000FA60C /* Joystick.m */,
+				1BE7D7FE1BC7F854000FA60C /* MiraadTales-Bridging-Header.h */,
+			);
+			name = Joystick;
 			sourceTree = "<group>";
 		};
 		1BECB4C91BC55C9900EDBB8F /* Race */ = {
@@ -292,6 +318,7 @@
 		1B8EDBF91BC2B073009603B6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Rodolfo José";
 				TargetAttributes = {
@@ -334,6 +361,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B8EDC071BC2B074009603B6 /* GameScene.sks in Resources */,
+				1BE7D8051BC7FEDA000FA60C /* Ylla.atlas in Resources */,
 				1B8EDC131BC2B074009603B6 /* LaunchScreen.storyboard in Resources */,
 				1B8EDC101BC2B074009603B6 /* Assets.xcassets in Resources */,
 				1B8EDC0E1BC2B074009603B6 /* Main.storyboard in Resources */,
@@ -368,6 +396,7 @@
 				1BECB4CB1BC55CB000EDBB8F /* BaseRace.swift in Sources */,
 				1B8EDC3B1BC2C506009603B6 /* PlayersRace.swift in Sources */,
 				1BA00EBA1BC6B4AD00B8972A /* ItemQuest.swift in Sources */,
+				1BE7D8011BC7F855000FA60C /* Joystick.m in Sources */,
 				1BD76E431BC4080D00A2EDE1 /* ItemType.swift in Sources */,
 				1B8EDC091BC2B074009603B6 /* GameScene.swift in Sources */,
 				1BECB4D31BC55F2600EDBB8F /* Paladin.swift in Sources */,
@@ -522,10 +551,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = MiraadTales/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.cin.bepid.rjos.MiraadTales;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MiraadTales/MiraadTales-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -533,10 +565,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = MiraadTales/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.cin.bepid.rjos.MiraadTales;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MiraadTales/MiraadTales-Bridging-Header.h";
 			};
 			name = Release;
 		};
