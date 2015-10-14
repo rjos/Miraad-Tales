@@ -15,19 +15,18 @@ public enum DirectionPlayer: String {
     case Right = "DirectionRight"
 }
 
-public class Player: SKNode {
+public class Player: SKSpriteNode {
     
-    public let race: BaseRace
-    private var sprite: SKSpriteNode
+    public var race: BaseRace
     private var playerWalkingFrames = Array<Array<SKTexture>>()
+    private let longTapPlayer: NSTimeInterval = 1.0
+    private var touchStarted: NSTimeInterval? = nil
     
     public init(race: BaseRace, imageNamed: String) {
         self.race = race
-        self.sprite = SKSpriteNode()
-        super.init()
-        self.setAtlas()
-        self.sprite = SKSpriteNode(texture: self.playerWalkingFrames[0][1])
-        self.addChild(self.sprite)
+        let texture = SKTexture(imageNamed: imageNamed)
+        super.init(texture: texture, color: UIColor.redColor(), size: texture.size())
+        setAtlas()
         self.xScale = 0.5
         self.yScale = 0.5
     }
@@ -36,8 +35,25 @@ public class Player: SKNode {
         fatalError("init(coder:) has not been implemented")
     }
     
+    public override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        
+        if let touch = touches.first {
+            
+            touchStarted = touch.timestamp
+        }
+    }
+    
+    public override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
+        touchStarted = nil
+    }
+    
     public func update(currentTime: CFTimeInterval) {
         
+        if touchStarted != nil && ((currentTime - touchStarted!) >= longTapPlayer) {
+            
+            touchStarted = nil
+            print("Open menu")
+        }
     }
     
     private func setAtlas() {
@@ -48,7 +64,7 @@ public class Player: SKNode {
         
         for var i = 0; i < numImages; i = i + 3 {
             for var j = 1; j <= 3; j++ {
-                let playerTextureName = "\(self.race.name)\(i + j)"
+                let playerTextureName = "\(self.race.name)-\(i + j)"
                 walkFrames.append(playerAnimatedAtlas.textureNamed(playerTextureName))
             }
             
@@ -78,10 +94,10 @@ public class Player: SKNode {
             break
         }
         
-        self.sprite.runAction(SKAction.repeatActionForever(SKAction.animateWithTextures(walkingFramesDirection, timePerFrame: 0.1, resize: false, restore: true)), withKey: "walkingINPlacePlayer\(self.name)")
+        self.runAction(SKAction.repeatActionForever(SKAction.animateWithTextures(walkingFramesDirection, timePerFrame: 0.1, resize: false, restore: true)), withKey: "walkingINPlacePlayer\(self.name)")
     }
     
     public func removeAction() {
-        self.sprite.removeAllActions()
+        self.removeAllActions()
     }
 }

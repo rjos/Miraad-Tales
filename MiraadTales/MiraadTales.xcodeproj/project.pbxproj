@@ -35,6 +35,7 @@
 		1BECB4D11BC55EF700EDBB8F /* Bard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BECB4D01BC55EF700EDBB8F /* Bard.swift */; settings = {ASSET_TAGS = (); }; };
 		1BECB4D31BC55F2600EDBB8F /* Paladin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BECB4D21BC55F2600EDBB8F /* Paladin.swift */; settings = {ASSET_TAGS = (); }; };
 		1BECB4D51BC563F700EDBB8F /* StatusList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BECB4D41BC563F700EDBB8F /* StatusList.swift */; settings = {ASSET_TAGS = (); }; };
+		1BEDA5691BCE8B8800C95A73 /* Hydora.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1BEDA5681BCE8B8800C95A73 /* Hydora.atlas */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		1BECB4D01BC55EF700EDBB8F /* Bard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bard.swift; sourceTree = "<group>"; };
 		1BECB4D21BC55F2600EDBB8F /* Paladin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Paladin.swift; sourceTree = "<group>"; };
 		1BECB4D41BC563F700EDBB8F /* StatusList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusList.swift; sourceTree = "<group>"; };
+		1BEDA5681BCE8B8800C95A73 /* Hydora.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Hydora.atlas; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +229,7 @@
 		1BE7D7E31BC7E2EB000FA60C /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				1BEDA5681BCE8B8800C95A73 /* Hydora.atlas */,
 				1BE7D8041BC7FEDA000FA60C /* Ylla.atlas */,
 			);
 			name = Assets;
@@ -360,6 +363,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BEDA5691BCE8B8800C95A73 /* Hydora.atlas in Resources */,
 				1B8EDC071BC2B074009603B6 /* GameScene.sks in Resources */,
 				1BE7D8051BC7FEDA000FA60C /* Ylla.atlas in Resources */,
 				1B8EDC131BC2B074009603B6 /* LaunchScreen.storyboard in Resources */,
