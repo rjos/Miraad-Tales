@@ -22,7 +22,7 @@ class GameScene: SKScene {
 //        self.addChild(myLabel)
         
         let status = PlayerStatus(HP: 12, MP: 6, Speed: 16, pAtk: 16, mAtk: 6, pDef: 12, mDef: 6)
-        let ylla = Swordsman(name: "Ylla", status: status, equipments: [Equip](), skills: [Skill]())
+        let ylla = Swordsman(name: "Ylla", status: status, equipments: [Equip](), skills: [Skill](), isDie: false)
         
         let player = Player(race: ylla, imageNamed: "Ylla-2")
         player.name = "player"

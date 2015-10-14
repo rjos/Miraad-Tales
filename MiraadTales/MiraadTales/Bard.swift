@@ -10,8 +10,8 @@ import UIKit
 
 public class Bard: BaseRace {
 
-    public override init(name: String, status: PlayerStatus, equipments: [Equip], skills: [Skill]) {
-        super.init(name: name, status: status, equipments: equipments, skills: skills)
+    public override init(name: String, status: PlayerStatus, equipments: [Equip], skills: [Skill], isDie: Bool) {
+        super.init(name: name, status: status, equipments: equipments, skills: skills, isDie: isDie)
     }
     
     public override func incrementHP() {

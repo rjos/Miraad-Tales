@@ -14,12 +14,14 @@ public class BaseRace: NSObject, StatusList {
     public let status: PlayerStatus
     public var equipments: [Equip]
     public var skills: [Skill]
+    public var isDie: Bool
     
-    public init(name: String, status: PlayerStatus, equipments: [Equip], skills: [Skill]) {
+    public init(name: String, status: PlayerStatus, equipments: [Equip], skills: [Skill], isDie: Bool) {
         self.name = name
         self.status = status
         self.equipments = equipments
         self.skills = skills
+        self.isDie = isDie
     }
     
     public func incrementHP() {
