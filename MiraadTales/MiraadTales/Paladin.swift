@@ -10,7 +10,7 @@ import UIKit
 
 public class Paladin: BaseRace {
 
-    public override init(name: String, status: PlayerStatus, equipments: [Equip], skills: [BaseSkill]) {
+    public override init(name: String, status: PlayerStatus, equipments: [Equip], skills: [Skill]) {
         super.init(name: name, status: status, equipments: equipments, skills: skills)
     }
     

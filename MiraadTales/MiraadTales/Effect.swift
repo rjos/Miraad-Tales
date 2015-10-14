@@ -12,10 +12,12 @@ public class Effect: NSObject {
     
     public let target: TargetSkill
     public let affect: AffectSkill
+    public let percenteEffects: Int
     
-    public init(target: TargetSkill, affect: AffectSkill) {
+    public init(target: TargetSkill, affect: AffectSkill, percenteEffects: Int) {
         self.target = target
         self.affect = affect
+        self.percenteEffects = percenteEffects
     }
 }
 

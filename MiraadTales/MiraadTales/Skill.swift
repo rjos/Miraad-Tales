@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class BaseSkill: NSObject {
+public class Skill: NSObject {
     
     public let name: String
     public let equip: Equip

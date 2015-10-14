@@ -13,9 +13,9 @@ public class BaseRace: NSObject, StatusList {
     public let name: String
     public let status: PlayerStatus
     public var equipments: [Equip]
-    public var skills: [BaseSkill]
+    public var skills: [Skill]
     
-    public init(name: String, status: PlayerStatus, equipments: [Equip], skills: [BaseSkill]) {
+    public init(name: String, status: PlayerStatus, equipments: [Equip], skills: [Skill]) {
         self.name = name
         self.status = status
         self.equipments = equipments

@@ -26,7 +26,7 @@
 		1BD76E3F1BC401CF00A2EDE1 /* Equip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD76E3E1BC401CF00A2EDE1 /* Equip.swift */; settings = {ASSET_TAGS = (); }; };
 		1BD76E431BC4080D00A2EDE1 /* ItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD76E421BC4080D00A2EDE1 /* ItemType.swift */; settings = {ASSET_TAGS = (); }; };
 		1BD76E451BC4093900A2EDE1 /* PlayerStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD76E441BC4093900A2EDE1 /* PlayerStatus.swift */; settings = {ASSET_TAGS = (); }; };
-		1BD76E4E1BC4135900A2EDE1 /* BaseSkill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD76E4D1BC4135900A2EDE1 /* BaseSkill.swift */; settings = {ASSET_TAGS = (); }; };
+		1BD76E4E1BC4135900A2EDE1 /* Skill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD76E4D1BC4135900A2EDE1 /* Skill.swift */; settings = {ASSET_TAGS = (); }; };
 		1BE7D8011BC7F855000FA60C /* Joystick.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BE7D8001BC7F855000FA60C /* Joystick.m */; settings = {ASSET_TAGS = (); }; };
 		1BE7D8051BC7FEDA000FA60C /* Ylla.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1BE7D8041BC7FEDA000FA60C /* Ylla.atlas */; settings = {ASSET_TAGS = (); }; };
 		1BECB4CB1BC55CB000EDBB8F /* BaseRace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BECB4CA1BC55CB000EDBB8F /* BaseRace.swift */; settings = {ASSET_TAGS = (); }; };
@@ -80,7 +80,7 @@
 		1BD76E3E1BC401CF00A2EDE1 /* Equip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Equip.swift; sourceTree = "<group>"; };
 		1BD76E421BC4080D00A2EDE1 /* ItemType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemType.swift; sourceTree = "<group>"; };
 		1BD76E441BC4093900A2EDE1 /* PlayerStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerStatus.swift; sourceTree = "<group>"; };
-		1BD76E4D1BC4135900A2EDE1 /* BaseSkill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseSkill.swift; sourceTree = "<group>"; };
+		1BD76E4D1BC4135900A2EDE1 /* Skill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Skill.swift; sourceTree = "<group>"; };
 		1BE7D7FE1BC7F854000FA60C /* MiraadTales-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MiraadTales-Bridging-Header.h"; sourceTree = "<group>"; };
 		1BE7D7FF1BC7F855000FA60C /* Joystick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Joystick.h; sourceTree = "<group>"; };
 		1BE7D8001BC7F855000FA60C /* Joystick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Joystick.m; sourceTree = "<group>"; };
@@ -218,7 +218,7 @@
 		1BD76E461BC40D7E00A2EDE1 /* Skill */ = {
 			isa = PBXGroup;
 			children = (
-				1BD76E4D1BC4135900A2EDE1 /* BaseSkill.swift */,
+				1BD76E4D1BC4135900A2EDE1 /* Skill.swift */,
 				1BA00EB01BC69F3F00B8972A /* Effect.swift */,
 			);
 			name = Skill;
@@ -392,7 +392,7 @@
 				1BA00EBC1BC6B55100B8972A /* Item.swift in Sources */,
 				1BECB4CF1BC55EB300EDBB8F /* Mage.swift in Sources */,
 				1BA00EB81BC6B38F00B8972A /* BaseItem.swift in Sources */,
-				1BD76E4E1BC4135900A2EDE1 /* BaseSkill.swift in Sources */,
+				1BD76E4E1BC4135900A2EDE1 /* Skill.swift in Sources */,
 				1BECB4CB1BC55CB000EDBB8F /* BaseRace.swift in Sources */,
 				1B8EDC3B1BC2C506009603B6 /* PlayersRace.swift in Sources */,
 				1BA00EBA1BC6B4AD00B8972A /* ItemQuest.swift in Sources */,

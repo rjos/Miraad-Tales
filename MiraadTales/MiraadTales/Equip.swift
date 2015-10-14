@@ -14,9 +14,9 @@ public class Equip: BaseItem {
     public let owner: BaseRace
     public let status: Status
     public let requiredLevel: NSNumber
-    public let skill: BaseSkill
+    public let skill: Skill
     
-    public init(name: String, ownerRace: PlayersRace, owner: BaseRace,status: Status, type:ItemType, requiredLevel: NSNumber, skill: BaseSkill) {
+    public init(name: String, ownerRace: PlayersRace, owner: BaseRace,status: Status, type:ItemType, requiredLevel: NSNumber, skill: Skill) {
         
         self.ownerRace = ownerRace
         self.owner = owner
