@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B4F297E1BCFD28200612BF8 /* VLDContextSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B4F29791BCFD28200612BF8 /* VLDContextSheet.m */; settings = {ASSET_TAGS = (); }; };
+		1B4F297F1BCFD28200612BF8 /* VLDContextSheetItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B4F297B1BCFD28200612BF8 /* VLDContextSheetItem.m */; settings = {ASSET_TAGS = (); }; };
+		1B4F29801BCFD28200612BF8 /* VLDContextSheetItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B4F297D1BCFD28200612BF8 /* VLDContextSheetItemView.m */; settings = {ASSET_TAGS = (); }; };
+		1B4F29861BCFE2EB00612BF8 /* LFCGzipUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B4F29831BCFE2EB00612BF8 /* LFCGzipUtility.m */; settings = {ASSET_TAGS = (); }; };
+		1B4F29871BCFE2EB00612BF8 /* JSTileMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B4F29851BCFE2EB00612BF8 /* JSTileMap.m */; settings = {ASSET_TAGS = (); }; };
 		1B8EDC051BC2B074009603B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8EDC041BC2B074009603B6 /* AppDelegate.swift */; };
 		1B8EDC071BC2B074009603B6 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1B8EDC061BC2B074009603B6 /* GameScene.sks */; };
 		1B8EDC091BC2B074009603B6 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8EDC081BC2B074009603B6 /* GameScene.swift */; };
@@ -56,6 +61,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B4F29781BCFD28200612BF8 /* VLDContextSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLDContextSheet.h; sourceTree = "<group>"; };
+		1B4F29791BCFD28200612BF8 /* VLDContextSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLDContextSheet.m; sourceTree = "<group>"; };
+		1B4F297A1BCFD28200612BF8 /* VLDContextSheetItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLDContextSheetItem.h; sourceTree = "<group>"; };
+		1B4F297B1BCFD28200612BF8 /* VLDContextSheetItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLDContextSheetItem.m; sourceTree = "<group>"; };
+		1B4F297C1BCFD28200612BF8 /* VLDContextSheetItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLDContextSheetItemView.h; sourceTree = "<group>"; };
+		1B4F297D1BCFD28200612BF8 /* VLDContextSheetItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLDContextSheetItemView.m; sourceTree = "<group>"; };
+		1B4F29821BCFE2EB00612BF8 /* LFCGzipUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFCGzipUtility.h; sourceTree = "<group>"; };
+		1B4F29831BCFE2EB00612BF8 /* LFCGzipUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFCGzipUtility.m; sourceTree = "<group>"; };
+		1B4F29841BCFE2EB00612BF8 /* JSTileMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSTileMap.h; sourceTree = "<group>"; };
+		1B4F29851BCFE2EB00612BF8 /* JSTileMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSTileMap.m; sourceTree = "<group>"; };
 		1B8EDC011BC2B074009603B6 /* MiraadTales.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiraadTales.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B8EDC041BC2B074009603B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B8EDC061BC2B074009603B6 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -120,6 +135,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B4F29771BCFD26F00612BF8 /* ContextMenuPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				1B4F29781BCFD28200612BF8 /* VLDContextSheet.h */,
+				1B4F29791BCFD28200612BF8 /* VLDContextSheet.m */,
+				1B4F297A1BCFD28200612BF8 /* VLDContextSheetItem.h */,
+				1B4F297B1BCFD28200612BF8 /* VLDContextSheetItem.m */,
+				1B4F297C1BCFD28200612BF8 /* VLDContextSheetItemView.h */,
+				1B4F297D1BCFD28200612BF8 /* VLDContextSheetItemView.m */,
+			);
+			name = ContextMenuPlayer;
+			sourceTree = "<group>";
+		};
+		1B4F29811BCFE29700612BF8 /* TileMap */ = {
+			isa = PBXGroup;
+			children = (
+				1B4F29821BCFE2EB00612BF8 /* LFCGzipUtility.h */,
+				1B4F29831BCFE2EB00612BF8 /* LFCGzipUtility.m */,
+				1B4F29841BCFE2EB00612BF8 /* JSTileMap.h */,
+				1B4F29851BCFE2EB00612BF8 /* JSTileMap.m */,
+			);
+			name = TileMap;
+			sourceTree = "<group>";
+		};
 		1B8EDBF81BC2B073009603B6 = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +217,9 @@
 		1B8EDC361BC2B0FC009603B6 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				1BE7D7FE1BC7F854000FA60C /* MiraadTales-Bridging-Header.h */,
+				1B4F29811BCFE29700612BF8 /* TileMap */,
+				1B4F29771BCFD26F00612BF8 /* ContextMenuPlayer */,
 				1BE7D7FD1BC7F834000FA60C /* Joystick */,
 				1BD76E3C1BC4003800A2EDE1 /* Character */,
 			);
@@ -240,7 +282,6 @@
 			children = (
 				1BE7D7FF1BC7F855000FA60C /* Joystick.h */,
 				1BE7D8001BC7F855000FA60C /* Joystick.m */,
-				1BE7D7FE1BC7F854000FA60C /* MiraadTales-Bridging-Header.h */,
 			);
 			name = Joystick;
 			sourceTree = "<group>";
@@ -393,19 +434,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B4F297F1BCFD28200612BF8 /* VLDContextSheetItem.m in Sources */,
 				1BA00EBC1BC6B55100B8972A /* Item.swift in Sources */,
 				1BECB4CF1BC55EB300EDBB8F /* Mage.swift in Sources */,
 				1BA00EB81BC6B38F00B8972A /* BaseItem.swift in Sources */,
 				1BD76E4E1BC4135900A2EDE1 /* Skill.swift in Sources */,
+				1B4F297E1BCFD28200612BF8 /* VLDContextSheet.m in Sources */,
 				1BECB4CB1BC55CB000EDBB8F /* BaseRace.swift in Sources */,
 				1B8EDC3B1BC2C506009603B6 /* PlayersRace.swift in Sources */,
 				1BA00EBA1BC6B4AD00B8972A /* ItemQuest.swift in Sources */,
 				1BE7D8011BC7F855000FA60C /* Joystick.m in Sources */,
+				1B4F29801BCFD28200612BF8 /* VLDContextSheetItemView.m in Sources */,
+				1B4F29871BCFE2EB00612BF8 /* JSTileMap.m in Sources */,
 				1BD76E431BC4080D00A2EDE1 /* ItemType.swift in Sources */,
 				1B8EDC091BC2B074009603B6 /* GameScene.swift in Sources */,
 				1BECB4D31BC55F2600EDBB8F /* Paladin.swift in Sources */,
 				1B8EDC0B1BC2B074009603B6 /* GameViewController.swift in Sources */,
 				1BECB4CD1BC55E2200EDBB8F /* Swordsman.swift in Sources */,
+				1B4F29861BCFE2EB00612BF8 /* LFCGzipUtility.m in Sources */,
 				1BD76E451BC4093900A2EDE1 /* PlayerStatus.swift in Sources */,
 				1B8EDC051BC2B074009603B6 /* AppDelegate.swift in Sources */,
 				1BA00EB11BC69F3F00B8972A /* Effect.swift in Sources */,

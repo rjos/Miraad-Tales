@@ -3,3 +3,6 @@
 //
 
 #import "Joystick.h"
+#import "VLDContextSheet.h"
+#import "VLDContextSheetItem.h"
+#import "JSTileMap.h"

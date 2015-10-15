@@ -27,7 +27,7 @@ class GameScene: SKScene {
         let status = PlayerStatus(HP: 12, MP: 6, Speed: 16, pAtk: 16, mAtk: 6, pDef: 12, mDef: 6)
         let ylla = Swordsman(name: "Ylla", status: status, equipments: [Equip](), skills: [Skill](), isDie: false)
         
-        let player = Player(race: ylla, imageNamed: "Ylla-2")
+        let player = Player(race: ylla, imageNamed: "Ylla-2", viewController: self.view!)
         player.name = "ylla"
         self.addChild(player)
         
@@ -35,7 +35,7 @@ class GameScene: SKScene {
         
         let status_hydora = PlayerStatus(HP: 12, MP: 6, Speed: 16, pAtk: 16, mAtk: 6, pDef: 12, mDef: 6)
         let hydora = Paladin(name: "Hydora", status: status_hydora, equipments: [Equip](), skills: [Skill](), isDie: false)
-        let pHydora = Player(race: hydora, imageNamed: "Hydora-2")
+        let pHydora = Player(race: hydora, imageNamed: "Hydora-2", viewController: self.view!)
         pHydora.name = "hydora"
         
         pHydora.position = CGPointMake(player.position.x - player.frame.size.width, player.position.y)
@@ -115,7 +115,14 @@ class GameScene: SKScene {
             lastedPositionPlayer = CGPointMake(lastedPositionPlayer.x + (joystick.velocity.x / 10), lastedPositionPlayer.y + (joystick.velocity.y / 10))
             
             players[currentPlayer].position = lastedPositionPlayer
-            players[currentPlayer + 1].position = CGPointMake(lastedPositionPlayers[0].x - players[currentPlayer].frame.width, lastedPositionPlayers[0].y)
+            
+            
+            if Int(lastedPositionPlayer.x) == Int(lastedPositionPlayers[0].x) {
+                players[currentPlayer + 1].position = CGPointMake(lastedPositionPlayers[0].x, lastedPositionPlayers[0].y - players[currentPlayer].frame.height)
+            }else {
+                
+                players[currentPlayer + 1].position = CGPointMake(lastedPositionPlayers[0].x - players[currentPlayer].frame.width, lastedPositionPlayers[0].y)
+            }
         }
         
         if !joystick.isTracking {
