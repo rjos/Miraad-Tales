@@ -5,4 +5,5 @@
 #import "Joystick.h"
 #import "VLDContextSheet.h"
 #import "VLDContextSheetItem.h"
+#import "LFCGzipUtility.h"
 #import "JSTileMap.h"

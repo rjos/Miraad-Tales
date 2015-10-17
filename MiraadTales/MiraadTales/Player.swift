@@ -18,6 +18,9 @@ public enum DirectionPlayer: String {
 public class Player: SKSpriteNode, VLDContextSheetDelegate {
     
     public var race: BaseRace
+    public var lastedPosition = [CGPoint]()
+    public var lastedVelocity = [CGPoint]()
+    public var menuHasOpened: Bool = false
     private var playerWalkingFrames = Array<Array<SKTexture>>()
     private let longTapPlayer: NSTimeInterval = 1.0
     private var touchStarted: NSTimeInterval? = nil
@@ -130,10 +133,49 @@ public class Player: SKSpriteNode, VLDContextSheetDelegate {
     private func openContextMenu() {
         //let tapRecognizer = UITapGestureRecognizer(target: self.viewController, action: nil)
         self.contextMenuPlayer?.startWithGestureRecognizer(self.locationTouch!, inView: self.viewController)
+        self.menuHasOpened = true
     }
     
     public func contextSheet(contextSheet: VLDContextSheet!, didSelectItem item: VLDContextSheetItem!) {
         print(item.title)
         //Open menus!
+        self.menuHasOpened = false
+    }
+    
+    public func setLastedPosition(positive: Bool, orientation: Orientation) {
+        
+        var sign: CGFloat = -1
+        
+        if positive {
+            sign = 1
+        }
+        
+        var targetPosition: CGFloat
+        var current: CGFloat
+        
+        switch orientation {
+        case .Horizontal:
+            targetPosition = self.position.x - (self.frame.width * sign)
+            current = self.position.x
+            break
+        case .Vertical:
+            targetPosition = self.position.y - (self.frame.height * sign)
+            current = self.position.y
+            break
+        }
+        
+        while Int(current) != Int(targetPosition) {
+            
+            switch orientation {
+            case .Horizontal:
+                self.lastedPosition.append(CGPointMake(current, self.position.y))
+                break
+            case .Vertical:
+                self.lastedPosition.append(CGPointMake(self.position.x, current))
+                break
+            }
+            
+            current = current - (0.99 * sign)
+        }
     }
 }

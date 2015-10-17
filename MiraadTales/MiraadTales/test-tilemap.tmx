@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="34" height="34" tilewidth="34" tileheight="34" nextobjectid="1">
+ <tileset firstgid="1" name="casas" tilewidth="80" tileheight="95" tilecount="70">
+  <image source="casas.png" trans="ffffff" width="864" height="705"/>
+ </tileset>
+ <tileset firstgid="71" name="piso" tilewidth="45" tileheight="45" tilecount="285">
+  <image source="grama.png" trans="ffffff" width="864" height="705"/>
+ </tileset>
+ <layer name="01 piso" width="34" height="34">
+  <data encoding="base64" compression="zlib">
+   eJztwwENAAAMw6C6m39HF3JIWDVVVVVV3zy99kCs
+  </data>
+ </layer>
+ <layer name="02 colisao" width="34" height="34">
+  <data encoding="base64" compression="zlib">
+   eJzt18ENACAIQ1EUdf+RnUFiIST/nWnhihnQxwjmduIuoIOVnAOgNasPAAqdx3kX9wP4j99M4wI5wwAi
+  </data>
+ </layer>
+</map>

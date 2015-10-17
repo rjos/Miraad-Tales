@@ -12,8 +12,11 @@ class GameScene: SKScene {
     
     var isWalking = false
     var players = [Player]()
-    var currentPlayer = 0
+    var positionCurrentPlayer: CGPoint = CGPointZero
     var lastedPositionPlayers: [CGPoint] = []
+    var map: JSTileMap = JSTileMap(named: "test-tilemap.tmx")
+    var movementManagement: MovementManagement! = nil
+    var actionManagement: ActionManagement! = nil
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
@@ -24,24 +27,37 @@ class GameScene: SKScene {
 //        
 //        self.addChild(myLabel)
         
+        //Add map
+        let skMap = self.childNodeWithName("SKMap")!
+        skMap.addChild(map)
+        
+        let frameMap = map.calculateAccumulatedFrame()
+        
+        //Add Ylla
         let status = PlayerStatus(HP: 12, MP: 6, Speed: 16, pAtk: 16, mAtk: 6, pDef: 12, mDef: 6)
         let ylla = Swordsman(name: "Ylla", status: status, equipments: [Equip](), skills: [Skill](), isDie: false)
         
         let player = Player(race: ylla, imageNamed: "Ylla-2", viewController: self.view!)
         player.name = "ylla"
-        self.addChild(player)
+        player.zPosition = 15
+        player.xScale = 1
+        player.yScale = 1
+        player.position = CGPointMake((frameMap.width / 2) - (100), (frameMap.height / 2) - (player.frame.height / 2))
         
-        lastedPositionPlayers.append(player.position)
-        
-        let status_hydora = PlayerStatus(HP: 12, MP: 6, Speed: 16, pAtk: 16, mAtk: 6, pDef: 12, mDef: 6)
-        let hydora = Paladin(name: "Hydora", status: status_hydora, equipments: [Equip](), skills: [Skill](), isDie: false)
-        let pHydora = Player(race: hydora, imageNamed: "Hydora-2", viewController: self.view!)
-        pHydora.name = "hydora"
-        
-        pHydora.position = CGPointMake(player.position.x - player.frame.size.width, player.position.y)
-        self.addChild(pHydora)
-        
+        player.setLastedPosition(true, orientation: Orientation.Horizontal)
+        map.addChild(player)
         players.append(player)
+        
+        positionCurrentPlayer = player.position
+        
+        let pHydora = Player(race: ylla, imageNamed: "Ylla-2", viewController: self.view!)
+        pHydora.name = "hydora"
+        pHydora.zPosition = 15
+        pHydora.xScale = 1
+        pHydora.yScale = 1
+        pHydora.position = CGPointMake(player.position.x - player.frame.width, player.position.y)
+        pHydora.setLastedPosition(true, orientation: Orientation.Horizontal)
+        map.addChild(pHydora)
         players.append(pHydora)
         
         let joyBack = SKSpriteNode(imageNamed: "dpad")
@@ -51,87 +67,54 @@ class GameScene: SKScene {
         joyFront.alpha = 0.7
         
         let joystick = Joystick(thumb: joyFront, andBackdrop: joyBack)
-        joystick.name = "joystick"
-        joystick.position = CGPointMake(-193.161, -132.619)
+        joystick.name = "Joystick"
+        joystick.xScale = 0.5
+        joystick.yScale = 0.5
+        joystick.position = CGPointMake(0, 0)
         
-        let camera = self.childNodeWithName("SKCameraNode") as! SKCameraNode
-        camera.position = player.position
-        camera.addChild(joystick)
+        let skJoystick = self.camera!.childNodeWithName("SKJoystick")!
+        self.camera!.position = player.position
+        joystick.zPosition = 15
+        skJoystick.addChild(joystick)
         
-        //self.addChild(joystick)
+        self.movementManagement = MovementManagement(player: player, camera: self.camera!, sizeMap: frameMap,joystick: joystick, players: players)
+        
+
+        let skButtons = self.camera!.childNodeWithName("SKButtons")!
+        self.actionManagement =  ActionManagement(imageNamedButtonA: "buttonA", imageNamedButtonB: "buttonB", imageNamedButtonSwitch: "switch", movementManagement: self.movementManagement)
+        skButtons.addChild(self.actionManagement)
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
        /* Called when a touch begins */
+        
+        self.actionManagement!.touchesBegan(touches, withEvent: event)
         
         for touch in touches {
             let location = touch.locationInNode(self)
             
             let nodePosition = self.nodeAtPoint(location)
             
-            if nodePosition is SKSpriteNode && nodePosition.name == players[currentPlayer].name {
-                players[currentPlayer].touchesBegan(touches, withEvent: event)
+            if nodePosition is SKSpriteNode && nodePosition.name == movementManagement.player.name {
+                movementManagement.player.touchesBegan(touches, withEvent: event)
             }
         }
     }
    
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
-        players[currentPlayer].touchesEnded(touches, withEvent: event)
+        self.actionManagement!.touchesEnded(touches, withEvent: event)
+        movementManagement.player.touchesEnded(touches, withEvent: event)
     }
     
     override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
-        players[currentPlayer].touchesCancelled(touches, withEvent: event)
+        self.actionManagement!.touchesCancelled(touches, withEvent: event)
+        movementManagement.player.touchesCancelled(touches, withEvent: event)
     }
     
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
         
-        let camera = self.childNodeWithName("SKCameraNode") as! SKCameraNode
-        let joystick = camera.childNodeWithName("joystick") as! Joystick
-        
-        players[currentPlayer].update(currentTime)
-        
-        if !self.isWalking && joystick.isTracking && joystick.velocity != CGPointZero {
-            
-            self.isWalking = !self.isWalking
-            
-            if joystick.angularVelocity > 1 && joystick.angularVelocity < 2 {
-                players[currentPlayer].walkingPlayer(DirectionPlayer.Right)
-                players[currentPlayer + 1].walkingPlayer(DirectionPlayer.Right)
-            }else if joystick.angularVelocity < -1 && joystick.angularVelocity > -2 {
-                players[currentPlayer].walkingPlayer(DirectionPlayer.Left)
-                players[currentPlayer + 1].walkingPlayer(DirectionPlayer.Left)
-            }else if joystick.angularVelocity > -1 && joystick.angularVelocity < 1 {
-                players[currentPlayer].walkingPlayer(DirectionPlayer.Up)
-                players[currentPlayer + 1].walkingPlayer(DirectionPlayer.Up)
-            }else if joystick.angularVelocity < -2 || joystick.angularVelocity > 2 {
-                players[currentPlayer].walkingPlayer(DirectionPlayer.Down)
-                players[currentPlayer + 1].walkingPlayer(DirectionPlayer.Down)
-            }
-            
-            var lastedPositionPlayer = players[currentPlayer].position
-            lastedPositionPlayers[0] = lastedPositionPlayer
-            lastedPositionPlayer = CGPointMake(lastedPositionPlayer.x + (joystick.velocity.x / 10), lastedPositionPlayer.y + (joystick.velocity.y / 10))
-            
-            players[currentPlayer].position = lastedPositionPlayer
-            
-            
-            if Int(lastedPositionPlayer.x) == Int(lastedPositionPlayers[0].x) {
-                players[currentPlayer + 1].position = CGPointMake(lastedPositionPlayers[0].x, lastedPositionPlayers[0].y - players[currentPlayer].frame.height)
-            }else {
-                
-                players[currentPlayer + 1].position = CGPointMake(lastedPositionPlayers[0].x - players[currentPlayer].frame.width, lastedPositionPlayers[0].y)
-            }
-        }
-        
-        if !joystick.isTracking {
-            
-            self.isWalking = false
-            players[currentPlayer].removeAction()
-            players[currentPlayer + 1].removeAction()
-        }
-        
-        camera.position = players[currentPlayer].position
+        self.movementManagement.update(currentTime)
     }
 }

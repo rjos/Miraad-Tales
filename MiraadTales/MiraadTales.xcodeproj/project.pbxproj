@@ -23,11 +23,17 @@
 		1B8EDC291BC2B074009603B6 /* MiraadTalesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8EDC281BC2B074009603B6 /* MiraadTalesUITests.swift */; };
 		1B8EDC391BC2B959009603B6 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8EDC381BC2B959009603B6 /* Status.swift */; settings = {ASSET_TAGS = (); }; };
 		1B8EDC3B1BC2C506009603B6 /* PlayersRace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8EDC3A1BC2C506009603B6 /* PlayersRace.swift */; settings = {ASSET_TAGS = (); }; };
+		1B9BE8761BD1359300E9EE27 /* test-tilemap.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 1B9BE8751BD1359300E9EE27 /* test-tilemap.tmx */; settings = {ASSET_TAGS = (); }; };
+		1B9BE8781BD137E300E9EE27 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B9BE8771BD137E300E9EE27 /* libz.tbd */; };
 		1BA00EB11BC69F3F00B8972A /* Effect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA00EB01BC69F3F00B8972A /* Effect.swift */; settings = {ASSET_TAGS = (); }; };
 		1BA00EB41BC6AB2C00B8972A /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA00EB31BC6AB2C00B8972A /* Player.swift */; settings = {ASSET_TAGS = (); }; };
 		1BA00EB81BC6B38F00B8972A /* BaseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA00EB71BC6B38F00B8972A /* BaseItem.swift */; settings = {ASSET_TAGS = (); }; };
 		1BA00EBA1BC6B4AD00B8972A /* ItemQuest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA00EB91BC6B4AD00B8972A /* ItemQuest.swift */; settings = {ASSET_TAGS = (); }; };
 		1BA00EBC1BC6B55100B8972A /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA00EBB1BC6B55100B8972A /* Item.swift */; settings = {ASSET_TAGS = (); }; };
+		1BC1F4191BD1A00C000CE8B3 /* casas.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BC1F4171BD1A00C000CE8B3 /* casas.png */; settings = {ASSET_TAGS = (); }; };
+		1BC1F41A1BD1A00C000CE8B3 /* grama.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BC1F4181BD1A00C000CE8B3 /* grama.png */; settings = {ASSET_TAGS = (); }; };
+		1BC1F41D1BD1C6CB000CE8B3 /* MovementManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC1F41C1BD1C6CB000CE8B3 /* MovementManagement.swift */; settings = {ASSET_TAGS = (); }; };
+		1BC1F4201BD2360F000CE8B3 /* ActionManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC1F41F1BD2360F000CE8B3 /* ActionManagement.swift */; settings = {ASSET_TAGS = (); }; };
 		1BD76E3F1BC401CF00A2EDE1 /* Equip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD76E3E1BC401CF00A2EDE1 /* Equip.swift */; settings = {ASSET_TAGS = (); }; };
 		1BD76E431BC4080D00A2EDE1 /* ItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD76E421BC4080D00A2EDE1 /* ItemType.swift */; settings = {ASSET_TAGS = (); }; };
 		1BD76E451BC4093900A2EDE1 /* PlayerStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD76E441BC4093900A2EDE1 /* PlayerStatus.swift */; settings = {ASSET_TAGS = (); }; };
@@ -88,11 +94,17 @@
 		1B8EDC2A1BC2B074009603B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B8EDC381BC2B959009603B6 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		1B8EDC3A1BC2C506009603B6 /* PlayersRace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersRace.swift; sourceTree = "<group>"; };
+		1B9BE8751BD1359300E9EE27 /* test-tilemap.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "test-tilemap.tmx"; sourceTree = "<group>"; };
+		1B9BE8771BD137E300E9EE27 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		1BA00EB01BC69F3F00B8972A /* Effect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Effect.swift; sourceTree = "<group>"; };
 		1BA00EB31BC6AB2C00B8972A /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		1BA00EB71BC6B38F00B8972A /* BaseItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseItem.swift; sourceTree = "<group>"; };
 		1BA00EB91BC6B4AD00B8972A /* ItemQuest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemQuest.swift; sourceTree = "<group>"; };
 		1BA00EBB1BC6B55100B8972A /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		1BC1F4171BD1A00C000CE8B3 /* casas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = casas.png; sourceTree = "<group>"; };
+		1BC1F4181BD1A00C000CE8B3 /* grama.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grama.png; sourceTree = "<group>"; };
+		1BC1F41C1BD1C6CB000CE8B3 /* MovementManagement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovementManagement.swift; sourceTree = "<group>"; };
+		1BC1F41F1BD2360F000CE8B3 /* ActionManagement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionManagement.swift; sourceTree = "<group>"; };
 		1BD76E3E1BC401CF00A2EDE1 /* Equip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Equip.swift; sourceTree = "<group>"; };
 		1BD76E421BC4080D00A2EDE1 /* ItemType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemType.swift; sourceTree = "<group>"; };
 		1BD76E441BC4093900A2EDE1 /* PlayerStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerStatus.swift; sourceTree = "<group>"; };
@@ -115,6 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B9BE8781BD137E300E9EE27 /* libz.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,6 +175,7 @@
 		1B8EDBF81BC2B073009603B6 = {
 			isa = PBXGroup;
 			children = (
+				1B9BE8771BD137E300E9EE27 /* libz.tbd */,
 				1B8EDC031BC2B074009603B6 /* MiraadTales */,
 				1B8EDC1C1BC2B074009603B6 /* MiraadTalesTests */,
 				1B8EDC271BC2B074009603B6 /* MiraadTalesUITests */,
@@ -182,6 +196,7 @@
 		1B8EDC031BC2B074009603B6 /* MiraadTales */ = {
 			isa = PBXGroup;
 			children = (
+				1B9BE8741BD1357600E9EE27 /* World */,
 				1BE7D7E31BC7E2EB000FA60C /* Assets */,
 				1B8EDC361BC2B0FC009603B6 /* Library */,
 				1B8EDC061BC2B074009603B6 /* GameScene.sks */,
@@ -218,6 +233,8 @@
 			isa = PBXGroup;
 			children = (
 				1BE7D7FE1BC7F854000FA60C /* MiraadTales-Bridging-Header.h */,
+				1BC1F41F1BD2360F000CE8B3 /* ActionManagement.swift */,
+				1BC1F41C1BD1C6CB000CE8B3 /* MovementManagement.swift */,
 				1B4F29811BCFE29700612BF8 /* TileMap */,
 				1B4F29771BCFD26F00612BF8 /* ContextMenuPlayer */,
 				1BE7D7FD1BC7F834000FA60C /* Joystick */,
@@ -233,6 +250,16 @@
 				1BECB4D41BC563F700EDBB8F /* StatusList.swift */,
 			);
 			name = Attibutes;
+			sourceTree = "<group>";
+		};
+		1B9BE8741BD1357600E9EE27 /* World */ = {
+			isa = PBXGroup;
+			children = (
+				1BC1F4171BD1A00C000CE8B3 /* casas.png */,
+				1BC1F4181BD1A00C000CE8B3 /* grama.png */,
+				1B9BE8751BD1359300E9EE27 /* test-tilemap.tmx */,
+			);
+			name = World;
 			sourceTree = "<group>";
 		};
 		1BD76E3C1BC4003800A2EDE1 /* Character */ = {
@@ -368,6 +395,7 @@
 				TargetAttributes = {
 					1B8EDC001BC2B073009603B6 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = GHP2MP7KV3;
 					};
 					1B8EDC181BC2B074009603B6 = {
 						CreatedOnToolsVersion = 7.0;
@@ -407,9 +435,12 @@
 				1BEDA5691BCE8B8800C95A73 /* Hydora.atlas in Resources */,
 				1B8EDC071BC2B074009603B6 /* GameScene.sks in Resources */,
 				1BE7D8051BC7FEDA000FA60C /* Ylla.atlas in Resources */,
+				1BC1F41A1BD1A00C000CE8B3 /* grama.png in Resources */,
+				1B9BE8761BD1359300E9EE27 /* test-tilemap.tmx in Resources */,
 				1B8EDC131BC2B074009603B6 /* LaunchScreen.storyboard in Resources */,
 				1B8EDC101BC2B074009603B6 /* Assets.xcassets in Resources */,
 				1B8EDC0E1BC2B074009603B6 /* Main.storyboard in Resources */,
+				1BC1F4191BD1A00C000CE8B3 /* casas.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,6 +473,7 @@
 				1B4F297E1BCFD28200612BF8 /* VLDContextSheet.m in Sources */,
 				1BECB4CB1BC55CB000EDBB8F /* BaseRace.swift in Sources */,
 				1B8EDC3B1BC2C506009603B6 /* PlayersRace.swift in Sources */,
+				1BC1F4201BD2360F000CE8B3 /* ActionManagement.swift in Sources */,
 				1BA00EBA1BC6B4AD00B8972A /* ItemQuest.swift in Sources */,
 				1BE7D8011BC7F855000FA60C /* Joystick.m in Sources */,
 				1B4F29801BCFD28200612BF8 /* VLDContextSheetItemView.m in Sources */,
@@ -459,6 +491,7 @@
 				1BD76E3F1BC401CF00A2EDE1 /* Equip.swift in Sources */,
 				1BECB4D11BC55EF700EDBB8F /* Bard.swift in Sources */,
 				1BA00EB41BC6AB2C00B8972A /* Player.swift in Sources */,
+				1BC1F41D1BD1C6CB000CE8B3 /* MovementManagement.swift in Sources */,
 				1B8EDC391BC2B959009603B6 /* Status.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -602,10 +635,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MiraadTales/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.cin.bepid.rjos.MiraadTales;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MiraadTales/MiraadTales-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -616,10 +652,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MiraadTales/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.cin.bepid.rjos.MiraadTales;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MiraadTales/MiraadTales-Bridging-Header.h";
 			};
 			name = Release;
