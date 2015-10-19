@@ -60,7 +60,7 @@ public class MovementManagement: SKNode {
         
         self.player.update(currentTime)
         
-        if !self.player.menuHasOpened && self.josytick.isTracking && self.josytick.velocity != CGPointZero {
+        if !self.player.menuHasOpened && self.josytick.direction != DirectionPlayer.None {
             
             if self.player.lastedPosition.count == 0 {
                 self.player.lastedPosition.append(self.player.position)
@@ -98,7 +98,7 @@ public class MovementManagement: SKNode {
         
         var lastedPositionPlayer = player.position
         
-        lastedPositionPlayer = CGPointMake(lastedPositionPlayer.x + (joystick.velocity.x / 60), lastedPositionPlayer.y + (joystick.velocity.y / 60))
+        lastedPositionPlayer = CGPointMake(lastedPositionPlayer.x + (joystick.velocity.x), lastedPositionPlayer.y + (joystick.velocity.y))
         
         if lastedPositionPlayer.x >= self.minPositionPlayer.x && lastedPositionPlayer.x <= self.maxPositionPlayer.x {
             player.position.x = lastedPositionPlayer.x
@@ -106,6 +106,10 @@ public class MovementManagement: SKNode {
         
         if lastedPositionPlayer.y >= self.minPositionPlayer.y && lastedPositionPlayer.y <= self.maxPositionPlayer.y {
             player.position.y = lastedPositionPlayer.y
+        }
+        
+        if joystick.direction != player.lastedDirection {
+            player.walkingPlayer(josytick.direction)
         }
         
         self.movimentOtherPlayers()

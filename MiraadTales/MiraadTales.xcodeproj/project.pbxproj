@@ -23,6 +23,9 @@
 		1B8EDC291BC2B074009603B6 /* MiraadTalesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8EDC281BC2B074009603B6 /* MiraadTalesUITests.swift */; };
 		1B8EDC391BC2B959009603B6 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8EDC381BC2B959009603B6 /* Status.swift */; settings = {ASSET_TAGS = (); }; };
 		1B8EDC3B1BC2C506009603B6 /* PlayersRace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8EDC3A1BC2C506009603B6 /* PlayersRace.swift */; settings = {ASSET_TAGS = (); }; };
+		1B9553761BD52D5C001D1FBD /* Joystick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9553751BD52D5C001D1FBD /* Joystick.swift */; settings = {ASSET_TAGS = (); }; };
+		1B9553781BD53195001D1FBD /* DirectionPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9553771BD53195001D1FBD /* DirectionPlayer.swift */; settings = {ASSET_TAGS = (); }; };
+		1B95537A1BD5325F001D1FBD /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9553791BD5325F001D1FBD /* Button.swift */; settings = {ASSET_TAGS = (); }; };
 		1B9BE8761BD1359300E9EE27 /* test-tilemap.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 1B9BE8751BD1359300E9EE27 /* test-tilemap.tmx */; settings = {ASSET_TAGS = (); }; };
 		1B9BE8781BD137E300E9EE27 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B9BE8771BD137E300E9EE27 /* libz.tbd */; };
 		1BA00EB11BC69F3F00B8972A /* Effect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA00EB01BC69F3F00B8972A /* Effect.swift */; settings = {ASSET_TAGS = (); }; };
@@ -94,6 +97,9 @@
 		1B8EDC2A1BC2B074009603B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B8EDC381BC2B959009603B6 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		1B8EDC3A1BC2C506009603B6 /* PlayersRace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersRace.swift; sourceTree = "<group>"; };
+		1B9553751BD52D5C001D1FBD /* Joystick.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Joystick.swift; sourceTree = "<group>"; };
+		1B9553771BD53195001D1FBD /* DirectionPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionPlayer.swift; sourceTree = "<group>"; };
+		1B9553791BD5325F001D1FBD /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		1B9BE8751BD1359300E9EE27 /* test-tilemap.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "test-tilemap.tmx"; sourceTree = "<group>"; };
 		1B9BE8771BD137E300E9EE27 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		1BA00EB01BC69F3F00B8972A /* Effect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Effect.swift; sourceTree = "<group>"; };
@@ -309,6 +315,8 @@
 			children = (
 				1BE7D7FF1BC7F855000FA60C /* Joystick.h */,
 				1BE7D8001BC7F855000FA60C /* Joystick.m */,
+				1B9553751BD52D5C001D1FBD /* Joystick.swift */,
+				1B9553791BD5325F001D1FBD /* Button.swift */,
 			);
 			name = Joystick;
 			sourceTree = "<group>";
@@ -316,6 +324,7 @@
 		1BECB4C91BC55C9900EDBB8F /* Race */ = {
 			isa = PBXGroup;
 			children = (
+				1B9553771BD53195001D1FBD /* DirectionPlayer.swift */,
 				1B8EDC3A1BC2C506009603B6 /* PlayersRace.swift */,
 				1BECB4CA1BC55CB000EDBB8F /* BaseRace.swift */,
 				1BECB4CC1BC55E2200EDBB8F /* Swordsman.swift */,
@@ -470,10 +479,12 @@
 				1BECB4CF1BC55EB300EDBB8F /* Mage.swift in Sources */,
 				1BA00EB81BC6B38F00B8972A /* BaseItem.swift in Sources */,
 				1BD76E4E1BC4135900A2EDE1 /* Skill.swift in Sources */,
+				1B95537A1BD5325F001D1FBD /* Button.swift in Sources */,
 				1B4F297E1BCFD28200612BF8 /* VLDContextSheet.m in Sources */,
 				1BECB4CB1BC55CB000EDBB8F /* BaseRace.swift in Sources */,
 				1B8EDC3B1BC2C506009603B6 /* PlayersRace.swift in Sources */,
 				1BC1F4201BD2360F000CE8B3 /* ActionManagement.swift in Sources */,
+				1B9553761BD52D5C001D1FBD /* Joystick.swift in Sources */,
 				1BA00EBA1BC6B4AD00B8972A /* ItemQuest.swift in Sources */,
 				1BE7D8011BC7F855000FA60C /* Joystick.m in Sources */,
 				1B4F29801BCFD28200612BF8 /* VLDContextSheetItemView.m in Sources */,
@@ -484,6 +495,7 @@
 				1B8EDC0B1BC2B074009603B6 /* GameViewController.swift in Sources */,
 				1BECB4CD1BC55E2200EDBB8F /* Swordsman.swift in Sources */,
 				1B4F29861BCFE2EB00612BF8 /* LFCGzipUtility.m in Sources */,
+				1B9553781BD53195001D1FBD /* DirectionPlayer.swift in Sources */,
 				1BD76E451BC4093900A2EDE1 /* PlayerStatus.swift in Sources */,
 				1B8EDC051BC2B074009603B6 /* AppDelegate.swift in Sources */,
 				1BA00EB11BC69F3F00B8972A /* Effect.swift in Sources */,

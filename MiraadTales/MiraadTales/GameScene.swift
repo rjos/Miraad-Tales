@@ -66,7 +66,7 @@ class GameScene: SKScene {
         joyBack.alpha = 0.5
         joyFront.alpha = 0.7
         
-        let joystick = Joystick(thumb: joyFront, andBackdrop: joyBack)
+        let joystick = Joystick()
         joystick.name = "Joystick"
         joystick.xScale = 0.5
         joystick.yScale = 0.5

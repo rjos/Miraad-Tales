@@ -8,13 +8,6 @@
 
 import SpriteKit
 
-public enum DirectionPlayer: String {
-    case Up = "DirectionUp"
-    case Down = "DirectionDown"
-    case Left = "DirectionLeft"
-    case Right = "DirectionRight"
-}
-
 public class Player: SKSpriteNode, VLDContextSheetDelegate {
     
     public var race: BaseRace
@@ -27,11 +20,13 @@ public class Player: SKSpriteNode, VLDContextSheetDelegate {
     private var contextMenuPlayer: VLDContextSheet? = nil
     private let viewController: UIView
     private var locationTouch: CGPoint? = nil
+    public var lastedDirection: DirectionPlayer
     
     public init(race: BaseRace, imageNamed: String, viewController: UIView) {
         self.race = race
         let texture = SKTexture(imageNamed: imageNamed)
         self.viewController = viewController
+        self.lastedDirection = DirectionPlayer.None
         super.init(texture: texture, color: UIColor.redColor(), size: texture.size())
         setAtlas()
         self.xScale = 0.5
@@ -80,9 +75,15 @@ public class Player: SKSpriteNode, VLDContextSheetDelegate {
         case .Right:
             walkingFramesDirection = self.playerWalkingFrames[1]
             break
+        case .None:
+            self.removeAction()
+            walkingFramesDirection = []
+            break
         }
         
-        self.runAction(SKAction.repeatActionForever(SKAction.animateWithTextures(walkingFramesDirection, timePerFrame: 0.1, resize: false, restore: true)), withKey: "walkingINPlacePlayer\(self.name)")
+        if direction != DirectionPlayer.None {
+            self.runAction(SKAction.repeatActionForever(SKAction.animateWithTextures(walkingFramesDirection, timePerFrame: 0.1, resize: false, restore: true)), withKey: "walkingINPlacePlayer\(self.name)")
+        }
     }
     
     public func removeAction() {
