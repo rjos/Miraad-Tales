@@ -29,6 +29,7 @@ public class MovementManagement: SKNode {
     public init(player: Player, camera: SKCameraNode, sizeMap: CGRect, joystick: Joystick, players: [Player]) {
         
         self.player = player
+        self.player.alpha = 1
         self.player.zPosition += 2
         self.camera = camera
         self.sizeMap = sizeMap
@@ -67,9 +68,9 @@ public class MovementManagement: SKNode {
             }else {
                 self.player.lastedPosition.insert(self.player.position, atIndex: 0)
             }
-            
-            movePlayer(self.player, joystick: self.josytick)
         }
+        
+        movePlayer(self.player, joystick: self.josytick)
         
         moveCamera(self.camera, player: self.player)
     }
@@ -112,7 +113,11 @@ public class MovementManagement: SKNode {
             player.walkingPlayer(josytick.direction)
         }
         
-        self.movimentOtherPlayers()
+        if joystick.direction != DirectionPlayer.None {
+            self.movimentOtherPlayers()
+        }else if joystick.direction == DirectionPlayer.None && self.player.lastedDirection == DirectionPlayer.None {
+            self.removeActionsOtherPlayers()
+        }
     }
     
     private func movimentOtherPlayers() {
@@ -123,8 +128,21 @@ public class MovementManagement: SKNode {
             
             self.players[i].lastedPosition.insert(self.players[i].position, atIndex: 0)
             
+            let direction = self.calculateDirection(self.players[i].position, newPosition: newPosition)
+            
+            if direction != self.players[i].lastedDirection {
+                self.players[i].walkingPlayer(direction)
+            }
+            
             self.players[i].position = newPosition
             self.players[i-1].lastedPosition.removeLast()
+        }
+    }
+    
+    private func removeActionsOtherPlayers() {
+        
+        for var i = 1; i < self.players.count; i++ {
+            self.players[i].removeAction()
         }
     }
 
@@ -136,11 +154,13 @@ public class MovementManagement: SKNode {
         let newPlayer = self.players[indexNewPlayer]
         
         let tempPlayer = self.players[0]
+        tempPlayer.alpha = 0.7
         
         self.players[0] = newPlayer
         self.players[indexNewPlayer] = tempPlayer
         
         self.player = newPlayer
+        self.player.alpha = 1
         self.player.zPosition += 2
         
         self.player.lastedPosition.removeAll()
@@ -177,6 +197,33 @@ public class MovementManagement: SKNode {
             let move = SKAction.moveTo(self.player.position, duration: 0.1)
             self.camera.runAction(move)
         }
+    }
+    
+    private func calculateDirection(currentPosition: CGPoint, newPosition:CGPoint) -> DirectionPlayer {
+        
+        var direction: DirectionPlayer = DirectionPlayer.None
+        
+        let x = newPosition.x - currentPosition.x
+        let y = newPosition.y - currentPosition.y
+        
+        if x == 0 {
+            
+            if y > 0 {
+                direction = DirectionPlayer.Up
+            }else {
+                direction = DirectionPlayer.Down
+            }
+            
+        }else {
+            
+            if x > 0 {
+                direction = DirectionPlayer.Right
+            }else {
+                direction = DirectionPlayer.Left
+            }
+        }
+        
+        return direction
     }
     
 }

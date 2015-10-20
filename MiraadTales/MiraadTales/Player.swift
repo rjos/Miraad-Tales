@@ -60,6 +60,8 @@ public class Player: SKSpriteNode, VLDContextSheetDelegate {
         
         self.removeAction()
         
+        self.lastedDirection = direction
+        
         let walkingFramesDirection: [SKTexture]
         
         switch direction {
@@ -70,10 +72,10 @@ public class Player: SKSpriteNode, VLDContextSheetDelegate {
             walkingFramesDirection = self.playerWalkingFrames[0]
             break
         case .Left:
-            walkingFramesDirection = self.playerWalkingFrames[2]
+            walkingFramesDirection = self.playerWalkingFrames[1]
             break
         case .Right:
-            walkingFramesDirection = self.playerWalkingFrames[1]
+            walkingFramesDirection = self.playerWalkingFrames[2]
             break
         case .None:
             self.removeAction()
@@ -88,6 +90,7 @@ public class Player: SKSpriteNode, VLDContextSheetDelegate {
     
     public func removeAction() {
         self.removeAllActions()
+        self.lastedDirection = DirectionPlayer.None
     }
     
     //MARK: - Event touches

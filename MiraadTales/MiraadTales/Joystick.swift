@@ -10,10 +10,10 @@ import SpriteKit
 
 public class Joystick: SKNode {
     
-    private let leftButton: Button
-    private let rightButton: Button
-    private let upButton: Button
-    private let downButton: Button
+    private let leftButton: SKSpriteNode
+    private let rightButton: SKSpriteNode
+    private let upButton: SKSpriteNode
+    private let downButton: SKSpriteNode
     
     private let centerJoystick: SKSpriteNode
     
@@ -22,25 +22,34 @@ public class Joystick: SKNode {
     
     public var isClicked: Bool
     
-    private var selectButton: Button!
+    private var selectButton: SKSpriteNode!
     
     public override init() {
         
-        self.leftButton = Button(backgroundImage: "esquerda", itemImage: "esquerda2")
+        
+        self.leftButton = SKSpriteNode(imageNamed: "controle-esquerda")
         self.leftButton.name = "LeftButton"
-        self.leftButton.position = CGPointMake(-self.leftButton.frame.width / 2, 0)
+        self.leftButton.alpha = 0.5
+        self.leftButton.xScale = 0.7
+        self.leftButton.yScale = 0.7
         
-        self.rightButton = Button(backgroundImage: "direita", itemImage: "direita2")
+        self.rightButton = SKSpriteNode(imageNamed: "controle-direita")
         self.rightButton.name = "RightButton"
-        self.rightButton.position = CGPointMake(self.rightButton.frame.width / 2, 0)
+        self.rightButton.alpha = 0.5
+        self.rightButton.xScale = 0.7
+        self.rightButton.yScale = 0.7
         
-        self.upButton = Button(backgroundImage: "cima", itemImage: "cima2")
+        self.upButton = SKSpriteNode(imageNamed: "controle-cima")
         self.upButton.name = "UpButton"
-        self.upButton.position = CGPointMake(0, self.upButton.frame.height / 2)
+        self.upButton.alpha = 0.5
+        self.upButton.xScale = 0.7
+        self.upButton.yScale = 0.7
         
-        self.downButton = Button(backgroundImage: "baixo", itemImage: "baixo2")
+        self.downButton = SKSpriteNode(imageNamed: "controle-baixo")
         self.downButton.name = "DownButton"
-        self.downButton.position = CGPointMake(0, -self.downButton.frame.height / 2)
+        self.downButton.alpha = 0.5
+        self.downButton.xScale = 0.7
+        self.downButton.yScale = 0.7
         
         self.centerJoystick = SKSpriteNode(imageNamed: "bolinha")
         
@@ -53,6 +62,16 @@ public class Joystick: SKNode {
         self.selectButton = nil
         
         super.init()
+        
+        let frameLeft = self.leftButton.calculateAccumulatedFrame()
+        
+        self.leftButton.position = CGPointMake(-frameLeft.width / 2, 0)
+        self.rightButton.position = CGPointMake(frameLeft.width / 2, 0)
+        
+        let frameUp = self.upButton.calculateAccumulatedFrame()
+        
+        self.upButton.position = CGPointMake(0, frameUp.height / 2)
+        self.downButton.position = CGPointMake(0, -frameUp.height / 2)
         
         self.addChild(self.leftButton)
         self.addChild(self.rightButton)
@@ -72,10 +91,9 @@ public class Joystick: SKNode {
             
             let nodeForPosition = self.nodeAtPoint(location)
             
-            if nodeForPosition is Button {
-                
-                nodeForPosition.touchesBegan(touches, withEvent: event)
-                self.selectButton = (nodeForPosition as! Button)
+            if nodeForPosition is SKSpriteNode {
+                self.selectButton = nodeForPosition as! SKSpriteNode
+                self.selectButton.alpha = 0.8
                 self.isClicked = true
             }
         }
@@ -84,35 +102,22 @@ public class Joystick: SKNode {
     public override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
         if let selectButton = self.selectButton {
-            selectButton.touchesEnded(touches, withEvent: event)
+            selectButton.alpha = 0.5
         }
-        
+        self.selectButton = nil
         self.isClicked = false
     }
     
     public override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        
-        for touch in touches {
-            
-            let location = touch.locationInNode(self)
-            
-            let nodeForPosition = self.nodeAtPoint(location)
-            
-            if nodeForPosition is Button && nodeForPosition != self.selectButton {
-             
-                nodeForPosition.touchesBegan(touches, withEvent: event)
-                self.selectButton = (nodeForPosition as! Button)
-            }
-        }
         
     }
     
     public override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
         
         if let selectButton = self.selectButton {
-            selectButton.touchesEnded(touches!, withEvent: event)
+            selectButton.alpha = 0.5
         }
-        
+        self.selectButton = nil
         self.isClicked = false
     }
     

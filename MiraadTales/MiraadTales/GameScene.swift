@@ -17,6 +17,7 @@ class GameScene: SKScene {
     var map: JSTileMap = JSTileMap(named: "test-tilemap.tmx")
     var movementManagement: MovementManagement! = nil
     var actionManagement: ActionManagement! = nil
+    var joystick: Joystick! = nil
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
@@ -40,6 +41,7 @@ class GameScene: SKScene {
         let player = Player(race: ylla, imageNamed: "Ylla-2", viewController: self.view!)
         player.name = "ylla"
         player.zPosition = 15
+        player.alpha = 0.7
         player.xScale = 1
         player.yScale = 1
         player.position = CGPointMake((frameMap.width / 2) - (100), (frameMap.height / 2) - (player.frame.height / 2))
@@ -53,6 +55,7 @@ class GameScene: SKScene {
         let pHydora = Player(race: ylla, imageNamed: "Ylla-2", viewController: self.view!)
         pHydora.name = "hydora"
         pHydora.zPosition = 15
+        pHydora.alpha = 0.7
         pHydora.xScale = 1
         pHydora.yScale = 1
         pHydora.position = CGPointMake(player.position.x - player.frame.width, player.position.y)
@@ -66,10 +69,10 @@ class GameScene: SKScene {
         joyBack.alpha = 0.5
         joyFront.alpha = 0.7
         
-        let joystick = Joystick()
+        self.joystick = Joystick()
         joystick.name = "Joystick"
-        joystick.xScale = 0.5
-        joystick.yScale = 0.5
+        joystick.xScale = 0.25
+        joystick.yScale = 0.25
         joystick.position = CGPointMake(0, 0)
         
         let skJoystick = self.camera!.childNodeWithName("SKJoystick")!
@@ -89,6 +92,7 @@ class GameScene: SKScene {
        /* Called when a touch begins */
         
         self.actionManagement!.touchesBegan(touches, withEvent: event)
+        self.joystick.touchesBegan(touches, withEvent: event)
         
         for touch in touches {
             let location = touch.locationInNode(self)
@@ -105,16 +109,19 @@ class GameScene: SKScene {
         
         self.actionManagement!.touchesEnded(touches, withEvent: event)
         movementManagement.player.touchesEnded(touches, withEvent: event)
+        self.joystick.touchesEnded(touches, withEvent: event)
     }
     
     override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
         self.actionManagement!.touchesCancelled(touches, withEvent: event)
         movementManagement.player.touchesCancelled(touches, withEvent: event)
+        joystick.touchesCancelled(touches, withEvent: event)
     }
     
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
         
         self.movementManagement.update(currentTime)
+        self.joystick.update(currentTime)
     }
 }
