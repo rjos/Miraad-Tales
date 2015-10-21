@@ -45,13 +45,15 @@ class GameScene: SKScene {
         player.xScale = 1
         player.yScale = 1
         player.position = CGPointMake((frameMap.width / 2) - (100), (frameMap.height / 2) - (player.frame.height / 2))
-        
+        player.physicsBody = SKPhysicsBody(texture: SKTexture(imageNamed: "Ylla-2"), size: player.size)
         player.setLastedPosition(true, orientation: Orientation.Horizontal)
         map.addChild(player)
         players.append(player)
         
         positionCurrentPlayer = player.position
         
+        
+        //Add Hydora
         let hydora = Paladin(name: "Hydora", status: status, equipments: [Equip](), skills: [Skill](), isDie: false)
         let pHydora = Player(race: hydora, imageNamed: "Hydora-2", viewController: self.view!)
         pHydora.name = "hydora"
@@ -63,6 +65,39 @@ class GameScene: SKScene {
         pHydora.setLastedPosition(true, orientation: Orientation.Horizontal)
         map.addChild(pHydora)
         players.append(pHydora)
+        
+        
+        //Add NPC Herb
+        print("\(pHydora.position.x) e \(pHydora.position.y) ");
+        let herb = SKSpriteNode(imageNamed: "Herb_01")
+//        herb.position.x = 452
+//        herb.position.y = 567.5
+        herb.alpha = 1
+        herb.yScale = 1
+        herb.xScale = 1
+        herb.zPosition = 15
+        herb.position = CGPointMake(530.5, 567.5)
+        player.physicsBody = SKPhysicsBody(texture: SKTexture(imageNamed: "Ylla-2"), size: player.size)
+        self.physicsWorld.gravity = CGVectorMake( 0.0, 0.0 );
+//        herb.position = CGPointMake(460, 500.5)
+//        player.physicsBody.
+        herb.physicsBody = SKPhysicsBody(texture: SKTexture(imageNamed: "Ylla-2"), size: player.size)
+        self.physicsWorld.gravity = CGVectorMake( 0.0, 0.0 );
+        
+        herb.physicsBody?.collisionBitMask = CollisionSetUps.Player.rawValue
+        pHydora.physicsBody?.collisionBitMask = CollisionSetUps.Buildings.rawValue
+        player.physicsBody?.collisionBitMask = CollisionSetUps.Player.rawValue
+
+//        func didBeginContact(contact: SKPhysicsContact) {
+//            
+//            // Check for Projectile
+//            if contact.bodyA.categoryBitMask & 4 > 0 || contact.bodyB.categoryBitMask & 4 > 0   {
+//                let projectile = (contact.bodyA.categoryBitMask & 4) > 0 ? contact.bodyA.node : contact.bodyB.node
+//            }
+//        }
+        
+
+        map.addChild(herb)
         
         let joyBack = SKSpriteNode(imageNamed: "dpad")
         let joyFront = SKSpriteNode(imageNamed: "joystick")

@@ -121,6 +121,7 @@
 		BCCBB8991BD7B5330026EEB2 /* Rohan---Bard_10.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8511BD7B5330026EEB2 /* Rohan---Bard_10.png */; settings = {ASSET_TAGS = (); }; };
 		BCCBB89A1BD7B5330026EEB2 /* Rohan---Bard_11.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8521BD7B5330026EEB2 /* Rohan---Bard_11.png */; settings = {ASSET_TAGS = (); }; };
 		BCCBB89B1BD7B5330026EEB2 /* Rohan---Bard_12.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8531BD7B5330026EEB2 /* Rohan---Bard_12.png */; settings = {ASSET_TAGS = (); }; };
+		BCCBB89F1BD7C3370026EEB2 /* CollisionSetUps.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCBB89E1BD7C3370026EEB2 /* CollisionSetUps.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -268,6 +269,7 @@
 		BCCBB8511BD7B5330026EEB2 /* Rohan---Bard_10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Rohan---Bard_10.png"; sourceTree = "<group>"; };
 		BCCBB8521BD7B5330026EEB2 /* Rohan---Bard_11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Rohan---Bard_11.png"; sourceTree = "<group>"; };
 		BCCBB8531BD7B5330026EEB2 /* Rohan---Bard_12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Rohan---Bard_12.png"; sourceTree = "<group>"; };
+		BCCBB89E1BD7C3370026EEB2 /* CollisionSetUps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollisionSetUps.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -383,6 +385,7 @@
 				1BE7D7FE1BC7F854000FA60C /* MiraadTales-Bridging-Header.h */,
 				1BC1F41F1BD2360F000CE8B3 /* ActionManagement.swift */,
 				1BC1F41C1BD1C6CB000CE8B3 /* MovementManagement.swift */,
+				BCCBB89E1BD7C3370026EEB2 /* CollisionSetUps.swift */,
 				1B4F29811BCFE29700612BF8 /* TileMap */,
 				1B4F29771BCFD26F00612BF8 /* ContextMenuPlayer */,
 				1BE7D7FD1BC7F834000FA60C /* Joystick */,
@@ -807,6 +810,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCCBB89F1BD7C3370026EEB2 /* CollisionSetUps.swift in Sources */,
 				1B4F297F1BCFD28200612BF8 /* VLDContextSheetItem.m in Sources */,
 				1BA00EBC1BC6B55100B8972A /* Item.swift in Sources */,
 				1BECB4CF1BC55EB300EDBB8F /* Mage.swift in Sources */,
