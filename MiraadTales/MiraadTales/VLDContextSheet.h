@@ -13,6 +13,7 @@
 @protocol VLDContextSheetDelegate <NSObject>
 
 - (void) contextSheet: (VLDContextSheet *) contextSheet didSelectItem: (VLDContextSheetItem *) item;
+- (void) contextSheet: (VLDContextSheet *) contextSheet;
 
 @end
 

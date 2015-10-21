@@ -146,6 +146,12 @@ public class Player: SKSpriteNode, VLDContextSheetDelegate {
         self.menuHasOpened = false
     }
     
+    public func contextSheet(contextSheet: VLDContextSheet!) {
+        
+        self.menuHasOpened = false
+    }
+    
+    
     public func setLastedPosition(positive: Bool, orientation: Orientation) {
         
         var sign: CGFloat = -1
