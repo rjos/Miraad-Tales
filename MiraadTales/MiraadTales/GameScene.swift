@@ -52,7 +52,8 @@ class GameScene: SKScene {
         
         positionCurrentPlayer = player.position
         
-        let pHydora = Player(race: ylla, imageNamed: "Ylla-2", viewController: self.view!)
+        let hydora = Paladin(name: "Hydora", status: status, equipments: [Equip](), skills: [Skill](), isDie: false)
+        let pHydora = Player(race: hydora, imageNamed: "Hydora-2", viewController: self.view!)
         pHydora.name = "hydora"
         pHydora.zPosition = 15
         pHydora.alpha = 0.7
