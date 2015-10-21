@@ -122,6 +122,7 @@
 		BCCBB89A1BD7B5330026EEB2 /* Rohan---Bard_11.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8521BD7B5330026EEB2 /* Rohan---Bard_11.png */; settings = {ASSET_TAGS = (); }; };
 		BCCBB89B1BD7B5330026EEB2 /* Rohan---Bard_12.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8531BD7B5330026EEB2 /* Rohan---Bard_12.png */; settings = {ASSET_TAGS = (); }; };
 		BCCBB89F1BD7C3370026EEB2 /* CollisionSetUps.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCBB89E1BD7C3370026EEB2 /* CollisionSetUps.swift */; settings = {ASSET_TAGS = (); }; };
+		C75342F61BD7E16E009C1684 /* map assets in Resources */ = {isa = PBXBuildFile; fileRef = C75342F51BD7E16E009C1684 /* map assets */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -270,6 +271,7 @@
 		BCCBB8521BD7B5330026EEB2 /* Rohan---Bard_11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Rohan---Bard_11.png"; sourceTree = "<group>"; };
 		BCCBB8531BD7B5330026EEB2 /* Rohan---Bard_12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Rohan---Bard_12.png"; sourceTree = "<group>"; };
 		BCCBB89E1BD7C3370026EEB2 /* CollisionSetUps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollisionSetUps.swift; sourceTree = "<group>"; };
+		C75342F51BD7E16E009C1684 /* map assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "map assets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -449,6 +451,7 @@
 		1BE7D7E31BC7E2EB000FA60C /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				C75342F51BD7E16E009C1684 /* map assets */,
 				BCCBB8061BD7B5330026EEB2 /* Aemon */,
 				BCCBB8131BD7B5330026EEB2 /* Bellatrix */,
 				BCCBB8201BD7B5330026EEB2 /* Herb */,
@@ -722,6 +725,7 @@
 				BCCBB8711BD7B5330026EEB2 /* Herb_06.png in Resources */,
 				BCCBB8761BD7B5330026EEB2 /* Herb_11.png in Resources */,
 				BCCBB8701BD7B5330026EEB2 /* Herb_05.png in Resources */,
+				C75342F61BD7E16E009C1684 /* map assets in Resources */,
 				BCCBB87B1BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_04.png in Resources */,
 				BCCBB8641BD7B5330026EEB2 /* Bellatrix---Witch_05.png in Resources */,
 				BCCBB8801BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_09.png in Resources */,
