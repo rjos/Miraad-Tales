@@ -31,6 +31,13 @@ public class Player: SKSpriteNode, VLDContextSheetDelegate {
         setAtlas()
         self.xScale = 0.5
         self.yScale = 0.5
+        self.physicsBody = SKPhysicsBody(texture:texture, size: texture.size())
+        self.physicsBody?.collisionBitMask = CollisionSetUps.NPC.rawValue
+        self.physicsBody?.categoryBitMask = CollisionSetUps.Player.rawValue
+        self.physicsBody?.contactTestBitMask = CollisionSetUps.NPC.rawValue
+        self.physicsBody?.allowsRotation = false
+
+//        self.physicsWorld.gravity = CGVectorMake( 0.0, 0.0 );
     }
 
     required public init?(coder aDecoder: NSCoder) {
