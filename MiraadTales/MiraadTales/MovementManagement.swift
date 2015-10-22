@@ -9,7 +9,7 @@
 import UIKit
 
 public class MovementManagement: SKNode {
-
+    
     public var player: Player
     public let camera: SKCameraNode
     public var sizeMap: CGRect
@@ -51,17 +51,17 @@ public class MovementManagement: SKNode {
         
         super.init()
     }
-
+    
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     //MARK: - Update method
-    public func update(currentTime: CFTimeInterval) {
+    public func update(currentTime: CFTimeInterval, didCollide:Bool) {
         
         self.player.update(currentTime)
         
-        if !self.player.menuHasOpened && self.josytick.direction != DirectionPlayer.None {
+        if !self.player.menuHasOpened && self.josytick.direction != DirectionPlayer.None && !didCollide {
             
             if self.player.lastedPosition.count == 0 {
                 self.player.lastedPosition.append(self.player.position)
@@ -70,7 +70,7 @@ public class MovementManagement: SKNode {
             }
         }
         
-        movePlayer(self.player, joystick: self.josytick)
+        movePlayer(self.player, joystick: self.josytick, didCollide: didCollide)
         
         moveCamera(self.camera, player: self.player)
     }
@@ -95,12 +95,11 @@ public class MovementManagement: SKNode {
         }
     }
     
-    private func movePlayer(player: Player, joystick: Joystick) {
+    private func movePlayer(player: Player, joystick: Joystick, didCollide: Bool) {
         
         var lastedPositionPlayer = player.position
         
         lastedPositionPlayer = CGPointMake(lastedPositionPlayer.x + (joystick.velocity.x), lastedPositionPlayer.y + (joystick.velocity.y))
-        
         if lastedPositionPlayer.x >= self.minPositionPlayer.x && lastedPositionPlayer.x <= self.maxPositionPlayer.x {
             player.position.x = lastedPositionPlayer.x
         }
@@ -109,13 +108,14 @@ public class MovementManagement: SKNode {
             player.position.y = lastedPositionPlayer.y
         }
         
+        
         if joystick.direction != player.lastedDirection {
             player.walkingPlayer(josytick.direction)
         }
         
-        if joystick.direction != DirectionPlayer.None {
+        if joystick.direction != DirectionPlayer.None && !didCollide {
             self.movimentOtherPlayers()
-        }else if joystick.direction == DirectionPlayer.None && self.player.lastedDirection == DirectionPlayer.None {
+        }else if (joystick.direction == DirectionPlayer.None && self.player.lastedDirection == DirectionPlayer.None) || didCollide {
             self.removeActionsOtherPlayers()
         }
     }
@@ -145,7 +145,7 @@ public class MovementManagement: SKNode {
             self.players[i].removeAction()
         }
     }
-
+    
     //MARK: -Function for switch between players
     public func changePlayer(indexNewPlayer: Int) {
         

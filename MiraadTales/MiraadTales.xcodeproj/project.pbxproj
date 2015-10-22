@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1B4F297E1BCFD28200612BF8 /* VLDContextSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B4F29791BCFD28200612BF8 /* VLDContextSheet.m */; settings = {ASSET_TAGS = (); }; };
-		1B4F297F1BCFD28200612BF8 /* VLDContextSheetItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B4F297B1BCFD28200612BF8 /* VLDContextSheetItem.m */; settings = {ASSET_TAGS = (); }; };
-		1B4F29801BCFD28200612BF8 /* VLDContextSheetItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B4F297D1BCFD28200612BF8 /* VLDContextSheetItemView.m */; settings = {ASSET_TAGS = (); }; };
-		1B4F29861BCFE2EB00612BF8 /* LFCGzipUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B4F29831BCFE2EB00612BF8 /* LFCGzipUtility.m */; settings = {ASSET_TAGS = (); }; };
-		1B4F29871BCFE2EB00612BF8 /* JSTileMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B4F29851BCFE2EB00612BF8 /* JSTileMap.m */; settings = {ASSET_TAGS = (); }; };
+		1B4780311BD9297B007E03B5 /* CombatScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4780301BD9297B007E03B5 /* CombatScene.swift */; settings = {ASSET_TAGS = (); }; };
+		1B4780331BD9298E007E03B5 /* CombatScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1B4780321BD9298E007E03B5 /* CombatScene.sks */; settings = {ASSET_TAGS = (); }; };
+		1B4F297E1BCFD28200612BF8 /* VLDContextSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B4F29791BCFD28200612BF8 /* VLDContextSheet.m */; };
+		1B4F297F1BCFD28200612BF8 /* VLDContextSheetItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B4F297B1BCFD28200612BF8 /* VLDContextSheetItem.m */; };
+		1B4F29801BCFD28200612BF8 /* VLDContextSheetItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B4F297D1BCFD28200612BF8 /* VLDContextSheetItemView.m */; };
+		1B4F29861BCFE2EB00612BF8 /* LFCGzipUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B4F29831BCFE2EB00612BF8 /* LFCGzipUtility.m */; };
+		1B4F29871BCFE2EB00612BF8 /* JSTileMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B4F29851BCFE2EB00612BF8 /* JSTileMap.m */; };
 		1B8EDC051BC2B074009603B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8EDC041BC2B074009603B6 /* AppDelegate.swift */; };
 		1B8EDC071BC2B074009603B6 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1B8EDC061BC2B074009603B6 /* GameScene.sks */; };
 		1B8EDC091BC2B074009603B6 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8EDC081BC2B074009603B6 /* GameScene.swift */; };
@@ -21,116 +23,137 @@
 		1B8EDC131BC2B074009603B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B8EDC111BC2B074009603B6 /* LaunchScreen.storyboard */; };
 		1B8EDC1E1BC2B074009603B6 /* MiraadTalesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8EDC1D1BC2B074009603B6 /* MiraadTalesTests.swift */; };
 		1B8EDC291BC2B074009603B6 /* MiraadTalesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8EDC281BC2B074009603B6 /* MiraadTalesUITests.swift */; };
-		1B8EDC391BC2B959009603B6 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8EDC381BC2B959009603B6 /* Status.swift */; settings = {ASSET_TAGS = (); }; };
-		1B8EDC3B1BC2C506009603B6 /* PlayersRace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8EDC3A1BC2C506009603B6 /* PlayersRace.swift */; settings = {ASSET_TAGS = (); }; };
-		1B9553761BD52D5C001D1FBD /* Joystick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9553751BD52D5C001D1FBD /* Joystick.swift */; settings = {ASSET_TAGS = (); }; };
-		1B9553781BD53195001D1FBD /* DirectionPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9553771BD53195001D1FBD /* DirectionPlayer.swift */; settings = {ASSET_TAGS = (); }; };
-		1B9BE8761BD1359300E9EE27 /* test-tilemap.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 1B9BE8751BD1359300E9EE27 /* test-tilemap.tmx */; settings = {ASSET_TAGS = (); }; };
+		1B8EDC391BC2B959009603B6 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8EDC381BC2B959009603B6 /* Status.swift */; };
+		1B8EDC3B1BC2C506009603B6 /* PlayersRace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8EDC3A1BC2C506009603B6 /* PlayersRace.swift */; };
+		1B9553761BD52D5C001D1FBD /* Joystick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9553751BD52D5C001D1FBD /* Joystick.swift */; };
+		1B9553781BD53195001D1FBD /* DirectionPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9553771BD53195001D1FBD /* DirectionPlayer.swift */; };
+		1B9BE8761BD1359300E9EE27 /* test-tilemap.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 1B9BE8751BD1359300E9EE27 /* test-tilemap.tmx */; };
 		1B9BE8781BD137E300E9EE27 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B9BE8771BD137E300E9EE27 /* libz.tbd */; };
-		1BA00EB11BC69F3F00B8972A /* Effect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA00EB01BC69F3F00B8972A /* Effect.swift */; settings = {ASSET_TAGS = (); }; };
-		1BA00EB41BC6AB2C00B8972A /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA00EB31BC6AB2C00B8972A /* Player.swift */; settings = {ASSET_TAGS = (); }; };
-		1BA00EB81BC6B38F00B8972A /* BaseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA00EB71BC6B38F00B8972A /* BaseItem.swift */; settings = {ASSET_TAGS = (); }; };
-		1BA00EBA1BC6B4AD00B8972A /* ItemQuest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA00EB91BC6B4AD00B8972A /* ItemQuest.swift */; settings = {ASSET_TAGS = (); }; };
-		1BA00EBC1BC6B55100B8972A /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA00EBB1BC6B55100B8972A /* Item.swift */; settings = {ASSET_TAGS = (); }; };
-		1BB3E3171BD9195200DD95D5 /* CombatScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1BB3E3161BD9195200DD95D5 /* CombatScene.sks */; settings = {ASSET_TAGS = (); }; };
-		1BB3E3191BD9196D00DD95D5 /* CombatScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB3E3181BD9196D00DD95D5 /* CombatScene.swift */; settings = {ASSET_TAGS = (); }; };
-		1BC1F4191BD1A00C000CE8B3 /* casas.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BC1F4171BD1A00C000CE8B3 /* casas.png */; settings = {ASSET_TAGS = (); }; };
-		1BC1F41A1BD1A00C000CE8B3 /* grama.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BC1F4181BD1A00C000CE8B3 /* grama.png */; settings = {ASSET_TAGS = (); }; };
-		1BC1F41D1BD1C6CB000CE8B3 /* MovementManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC1F41C1BD1C6CB000CE8B3 /* MovementManagement.swift */; settings = {ASSET_TAGS = (); }; };
-		1BC1F4201BD2360F000CE8B3 /* ActionManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC1F41F1BD2360F000CE8B3 /* ActionManagement.swift */; settings = {ASSET_TAGS = (); }; };
-		1BC910221BD7E4AE009E2A9C /* fundo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BC9101B1BD7E4AE009E2A9C /* fundo.png */; settings = {ASSET_TAGS = (); }; };
-		1BC910231BD7E4AE009E2A9C /* grass.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BC9101C1BD7E4AE009E2A9C /* grass.png */; settings = {ASSET_TAGS = (); }; };
-		1BC910241BD7E4AE009E2A9C /* house1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BC9101D1BD7E4AE009E2A9C /* house1.png */; settings = {ASSET_TAGS = (); }; };
-		1BC910251BD7E4AE009E2A9C /* house2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BC9101E1BD7E4AE009E2A9C /* house2.png */; settings = {ASSET_TAGS = (); }; };
-		1BC910261BD7E4AE009E2A9C /* house3.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BC9101F1BD7E4AE009E2A9C /* house3.png */; settings = {ASSET_TAGS = (); }; };
-		1BC910271BD7E4AE009E2A9C /* house4.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BC910201BD7E4AE009E2A9C /* house4.png */; settings = {ASSET_TAGS = (); }; };
-		1BC910281BD7E4AE009E2A9C /* public_tileset_by_orohnpokemon-d4vpcfu copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BC910211BD7E4AE009E2A9C /* public_tileset_by_orohnpokemon-d4vpcfu copy.png */; settings = {ASSET_TAGS = (); }; };
-		1BD76E3F1BC401CF00A2EDE1 /* Equip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD76E3E1BC401CF00A2EDE1 /* Equip.swift */; settings = {ASSET_TAGS = (); }; };
-		1BD76E431BC4080D00A2EDE1 /* ItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD76E421BC4080D00A2EDE1 /* ItemType.swift */; settings = {ASSET_TAGS = (); }; };
-		1BD76E451BC4093900A2EDE1 /* PlayerStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD76E441BC4093900A2EDE1 /* PlayerStatus.swift */; settings = {ASSET_TAGS = (); }; };
-		1BD76E4E1BC4135900A2EDE1 /* Skill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD76E4D1BC4135900A2EDE1 /* Skill.swift */; settings = {ASSET_TAGS = (); }; };
-		1BE7D8011BC7F855000FA60C /* Joystick.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BE7D8001BC7F855000FA60C /* Joystick.m */; settings = {ASSET_TAGS = (); }; };
-		1BE7D8051BC7FEDA000FA60C /* Ylla.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1BE7D8041BC7FEDA000FA60C /* Ylla.atlas */; settings = {ASSET_TAGS = (); }; };
-		1BECB4CB1BC55CB000EDBB8F /* BaseRace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BECB4CA1BC55CB000EDBB8F /* BaseRace.swift */; settings = {ASSET_TAGS = (); }; };
-		1BECB4CD1BC55E2200EDBB8F /* Swordsman.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BECB4CC1BC55E2200EDBB8F /* Swordsman.swift */; settings = {ASSET_TAGS = (); }; };
-		1BECB4CF1BC55EB300EDBB8F /* Mage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BECB4CE1BC55EB300EDBB8F /* Mage.swift */; settings = {ASSET_TAGS = (); }; };
-		1BECB4D11BC55EF700EDBB8F /* Bard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BECB4D01BC55EF700EDBB8F /* Bard.swift */; settings = {ASSET_TAGS = (); }; };
-		1BECB4D31BC55F2600EDBB8F /* Paladin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BECB4D21BC55F2600EDBB8F /* Paladin.swift */; settings = {ASSET_TAGS = (); }; };
-		1BECB4D51BC563F700EDBB8F /* StatusList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BECB4D41BC563F700EDBB8F /* StatusList.swift */; settings = {ASSET_TAGS = (); }; };
-		1BEDA5691BCE8B8800C95A73 /* Hydora.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1BEDA5681BCE8B8800C95A73 /* Hydora.atlas */; settings = {ASSET_TAGS = (); }; };
-		BCCBB8541BD7B5330026EEB2 /* Aemon---Tyrant_01.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8071BD7B5330026EEB2 /* Aemon---Tyrant_01.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB8551BD7B5330026EEB2 /* Aemon---Tyrant_02.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8081BD7B5330026EEB2 /* Aemon---Tyrant_02.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB8561BD7B5330026EEB2 /* Aemon---Tyrant_03.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8091BD7B5330026EEB2 /* Aemon---Tyrant_03.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB8571BD7B5330026EEB2 /* Aemon---Tyrant_04.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB80A1BD7B5330026EEB2 /* Aemon---Tyrant_04.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB8581BD7B5330026EEB2 /* Aemon---Tyrant_05.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB80B1BD7B5330026EEB2 /* Aemon---Tyrant_05.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB8591BD7B5330026EEB2 /* Aemon---Tyrant_06.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB80C1BD7B5330026EEB2 /* Aemon---Tyrant_06.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB85A1BD7B5330026EEB2 /* Aemon---Tyrant_07.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB80D1BD7B5330026EEB2 /* Aemon---Tyrant_07.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB85B1BD7B5330026EEB2 /* Aemon---Tyrant_08.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB80E1BD7B5330026EEB2 /* Aemon---Tyrant_08.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB85C1BD7B5330026EEB2 /* Aemon---Tyrant_09.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB80F1BD7B5330026EEB2 /* Aemon---Tyrant_09.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB85D1BD7B5330026EEB2 /* Aemon---Tyrant_10.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8101BD7B5330026EEB2 /* Aemon---Tyrant_10.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB85E1BD7B5330026EEB2 /* Aemon---Tyrant_11.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8111BD7B5330026EEB2 /* Aemon---Tyrant_11.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB85F1BD7B5330026EEB2 /* Aemon---Tyrant_12.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8121BD7B5330026EEB2 /* Aemon---Tyrant_12.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB8601BD7B5330026EEB2 /* Bellatrix---Witch_01.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8141BD7B5330026EEB2 /* Bellatrix---Witch_01.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB8611BD7B5330026EEB2 /* Bellatrix---Witch_02.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8151BD7B5330026EEB2 /* Bellatrix---Witch_02.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB8621BD7B5330026EEB2 /* Bellatrix---Witch_03.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8161BD7B5330026EEB2 /* Bellatrix---Witch_03.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB8631BD7B5330026EEB2 /* Bellatrix---Witch_04.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8171BD7B5330026EEB2 /* Bellatrix---Witch_04.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB8641BD7B5330026EEB2 /* Bellatrix---Witch_05.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8181BD7B5330026EEB2 /* Bellatrix---Witch_05.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB8651BD7B5330026EEB2 /* Bellatrix---Witch_06.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8191BD7B5330026EEB2 /* Bellatrix---Witch_06.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB8661BD7B5330026EEB2 /* Bellatrix---Witch_07.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB81A1BD7B5330026EEB2 /* Bellatrix---Witch_07.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB8671BD7B5330026EEB2 /* Bellatrix---Witch_08.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB81B1BD7B5330026EEB2 /* Bellatrix---Witch_08.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB8681BD7B5330026EEB2 /* Bellatrix---Witch_09.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB81C1BD7B5330026EEB2 /* Bellatrix---Witch_09.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB8691BD7B5330026EEB2 /* Bellatrix---Witch_10.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB81D1BD7B5330026EEB2 /* Bellatrix---Witch_10.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB86A1BD7B5330026EEB2 /* Bellatrix---Witch_11.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB81E1BD7B5330026EEB2 /* Bellatrix---Witch_11.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB86B1BD7B5330026EEB2 /* Bellatrix---Witch_12.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB81F1BD7B5330026EEB2 /* Bellatrix---Witch_12.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB86C1BD7B5330026EEB2 /* Herb_01.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8211BD7B5330026EEB2 /* Herb_01.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB86D1BD7B5330026EEB2 /* Herb_02.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8221BD7B5330026EEB2 /* Herb_02.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB86E1BD7B5330026EEB2 /* Herb_03.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8231BD7B5330026EEB2 /* Herb_03.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB86F1BD7B5330026EEB2 /* Herb_04.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8241BD7B5330026EEB2 /* Herb_04.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB8701BD7B5330026EEB2 /* Herb_05.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8251BD7B5330026EEB2 /* Herb_05.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB8711BD7B5330026EEB2 /* Herb_06.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8261BD7B5330026EEB2 /* Herb_06.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB8721BD7B5330026EEB2 /* Herb_07.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8271BD7B5330026EEB2 /* Herb_07.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB8731BD7B5330026EEB2 /* Herb_08.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8281BD7B5330026EEB2 /* Herb_08.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB8741BD7B5330026EEB2 /* Herb_09.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8291BD7B5330026EEB2 /* Herb_09.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB8751BD7B5330026EEB2 /* Herb_10.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB82A1BD7B5330026EEB2 /* Herb_10.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB8761BD7B5330026EEB2 /* Herb_11.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB82B1BD7B5330026EEB2 /* Herb_11.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB8771BD7B5330026EEB2 /* Herb_12.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB82C1BD7B5330026EEB2 /* Herb_12.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB8781BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_01.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB82E1BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_01.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB8791BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_02.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB82F1BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_02.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB87A1BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_03.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8301BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_03.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB87B1BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_04.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8311BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_04.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB87C1BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_05.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8321BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_05.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB87D1BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_06.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8331BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_06.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB87E1BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_07.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8341BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_07.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB87F1BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_08.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8351BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_08.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB8801BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_09.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8361BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_09.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB8811BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_10.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8371BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_10.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB8821BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_11.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8381BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_11.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB8831BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_12.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8391BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_12.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB8841BD7B5330026EEB2 /* Ramdall---Black-Mage_01.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB83B1BD7B5330026EEB2 /* Ramdall---Black-Mage_01.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB8851BD7B5330026EEB2 /* Ramdall---Black-Mage_02.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB83C1BD7B5330026EEB2 /* Ramdall---Black-Mage_02.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB8861BD7B5330026EEB2 /* Ramdall---Black-Mage_03.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB83D1BD7B5330026EEB2 /* Ramdall---Black-Mage_03.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB8871BD7B5330026EEB2 /* Ramdall---Black-Mage_04.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB83E1BD7B5330026EEB2 /* Ramdall---Black-Mage_04.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB8881BD7B5330026EEB2 /* Ramdall---Black-Mage_05.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB83F1BD7B5330026EEB2 /* Ramdall---Black-Mage_05.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB8891BD7B5330026EEB2 /* Ramdall---Black-Mage_06.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8401BD7B5330026EEB2 /* Ramdall---Black-Mage_06.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB88A1BD7B5330026EEB2 /* Ramdall---Black-Mage_07.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8411BD7B5330026EEB2 /* Ramdall---Black-Mage_07.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB88B1BD7B5330026EEB2 /* Ramdall---Black-Mage_08.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8421BD7B5330026EEB2 /* Ramdall---Black-Mage_08.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB88C1BD7B5330026EEB2 /* Ramdall---Black-Mage_09.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8431BD7B5330026EEB2 /* Ramdall---Black-Mage_09.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB88D1BD7B5330026EEB2 /* Ramdall---Black-Mage_10.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8441BD7B5330026EEB2 /* Ramdall---Black-Mage_10.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB88E1BD7B5330026EEB2 /* Ramdall---Black-Mage_11.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8451BD7B5330026EEB2 /* Ramdall---Black-Mage_11.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB88F1BD7B5330026EEB2 /* Ramdall---Black-Mage_12.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8461BD7B5330026EEB2 /* Ramdall---Black-Mage_12.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB8901BD7B5330026EEB2 /* Rohan---Bard_01.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8481BD7B5330026EEB2 /* Rohan---Bard_01.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB8911BD7B5330026EEB2 /* Rohan---Bard_02.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8491BD7B5330026EEB2 /* Rohan---Bard_02.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB8921BD7B5330026EEB2 /* Rohan---Bard_03.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB84A1BD7B5330026EEB2 /* Rohan---Bard_03.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB8931BD7B5330026EEB2 /* Rohan---Bard_04.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB84B1BD7B5330026EEB2 /* Rohan---Bard_04.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB8941BD7B5330026EEB2 /* Rohan---Bard_05.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB84C1BD7B5330026EEB2 /* Rohan---Bard_05.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB8951BD7B5330026EEB2 /* Rohan---Bard_06.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB84D1BD7B5330026EEB2 /* Rohan---Bard_06.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB8961BD7B5330026EEB2 /* Rohan---Bard_07.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB84E1BD7B5330026EEB2 /* Rohan---Bard_07.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB8971BD7B5330026EEB2 /* Rohan---Bard_08.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB84F1BD7B5330026EEB2 /* Rohan---Bard_08.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB8981BD7B5330026EEB2 /* Rohan---Bard_09.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8501BD7B5330026EEB2 /* Rohan---Bard_09.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB8991BD7B5330026EEB2 /* Rohan---Bard_10.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8511BD7B5330026EEB2 /* Rohan---Bard_10.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB89A1BD7B5330026EEB2 /* Rohan---Bard_11.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8521BD7B5330026EEB2 /* Rohan---Bard_11.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB89B1BD7B5330026EEB2 /* Rohan---Bard_12.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8531BD7B5330026EEB2 /* Rohan---Bard_12.png */; settings = {ASSET_TAGS = (); }; };
-		BCCBB89F1BD7C3370026EEB2 /* CollisionSetUps.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCBB89E1BD7C3370026EEB2 /* CollisionSetUps.swift */; settings = {ASSET_TAGS = (); }; };
+		1BA00EB11BC69F3F00B8972A /* Effect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA00EB01BC69F3F00B8972A /* Effect.swift */; };
+		1BA00EB41BC6AB2C00B8972A /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA00EB31BC6AB2C00B8972A /* Player.swift */; };
+		1BA00EB81BC6B38F00B8972A /* BaseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA00EB71BC6B38F00B8972A /* BaseItem.swift */; };
+		1BA00EBA1BC6B4AD00B8972A /* ItemQuest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA00EB91BC6B4AD00B8972A /* ItemQuest.swift */; };
+		1BA00EBC1BC6B55100B8972A /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA00EBB1BC6B55100B8972A /* Item.swift */; };
+		1BC1F4191BD1A00C000CE8B3 /* casas.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BC1F4171BD1A00C000CE8B3 /* casas.png */; };
+		1BC1F41A1BD1A00C000CE8B3 /* grama.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BC1F4181BD1A00C000CE8B3 /* grama.png */; };
+		1BC1F41D1BD1C6CB000CE8B3 /* MovementManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC1F41C1BD1C6CB000CE8B3 /* MovementManagement.swift */; };
+		1BC1F4201BD2360F000CE8B3 /* ActionManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC1F41F1BD2360F000CE8B3 /* ActionManagement.swift */; };
+		1BD76E3F1BC401CF00A2EDE1 /* Equip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD76E3E1BC401CF00A2EDE1 /* Equip.swift */; };
+		1BD76E431BC4080D00A2EDE1 /* ItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD76E421BC4080D00A2EDE1 /* ItemType.swift */; };
+		1BD76E451BC4093900A2EDE1 /* PlayerStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD76E441BC4093900A2EDE1 /* PlayerStatus.swift */; };
+		1BD76E4E1BC4135900A2EDE1 /* Skill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD76E4D1BC4135900A2EDE1 /* Skill.swift */; };
+		1BE7D8011BC7F855000FA60C /* Joystick.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BE7D8001BC7F855000FA60C /* Joystick.m */; };
+		1BE7D8051BC7FEDA000FA60C /* Ylla.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1BE7D8041BC7FEDA000FA60C /* Ylla.atlas */; };
+		1BECB4CB1BC55CB000EDBB8F /* BaseRace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BECB4CA1BC55CB000EDBB8F /* BaseRace.swift */; };
+		1BECB4CD1BC55E2200EDBB8F /* Swordsman.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BECB4CC1BC55E2200EDBB8F /* Swordsman.swift */; };
+		1BECB4CF1BC55EB300EDBB8F /* Mage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BECB4CE1BC55EB300EDBB8F /* Mage.swift */; };
+		1BECB4D11BC55EF700EDBB8F /* Bard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BECB4D01BC55EF700EDBB8F /* Bard.swift */; };
+		1BECB4D31BC55F2600EDBB8F /* Paladin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BECB4D21BC55F2600EDBB8F /* Paladin.swift */; };
+		1BECB4D51BC563F700EDBB8F /* StatusList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BECB4D41BC563F700EDBB8F /* StatusList.swift */; };
+		1BEDA5691BCE8B8800C95A73 /* Hydora.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1BEDA5681BCE8B8800C95A73 /* Hydora.atlas */; };
+		BC0F858A1BD9087E005E424D /* grass.png in Resources */ = {isa = PBXBuildFile; fileRef = BC0F85891BD9087E005E424D /* grass.png */; };
+		BC0F858C1BD90DC5005E424D /* ground.png in Resources */ = {isa = PBXBuildFile; fileRef = BC0F858B1BD90DC5005E424D /* ground.png */; };
+		BC0F858E1BD911A4005E424D /* EquipScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = BC0F858D1BD911A4005E424D /* EquipScene.sks */; };
+		BC0F85AA1BD9136A005E424D /* balão-herb.png in Resources */ = {isa = PBXBuildFile; fileRef = BC0F85901BD9136A005E424D /* balão-herb.png */; };
+		BC0F85AB1BD9136A005E424D /* balão-hydora.png in Resources */ = {isa = PBXBuildFile; fileRef = BC0F85911BD9136A005E424D /* balão-hydora.png */; };
+		BC0F85AC1BD9136A005E424D /* bg_equipamento.png in Resources */ = {isa = PBXBuildFile; fileRef = BC0F85921BD9136A005E424D /* bg_equipamento.png */; };
+		BC0F85AD1BD9136A005E424D /* cajado.png in Resources */ = {isa = PBXBuildFile; fileRef = BC0F85931BD9136A005E424D /* cajado.png */; };
+		BC0F85AF1BD9136A005E424D /* desc1.png in Resources */ = {isa = PBXBuildFile; fileRef = BC0F85951BD9136A005E424D /* desc1.png */; };
+		BC0F85B01BD9136A005E424D /* desc2.png in Resources */ = {isa = PBXBuildFile; fileRef = BC0F85961BD9136A005E424D /* desc2.png */; };
+		BC0F85B11BD9136A005E424D /* desc3.png in Resources */ = {isa = PBXBuildFile; fileRef = BC0F85971BD9136A005E424D /* desc3.png */; };
+		BC0F85B21BD9136A005E424D /* desc4.png in Resources */ = {isa = PBXBuildFile; fileRef = BC0F85981BD9136A005E424D /* desc4.png */; };
+		BC0F85B31BD9136A005E424D /* desc5.png in Resources */ = {isa = PBXBuildFile; fileRef = BC0F85991BD9136A005E424D /* desc5.png */; };
+		BC0F85B41BD9136A005E424D /* desc6.png in Resources */ = {isa = PBXBuildFile; fileRef = BC0F859A1BD9136A005E424D /* desc6.png */; };
+		BC0F85B51BD9136A005E424D /* desc7.png in Resources */ = {isa = PBXBuildFile; fileRef = BC0F859B1BD9136A005E424D /* desc7.png */; };
+		BC0F85B61BD9136A005E424D /* desc8.png in Resources */ = {isa = PBXBuildFile; fileRef = BC0F859C1BD9136A005E424D /* desc8.png */; };
+		BC0F85B71BD9136A005E424D /* EQUIPAMENTO.png in Resources */ = {isa = PBXBuildFile; fileRef = BC0F859D1BD9136A005E424D /* EQUIPAMENTO.png */; };
+		BC0F85B81BD9136A005E424D /* escudo.png in Resources */ = {isa = PBXBuildFile; fileRef = BC0F859E1BD9136A005E424D /* escudo.png */; };
+		BC0F85BA1BD9136A005E424D /* herb-balão.png in Resources */ = {isa = PBXBuildFile; fileRef = BC0F85A01BD9136A005E424D /* herb-balão.png */; };
+		BC0F85BB1BD9136A005E424D /* hydora-balão.png in Resources */ = {isa = PBXBuildFile; fileRef = BC0F85A11BD9136A005E424D /* hydora-balão.png */; };
+		BC0F85BC1BD9136A005E424D /* Marreta.png in Resources */ = {isa = PBXBuildFile; fileRef = BC0F85A21BD9136A005E424D /* Marreta.png */; };
+		BC0F85BD1BD9136A005E424D /* moldura.png in Resources */ = {isa = PBXBuildFile; fileRef = BC0F85A31BD9136A005E424D /* moldura.png */; };
+		BC0F85BE1BD9136A005E424D /* protótipo-equipamento.key in Resources */ = {isa = PBXBuildFile; fileRef = BC0F85A41BD9136A005E424D /* protótipo-equipamento.key */; };
+		BC0F85BF1BD9136A005E424D /* retangulo.png in Resources */ = {isa = PBXBuildFile; fileRef = BC0F85A51BD9136A005E424D /* retangulo.png */; };
+		BC0F85C01BD9136A005E424D /* sidearrow.png in Resources */ = {isa = PBXBuildFile; fileRef = BC0F85A61BD9136A005E424D /* sidearrow.png */; };
+		BC0F85C11BD9136A005E424D /* tela_equipamento.png in Resources */ = {isa = PBXBuildFile; fileRef = BC0F85A71BD9136A005E424D /* tela_equipamento.png */; };
+		BC0F85C21BD9136A005E424D /* tela_equipamento.svg in Resources */ = {isa = PBXBuildFile; fileRef = BC0F85A81BD9136A005E424D /* tela_equipamento.svg */; };
+		BC0F85C31BD9136A005E424D /* X[PROTÓTIPO].png in Resources */ = {isa = PBXBuildFile; fileRef = BC0F85A91BD9136A005E424D /* X[PROTÓTIPO].png */; };
+		BC0F85C61BD91D05005E424D /* hydora-retrato.png in Resources */ = {isa = PBXBuildFile; fileRef = BC0F85C41BD91D05005E424D /* hydora-retrato.png */; };
+		BC0F85C71BD91D05005E424D /* tio-retrato.png in Resources */ = {isa = PBXBuildFile; fileRef = BC0F85C51BD91D05005E424D /* tio-retrato.png */; };
+		BC0F85C91BD922F7005E424D /* EquipScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0F85C81BD922F6005E424D /* EquipScene.swift */; };
+		BCCBB8541BD7B5330026EEB2 /* Aemon---Tyrant_01.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8071BD7B5330026EEB2 /* Aemon---Tyrant_01.png */; };
+		BCCBB8551BD7B5330026EEB2 /* Aemon---Tyrant_02.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8081BD7B5330026EEB2 /* Aemon---Tyrant_02.png */; };
+		BCCBB8561BD7B5330026EEB2 /* Aemon---Tyrant_03.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8091BD7B5330026EEB2 /* Aemon---Tyrant_03.png */; };
+		BCCBB8571BD7B5330026EEB2 /* Aemon---Tyrant_04.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB80A1BD7B5330026EEB2 /* Aemon---Tyrant_04.png */; };
+		BCCBB8581BD7B5330026EEB2 /* Aemon---Tyrant_05.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB80B1BD7B5330026EEB2 /* Aemon---Tyrant_05.png */; };
+		BCCBB8591BD7B5330026EEB2 /* Aemon---Tyrant_06.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB80C1BD7B5330026EEB2 /* Aemon---Tyrant_06.png */; };
+		BCCBB85A1BD7B5330026EEB2 /* Aemon---Tyrant_07.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB80D1BD7B5330026EEB2 /* Aemon---Tyrant_07.png */; };
+		BCCBB85B1BD7B5330026EEB2 /* Aemon---Tyrant_08.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB80E1BD7B5330026EEB2 /* Aemon---Tyrant_08.png */; };
+		BCCBB85C1BD7B5330026EEB2 /* Aemon---Tyrant_09.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB80F1BD7B5330026EEB2 /* Aemon---Tyrant_09.png */; };
+		BCCBB85D1BD7B5330026EEB2 /* Aemon---Tyrant_10.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8101BD7B5330026EEB2 /* Aemon---Tyrant_10.png */; };
+		BCCBB85E1BD7B5330026EEB2 /* Aemon---Tyrant_11.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8111BD7B5330026EEB2 /* Aemon---Tyrant_11.png */; };
+		BCCBB85F1BD7B5330026EEB2 /* Aemon---Tyrant_12.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8121BD7B5330026EEB2 /* Aemon---Tyrant_12.png */; };
+		BCCBB8601BD7B5330026EEB2 /* Bellatrix---Witch_01.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8141BD7B5330026EEB2 /* Bellatrix---Witch_01.png */; };
+		BCCBB8611BD7B5330026EEB2 /* Bellatrix---Witch_02.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8151BD7B5330026EEB2 /* Bellatrix---Witch_02.png */; };
+		BCCBB8621BD7B5330026EEB2 /* Bellatrix---Witch_03.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8161BD7B5330026EEB2 /* Bellatrix---Witch_03.png */; };
+		BCCBB8631BD7B5330026EEB2 /* Bellatrix---Witch_04.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8171BD7B5330026EEB2 /* Bellatrix---Witch_04.png */; };
+		BCCBB8641BD7B5330026EEB2 /* Bellatrix---Witch_05.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8181BD7B5330026EEB2 /* Bellatrix---Witch_05.png */; };
+		BCCBB8651BD7B5330026EEB2 /* Bellatrix---Witch_06.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8191BD7B5330026EEB2 /* Bellatrix---Witch_06.png */; };
+		BCCBB8661BD7B5330026EEB2 /* Bellatrix---Witch_07.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB81A1BD7B5330026EEB2 /* Bellatrix---Witch_07.png */; };
+		BCCBB8671BD7B5330026EEB2 /* Bellatrix---Witch_08.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB81B1BD7B5330026EEB2 /* Bellatrix---Witch_08.png */; };
+		BCCBB8681BD7B5330026EEB2 /* Bellatrix---Witch_09.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB81C1BD7B5330026EEB2 /* Bellatrix---Witch_09.png */; };
+		BCCBB8691BD7B5330026EEB2 /* Bellatrix---Witch_10.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB81D1BD7B5330026EEB2 /* Bellatrix---Witch_10.png */; };
+		BCCBB86A1BD7B5330026EEB2 /* Bellatrix---Witch_11.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB81E1BD7B5330026EEB2 /* Bellatrix---Witch_11.png */; };
+		BCCBB86B1BD7B5330026EEB2 /* Bellatrix---Witch_12.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB81F1BD7B5330026EEB2 /* Bellatrix---Witch_12.png */; };
+		BCCBB86C1BD7B5330026EEB2 /* Herb_01.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8211BD7B5330026EEB2 /* Herb_01.png */; };
+		BCCBB86D1BD7B5330026EEB2 /* Herb_02.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8221BD7B5330026EEB2 /* Herb_02.png */; };
+		BCCBB86E1BD7B5330026EEB2 /* Herb_03.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8231BD7B5330026EEB2 /* Herb_03.png */; };
+		BCCBB86F1BD7B5330026EEB2 /* Herb_04.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8241BD7B5330026EEB2 /* Herb_04.png */; };
+		BCCBB8701BD7B5330026EEB2 /* Herb_05.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8251BD7B5330026EEB2 /* Herb_05.png */; };
+		BCCBB8711BD7B5330026EEB2 /* Herb_06.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8261BD7B5330026EEB2 /* Herb_06.png */; };
+		BCCBB8721BD7B5330026EEB2 /* Herb_07.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8271BD7B5330026EEB2 /* Herb_07.png */; };
+		BCCBB8731BD7B5330026EEB2 /* Herb_08.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8281BD7B5330026EEB2 /* Herb_08.png */; };
+		BCCBB8741BD7B5330026EEB2 /* Herb_09.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8291BD7B5330026EEB2 /* Herb_09.png */; };
+		BCCBB8751BD7B5330026EEB2 /* Herb_10.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB82A1BD7B5330026EEB2 /* Herb_10.png */; };
+		BCCBB8761BD7B5330026EEB2 /* Herb_11.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB82B1BD7B5330026EEB2 /* Herb_11.png */; };
+		BCCBB8771BD7B5330026EEB2 /* Herb_12.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB82C1BD7B5330026EEB2 /* Herb_12.png */; };
+		BCCBB8781BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_01.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB82E1BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_01.png */; };
+		BCCBB8791BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_02.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB82F1BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_02.png */; };
+		BCCBB87A1BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_03.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8301BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_03.png */; };
+		BCCBB87B1BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_04.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8311BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_04.png */; };
+		BCCBB87C1BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_05.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8321BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_05.png */; };
+		BCCBB87D1BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_06.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8331BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_06.png */; };
+		BCCBB87E1BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_07.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8341BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_07.png */; };
+		BCCBB87F1BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_08.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8351BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_08.png */; };
+		BCCBB8801BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_09.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8361BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_09.png */; };
+		BCCBB8811BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_10.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8371BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_10.png */; };
+		BCCBB8821BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_11.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8381BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_11.png */; };
+		BCCBB8831BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_12.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8391BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_12.png */; };
+		BCCBB8841BD7B5330026EEB2 /* Ramdall---Black-Mage_01.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB83B1BD7B5330026EEB2 /* Ramdall---Black-Mage_01.png */; };
+		BCCBB8851BD7B5330026EEB2 /* Ramdall---Black-Mage_02.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB83C1BD7B5330026EEB2 /* Ramdall---Black-Mage_02.png */; };
+		BCCBB8861BD7B5330026EEB2 /* Ramdall---Black-Mage_03.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB83D1BD7B5330026EEB2 /* Ramdall---Black-Mage_03.png */; };
+		BCCBB8871BD7B5330026EEB2 /* Ramdall---Black-Mage_04.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB83E1BD7B5330026EEB2 /* Ramdall---Black-Mage_04.png */; };
+		BCCBB8881BD7B5330026EEB2 /* Ramdall---Black-Mage_05.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB83F1BD7B5330026EEB2 /* Ramdall---Black-Mage_05.png */; };
+		BCCBB8891BD7B5330026EEB2 /* Ramdall---Black-Mage_06.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8401BD7B5330026EEB2 /* Ramdall---Black-Mage_06.png */; };
+		BCCBB88A1BD7B5330026EEB2 /* Ramdall---Black-Mage_07.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8411BD7B5330026EEB2 /* Ramdall---Black-Mage_07.png */; };
+		BCCBB88B1BD7B5330026EEB2 /* Ramdall---Black-Mage_08.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8421BD7B5330026EEB2 /* Ramdall---Black-Mage_08.png */; };
+		BCCBB88C1BD7B5330026EEB2 /* Ramdall---Black-Mage_09.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8431BD7B5330026EEB2 /* Ramdall---Black-Mage_09.png */; };
+		BCCBB88D1BD7B5330026EEB2 /* Ramdall---Black-Mage_10.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8441BD7B5330026EEB2 /* Ramdall---Black-Mage_10.png */; };
+		BCCBB88E1BD7B5330026EEB2 /* Ramdall---Black-Mage_11.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8451BD7B5330026EEB2 /* Ramdall---Black-Mage_11.png */; };
+		BCCBB88F1BD7B5330026EEB2 /* Ramdall---Black-Mage_12.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8461BD7B5330026EEB2 /* Ramdall---Black-Mage_12.png */; };
+		BCCBB8901BD7B5330026EEB2 /* Rohan---Bard_01.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8481BD7B5330026EEB2 /* Rohan---Bard_01.png */; };
+		BCCBB8911BD7B5330026EEB2 /* Rohan---Bard_02.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8491BD7B5330026EEB2 /* Rohan---Bard_02.png */; };
+		BCCBB8921BD7B5330026EEB2 /* Rohan---Bard_03.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB84A1BD7B5330026EEB2 /* Rohan---Bard_03.png */; };
+		BCCBB8931BD7B5330026EEB2 /* Rohan---Bard_04.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB84B1BD7B5330026EEB2 /* Rohan---Bard_04.png */; };
+		BCCBB8941BD7B5330026EEB2 /* Rohan---Bard_05.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB84C1BD7B5330026EEB2 /* Rohan---Bard_05.png */; };
+		BCCBB8951BD7B5330026EEB2 /* Rohan---Bard_06.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB84D1BD7B5330026EEB2 /* Rohan---Bard_06.png */; };
+		BCCBB8961BD7B5330026EEB2 /* Rohan---Bard_07.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB84E1BD7B5330026EEB2 /* Rohan---Bard_07.png */; };
+		BCCBB8971BD7B5330026EEB2 /* Rohan---Bard_08.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB84F1BD7B5330026EEB2 /* Rohan---Bard_08.png */; };
+		BCCBB8981BD7B5330026EEB2 /* Rohan---Bard_09.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8501BD7B5330026EEB2 /* Rohan---Bard_09.png */; };
+		BCCBB8991BD7B5330026EEB2 /* Rohan---Bard_10.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8511BD7B5330026EEB2 /* Rohan---Bard_10.png */; };
+		BCCBB89A1BD7B5330026EEB2 /* Rohan---Bard_11.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8521BD7B5330026EEB2 /* Rohan---Bard_11.png */; };
+		BCCBB89B1BD7B5330026EEB2 /* Rohan---Bard_12.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8531BD7B5330026EEB2 /* Rohan---Bard_12.png */; };
+		BCCBB89F1BD7C3370026EEB2 /* CollisionSetUps.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCBB89E1BD7C3370026EEB2 /* CollisionSetUps.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -151,6 +174,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B4780301BD9297B007E03B5 /* CombatScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombatScene.swift; sourceTree = "<group>"; };
+		1B4780321BD9298E007E03B5 /* CombatScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CombatScene.sks; sourceTree = "<group>"; };
 		1B4F29781BCFD28200612BF8 /* VLDContextSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLDContextSheet.h; sourceTree = "<group>"; };
 		1B4F29791BCFD28200612BF8 /* VLDContextSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLDContextSheet.m; sourceTree = "<group>"; };
 		1B4F297A1BCFD28200612BF8 /* VLDContextSheetItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLDContextSheetItem.h; sourceTree = "<group>"; };
@@ -187,8 +212,6 @@
 		1BA00EB71BC6B38F00B8972A /* BaseItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseItem.swift; sourceTree = "<group>"; };
 		1BA00EB91BC6B4AD00B8972A /* ItemQuest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemQuest.swift; sourceTree = "<group>"; };
 		1BA00EBB1BC6B55100B8972A /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
-		1BB3E3161BD9195200DD95D5 /* CombatScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CombatScene.sks; sourceTree = "<group>"; };
-		1BB3E3181BD9196D00DD95D5 /* CombatScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombatScene.swift; sourceTree = "<group>"; };
 		1BC1F4171BD1A00C000CE8B3 /* casas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = casas.png; sourceTree = "<group>"; };
 		1BC1F4181BD1A00C000CE8B3 /* grama.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grama.png; sourceTree = "<group>"; };
 		1BC1F41C1BD1C6CB000CE8B3 /* MovementManagement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovementManagement.swift; sourceTree = "<group>"; };
@@ -215,6 +238,38 @@
 		1BECB4D21BC55F2600EDBB8F /* Paladin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Paladin.swift; sourceTree = "<group>"; };
 		1BECB4D41BC563F700EDBB8F /* StatusList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusList.swift; sourceTree = "<group>"; };
 		1BEDA5681BCE8B8800C95A73 /* Hydora.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Hydora.atlas; sourceTree = "<group>"; };
+		BC0F85891BD9087E005E424D /* grass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grass.png; sourceTree = "<group>"; };
+		BC0F858B1BD90DC5005E424D /* ground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ground.png; sourceTree = "<group>"; };
+		BC0F858D1BD911A4005E424D /* EquipScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EquipScene.sks; sourceTree = "<group>"; };
+		BC0F85901BD9136A005E424D /* balão-herb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "balão-herb.png"; sourceTree = "<group>"; };
+		BC0F85911BD9136A005E424D /* balão-hydora.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "balão-hydora.png"; sourceTree = "<group>"; };
+		BC0F85921BD9136A005E424D /* bg_equipamento.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_equipamento.png; sourceTree = "<group>"; };
+		BC0F85931BD9136A005E424D /* cajado.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cajado.png; sourceTree = "<group>"; };
+		BC0F85941BD9136A005E424D /* Cópia de tela_equipamento.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Cópia de tela_equipamento.svg"; sourceTree = "<group>"; };
+		BC0F85951BD9136A005E424D /* desc1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = desc1.png; sourceTree = "<group>"; };
+		BC0F85961BD9136A005E424D /* desc2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = desc2.png; sourceTree = "<group>"; };
+		BC0F85971BD9136A005E424D /* desc3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = desc3.png; sourceTree = "<group>"; };
+		BC0F85981BD9136A005E424D /* desc4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = desc4.png; sourceTree = "<group>"; };
+		BC0F85991BD9136A005E424D /* desc5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = desc5.png; sourceTree = "<group>"; };
+		BC0F859A1BD9136A005E424D /* desc6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = desc6.png; sourceTree = "<group>"; };
+		BC0F859B1BD9136A005E424D /* desc7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = desc7.png; sourceTree = "<group>"; };
+		BC0F859C1BD9136A005E424D /* desc8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = desc8.png; sourceTree = "<group>"; };
+		BC0F859D1BD9136A005E424D /* EQUIPAMENTO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EQUIPAMENTO.png; sourceTree = "<group>"; };
+		BC0F859E1BD9136A005E424D /* escudo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = escudo.png; sourceTree = "<group>"; };
+		BC0F859F1BD9136A005E424D /* Escudocomfrescurinha.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Escudocomfrescurinha.png; sourceTree = "<group>"; };
+		BC0F85A01BD9136A005E424D /* herb-balão.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "herb-balão.png"; sourceTree = "<group>"; };
+		BC0F85A11BD9136A005E424D /* hydora-balão.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hydora-balão.png"; sourceTree = "<group>"; };
+		BC0F85A21BD9136A005E424D /* Marreta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Marreta.png; sourceTree = "<group>"; };
+		BC0F85A31BD9136A005E424D /* moldura.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = moldura.png; sourceTree = "<group>"; };
+		BC0F85A41BD9136A005E424D /* protótipo-equipamento.key */ = {isa = PBXFileReference; lastKnownFileType = file; path = "protótipo-equipamento.key"; sourceTree = "<group>"; };
+		BC0F85A51BD9136A005E424D /* retangulo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = retangulo.png; sourceTree = "<group>"; };
+		BC0F85A61BD9136A005E424D /* sidearrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sidearrow.png; sourceTree = "<group>"; };
+		BC0F85A71BD9136A005E424D /* tela_equipamento.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tela_equipamento.png; sourceTree = "<group>"; };
+		BC0F85A81BD9136A005E424D /* tela_equipamento.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = tela_equipamento.svg; sourceTree = "<group>"; };
+		BC0F85A91BD9136A005E424D /* X[PROTÓTIPO].png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "X[PROTÓTIPO].png"; sourceTree = "<group>"; };
+		BC0F85C41BD91D05005E424D /* hydora-retrato.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hydora-retrato.png"; sourceTree = "<group>"; };
+		BC0F85C51BD91D05005E424D /* tio-retrato.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tio-retrato.png"; sourceTree = "<group>"; };
+		BC0F85C81BD922F6005E424D /* EquipScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquipScene.swift; sourceTree = "<group>"; };
 		BCCBB8071BD7B5330026EEB2 /* Aemon---Tyrant_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Aemon---Tyrant_01.png"; sourceTree = "<group>"; };
 		BCCBB8081BD7B5330026EEB2 /* Aemon---Tyrant_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Aemon---Tyrant_02.png"; sourceTree = "<group>"; };
 		BCCBB8091BD7B5330026EEB2 /* Aemon---Tyrant_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Aemon---Tyrant_03.png"; sourceTree = "<group>"; };
@@ -367,16 +422,18 @@
 				1B9BE8741BD1357600E9EE27 /* World */,
 				1BE7D7E31BC7E2EB000FA60C /* Assets */,
 				1B8EDC361BC2B0FC009603B6 /* Library */,
+				BC0F858D1BD911A4005E424D /* EquipScene.sks */,
+				BC0F85C81BD922F6005E424D /* EquipScene.swift */,
 				1B8EDC061BC2B074009603B6 /* GameScene.sks */,
 				1B8EDC081BC2B074009603B6 /* GameScene.swift */,
-				1BB3E3161BD9195200DD95D5 /* CombatScene.sks */,
-				1BB3E3181BD9196D00DD95D5 /* CombatScene.swift */,
 				1B8EDC041BC2B074009603B6 /* AppDelegate.swift */,
 				1B8EDC0A1BC2B074009603B6 /* GameViewController.swift */,
 				1B8EDC0C1BC2B074009603B6 /* Main.storyboard */,
 				1B8EDC0F1BC2B074009603B6 /* Assets.xcassets */,
 				1B8EDC111BC2B074009603B6 /* LaunchScreen.storyboard */,
 				1B8EDC141BC2B074009603B6 /* Info.plist */,
+				1B4780301BD9297B007E03B5 /* CombatScene.swift */,
+				1B4780321BD9298E007E03B5 /* CombatScene.sks */,
 			);
 			path = MiraadTales;
 			sourceTree = "<group>";
@@ -484,6 +541,9 @@
 			isa = PBXGroup;
 			children = (
 				1BC9101A1BD7E4AE009E2A9C /* map */,
+				BC0F858B1BD90DC5005E424D /* ground.png */,
+				BC0F85891BD9087E005E424D /* grass.png */,
+				BC0F858F1BD9136A005E424D /* Equipamento */,
 				BCCBB8061BD7B5330026EEB2 /* Aemon */,
 				BCCBB8131BD7B5330026EEB2 /* Bellatrix */,
 				BCCBB8201BD7B5330026EEB2 /* Herb */,
@@ -519,6 +579,42 @@
 				1BA00EB31BC6AB2C00B8972A /* Player.swift */,
 			);
 			name = Race;
+			sourceTree = "<group>";
+		};
+		BC0F858F1BD9136A005E424D /* Equipamento */ = {
+			isa = PBXGroup;
+			children = (
+				BC0F85901BD9136A005E424D /* balão-herb.png */,
+				BC0F85911BD9136A005E424D /* balão-hydora.png */,
+				BC0F85921BD9136A005E424D /* bg_equipamento.png */,
+				BC0F85931BD9136A005E424D /* cajado.png */,
+				BC0F85941BD9136A005E424D /* Cópia de tela_equipamento.svg */,
+				BC0F85951BD9136A005E424D /* desc1.png */,
+				BC0F85961BD9136A005E424D /* desc2.png */,
+				BC0F85971BD9136A005E424D /* desc3.png */,
+				BC0F85981BD9136A005E424D /* desc4.png */,
+				BC0F85991BD9136A005E424D /* desc5.png */,
+				BC0F859A1BD9136A005E424D /* desc6.png */,
+				BC0F859B1BD9136A005E424D /* desc7.png */,
+				BC0F859C1BD9136A005E424D /* desc8.png */,
+				BC0F859D1BD9136A005E424D /* EQUIPAMENTO.png */,
+				BC0F859E1BD9136A005E424D /* escudo.png */,
+				BC0F859F1BD9136A005E424D /* Escudocomfrescurinha.png */,
+				BC0F85C41BD91D05005E424D /* hydora-retrato.png */,
+				BC0F85C51BD91D05005E424D /* tio-retrato.png */,
+				BC0F85A01BD9136A005E424D /* herb-balão.png */,
+				BC0F85A11BD9136A005E424D /* hydora-balão.png */,
+				BC0F85A21BD9136A005E424D /* Marreta.png */,
+				BC0F85A31BD9136A005E424D /* moldura.png */,
+				BC0F85A41BD9136A005E424D /* protótipo-equipamento.key */,
+				BC0F85A51BD9136A005E424D /* retangulo.png */,
+				BC0F85A61BD9136A005E424D /* sidearrow.png */,
+				BC0F85A71BD9136A005E424D /* tela_equipamento.png */,
+				BC0F85A81BD9136A005E424D /* tela_equipamento.svg */,
+				BC0F85A91BD9136A005E424D /* X[PROTÓTIPO].png */,
+			);
+			name = Equipamento;
+			path = Rohan/Equipamento;
 			sourceTree = "<group>";
 		};
 		BCCBB8061BD7B5330026EEB2 /* Aemon */ = {
@@ -743,71 +839,89 @@
 				BCCBB85B1BD7B5330026EEB2 /* Aemon---Tyrant_08.png in Resources */,
 				BCCBB8591BD7B5330026EEB2 /* Aemon---Tyrant_06.png in Resources */,
 				BCCBB87E1BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_07.png in Resources */,
+				BC0F85C21BD9136A005E424D /* tela_equipamento.svg in Resources */,
 				BCCBB8851BD7B5330026EEB2 /* Ramdall---Black-Mage_02.png in Resources */,
 				BCCBB87D1BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_06.png in Resources */,
 				BCCBB8621BD7B5330026EEB2 /* Bellatrix---Witch_03.png in Resources */,
-				1BC910231BD7E4AE009E2A9C /* grass.png in Resources */,
 				1BEDA5691BCE8B8800C95A73 /* Hydora.atlas in Resources */,
+				BC0F85AD1BD9136A005E424D /* cajado.png in Resources */,
 				BCCBB8631BD7B5330026EEB2 /* Bellatrix---Witch_04.png in Resources */,
 				BCCBB89B1BD7B5330026EEB2 /* Rohan---Bard_12.png in Resources */,
 				BCCBB8811BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_10.png in Resources */,
 				BCCBB8611BD7B5330026EEB2 /* Bellatrix---Witch_02.png in Resources */,
 				BCCBB8901BD7B5330026EEB2 /* Rohan---Bard_01.png in Resources */,
 				BCCBB8881BD7B5330026EEB2 /* Ramdall---Black-Mage_05.png in Resources */,
-				1BC910281BD7E4AE009E2A9C /* public_tileset_by_orohnpokemon-d4vpcfu copy.png in Resources */,
 				BCCBB86D1BD7B5330026EEB2 /* Herb_02.png in Resources */,
 				BCCBB8711BD7B5330026EEB2 /* Herb_06.png in Resources */,
-				1BB3E3171BD9195200DD95D5 /* CombatScene.sks in Resources */,
 				BCCBB8761BD7B5330026EEB2 /* Herb_11.png in Resources */,
 				BCCBB8701BD7B5330026EEB2 /* Herb_05.png in Resources */,
+				BC0F85BD1BD9136A005E424D /* moldura.png in Resources */,
 				BCCBB87B1BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_04.png in Resources */,
+				BC0F858A1BD9087E005E424D /* grass.png in Resources */,
+				BC0F858C1BD90DC5005E424D /* ground.png in Resources */,
 				BCCBB8641BD7B5330026EEB2 /* Bellatrix---Witch_05.png in Resources */,
 				BCCBB8801BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_09.png in Resources */,
+				1B4780331BD9298E007E03B5 /* CombatScene.sks in Resources */,
 				1B8EDC071BC2B074009603B6 /* GameScene.sks in Resources */,
 				1BE7D8051BC7FEDA000FA60C /* Ylla.atlas in Resources */,
 				BCCBB8581BD7B5330026EEB2 /* Aemon---Tyrant_05.png in Resources */,
 				BCCBB8741BD7B5330026EEB2 /* Herb_09.png in Resources */,
+				BC0F85C11BD9136A005E424D /* tela_equipamento.png in Resources */,
 				BCCBB85F1BD7B5330026EEB2 /* Aemon---Tyrant_12.png in Resources */,
+				BC0F85B31BD9136A005E424D /* desc5.png in Resources */,
 				BCCBB8941BD7B5330026EEB2 /* Rohan---Bard_05.png in Resources */,
 				BCCBB8651BD7B5330026EEB2 /* Bellatrix---Witch_06.png in Resources */,
 				BCCBB86E1BD7B5330026EEB2 /* Herb_03.png in Resources */,
 				BCCBB8561BD7B5330026EEB2 /* Aemon---Tyrant_03.png in Resources */,
 				BCCBB88C1BD7B5330026EEB2 /* Ramdall---Black-Mage_09.png in Resources */,
+				BC0F85C31BD9136A005E424D /* X[PROTÓTIPO].png in Resources */,
 				BCCBB8771BD7B5330026EEB2 /* Herb_12.png in Resources */,
+				BC0F85AF1BD9136A005E424D /* desc1.png in Resources */,
 				1BC1F41A1BD1A00C000CE8B3 /* grama.png in Resources */,
 				BCCBB88A1BD7B5330026EEB2 /* Ramdall---Black-Mage_07.png in Resources */,
 				BCCBB8961BD7B5330026EEB2 /* Rohan---Bard_07.png in Resources */,
+				BC0F85B11BD9136A005E424D /* desc3.png in Resources */,
 				BCCBB88B1BD7B5330026EEB2 /* Ramdall---Black-Mage_08.png in Resources */,
 				BCCBB8921BD7B5330026EEB2 /* Rohan---Bard_03.png in Resources */,
+				BC0F85AC1BD9136A005E424D /* bg_equipamento.png in Resources */,
+				BC0F85B81BD9136A005E424D /* escudo.png in Resources */,
 				BCCBB8841BD7B5330026EEB2 /* Ramdall---Black-Mage_01.png in Resources */,
 				BCCBB8931BD7B5330026EEB2 /* Rohan---Bard_04.png in Resources */,
+				BC0F85AB1BD9136A005E424D /* balão-hydora.png in Resources */,
 				BCCBB8891BD7B5330026EEB2 /* Ramdall---Black-Mage_06.png in Resources */,
 				BCCBB8981BD7B5330026EEB2 /* Rohan---Bard_09.png in Resources */,
 				BCCBB87F1BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_08.png in Resources */,
 				BCCBB88D1BD7B5330026EEB2 /* Ramdall---Black-Mage_10.png in Resources */,
+				BC0F85B61BD9136A005E424D /* desc8.png in Resources */,
+				BC0F85C01BD9136A005E424D /* sidearrow.png in Resources */,
 				BCCBB86F1BD7B5330026EEB2 /* Herb_04.png in Resources */,
 				BCCBB8781BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_01.png in Resources */,
+				BC0F85BF1BD9136A005E424D /* retangulo.png in Resources */,
+				BC0F85C71BD91D05005E424D /* tio-retrato.png in Resources */,
 				BCCBB8681BD7B5330026EEB2 /* Bellatrix---Witch_09.png in Resources */,
 				BCCBB85A1BD7B5330026EEB2 /* Aemon---Tyrant_07.png in Resources */,
 				BCCBB8721BD7B5330026EEB2 /* Herb_07.png in Resources */,
+				BC0F85BE1BD9136A005E424D /* protótipo-equipamento.key in Resources */,
 				BCCBB8671BD7B5330026EEB2 /* Bellatrix---Witch_08.png in Resources */,
 				1B9BE8761BD1359300E9EE27 /* test-tilemap.tmx in Resources */,
-				1BC910241BD7E4AE009E2A9C /* house1.png in Resources */,
 				BCCBB85E1BD7B5330026EEB2 /* Aemon---Tyrant_11.png in Resources */,
-				1BC910261BD7E4AE009E2A9C /* house3.png in Resources */,
 				BCCBB8831BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_12.png in Resources */,
 				BCCBB8911BD7B5330026EEB2 /* Rohan---Bard_02.png in Resources */,
 				BCCBB8541BD7B5330026EEB2 /* Aemon---Tyrant_01.png in Resources */,
+				BC0F858E1BD911A4005E424D /* EquipScene.sks in Resources */,
 				BCCBB8661BD7B5330026EEB2 /* Bellatrix---Witch_07.png in Resources */,
 				BCCBB87C1BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_05.png in Resources */,
+				BC0F85B41BD9136A005E424D /* desc6.png in Resources */,
 				BCCBB8691BD7B5330026EEB2 /* Bellatrix---Witch_10.png in Resources */,
+				BC0F85B21BD9136A005E424D /* desc4.png in Resources */,
 				BCCBB88F1BD7B5330026EEB2 /* Ramdall---Black-Mage_12.png in Resources */,
 				BCCBB85D1BD7B5330026EEB2 /* Aemon---Tyrant_10.png in Resources */,
 				BCCBB86C1BD7B5330026EEB2 /* Herb_01.png in Resources */,
 				BCCBB8861BD7B5330026EEB2 /* Ramdall---Black-Mage_03.png in Resources */,
+				BC0F85BA1BD9136A005E424D /* herb-balão.png in Resources */,
 				BCCBB8791BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_02.png in Resources */,
-				1BC910251BD7E4AE009E2A9C /* house2.png in Resources */,
 				BCCBB86B1BD7B5330026EEB2 /* Bellatrix---Witch_12.png in Resources */,
+				BC0F85AA1BD9136A005E424D /* balão-herb.png in Resources */,
 				BCCBB8571BD7B5330026EEB2 /* Aemon---Tyrant_04.png in Resources */,
 				BCCBB8821BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_11.png in Resources */,
 				BCCBB89A1BD7B5330026EEB2 /* Rohan---Bard_11.png in Resources */,
@@ -816,17 +930,21 @@
 				1B8EDC131BC2B074009603B6 /* LaunchScreen.storyboard in Resources */,
 				BCCBB86A1BD7B5330026EEB2 /* Bellatrix---Witch_11.png in Resources */,
 				BCCBB8971BD7B5330026EEB2 /* Rohan---Bard_08.png in Resources */,
+				BC0F85C61BD91D05005E424D /* hydora-retrato.png in Resources */,
+				BC0F85B51BD9136A005E424D /* desc7.png in Resources */,
 				BCCBB8951BD7B5330026EEB2 /* Rohan---Bard_06.png in Resources */,
 				1B8EDC101BC2B074009603B6 /* Assets.xcassets in Resources */,
 				BCCBB8871BD7B5330026EEB2 /* Ramdall---Black-Mage_04.png in Resources */,
+				BC0F85BC1BD9136A005E424D /* Marreta.png in Resources */,
+				BC0F85BB1BD9136A005E424D /* hydora-balão.png in Resources */,
 				BCCBB8751BD7B5330026EEB2 /* Herb_10.png in Resources */,
 				BCCBB8551BD7B5330026EEB2 /* Aemon---Tyrant_02.png in Resources */,
 				BCCBB88E1BD7B5330026EEB2 /* Ramdall---Black-Mage_11.png in Resources */,
-				1BC910271BD7E4AE009E2A9C /* house4.png in Resources */,
 				BCCBB85C1BD7B5330026EEB2 /* Aemon---Tyrant_09.png in Resources */,
 				1B8EDC0E1BC2B074009603B6 /* Main.storyboard in Resources */,
-				1BC910221BD7E4AE009E2A9C /* fundo.png in Resources */,
 				BCCBB8601BD7B5330026EEB2 /* Bellatrix---Witch_01.png in Resources */,
+				BC0F85B71BD9136A005E424D /* EQUIPAMENTO.png in Resources */,
+				BC0F85B01BD9136A005E424D /* desc2.png in Resources */,
 				BCCBB8991BD7B5330026EEB2 /* Rohan---Bard_10.png in Resources */,
 				1BC1F4191BD1A00C000CE8B3 /* casas.png in Resources */,
 			);
@@ -869,7 +987,6 @@
 				1B4F29801BCFD28200612BF8 /* VLDContextSheetItemView.m in Sources */,
 				1B4F29871BCFE2EB00612BF8 /* JSTileMap.m in Sources */,
 				1BD76E431BC4080D00A2EDE1 /* ItemType.swift in Sources */,
-				1BB3E3191BD9196D00DD95D5 /* CombatScene.swift in Sources */,
 				1B8EDC091BC2B074009603B6 /* GameScene.swift in Sources */,
 				1BECB4D31BC55F2600EDBB8F /* Paladin.swift in Sources */,
 				1B8EDC0B1BC2B074009603B6 /* GameViewController.swift in Sources */,
@@ -882,7 +999,9 @@
 				1BECB4D51BC563F700EDBB8F /* StatusList.swift in Sources */,
 				1BD76E3F1BC401CF00A2EDE1 /* Equip.swift in Sources */,
 				1BECB4D11BC55EF700EDBB8F /* Bard.swift in Sources */,
+				1B4780311BD9297B007E03B5 /* CombatScene.swift in Sources */,
 				1BA00EB41BC6AB2C00B8972A /* Player.swift in Sources */,
+				BC0F85C91BD922F7005E424D /* EquipScene.swift in Sources */,
 				1BC1F41D1BD1C6CB000CE8B3 /* MovementManagement.swift in Sources */,
 				1B8EDC391BC2B959009603B6 /* Status.swift in Sources */,
 			);

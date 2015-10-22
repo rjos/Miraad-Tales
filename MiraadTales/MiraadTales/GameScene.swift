@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class GameScene: SKScene {
+class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var isWalking = false
     var players = [Player]()
@@ -18,6 +18,8 @@ class GameScene: SKScene {
     var movementManagement: MovementManagement! = nil
     var actionManagement: ActionManagement! = nil
     var joystick: Joystick! = nil
+    var didCollide:Bool = false
+
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
@@ -27,7 +29,15 @@ class GameScene: SKScene {
 //        myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame));
 //        
 //        self.addChild(myLabel)
+        let ground = SKSpriteNode(imageNamed: "ground")
+        ground.position = CGPointMake(0, 0)
+        ground.zPosition = 15
+        ground.xScale = 1
+        ground.yScale = 1
+        ground.alpha = 1
+        self.addChild(ground)
         
+        self.physicsWorld.contactDelegate = self
         //Add map
         let skMap = self.childNodeWithName("SKMap")!
         skMap.addChild(map)
@@ -45,7 +55,7 @@ class GameScene: SKScene {
         player.xScale = 1
         player.yScale = 1
         player.position = CGPointMake((frameMap.width / 2) - (100), (frameMap.height / 2) - (player.frame.height / 2))
-        player.physicsBody = SKPhysicsBody(texture: SKTexture(imageNamed: "Ylla-2"), size: player.size)
+//        player.physicsBody = SKPhysicsBody(texture: SKTexture(imageNamed: "Ylla-2"), size: player.size)
         player.setLastedPosition(true, orientation: Orientation.Horizontal)
         map.addChild(player)
         players.append(player)
@@ -76,25 +86,18 @@ class GameScene: SKScene {
         herb.yScale = 1
         herb.xScale = 1
         herb.zPosition = 15
-        herb.position = CGPointMake(530.5, 567.5)
-        player.physicsBody = SKPhysicsBody(texture: SKTexture(imageNamed: "Ylla-2"), size: player.size)
+        herb.position = CGPointMake(580.5, 567.5)
+//        player.physicsBody = SKPhysicsBody(texture: SKTexture(imageNamed: "Ylla-2"), size: player.size)
         self.physicsWorld.gravity = CGVectorMake( 0.0, 0.0 );
 //        herb.position = CGPointMake(460, 500.5)
 //        player.physicsBody.
-        herb.physicsBody = SKPhysicsBody(texture: SKTexture(imageNamed: "Ylla-2"), size: player.size)
-        self.physicsWorld.gravity = CGVectorMake( 0.0, 0.0 );
-        
-        herb.physicsBody?.collisionBitMask = CollisionSetUps.Player.rawValue
-        pHydora.physicsBody?.collisionBitMask = CollisionSetUps.Buildings.rawValue
-        player.physicsBody?.collisionBitMask = CollisionSetUps.Player.rawValue
+        herb.physicsBody = SKPhysicsBody(texture: SKTexture(imageNamed: "Herb_02"), size: herb.size)
+        herb.physicsBody?.categoryBitMask = CollisionSetUps.NPC.rawValue
+                herb.physicsBody?.collisionBitMask = CollisionSetUps.Player.rawValue
+        herb.physicsBody?.contactTestBitMask = CollisionSetUps.Player.rawValue
+        herb.physicsBody?.allowsRotation = false
+        herb.physicsBody?.dynamic = false
 
-//        func didBeginContact(contact: SKPhysicsContact) {
-//            
-//            // Check for Projectile
-//            if contact.bodyA.categoryBitMask & 4 > 0 || contact.bodyB.categoryBitMask & 4 > 0   {
-//                let projectile = (contact.bodyA.categoryBitMask & 4) > 0 ? contact.bodyA.node : contact.bodyB.node
-//            }
-//        }
         
 
         map.addChild(herb)
@@ -122,6 +125,14 @@ class GameScene: SKScene {
         let skButtons = self.camera!.childNodeWithName("SKButtons")!
         self.actionManagement =  ActionManagement(imageNamedButtonA: "buttonA", imageNamedButtonB: "buttonB", imageNamedButtonSwitch: "switch", movementManagement: self.movementManagement)
         skButtons.addChild(self.actionManagement)
+    }
+    
+    func didBeginContact(contact: SKPhysicsContact) {
+          print("collideeeeeeeeee")
+        if(contact.bodyA.categoryBitMask == CollisionSetUps.Player.rawValue && contact.bodyB.collisionBitMask == CollisionSetUps.Player.rawValue){
+            didCollide = true;
+            print(didCollide)
+        }
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -163,7 +174,9 @@ class GameScene: SKScene {
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
         
-        self.movementManagement.update(currentTime)
+        self.movementManagement.update(currentTime, didCollide: didCollide)
+        // se nao for colisao
         self.joystick.update(currentTime)
+        didCollide = false;
     }
 }
