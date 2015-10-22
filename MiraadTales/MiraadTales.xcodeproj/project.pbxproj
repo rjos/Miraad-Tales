@@ -32,6 +32,8 @@
 		1BA00EB81BC6B38F00B8972A /* BaseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA00EB71BC6B38F00B8972A /* BaseItem.swift */; settings = {ASSET_TAGS = (); }; };
 		1BA00EBA1BC6B4AD00B8972A /* ItemQuest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA00EB91BC6B4AD00B8972A /* ItemQuest.swift */; settings = {ASSET_TAGS = (); }; };
 		1BA00EBC1BC6B55100B8972A /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA00EBB1BC6B55100B8972A /* Item.swift */; settings = {ASSET_TAGS = (); }; };
+		1BB3E3171BD9195200DD95D5 /* CombatScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1BB3E3161BD9195200DD95D5 /* CombatScene.sks */; settings = {ASSET_TAGS = (); }; };
+		1BB3E3191BD9196D00DD95D5 /* CombatScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB3E3181BD9196D00DD95D5 /* CombatScene.swift */; settings = {ASSET_TAGS = (); }; };
 		1BC1F4191BD1A00C000CE8B3 /* casas.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BC1F4171BD1A00C000CE8B3 /* casas.png */; settings = {ASSET_TAGS = (); }; };
 		1BC1F41A1BD1A00C000CE8B3 /* grama.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BC1F4181BD1A00C000CE8B3 /* grama.png */; settings = {ASSET_TAGS = (); }; };
 		1BC1F41D1BD1C6CB000CE8B3 /* MovementManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC1F41C1BD1C6CB000CE8B3 /* MovementManagement.swift */; settings = {ASSET_TAGS = (); }; };
@@ -185,6 +187,8 @@
 		1BA00EB71BC6B38F00B8972A /* BaseItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseItem.swift; sourceTree = "<group>"; };
 		1BA00EB91BC6B4AD00B8972A /* ItemQuest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemQuest.swift; sourceTree = "<group>"; };
 		1BA00EBB1BC6B55100B8972A /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		1BB3E3161BD9195200DD95D5 /* CombatScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CombatScene.sks; sourceTree = "<group>"; };
+		1BB3E3181BD9196D00DD95D5 /* CombatScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombatScene.swift; sourceTree = "<group>"; };
 		1BC1F4171BD1A00C000CE8B3 /* casas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = casas.png; sourceTree = "<group>"; };
 		1BC1F4181BD1A00C000CE8B3 /* grama.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grama.png; sourceTree = "<group>"; };
 		1BC1F41C1BD1C6CB000CE8B3 /* MovementManagement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovementManagement.swift; sourceTree = "<group>"; };
@@ -364,8 +368,10 @@
 				1BE7D7E31BC7E2EB000FA60C /* Assets */,
 				1B8EDC361BC2B0FC009603B6 /* Library */,
 				1B8EDC061BC2B074009603B6 /* GameScene.sks */,
-				1B8EDC041BC2B074009603B6 /* AppDelegate.swift */,
 				1B8EDC081BC2B074009603B6 /* GameScene.swift */,
+				1BB3E3161BD9195200DD95D5 /* CombatScene.sks */,
+				1BB3E3181BD9196D00DD95D5 /* CombatScene.swift */,
+				1B8EDC041BC2B074009603B6 /* AppDelegate.swift */,
 				1B8EDC0A1BC2B074009603B6 /* GameViewController.swift */,
 				1B8EDC0C1BC2B074009603B6 /* Main.storyboard */,
 				1B8EDC0F1BC2B074009603B6 /* Assets.xcassets */,
@@ -751,6 +757,7 @@
 				1BC910281BD7E4AE009E2A9C /* public_tileset_by_orohnpokemon-d4vpcfu copy.png in Resources */,
 				BCCBB86D1BD7B5330026EEB2 /* Herb_02.png in Resources */,
 				BCCBB8711BD7B5330026EEB2 /* Herb_06.png in Resources */,
+				1BB3E3171BD9195200DD95D5 /* CombatScene.sks in Resources */,
 				BCCBB8761BD7B5330026EEB2 /* Herb_11.png in Resources */,
 				BCCBB8701BD7B5330026EEB2 /* Herb_05.png in Resources */,
 				BCCBB87B1BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_04.png in Resources */,
@@ -862,6 +869,7 @@
 				1B4F29801BCFD28200612BF8 /* VLDContextSheetItemView.m in Sources */,
 				1B4F29871BCFE2EB00612BF8 /* JSTileMap.m in Sources */,
 				1BD76E431BC4080D00A2EDE1 /* ItemType.swift in Sources */,
+				1BB3E3191BD9196D00DD95D5 /* CombatScene.swift in Sources */,
 				1B8EDC091BC2B074009603B6 /* GameScene.swift in Sources */,
 				1BECB4D31BC55F2600EDBB8F /* Paladin.swift in Sources */,
 				1B8EDC0B1BC2B074009603B6 /* GameViewController.swift in Sources */,

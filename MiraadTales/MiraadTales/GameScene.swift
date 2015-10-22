@@ -137,6 +137,12 @@ class GameScene: SKScene {
             
             if nodePosition is SKSpriteNode && nodePosition.name == movementManagement.player.name {
                 movementManagement.player.touchesBegan(touches, withEvent: event)
+            }else {
+                
+                let combatScene = CombatScene(fileNamed: "CombatScene")
+                let transition = SKTransition.doorsOpenHorizontalWithDuration(0.5)
+                combatScene!.scaleMode = SKSceneScaleMode.AspectFill
+                self.scene!.view?.presentScene(combatScene!, transition: transition)
             }
         }
     }
