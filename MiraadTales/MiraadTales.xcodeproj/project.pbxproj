@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1B4780311BD9297B007E03B5 /* CombatScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4780301BD9297B007E03B5 /* CombatScene.swift */; settings = {ASSET_TAGS = (); }; };
-		1B4780331BD9298E007E03B5 /* CombatScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1B4780321BD9298E007E03B5 /* CombatScene.sks */; settings = {ASSET_TAGS = (); }; };
+		1B4780311BD9297B007E03B5 /* CombatScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4780301BD9297B007E03B5 /* CombatScene.swift */; };
+		1B4780331BD9298E007E03B5 /* CombatScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1B4780321BD9298E007E03B5 /* CombatScene.sks */; };
 		1B4F297E1BCFD28200612BF8 /* VLDContextSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B4F29791BCFD28200612BF8 /* VLDContextSheet.m */; };
 		1B4F297F1BCFD28200612BF8 /* VLDContextSheetItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B4F297B1BCFD28200612BF8 /* VLDContextSheetItem.m */; };
 		1B4F29801BCFD28200612BF8 /* VLDContextSheetItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B4F297D1BCFD28200612BF8 /* VLDContextSheetItemView.m */; };
@@ -764,7 +764,7 @@
 				TargetAttributes = {
 					1B8EDC001BC2B073009603B6 = {
 						CreatedOnToolsVersion = 7.0;
-						DevelopmentTeam = GHP2MP7KV3;
+						DevelopmentTeam = 855H77G8PZ;
 					};
 					1B8EDC181BC2B074009603B6 = {
 						CreatedOnToolsVersion = 7.0;
