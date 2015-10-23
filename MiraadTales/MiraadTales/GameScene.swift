@@ -14,7 +14,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var players = [Player]()
     var positionCurrentPlayer: CGPoint = CGPointZero
     var lastedPositionPlayers: [CGPoint] = []
-    var map: JSTileMap = JSTileMap(named: "test-tilemap.tmx")
+    var map: SKNode! = nil
     var movementManagement: MovementManagement! = nil
     var actionManagement: ActionManagement! = nil
     var joystick: Joystick! = nil
@@ -29,18 +29,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 //        myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame));
 //        
 //        self.addChild(myLabel)
-        let ground = SKSpriteNode(imageNamed: "ground")
-        ground.position = CGPointMake(0, 0)
-        ground.zPosition = 15
-        ground.xScale = 1
-        ground.yScale = 1
-        ground.alpha = 1
-        self.addChild(ground)
+//        let ground = SKSpriteNode(imageNamed: "ground")
+//        ground.position = CGPointMake(0, 0)
+//        ground.zPosition = 15
+//        ground.xScale = 1
+//        ground.yScale = 1
+//        ground.alpha = 1
+//        self.addChild(ground)
+        
+        map = self.childNodeWithName("SKBg")!
         
         self.physicsWorld.contactDelegate = self
         //Add map
-        let skMap = self.childNodeWithName("SKMap")!
-        skMap.addChild(map)
+//        let skMap = self.childNodeWithName("SKMap")!
+//        skMap.addChild(map)
         
         let frameMap = map.calculateAccumulatedFrame()
         
@@ -150,10 +152,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 movementManagement.player.touchesBegan(touches, withEvent: event)
             }else {
                 
-                let combatScene = CombatScene(fileNamed: "CombatScene")
-                let transition = SKTransition.doorsOpenHorizontalWithDuration(0.5)
-                combatScene!.scaleMode = SKSceneScaleMode.AspectFill
-                self.scene!.view?.presentScene(combatScene!, transition: transition)
+//                let combatScene = CombatScene(fileNamed: "CombatScene")
+//                let transition = SKTransition.doorsOpenHorizontalWithDuration(0.5)
+//                combatScene!.scaleMode = SKSceneScaleMode.AspectFill
+//                self.scene!.view?.presentScene(combatScene!, transition: transition)
             }
         }
     }
