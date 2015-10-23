@@ -27,11 +27,11 @@ public class Player: SKSpriteNode, VLDContextSheetDelegate {
         let texture = SKTexture(imageNamed: imageNamed)
         self.viewController = viewController
         self.lastedDirection = DirectionPlayer.None
+//        super.init(imageNamed: imageNamed)
         super.init(texture: texture, color: UIColor.redColor(), size: texture.size())
         setAtlas()
-        self.xScale = 0.5
-        self.yScale = 0.5
-        self.physicsBody = SKPhysicsBody(texture:texture, size: texture.size())
+        self.physicsBody = SKPhysicsBody(texture: texture, alphaThreshold: 0.5, size: texture.size())
+        self.physicsBody?.usesPreciseCollisionDetection = true
         self.physicsBody?.collisionBitMask = CollisionSetUps.NPC.rawValue
         self.physicsBody?.categoryBitMask = CollisionSetUps.Player.rawValue
         self.physicsBody?.contactTestBitMask = CollisionSetUps.NPC.rawValue
