@@ -151,7 +151,6 @@
 		C76D63F61BDA7807002BF7F4 /* sabre_semcoisa.png in Resources */ = {isa = PBXBuildFile; fileRef = C76D63F51BDA7807002BF7F4 /* sabre_semcoisa.png */; };
 		C76D63F81BDA7837002BF7F4 /* elmo_semmoldura.png in Resources */ = {isa = PBXBuildFile; fileRef = C76D63F71BDA7837002BF7F4 /* elmo_semmoldura.png */; };
 		C76D63FA1BDA7861002BF7F4 /* escudo_semcoisa.png in Resources */ = {isa = PBXBuildFile; fileRef = C76D63F91BDA7861002BF7F4 /* escudo_semcoisa.png */; };
-		C76D63FC1BDA787C002BF7F4 /* X[PROTÓTIPO].png in Resources */ = {isa = PBXBuildFile; fileRef = C76D63FB1BDA787C002BF7F4 /* X[PROTÓTIPO].png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -331,7 +330,6 @@
 		C76D63F51BDA7807002BF7F4 /* sabre_semcoisa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sabre_semcoisa.png; sourceTree = "<group>"; };
 		C76D63F71BDA7837002BF7F4 /* elmo_semmoldura.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = elmo_semmoldura.png; sourceTree = "<group>"; };
 		C76D63F91BDA7861002BF7F4 /* escudo_semcoisa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = escudo_semcoisa.png; sourceTree = "<group>"; };
-		C76D63FB1BDA787C002BF7F4 /* X[PROTÓTIPO].png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "X[PROTÓTIPO].png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -573,7 +571,6 @@
 				C76D63F51BDA7807002BF7F4 /* sabre_semcoisa.png */,
 				C76D63F71BDA7837002BF7F4 /* elmo_semmoldura.png */,
 				C76D63F91BDA7861002BF7F4 /* escudo_semcoisa.png */,
-				C76D63FB1BDA787C002BF7F4 /* X[PROTÓTIPO].png */,
 				BC0F85961BD9136A005E424D /* desc2.png */,
 				BC0F85971BD9136A005E424D /* desc3.png */,
 				BC0F85981BD9136A005E424D /* desc4.png */,
@@ -779,7 +776,7 @@
 				TargetAttributes = {
 					1B8EDC001BC2B073009603B6 = {
 						CreatedOnToolsVersion = 7.0;
-						DevelopmentTeam = 855H77G8PZ;
+						DevelopmentTeam = GHP2MP7KV3;
 					};
 					1B8EDC181BC2B074009603B6 = {
 						CreatedOnToolsVersion = 7.0;
@@ -888,7 +885,6 @@
 				BCCBB8911BD7B5330026EEB2 /* Rohan---Bard_02.png in Resources */,
 				BCCBB8541BD7B5330026EEB2 /* Aemon---Tyrant_01.png in Resources */,
 				BC0F858E1BD911A4005E424D /* EquipScene.sks in Resources */,
-				C76D63FC1BDA787C002BF7F4 /* X[PROTÓTIPO].png in Resources */,
 				BCCBB8661BD7B5330026EEB2 /* Bellatrix---Witch_07.png in Resources */,
 				BCCBB87C1BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_05.png in Resources */,
 				BC0F85B41BD9136A005E424D /* desc6.png in Resources */,
