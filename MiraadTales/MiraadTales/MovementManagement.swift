@@ -38,14 +38,14 @@ public class MovementManagement: SKNode {
         let min_X_camera = ((screenSize.bounds.width * camera.xScale) * 0.5)
         let min_Y_camera = ((screenSize.bounds.height * camera.yScale) * 0.5)
         
-        self.minPositionCamera = CGPointMake(min_X_camera, min_Y_camera)
-        self.maxPositionCamera = CGPointMake(self.sizeMap.width - min_X_camera, self.sizeMap.height - min_Y_camera)
+        self.minPositionCamera = CGPointMake(min_X_camera - (self.sizeMap.width * 0.5), min_Y_camera - (self.sizeMap.height * 0.5))
+        self.maxPositionCamera = CGPointMake((self.sizeMap.width * 0.5) - min_X_camera, (self.sizeMap.height * 0.5) - min_Y_camera)
         
-        let min_X_player = player.size.width * 0.5
-        let min_Y_player = player.size.height * 0.5
+        let min_X_player = (player.size.width * 0.5) - (self.sizeMap.width * 0.5)
+        let min_Y_player = (player.size.height * 0.5) - (self.sizeMap.height * 0.5)
         
         self.minPositionPlayer = CGPointMake(min_X_player, min_Y_player)
-        self.maxPositionPlayer = CGPointMake(self.sizeMap.width - min_X_player, self.sizeMap.height - min_Y_player)
+        self.maxPositionPlayer = CGPointMake((self.sizeMap.width * 0.5) - (player.size.width * 0.5), (self.sizeMap.height * 0.5) - (player.size.height * 0.5))
         
         self.players = players
         
