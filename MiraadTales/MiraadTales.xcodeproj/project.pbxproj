@@ -51,7 +51,6 @@
 		1BECB4D31BC55F2600EDBB8F /* Paladin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BECB4D21BC55F2600EDBB8F /* Paladin.swift */; };
 		1BECB4D51BC563F700EDBB8F /* StatusList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BECB4D41BC563F700EDBB8F /* StatusList.swift */; };
 		1BEDA5691BCE8B8800C95A73 /* Hydora.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1BEDA5681BCE8B8800C95A73 /* Hydora.atlas */; };
-		BC0F858A1BD9087E005E424D /* grass.png in Resources */ = {isa = PBXBuildFile; fileRef = BC0F85891BD9087E005E424D /* grass.png */; };
 		BC0F858C1BD90DC5005E424D /* ground.png in Resources */ = {isa = PBXBuildFile; fileRef = BC0F858B1BD90DC5005E424D /* ground.png */; };
 		BC0F858E1BD911A4005E424D /* EquipScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = BC0F858D1BD911A4005E424D /* EquipScene.sks */; };
 		BC0F85AA1BD9136A005E424D /* balão-herb.png in Resources */ = {isa = PBXBuildFile; fileRef = BC0F85901BD9136A005E424D /* balão-herb.png */; };
@@ -216,12 +215,6 @@
 		1BC1F4181BD1A00C000CE8B3 /* grama.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grama.png; sourceTree = "<group>"; };
 		1BC1F41C1BD1C6CB000CE8B3 /* MovementManagement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovementManagement.swift; sourceTree = "<group>"; };
 		1BC1F41F1BD2360F000CE8B3 /* ActionManagement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionManagement.swift; sourceTree = "<group>"; };
-		1BC9101B1BD7E4AE009E2A9C /* fundo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fundo.png; sourceTree = "<group>"; };
-		1BC9101C1BD7E4AE009E2A9C /* grass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grass.png; sourceTree = "<group>"; };
-		1BC9101D1BD7E4AE009E2A9C /* house1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = house1.png; sourceTree = "<group>"; };
-		1BC9101E1BD7E4AE009E2A9C /* house2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = house2.png; sourceTree = "<group>"; };
-		1BC9101F1BD7E4AE009E2A9C /* house3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = house3.png; sourceTree = "<group>"; };
-		1BC910201BD7E4AE009E2A9C /* house4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = house4.png; sourceTree = "<group>"; };
 		1BC910211BD7E4AE009E2A9C /* public_tileset_by_orohnpokemon-d4vpcfu copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "public_tileset_by_orohnpokemon-d4vpcfu copy.png"; sourceTree = "<group>"; };
 		1BD76E3E1BC401CF00A2EDE1 /* Equip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Equip.swift; sourceTree = "<group>"; };
 		1BD76E421BC4080D00A2EDE1 /* ItemType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemType.swift; sourceTree = "<group>"; };
@@ -238,7 +231,6 @@
 		1BECB4D21BC55F2600EDBB8F /* Paladin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Paladin.swift; sourceTree = "<group>"; };
 		1BECB4D41BC563F700EDBB8F /* StatusList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusList.swift; sourceTree = "<group>"; };
 		1BEDA5681BCE8B8800C95A73 /* Hydora.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Hydora.atlas; sourceTree = "<group>"; };
-		BC0F85891BD9087E005E424D /* grass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grass.png; sourceTree = "<group>"; };
 		BC0F858B1BD90DC5005E424D /* ground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ground.png; sourceTree = "<group>"; };
 		BC0F858D1BD911A4005E424D /* EquipScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EquipScene.sks; sourceTree = "<group>"; };
 		BC0F85901BD9136A005E424D /* balão-herb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "balão-herb.png"; sourceTree = "<group>"; };
@@ -493,12 +485,6 @@
 		1BC9101A1BD7E4AE009E2A9C /* map */ = {
 			isa = PBXGroup;
 			children = (
-				1BC9101B1BD7E4AE009E2A9C /* fundo.png */,
-				1BC9101C1BD7E4AE009E2A9C /* grass.png */,
-				1BC9101D1BD7E4AE009E2A9C /* house1.png */,
-				1BC9101E1BD7E4AE009E2A9C /* house2.png */,
-				1BC9101F1BD7E4AE009E2A9C /* house3.png */,
-				1BC910201BD7E4AE009E2A9C /* house4.png */,
 				1BC910211BD7E4AE009E2A9C /* public_tileset_by_orohnpokemon-d4vpcfu copy.png */,
 			);
 			path = map;
@@ -542,7 +528,6 @@
 			children = (
 				1BC9101A1BD7E4AE009E2A9C /* map */,
 				BC0F858B1BD90DC5005E424D /* ground.png */,
-				BC0F85891BD9087E005E424D /* grass.png */,
 				BC0F858F1BD9136A005E424D /* Equipamento */,
 				BCCBB8061BD7B5330026EEB2 /* Aemon */,
 				BCCBB8131BD7B5330026EEB2 /* Bellatrix */,
@@ -857,7 +842,6 @@
 				BCCBB8701BD7B5330026EEB2 /* Herb_05.png in Resources */,
 				BC0F85BD1BD9136A005E424D /* moldura.png in Resources */,
 				BCCBB87B1BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_04.png in Resources */,
-				BC0F858A1BD9087E005E424D /* grass.png in Resources */,
 				BC0F858C1BD90DC5005E424D /* ground.png in Resources */,
 				BCCBB8641BD7B5330026EEB2 /* Bellatrix---Witch_05.png in Resources */,
 				BCCBB8801BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_09.png in Resources */,

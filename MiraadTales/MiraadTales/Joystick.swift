@@ -27,29 +27,29 @@ public class Joystick: SKNode {
     public override init() {
         
         
-        self.leftButton = SKSpriteNode(imageNamed: "controle-esquerda")
+        self.leftButton = SKSpriteNode(imageNamed: "btn_Left")
         self.leftButton.name = "LeftButton"
-        self.leftButton.alpha = 0.5
-        self.leftButton.xScale = 0.7
-        self.leftButton.yScale = 0.7
+        self.leftButton.alpha = 0.7
+        self.leftButton.xScale = 3
+        self.leftButton.yScale = 3
         
-        self.rightButton = SKSpriteNode(imageNamed: "controle-direita")
+        self.rightButton = SKSpriteNode(imageNamed: "btn_Right")
         self.rightButton.name = "RightButton"
-        self.rightButton.alpha = 0.5
-        self.rightButton.xScale = 0.7
-        self.rightButton.yScale = 0.7
+        self.rightButton.alpha = 0.7
+        self.rightButton.xScale = 3
+        self.rightButton.yScale = 3
         
-        self.upButton = SKSpriteNode(imageNamed: "controle-cima")
+        self.upButton = SKSpriteNode(imageNamed: "btn_Up")
         self.upButton.name = "UpButton"
-        self.upButton.alpha = 0.5
-        self.upButton.xScale = 0.7
-        self.upButton.yScale = 0.7
+        self.upButton.alpha = 0.7
+        self.upButton.xScale = 3
+        self.upButton.yScale = 3
         
-        self.downButton = SKSpriteNode(imageNamed: "controle-baixo")
+        self.downButton = SKSpriteNode(imageNamed: "btn_Down")
         self.downButton.name = "DownButton"
-        self.downButton.alpha = 0.5
-        self.downButton.xScale = 0.7
-        self.downButton.yScale = 0.7
+        self.downButton.alpha = 0.7
+        self.downButton.xScale = 3
+        self.downButton.yScale = 3
         
         self.centerJoystick = SKSpriteNode(imageNamed: "bolinha")
         
@@ -65,13 +65,13 @@ public class Joystick: SKNode {
         
         let frameLeft = self.leftButton.calculateAccumulatedFrame()
         
-        self.leftButton.position = CGPointMake(-frameLeft.width / 2, 0)
-        self.rightButton.position = CGPointMake(frameLeft.width / 2, 0)
+        self.leftButton.position = CGPointMake(-frameLeft.width, 0)
+        self.rightButton.position = CGPointMake(frameLeft.width, 0)
         
         let frameUp = self.upButton.calculateAccumulatedFrame()
         
-        self.upButton.position = CGPointMake(0, frameUp.height / 2)
-        self.downButton.position = CGPointMake(0, -frameUp.height / 2)
+        self.upButton.position = CGPointMake(0, frameUp.height)
+        self.downButton.position = CGPointMake(0, -frameUp.height)
         
         self.addChild(self.leftButton)
         self.addChild(self.rightButton)
@@ -93,7 +93,7 @@ public class Joystick: SKNode {
             
             if nodeForPosition is SKSpriteNode {
                 self.selectButton = nodeForPosition as! SKSpriteNode
-                self.selectButton.alpha = 0.8
+                self.selectButton.alpha = 1
                 self.isClicked = true
             }
         }
@@ -102,7 +102,7 @@ public class Joystick: SKNode {
     public override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
         if let selectButton = self.selectButton {
-            selectButton.alpha = 0.5
+            selectButton.alpha = 0.7
         }
         self.selectButton = nil
         self.isClicked = false
@@ -115,7 +115,7 @@ public class Joystick: SKNode {
     public override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
         
         if let selectButton = self.selectButton {
-            selectButton.alpha = 0.5
+            selectButton.alpha = 0.7
         }
         self.selectButton = nil
         self.isClicked = false

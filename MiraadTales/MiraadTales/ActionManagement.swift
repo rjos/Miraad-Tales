@@ -23,17 +23,17 @@ public class ActionManagement: SKNode {
         
         self.btnAction = SKSpriteNode(imageNamed: imageNamedButtonA)
         self.btnAction.position = CGPointMake(0, 0)
-        self.btnAction.alpha = 0.5
+        self.btnAction.alpha = 0.7
         self.btnAction.name = "btnAction"
         
         self.btnBack = SKSpriteNode(imageNamed: imageNamedButtonB)
-        self.btnBack.position = CGPointMake(0, self.btnAction.frame.height)
-        self.btnBack.alpha = 0.5
+        self.btnBack.position = CGPointMake(0, self.btnAction.frame.height + 10)
+        self.btnBack.alpha = 0.7
         self.btnBack.name = "btnBack"
         
         self.btnSwitch = SKSpriteNode(imageNamed: imageNamedButtonSwitch)
-        self.btnSwitch.position = CGPointMake(0, self.btnBack.frame.height + self.btnBack.position.y)
-        self.btnSwitch.alpha = 0.5
+        self.btnSwitch.position = CGPointMake(0, self.btnBack.frame.height + self.btnBack.position.y + 10)
+        self.btnSwitch.alpha = 0.7
         self.btnSwitch.name = "btnSwitch"
         
         self.enableSwitch = false
@@ -63,7 +63,7 @@ public class ActionManagement: SKNode {
             
             if nodePosition is SKSpriteNode {
                 
-                nodePosition.alpha = 0.8
+                nodePosition.alpha = 1
                 self.selectedButton = nodePosition as! SKSpriteNode
                 
                 if nodePosition.name == "btnAction" {
@@ -93,7 +93,7 @@ public class ActionManagement: SKNode {
             }
             
             if self.selectedButton != nil {
-                self.selectedButton.alpha = 0.5
+                self.selectedButton.alpha = 0.7
                 self.selectedButton = nil
             }
         }
