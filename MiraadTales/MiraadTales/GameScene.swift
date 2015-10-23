@@ -37,14 +37,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 //        ground.alpha = 1
 //        self.addChild(ground)
         
-        map = self.childNodeWithName("SKBg")!
+        map = self.childNodeWithName("SKMap")!
         
         self.physicsWorld.contactDelegate = self
         //Add map
 //        let skMap = self.childNodeWithName("SKMap")!
 //        skMap.addChild(map)
         
-        let frameMap = map.calculateAccumulatedFrame()
+        let frameMap = map.frame
         
         //Add Ylla
         let status = PlayerStatus(HP: 12, MP: 6, Speed: 16, pAtk: 16, mAtk: 6, pDef: 12, mDef: 6)
@@ -56,7 +56,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         player.alpha = 0.7
         player.xScale = 1
         player.yScale = 1
-        player.position = CGPointMake((frameMap.width / 2) - (100), (frameMap.height / 2) - (player.frame.height / 2))
+        //player.position = CGPointMake((frameMap.width / 2) - (100), (frameMap.height / 2) - (player.frame.height / 2))
+        player.position = CGPointMake(0, 0)
 //        player.physicsBody = SKPhysicsBody(texture: SKTexture(imageNamed: "Ylla-2"), size: player.size)
         player.setLastedPosition(true, orientation: Orientation.Horizontal)
         map.addChild(player)
@@ -100,8 +101,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         herb.physicsBody?.allowsRotation = false
         herb.physicsBody?.dynamic = false
 
-        
-
         map.addChild(herb)
         
         let joyBack = SKSpriteNode(imageNamed: "dpad")
@@ -117,7 +116,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         joystick.position = CGPointMake(0, 0)
         
         let skJoystick = self.camera!.childNodeWithName("SKJoystick")!
-        self.camera!.position = player.position
+        self.camera!.position = CGPointMake(0,0)
         joystick.zPosition = 15
         skJoystick.addChild(joystick)
         
@@ -125,7 +124,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
 
         let skButtons = self.camera!.childNodeWithName("SKButtons")!
-        self.actionManagement =  ActionManagement(imageNamedButtonA: "buttonA", imageNamedButtonB: "buttonB", imageNamedButtonSwitch: "switch", movementManagement: self.movementManagement)
+        self.actionManagement =  ActionManagement(imageNamedButtonA: "btn_A", imageNamedButtonB: "btn_B", imageNamedButtonSwitch: "btn_Switch", movementManagement: self.movementManagement)
         skButtons.addChild(self.actionManagement)
     }
     
