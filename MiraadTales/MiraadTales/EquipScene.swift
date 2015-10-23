@@ -91,11 +91,11 @@ public class EquipScene: SKScene{
     }
     
     public override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        <#code#>
+        
     }
     
     public override func update(currentTime: NSTimeInterval) {
-        <#code#>
+        
     }
 }
 
