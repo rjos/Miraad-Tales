@@ -147,6 +147,11 @@
 		BCCBB89A1BD7B5330026EEB2 /* Rohan---Bard_11.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8521BD7B5330026EEB2 /* Rohan---Bard_11.png */; };
 		BCCBB89B1BD7B5330026EEB2 /* Rohan---Bard_12.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8531BD7B5330026EEB2 /* Rohan---Bard_12.png */; };
 		BCCBB89F1BD7C3370026EEB2 /* CollisionSetUps.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCBB89E1BD7C3370026EEB2 /* CollisionSetUps.swift */; };
+		C76D63F41BDA77E8002BF7F4 /* espada_semmoldura.png in Resources */ = {isa = PBXBuildFile; fileRef = C76D63F31BDA77E8002BF7F4 /* espada_semmoldura.png */; };
+		C76D63F61BDA7807002BF7F4 /* sabre_semcoisa.png in Resources */ = {isa = PBXBuildFile; fileRef = C76D63F51BDA7807002BF7F4 /* sabre_semcoisa.png */; };
+		C76D63F81BDA7837002BF7F4 /* elmo_semmoldura.png in Resources */ = {isa = PBXBuildFile; fileRef = C76D63F71BDA7837002BF7F4 /* elmo_semmoldura.png */; };
+		C76D63FA1BDA7861002BF7F4 /* escudo_semcoisa.png in Resources */ = {isa = PBXBuildFile; fileRef = C76D63F91BDA7861002BF7F4 /* escudo_semcoisa.png */; };
+		C76D63FC1BDA787C002BF7F4 /* X[PROTÓTIPO].png in Resources */ = {isa = PBXBuildFile; fileRef = C76D63FB1BDA787C002BF7F4 /* X[PROTÓTIPO].png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -322,6 +327,11 @@
 		BCCBB8521BD7B5330026EEB2 /* Rohan---Bard_11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Rohan---Bard_11.png"; sourceTree = "<group>"; };
 		BCCBB8531BD7B5330026EEB2 /* Rohan---Bard_12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Rohan---Bard_12.png"; sourceTree = "<group>"; };
 		BCCBB89E1BD7C3370026EEB2 /* CollisionSetUps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollisionSetUps.swift; sourceTree = "<group>"; };
+		C76D63F31BDA77E8002BF7F4 /* espada_semmoldura.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = espada_semmoldura.png; sourceTree = "<group>"; };
+		C76D63F51BDA7807002BF7F4 /* sabre_semcoisa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sabre_semcoisa.png; sourceTree = "<group>"; };
+		C76D63F71BDA7837002BF7F4 /* elmo_semmoldura.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = elmo_semmoldura.png; sourceTree = "<group>"; };
+		C76D63F91BDA7861002BF7F4 /* escudo_semcoisa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = escudo_semcoisa.png; sourceTree = "<group>"; };
+		C76D63FB1BDA787C002BF7F4 /* X[PROTÓTIPO].png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "X[PROTÓTIPO].png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -559,6 +569,11 @@
 				BC0F85921BD9136A005E424D /* bg_equipamento.png */,
 				BC0F85931BD9136A005E424D /* cajado.png */,
 				BC0F85951BD9136A005E424D /* desc1.png */,
+				C76D63F31BDA77E8002BF7F4 /* espada_semmoldura.png */,
+				C76D63F51BDA7807002BF7F4 /* sabre_semcoisa.png */,
+				C76D63F71BDA7837002BF7F4 /* elmo_semmoldura.png */,
+				C76D63F91BDA7861002BF7F4 /* escudo_semcoisa.png */,
+				C76D63FB1BDA787C002BF7F4 /* X[PROTÓTIPO].png */,
 				BC0F85961BD9136A005E424D /* desc2.png */,
 				BC0F85971BD9136A005E424D /* desc3.png */,
 				BC0F85981BD9136A005E424D /* desc4.png */,
@@ -825,6 +840,7 @@
 				BC0F858C1BD90DC5005E424D /* ground.png in Resources */,
 				BCCBB8641BD7B5330026EEB2 /* Bellatrix---Witch_05.png in Resources */,
 				BCCBB8801BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_09.png in Resources */,
+				C76D63F81BDA7837002BF7F4 /* elmo_semmoldura.png in Resources */,
 				1B4780331BD9298E007E03B5 /* CombatScene.sks in Resources */,
 				1B8EDC071BC2B074009603B6 /* GameScene.sks in Resources */,
 				1BE7D8051BC7FEDA000FA60C /* Ylla.atlas in Resources */,
@@ -852,6 +868,8 @@
 				BCCBB8931BD7B5330026EEB2 /* Rohan---Bard_04.png in Resources */,
 				BCCBB8891BD7B5330026EEB2 /* Ramdall---Black-Mage_06.png in Resources */,
 				BCCBB8981BD7B5330026EEB2 /* Rohan---Bard_09.png in Resources */,
+				C76D63FA1BDA7861002BF7F4 /* escudo_semcoisa.png in Resources */,
+				C76D63F41BDA77E8002BF7F4 /* espada_semmoldura.png in Resources */,
 				BCCBB87F1BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_08.png in Resources */,
 				BCCBB88D1BD7B5330026EEB2 /* Ramdall---Black-Mage_10.png in Resources */,
 				BC0F85B61BD9136A005E424D /* desc8.png in Resources */,
@@ -870,6 +888,7 @@
 				BCCBB8911BD7B5330026EEB2 /* Rohan---Bard_02.png in Resources */,
 				BCCBB8541BD7B5330026EEB2 /* Aemon---Tyrant_01.png in Resources */,
 				BC0F858E1BD911A4005E424D /* EquipScene.sks in Resources */,
+				C76D63FC1BDA787C002BF7F4 /* X[PROTÓTIPO].png in Resources */,
 				BCCBB8661BD7B5330026EEB2 /* Bellatrix---Witch_07.png in Resources */,
 				BCCBB87C1BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_05.png in Resources */,
 				BC0F85B41BD9136A005E424D /* desc6.png in Resources */,
@@ -901,6 +920,7 @@
 				BCCBB85C1BD7B5330026EEB2 /* Aemon---Tyrant_09.png in Resources */,
 				1B8EDC0E1BC2B074009603B6 /* Main.storyboard in Resources */,
 				BCCBB8601BD7B5330026EEB2 /* Bellatrix---Witch_01.png in Resources */,
+				C76D63F61BDA7807002BF7F4 /* sabre_semcoisa.png in Resources */,
 				BC0F85B71BD9136A005E424D /* EQUIPAMENTO.png in Resources */,
 				BC0F85B01BD9136A005E424D /* desc2.png in Resources */,
 				BCCBB8991BD7B5330026EEB2 /* Rohan---Bard_10.png in Resources */,
