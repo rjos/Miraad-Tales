@@ -151,10 +151,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 movementManagement.player.touchesBegan(touches, withEvent: event)
             }else {
                 
-//                let combatScene = CombatScene(fileNamed: "CombatScene")
-//                let transition = SKTransition.doorsOpenHorizontalWithDuration(0.5)
-//                combatScene!.scaleMode = SKSceneScaleMode.AspectFill
-//                self.scene!.view?.presentScene(combatScene!, transition: transition)
+                let combatScene = CombatScene(fileNamed: "CombatScene")!
+                combatScene.players = self.players
+                let transition = SKTransition.doorsOpenHorizontalWithDuration(0.5)
+                combatScene.scaleMode = SKSceneScaleMode.AspectFill
+                self.scene!.view?.presentScene(combatScene, transition: transition)
             }
         }
     }
@@ -179,5 +180,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         // se nao for colisao
         self.joystick.update(currentTime)
         didCollide = false;
+        
     }
+    
 }

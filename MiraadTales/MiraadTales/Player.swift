@@ -14,6 +14,7 @@ public class Player: SKSpriteNode, VLDContextSheetDelegate {
     public var lastedPosition = [CGPoint]()
     public var lastedVelocity = [CGPoint]()
     public var menuHasOpened: Bool = false
+    public var inCombat: Bool
     private var playerWalkingFrames = Array<Array<SKTexture>>()
     private let longTapPlayer: NSTimeInterval = 1.0
     private var touchStarted: NSTimeInterval? = nil
@@ -27,11 +28,12 @@ public class Player: SKSpriteNode, VLDContextSheetDelegate {
         let texture = SKTexture(imageNamed: imageNamed)
         self.viewController = viewController
         self.lastedDirection = DirectionPlayer.None
-//        super.init(imageNamed: imageNamed)
+        self.inCombat = false
         super.init(texture: texture, color: UIColor.redColor(), size: texture.size())
         setAtlas()
         self.physicsBody = SKPhysicsBody(texture: texture, alphaThreshold: 0.5, size: texture.size())
         self.physicsBody?.usesPreciseCollisionDetection = true
+        self.physicsBody?.affectedByGravity = false
         self.physicsBody?.collisionBitMask = CollisionSetUps.NPC.rawValue
         self.physicsBody?.categoryBitMask = CollisionSetUps.Player.rawValue
         self.physicsBody?.contactTestBitMask = CollisionSetUps.NPC.rawValue
@@ -124,7 +126,9 @@ public class Player: SKSpriteNode, VLDContextSheetDelegate {
                 self.creatingContextMenu()
             }
             
-            self.openContextMenu()
+            if !self.inCombat {
+                self.openContextMenu()
+            }
         }
     }
     
@@ -158,7 +162,7 @@ public class Player: SKSpriteNode, VLDContextSheetDelegate {
         self.menuHasOpened = false
     }
     
-    
+    //MARK: - Generate positions for walking other players
     public func setLastedPosition(positive: Bool, orientation: Orientation) {
         
         var sign: CGFloat = -1
@@ -194,5 +198,18 @@ public class Player: SKSpriteNode, VLDContextSheetDelegate {
             
             current = current - (0.99 * sign)
         }
+    }
+    
+    //MARK: - Configure Combat and Exploration Scene
+    public func setPlayerForCombat() {
+        self.inCombat = true
+        self.xScale = 2.5
+        self.yScale = 2.5
+        self.runAction(SKAction.animateWithTextures([self.playerWalkingFrames[2][1]], timePerFrame: 0.1, resize: false, restore: false), withKey: "Combat-\(self.race.name)")
+    }
+    
+    public func setPlayerForExploration() {
+        self.inCombat = false
+        self.removeAction()
     }
 }
