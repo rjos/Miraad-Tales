@@ -26,6 +26,7 @@ public class EquipScene: SKScene{
             var equips = currentPlayer.race.equipments
             switch node.name!{
             case "weapon1":
+                
                 if(equips[0].unlocked){
                     // equip weapon 1
                 }

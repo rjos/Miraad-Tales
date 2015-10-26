@@ -124,7 +124,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
 
         let skButtons = self.camera!.childNodeWithName("SKButtons")!
-        self.actionManagement =  ActionManagement(imageNamedButtonA: "btn_A", imageNamedButtonB: "btn_B", imageNamedButtonSwitch: "btn_Switch", movementManagement: self.movementManagement)
+        self.actionManagement =  ActionManagement(imageNamedButtonA: "A", imageNamedButtonB: "B", imageNamedButtonSwitch: "switch", movementManagement: self.movementManagement)
         skButtons.addChild(self.actionManagement)
     }
     
