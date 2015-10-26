@@ -30,6 +30,7 @@ public class Player: SKSpriteNode, VLDContextSheetDelegate {
         self.lastedDirection = DirectionPlayer.None
         self.inCombat = false
         super.init(texture: texture, color: UIColor.redColor(), size: texture.size())
+        self.texture!.filteringMode = .Nearest
         setAtlas()
         self.physicsBody = SKPhysicsBody(texture: texture, alphaThreshold: 0.5, size: texture.size())
         self.physicsBody?.usesPreciseCollisionDetection = true
@@ -203,8 +204,8 @@ public class Player: SKSpriteNode, VLDContextSheetDelegate {
     //MARK: - Configure Combat and Exploration Scene
     public func setPlayerForCombat() {
         self.inCombat = true
-        self.xScale = 2.5
-        self.yScale = 2.5
+        self.xScale = 3
+        self.yScale = 3
         self.runAction(SKAction.animateWithTextures([self.playerWalkingFrames[2][1]], timePerFrame: 0.1, resize: false, restore: false), withKey: "Combat-\(self.race.name)")
     }
     
