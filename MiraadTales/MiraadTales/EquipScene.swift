@@ -27,34 +27,34 @@ public class EquipScene: SKScene{
             switch node.name!{
             case "weapon1":
                 
-                if(equips[0].unlocked){
+                if(equips[0].baseEquip.unlocked){
                     // equip weapon 1
                 }
                 break
             case "weapon2":
-                if(equips[0].unlocked){
+                if(equips[0].baseEquip.unlocked){
                     // equip weapon 2
                 }
                 
                 break
             case "weapon3":
-                if(equips[0].unlocked){
+                if(equips[0].baseEquip.unlocked){
                     // equip weapon 3
                 }
                 break
             case "equip1":
-                if(equips[0].unlocked){
+                if(equips[0].baseEquip.unlocked){
                     // equip armor 1
                 }
                 break
             case "equip2":
-                if(equips[0].unlocked){
+                if(equips[0].baseEquip.unlocked){
                     // equip armor 2
                 }
                 break
                 
             case "equip3":
-                if(equips[0].unlocked){
+                if(equips[0].baseEquip.unlocked){
                     // equip armor 3
                 }
                 break
@@ -66,7 +66,7 @@ public class EquipScene: SKScene{
             if node.name == "equip1"{
                 // change weapon
                 for equip in currentPlayer.race.equipments{
-                    if equip.unlocked{
+                    if equip.baseEquip.unlocked{
                         
                     }
                 }

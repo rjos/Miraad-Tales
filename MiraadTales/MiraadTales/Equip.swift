@@ -8,23 +8,17 @@
 
 import UIKit
 
-public class Equip: BaseItem {
+public class Equip: SKSpriteNode {
     
-    public let ownerRace: PlayersRace
-    public let owner: BaseRace
-    public let status: Status
-    public let requiredLevel: NSNumber
-    public let skill: Skill
-    public let unlocked: Bool
+    public let baseEquip: BaseEquip
     
-    public init(name: String, ownerRace: PlayersRace, owner: BaseRace,status: Status, type:ItemType, requiredLevel: NSNumber, skill: Skill, unlocked: Bool) {
-        
-        self.ownerRace = ownerRace
-        self.owner = owner
-        self.status = status
-        self.requiredLevel = requiredLevel
-        self.skill = skill
-        self.unlocked = unlocked
-        super.init(name: name, type: type)
+    public init(imageNamed: String, baseEquip: BaseEquip) {
+        self.baseEquip = baseEquip
+        let texture = SKTexture(imageNamed: imageNamed)
+        super.init(texture: texture, color: UIColor.blackColor(), size: texture.size())
+    }
+
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
