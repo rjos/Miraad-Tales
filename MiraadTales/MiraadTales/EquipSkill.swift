@@ -164,5 +164,6 @@ public class EquipSkill {
         
         let mageEquip = [woodenStaff, gemStaff, twistedStaff, cottonTunic, silkTunic, mithrillTunic]
         
+        return []
     }
 }
