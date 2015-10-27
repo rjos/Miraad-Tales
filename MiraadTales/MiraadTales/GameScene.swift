@@ -124,7 +124,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
 
         let skButtons = self.camera!.childNodeWithName("SKButtons")!
-        self.actionManagement =  ActionManagement(imageNamedButtonA: "btn_A", imageNamedButtonB: "btn_B", imageNamedButtonSwitch: "btn_Switch", movementManagement: self.movementManagement)
+        self.actionManagement =  ActionManagement(imageNamedButtonA: "A", imageNamedButtonB: "B", imageNamedButtonSwitch: "switch", movementManagement: self.movementManagement)
         skButtons.addChild(self.actionManagement)
     }
     
@@ -151,11 +151,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 movementManagement.player.touchesBegan(touches, withEvent: event)
             }else {
                 
-                let combatScene = CombatScene(fileNamed: "CombatScene")!
-                combatScene.players = self.players
-                let transition = SKTransition.doorsOpenHorizontalWithDuration(0.5)
-                combatScene.scaleMode = SKSceneScaleMode.AspectFill
-                self.scene!.view?.presentScene(combatScene, transition: transition)
+//                let combatScene = CombatScene(fileNamed: "CombatScene")!
+//                combatScene.players = self.players
+//                let transition = SKTransition.doorsOpenHorizontalWithDuration(0.5)
+//                combatScene.scaleMode = SKSceneScaleMode.AspectFill
+//                self.scene!.view?.presentScene(combatScene, transition: transition)
             }
         }
     }

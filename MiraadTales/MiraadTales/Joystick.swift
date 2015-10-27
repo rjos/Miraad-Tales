@@ -27,25 +27,25 @@ public class Joystick: SKNode {
     public override init() {
         
         
-        self.leftButton = SKSpriteNode(imageNamed: "btn_Left")
+        self.leftButton = SKSpriteNode(imageNamed: "arrowLeft")
         self.leftButton.name = "LeftButton"
         self.leftButton.alpha = 0.7
         self.leftButton.xScale = 3
         self.leftButton.yScale = 3
         
-        self.rightButton = SKSpriteNode(imageNamed: "btn_Right")
+        self.rightButton = SKSpriteNode(imageNamed: "arrowRight")
         self.rightButton.name = "RightButton"
         self.rightButton.alpha = 0.7
         self.rightButton.xScale = 3
         self.rightButton.yScale = 3
         
-        self.upButton = SKSpriteNode(imageNamed: "btn_Up")
+        self.upButton = SKSpriteNode(imageNamed: "arrowUp")
         self.upButton.name = "UpButton"
         self.upButton.alpha = 0.7
         self.upButton.xScale = 3
         self.upButton.yScale = 3
         
-        self.downButton = SKSpriteNode(imageNamed: "btn_Down")
+        self.downButton = SKSpriteNode(imageNamed: "arrowDown")
         self.downButton.name = "DownButton"
         self.downButton.alpha = 0.7
         self.downButton.xScale = 3
