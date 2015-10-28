@@ -37,6 +37,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 //        ground.alpha = 1
 //        self.addChild(ground)
         
+        DBEquipSkill.getSkill("Fire ball")
+        
         map = self.childNodeWithName("SKMap")!
         
         self.physicsWorld.contactDelegate = self

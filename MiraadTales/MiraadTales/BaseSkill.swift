@@ -12,6 +12,7 @@ public class BaseSkill: NSObject {
     
     public let name: String
     public var equip: Equip?
+    public let ownerRace: PlayersRace
     public let status: Status
     public let criticalRate: NSNumber
     public let missRate: NSNumber
@@ -19,9 +20,10 @@ public class BaseSkill: NSObject {
     public let effect: Effect?
     public let details: String
     
-    public init(name: String, equip: Equip?, status: Status, criticalRate: NSNumber, missRate: NSNumber, consumeMana: NSNumber, effect: Effect?, details: String) {
+    public init(name: String, equip: Equip?, ownerRace: PlayersRace, status: Status, criticalRate: NSNumber, missRate: NSNumber, consumeMana: NSNumber, effect: Effect?, details: String) {
         self.name = name
         self.equip = equip
+        self.ownerRace = ownerRace
         self.status = status
         self.criticalRate = criticalRate
         self.missRate = missRate

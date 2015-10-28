@@ -17,7 +17,7 @@
 		1B881B811BDFB074000DC648 /* BaseEnemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B881B801BDFB074000DC648 /* BaseEnemy.swift */; };
 		1B881B831BDFB0AD000DC648 /* TypeEnemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B881B821BDFB0AD000DC648 /* TypeEnemy.swift */; };
 		1B881B851BDFB360000DC648 /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B881B841BDFB360000DC648 /* Enemy.swift */; };
-		1B881B881BDFB5D8000DC648 /* EquipSkill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B881B871BDFB5D8000DC648 /* EquipSkill.swift */; };
+		1B881B881BDFB5D8000DC648 /* DBEquipSkill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B881B871BDFB5D8000DC648 /* DBEquipSkill.swift */; };
 		1B881B8B1BDFCA48000DC648 /* BaseEquip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B881B8A1BDFCA48000DC648 /* BaseEquip.swift */; };
 		1B8EDC051BC2B074009603B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8EDC041BC2B074009603B6 /* AppDelegate.swift */; };
 		1B8EDC071BC2B074009603B6 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1B8EDC061BC2B074009603B6 /* GameScene.sks */; };
@@ -192,7 +192,7 @@
 		1B881B801BDFB074000DC648 /* BaseEnemy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseEnemy.swift; sourceTree = "<group>"; };
 		1B881B821BDFB0AD000DC648 /* TypeEnemy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeEnemy.swift; sourceTree = "<group>"; };
 		1B881B841BDFB360000DC648 /* Enemy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
-		1B881B871BDFB5D8000DC648 /* EquipSkill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquipSkill.swift; sourceTree = "<group>"; };
+		1B881B871BDFB5D8000DC648 /* DBEquipSkill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBEquipSkill.swift; sourceTree = "<group>"; };
 		1B881B8A1BDFCA48000DC648 /* BaseEquip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseEquip.swift; sourceTree = "<group>"; };
 		1B8EDC011BC2B074009603B6 /* MiraadTales.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiraadTales.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B8EDC041BC2B074009603B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -407,7 +407,7 @@
 		1B881B861BDFB468000DC648 /* Databases */ = {
 			isa = PBXGroup;
 			children = (
-				1B881B871BDFB5D8000DC648 /* EquipSkill.swift */,
+				1B881B871BDFB5D8000DC648 /* DBEquipSkill.swift */,
 			);
 			name = Databases;
 			sourceTree = "<group>";
@@ -992,7 +992,7 @@
 				1B881B851BDFB360000DC648 /* Enemy.swift in Sources */,
 				1BC1F4201BD2360F000CE8B3 /* ActionManagement.swift in Sources */,
 				1B9553761BD52D5C001D1FBD /* Joystick.swift in Sources */,
-				1B881B881BDFB5D8000DC648 /* EquipSkill.swift in Sources */,
+				1B881B881BDFB5D8000DC648 /* DBEquipSkill.swift in Sources */,
 				1BA00EBA1BC6B4AD00B8972A /* ItemQuest.swift in Sources */,
 				1BE7D8011BC7F855000FA60C /* Joystick.m in Sources */,
 				1B4F29801BCFD28200612BF8 /* VLDContextSheetItemView.m in Sources */,
