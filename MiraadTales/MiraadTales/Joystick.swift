@@ -85,18 +85,18 @@ public class Joystick: SKNode {
     
     public override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
-        for touch in touches {
-            
-            let location = touch.locationInNode(self)
-            
-            let nodeForPosition = self.nodeAtPoint(location)
-            
-            if nodeForPosition is SKSpriteNode {
-                self.selectButton = nodeForPosition as! SKSpriteNode
-                self.selectButton.alpha = 1
-                self.isClicked = true
-            }
-        }
+//        for touch in touches {
+//            
+//            let location = touch.locationInNode(self)
+//            
+//            let nodeForPosition = self.nodeAtPoint(location)
+//            
+//            if nodeForPosition is SKSpriteNode {
+//                self.selectButton = nodeForPosition as! SKSpriteNode
+//                self.selectButton.alpha = 1
+//                self.isClicked = true
+//            }
+//        }
     }
     
     public override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -110,6 +110,19 @@ public class Joystick: SKNode {
     
     public override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
+        for touch in touches {
+            
+            let location = touch.locationInNode(self)
+            
+            let nodeForPosition = self.nodeAtPoint(location)
+            
+            if nodeForPosition is SKSpriteNode &&  nodeForPosition.name != self.selectButton.name {
+                self.selectButton.alpha = 0.7
+                self.selectButton = nodeForPosition as! SKSpriteNode
+                self.selectButton.alpha = 1.0
+                self.isClicked = true
+            }
+        }
     }
     
     public override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
