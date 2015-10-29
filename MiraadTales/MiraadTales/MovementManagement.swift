@@ -26,6 +26,8 @@ public class MovementManagement: SKNode {
     public var players: [Player] = [Player]()
     private var isCameraStopped: Bool = false
     
+    private var running: Bool
+    
     public init(player: Player, camera: SKCameraNode, sizeMap: CGRect, joystick: Joystick, players: [Player]) {
         
         self.player = player
@@ -34,6 +36,7 @@ public class MovementManagement: SKNode {
         self.camera = camera
         self.sizeMap = sizeMap
         self.josytick = joystick
+        self.running = false
         
         let min_X_camera = ((screenSize.bounds.width * camera.xScale) * 0.5)
         let min_Y_camera = ((screenSize.bounds.height * camera.yScale) * 0.5)
@@ -99,13 +102,35 @@ public class MovementManagement: SKNode {
         
         var lastedPositionPlayer = player.position
         
+        var velocityRunning = CGPointMake(0, 0)
+        
         lastedPositionPlayer = CGPointMake(lastedPositionPlayer.x + (joystick.velocity.x), lastedPositionPlayer.y + (joystick.velocity.y))
         if lastedPositionPlayer.x >= self.minPositionPlayer.x && lastedPositionPlayer.x <= self.maxPositionPlayer.x {
-            player.position.x = lastedPositionPlayer.x
+            
+            if player.isRunning {
+                
+                if joystick.velocity.x < 0 {
+                    velocityRunning.x = -0.5
+                }else if joystick.velocity.x > 0{
+                    velocityRunning.x = 0.5
+                }
+            }
+            
+            player.position.x = lastedPositionPlayer.x + velocityRunning.x
         }
         
         if lastedPositionPlayer.y >= self.minPositionPlayer.y && lastedPositionPlayer.y <= self.maxPositionPlayer.y {
-            player.position.y = lastedPositionPlayer.y
+            
+            if player.isRunning {
+                
+                if joystick.velocity.y < 0 {
+                    velocityRunning.y = -0.5
+                }else if joystick.velocity.y > 0 {
+                    velocityRunning.y = 0.5
+                }
+            }
+            
+            player.position.y = lastedPositionPlayer.y + velocityRunning.y
         }
         
         

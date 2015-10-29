@@ -22,6 +22,8 @@ public class Player: SKSpriteNode, VLDContextSheetDelegate {
     private let viewController: UIView
     private var locationTouch: CGPoint? = nil
     public var lastedDirection: DirectionPlayer
+    public var isRunning: Bool
+    public var selectedMenuContext: String!
     
     public init(race: BaseRace, imageNamed: String, viewController: UIView) {
         self.race = race
@@ -29,6 +31,8 @@ public class Player: SKSpriteNode, VLDContextSheetDelegate {
         self.viewController = viewController
         self.lastedDirection = DirectionPlayer.None
         self.inCombat = false
+        self.isRunning = false
+        self.selectedMenuContext = nil
         super.init(texture: texture, color: UIColor.redColor(), size: texture.size())
         self.texture!.filteringMode = .Nearest
         setAtlas()
@@ -155,7 +159,8 @@ public class Player: SKSpriteNode, VLDContextSheetDelegate {
     public func contextSheet(contextSheet: VLDContextSheet!, didSelectItem item: VLDContextSheetItem!) {
         print(item.title)
         //Open menus!
-        self.menuHasOpened = false
+        self.selectedMenuContext = item.title
+        //self.menuHasOpened = false
     }
     
     public func contextSheet(contextSheet: VLDContextSheet!) {

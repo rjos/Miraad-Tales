@@ -69,10 +69,11 @@ public class ActionManagement: SKNode {
                 if nodePosition.name == "btnAction" {
                     print("Click em A")
                 }else if nodePosition.name == "btnBack" {
-                    print("Click em B")
-                }else if nodePosition.name == "btnSwitch" {
+                    if !self.movementManagement.player.inCombat {
+                        self.movementManagement.player.isRunning = true
+                    }
+                }else if nodePosition.name == "btnSwitch" && self.enableSwitch {
                     print("Click em Switch")
-                    self.enableSwitch = true
                     self.switchPlayers()
                 }
             }
@@ -81,26 +82,57 @@ public class ActionManagement: SKNode {
     
     override public func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
-        if !self.movementManagement.player.menuHasOpened {
-            let touch = touches.first!
-            
-            let location = touch.locationInNode(self)
-            
-            let nodePosition = self.nodeAtPoint(location)
-            
-            if nodePosition is SKSpriteNode {
-                //Caso queira realizar alguma ação
-            }
-            
-            if self.selectedButton != nil {
-                self.selectedButton.alpha = 0.7
-                self.selectedButton = nil
-            }
+//        for touch in touches {
+//            
+//            let location = touch.locationInNode(self)
+//            
+//            let nodeForPosition = self.nodeAtPoint(location)
+//            
+//            if nodeForPosition is SKSpriteNode && !self.movementManagement.player.menuHasOpened {
+//                
+//                if self.selectedButton != nil && self.selectedButton.name == nodeForPosition.name {
+//                    self.selectedButton.alpha = 0.7
+//                    self.selectedButton = nil
+//                }
+//            }
+//        }
+        
+        if let selectedButton = self.selectedButton {
+            selectedButton.alpha = 0.7
         }
+        
+        self.selectedButton = nil
+        self.movementManagement.player.isRunning = false
+        
+//        if !self.movementManagement.player.menuHasOpened {
+//            let touch = touches.first!
+//            
+//            let location = touch.locationInNode(self)
+//            
+//            let nodePosition = self.nodeAtPoint(location)
+//            
+//            if nodePosition is SKSpriteNode {
+//                //Caso queira realizar alguma ação
+//            }
+//            
+//            if self.selectedButton != nil {
+//            }
+//        }
     }
     
     override public func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
         self.selectedButton = nil
+        self.movementManagement.player.isRunning = false
+    }
+    
+    public func update(currentTime: NSTimeInterval) {
+        
+        if self.movementManagement.josytick.velocity == CGPointZero {
+            self.enableSwitch = true
+        }else {
+            self.enableSwitch = false
+        }
+        
     }
     
     //MARK: - Function for Switch players

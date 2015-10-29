@@ -19,7 +19,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var actionManagement: ActionManagement! = nil
     var joystick: Joystick! = nil
     var didCollide:Bool = false
-
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
@@ -131,7 +130,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func didBeginContact(contact: SKPhysicsContact) {
-          print("collideeeeeeeeee")
+          //print("collideeeeeeeeee")
         if(contact.bodyA.categoryBitMask == CollisionSetUps.Player.rawValue && contact.bodyB.collisionBitMask == CollisionSetUps.Player.rawValue){
             didCollide = true;
             print(didCollide)
@@ -140,13 +139,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
        /* Called when a touch begins */
-        
         self.actionManagement.touchesBegan(touches, withEvent: event)
         self.joystick.touchesBegan(touches, withEvent: event)
         
         for touch in touches {
             let location = touch.locationInNode(self)
-            
             let nodePosition = self.nodeAtPoint(location)
             
             if nodePosition is SKSpriteNode && nodePosition.name == movementManagement.player.name {
@@ -164,9 +161,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
    
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
-        self.actionManagement!.touchesEnded(touches, withEvent: event)
+        for touch in touches {
+            
+            let location = touch.locationInNode(self)
+            let nodePosition = self.nodeAtPoint(location)
+            
+            if nodePosition.name == "btnBack" || nodePosition.name == "btnAction" || nodePosition.name == "btnSwitch" {
+                self.actionManagement!.touchesEnded(touches, withEvent: event)
+            }else {
+                self.joystick.touchesEnded(touches, withEvent: event)
+            }
+        }
+        
         movementManagement.player.touchesEnded(touches, withEvent: event)
-        self.joystick.touchesEnded(touches, withEvent: event)
     }
     
     override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
@@ -182,11 +189,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
         
-        self.movementManagement.update(currentTime, didCollide: didCollide)
-        // se nao for colisao
-        self.joystick.update(currentTime)
-        didCollide = false;
-        
+        if !self.movementManagement.player.menuHasOpened {
+            self.movementManagement.update(currentTime, didCollide: didCollide)
+            self.actionManagement.update(currentTime)
+            // se nao for colisao
+            self.joystick.update(currentTime)
+            didCollide = false;
+        }else /* Open menu */ {
+            
+        }
     }
-    
 }
