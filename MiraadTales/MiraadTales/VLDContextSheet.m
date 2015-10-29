@@ -86,7 +86,7 @@ static CGRect VLDOrientedScreenBounds() {
 
 - (void) createSubviews {
     _backgroundView = [[UIView alloc] initWithFrame: CGRectZero];
-    _backgroundView.backgroundColor = [UIColor colorWithWhite: 0 alpha: 0.6];
+    _backgroundView.backgroundColor = [UIColor colorWithWhite: 0 alpha: 0.0];
     [self addSubview: self.backgroundView];
     
     _itemViews = [[NSMutableArray alloc] init];

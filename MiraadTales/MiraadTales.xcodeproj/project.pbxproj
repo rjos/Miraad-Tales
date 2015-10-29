@@ -40,6 +40,8 @@
 		1BA00EB81BC6B38F00B8972A /* BaseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA00EB71BC6B38F00B8972A /* BaseItem.swift */; };
 		1BA00EBA1BC6B4AD00B8972A /* ItemQuest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA00EB91BC6B4AD00B8972A /* ItemQuest.swift */; };
 		1BA00EBC1BC6B55100B8972A /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA00EBB1BC6B55100B8972A /* Item.swift */; };
+		1BB03DCD1BE26444007E7615 /* EquipmentsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB03DCC1BE26444007E7615 /* EquipmentsMenu.swift */; };
+		1BB03DCF1BE266BC007E7615 /* BackpackMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB03DCE1BE266BC007E7615 /* BackpackMenu.swift */; };
 		1BC1F4191BD1A00C000CE8B3 /* casas.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BC1F4171BD1A00C000CE8B3 /* casas.png */; };
 		1BC1F41A1BD1A00C000CE8B3 /* grama.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BC1F4181BD1A00C000CE8B3 /* grama.png */; };
 		1BC1F41D1BD1C6CB000CE8B3 /* MovementManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC1F41C1BD1C6CB000CE8B3 /* MovementManagement.swift */; };
@@ -221,6 +223,8 @@
 		1BA00EB71BC6B38F00B8972A /* BaseItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseItem.swift; sourceTree = "<group>"; };
 		1BA00EB91BC6B4AD00B8972A /* ItemQuest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemQuest.swift; sourceTree = "<group>"; };
 		1BA00EBB1BC6B55100B8972A /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		1BB03DCC1BE26444007E7615 /* EquipmentsMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquipmentsMenu.swift; sourceTree = "<group>"; };
+		1BB03DCE1BE266BC007E7615 /* BackpackMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackpackMenu.swift; sourceTree = "<group>"; };
 		1BC1F4171BD1A00C000CE8B3 /* casas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = casas.png; sourceTree = "<group>"; };
 		1BC1F4181BD1A00C000CE8B3 /* grama.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grama.png; sourceTree = "<group>"; };
 		1BC1F41C1BD1C6CB000CE8B3 /* MovementManagement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovementManagement.swift; sourceTree = "<group>"; };
@@ -485,6 +489,7 @@
 				1BE7D7FD1BC7F834000FA60C /* Joystick */,
 				1BD76E3C1BC4003800A2EDE1 /* Characters */,
 				1B881B861BDFB468000DC648 /* Databases */,
+				1BB03DCB1BE263EE007E7615 /* Menus */,
 			);
 			name = Library;
 			sourceTree = "<group>";
@@ -506,6 +511,15 @@
 				1B9BE8751BD1359300E9EE27 /* test-tilemap.tmx */,
 			);
 			name = World;
+			sourceTree = "<group>";
+		};
+		1BB03DCB1BE263EE007E7615 /* Menus */ = {
+			isa = PBXGroup;
+			children = (
+				1BB03DCC1BE26444007E7615 /* EquipmentsMenu.swift */,
+				1BB03DCE1BE266BC007E7615 /* BackpackMenu.swift */,
+			);
+			name = Menus;
 			sourceTree = "<group>";
 		};
 		1BC9101A1BD7E4AE009E2A9C /* map */ = {
@@ -980,6 +994,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCCBB89F1BD7C3370026EEB2 /* CollisionSetUps.swift in Sources */,
+				1BB03DCF1BE266BC007E7615 /* BackpackMenu.swift in Sources */,
 				1B4F297F1BCFD28200612BF8 /* VLDContextSheetItem.m in Sources */,
 				1BA00EBC1BC6B55100B8972A /* Item.swift in Sources */,
 				1BECB4CF1BC55EB300EDBB8F /* Mage.swift in Sources */,
@@ -1018,6 +1033,7 @@
 				BC0F85C91BD922F7005E424D /* EquipScene.swift in Sources */,
 				1BC1F41D1BD1C6CB000CE8B3 /* MovementManagement.swift in Sources */,
 				1B8EDC391BC2B959009603B6 /* Status.swift in Sources */,
+				1BB03DCD1BE26444007E7615 /* EquipmentsMenu.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

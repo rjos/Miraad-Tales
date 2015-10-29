@@ -127,6 +127,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let skButtons = self.camera!.childNodeWithName("SKButtons")!
         self.actionManagement =  ActionManagement(imageNamedButtonA: "A", imageNamedButtonB: "B", imageNamedButtonSwitch: "switch", movementManagement: self.movementManagement)
         skButtons.addChild(self.actionManagement)
+        
     }
     
     func didBeginContact(contact: SKPhysicsContact) {
@@ -197,6 +198,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             didCollide = false;
         }else /* Open menu */ {
             
+            if self.movementManagement.player.selectedMenuContext != nil {
+                let equipMenu = EquipmentsMenu(players: players, size: self.size)
+                equipMenu.xScale = 0.01
+                equipMenu.yScale = 0.01
+                equipMenu.position = CGPointZero
+                equipMenu.zPosition = 100
+                map.addChild(equipMenu)
+                
+                let action = SKAction.scaleTo(1.0, duration: 0.2)
+                equipMenu.runAction(action, completion: { () -> Void in
+                    equipMenu.t()
+                })
+                
+                self.movementManagement.player.selectedMenuContext = nil
+            }
         }
     }
 }
