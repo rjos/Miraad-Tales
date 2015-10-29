@@ -141,7 +141,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
        /* Called when a touch begins */
         
-        self.actionManagement!.touchesBegan(touches, withEvent: event)
+        self.actionManagement.touchesBegan(touches, withEvent: event)
         self.joystick.touchesBegan(touches, withEvent: event)
         
         for touch in touches {
@@ -173,6 +173,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.actionManagement!.touchesCancelled(touches, withEvent: event)
         movementManagement.player.touchesCancelled(touches, withEvent: event)
         joystick.touchesCancelled(touches, withEvent: event)
+    }
+    
+    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        joystick.touchesMoved(touches, withEvent: event)
     }
     
     override func update(currentTime: CFTimeInterval) {
