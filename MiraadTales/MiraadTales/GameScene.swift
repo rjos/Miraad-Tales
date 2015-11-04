@@ -19,6 +19,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var actionManagement: ActionManagement! = nil
     var joystick: Joystick! = nil
     var didCollide:Bool = false
+    var equipMenu: EquipmentsMenu! = nil
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
@@ -35,9 +36,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 //        ground.yScale = 1
 //        ground.alpha = 1
 //        self.addChild(ground)
-        
-        DBEquipSkill.getSkill("Fire ball")
-        
         map = self.childNodeWithName("SKMap")!
         
         self.physicsWorld.contactDelegate = self
@@ -50,6 +48,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         //Add Ylla
         let status = PlayerStatus(HP: 12, MP: 6, Speed: 16, pAtk: 16, mAtk: 6, pDef: 12, mDef: 6)
         let ylla = Swordsman(name: "Ylla", status: status, equipments: [Equip](), skills: [Skill](), isDie: false)
+        
+//        ylla.equipments = DBEquipSkill.getEquips(PlayersRace.Swordsman)
         
         let player = Player(race: ylla, imageNamed: "Ylla-2", viewController: self.view!)
         player.name = "ylla"
@@ -66,9 +66,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         positionCurrentPlayer = player.position
         
-        
         //Add Hydora
         let hydora = Paladin(name: "Hydora", status: status, equipments: [Equip](), skills: [Skill](), isDie: false)
+        hydora.equipments = DBEquipSkill.getEquips(PlayersRace.Paladin)
+        hydora.equipments[0].baseEquip.isEquipped = true
+        
         let pHydora = Player(race: hydora, imageNamed: "Hydora-2", viewController: self.view!)
         pHydora.name = "hydora"
         pHydora.zPosition = 15
@@ -140,6 +142,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
        /* Called when a touch begins */
+        
+        if self.movementManagement.player.menuHasOpened && equipMenu != nil {
+            equipMenu.touchesBegan(touches, withEvent: event)
+            return
+        }
+        
         self.actionManagement.touchesBegan(touches, withEvent: event)
         self.joystick.touchesBegan(touches, withEvent: event)
         
@@ -199,17 +207,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }else /* Open menu */ {
             
             if self.movementManagement.player.selectedMenuContext != nil {
-                let equipMenu = EquipmentsMenu(players: players, size: self.size)
+                equipMenu = EquipmentsMenu(players: players, currentPlayer: self.movementManagement.player, size: self.size, name: "Equipment")
+                equipMenu.position = (self.camera?.position)!
                 equipMenu.xScale = 0.01
                 equipMenu.yScale = 0.01
-                equipMenu.position = CGPointZero
-                equipMenu.zPosition = 100
+//                equipMenu.zPosition = 100
                 map.addChild(equipMenu)
                 
-                let action = SKAction.scaleTo(1.0, duration: 0.2)
-                equipMenu.runAction(action, completion: { () -> Void in
-                    equipMenu.t()
-                })
+                equipMenu.open()
                 
                 self.movementManagement.player.selectedMenuContext = nil
             }

@@ -118,7 +118,7 @@ class CombatScene: SKScene {
     private func setSkillFromPlayer(player: Player) {
         
         let skills = player.race.skills
-        let currentPosition = CGPointZero
+        //let currentPosition: CGPoint = CGPointZero
         
         for var i = 0; i < skills.count; ++i {
             

@@ -41,13 +41,17 @@ public class MovementManagement: SKNode {
         let min_X_camera = ((screenSize.bounds.width * camera.xScale) * 0.5)
         let min_Y_camera = ((screenSize.bounds.height * camera.yScale) * 0.5)
         
+        //Menor posição que a camera pode movimentar
         self.minPositionCamera = CGPointMake(min_X_camera - (self.sizeMap.width * 0.5), min_Y_camera - (self.sizeMap.height * 0.5))
+        //Mair posição que a camera pode movimentar
         self.maxPositionCamera = CGPointMake((self.sizeMap.width * 0.5) - min_X_camera, (self.sizeMap.height * 0.5) - min_Y_camera)
         
         let min_X_player = (player.size.width * 0.5) - (self.sizeMap.width * 0.5)
         let min_Y_player = (player.size.height * 0.5) - (self.sizeMap.height * 0.5)
         
+        //Menor posição que o player pode movimentar
         self.minPositionPlayer = CGPointMake(min_X_player, min_Y_player)
+        //Maior posição que o player pode movimentar
         self.maxPositionPlayer = CGPointMake((self.sizeMap.width * 0.5) - (player.size.width * 0.5), (self.sizeMap.height * 0.5) - (player.size.height * 0.5))
         
         self.players = players
@@ -78,11 +82,13 @@ public class MovementManagement: SKNode {
         moveCamera(self.camera, player: self.player)
     }
     
-    //MARK: - Functions for move Camera and Players
+    //MARK: - Move Camera and Players
     private func moveCamera(camera: SKCameraNode, player: Player) {
         
+        //Atual posição da camera
         let lastedPositionCamera = camera.position
         
+        //Verificando parametros de movimentação da camera
         if player.position.x >= self.minPositionCamera.x && player.position.x <= self.maxPositionCamera.x {
             camera.position.x = player.position.x
             self.isCameraStopped = false
@@ -93,6 +99,7 @@ public class MovementManagement: SKNode {
             self.isCameraStopped = false
         }
         
+        //Verificar se não ocorreu movimentação na camera
         if camera.position.x == lastedPositionCamera.x && camera.position.y == lastedPositionCamera.y {
             self.isCameraStopped = true
         }
@@ -100,13 +107,16 @@ public class MovementManagement: SKNode {
     
     private func movePlayer(player: Player, joystick: Joystick, didCollide: Bool) {
         
+        //Atual posição do players
         var lastedPositionPlayer = player.position
         
+        //Velocidade para correr
         var velocityRunning = CGPointMake(0, 0)
         
         lastedPositionPlayer = CGPointMake(lastedPositionPlayer.x + (joystick.velocity.x), lastedPositionPlayer.y + (joystick.velocity.y))
         if lastedPositionPlayer.x >= self.minPositionPlayer.x && lastedPositionPlayer.x <= self.maxPositionPlayer.x {
             
+            //Incrementar velocidade X se estiver correndo
             if player.isRunning {
                 
                 if joystick.velocity.x < 0 {
@@ -121,6 +131,7 @@ public class MovementManagement: SKNode {
         
         if lastedPositionPlayer.y >= self.minPositionPlayer.y && lastedPositionPlayer.y <= self.maxPositionPlayer.y {
             
+            //Incrementar velocidade Y se estiver correndo
             if player.isRunning {
                 
                 if joystick.velocity.y < 0 {
@@ -133,11 +144,12 @@ public class MovementManagement: SKNode {
             player.position.y = lastedPositionPlayer.y + velocityRunning.y
         }
         
-        
+        //Verifica se a direção mudou
         if joystick.direction != player.lastedDirection {
             player.walkingPlayer(josytick.direction)
         }
         
+        //Movimentar outros personagens se a direção for diferente de None ou se não tiver colisão
         if joystick.direction != DirectionPlayer.None && !didCollide {
             self.movimentOtherPlayers()
         }else if (joystick.direction == DirectionPlayer.None && self.player.lastedDirection == DirectionPlayer.None) || didCollide {
@@ -149,17 +161,24 @@ public class MovementManagement: SKNode {
         
         for (var i = 1; i < self.players.count; i++) {
             
+            //Obter última posição do players principal
             let newPosition = self.players[i-1].lastedPosition.last!
             
+            //Incluir atual posição do player no vetor de posições
             self.players[i].lastedPosition.insert(self.players[i].position, atIndex: 0)
             
+            //Obtendo direção para aplicar a animação de andar
             let direction = self.calculateDirection(self.players[i].position, newPosition: newPosition)
             
+            //Se direção mudar, trocar a animação
             if direction != self.players[i].lastedDirection {
                 self.players[i].walkingPlayer(direction)
             }
             
+            //Setando nova posição
             self.players[i].position = newPosition
+            
+            //Removendo posição que andou do array do player principal
             self.players[i-1].lastedPosition.removeLast()
         }
     }
@@ -171,13 +190,16 @@ public class MovementManagement: SKNode {
         }
     }
     
-    //MARK: -Function for switch between players
+    //MARK: Switch players
     public func changePlayer(indexNewPlayer: Int) {
         
+        //Trocar valor zPosition do current Player anterior a mudança
         self.player.zPosition -= 2
         
+        //Selectionando novo player principal
         let newPlayer = self.players[indexNewPlayer]
         
+        //Trocando posições do array
         let tempPlayer = self.players[0]
         tempPlayer.alpha = 0.7
         
@@ -188,14 +210,12 @@ public class MovementManagement: SKNode {
         self.player.alpha = 1
         self.player.zPosition += 2
         
+        //removendo antigas posições para recalcular futuramente
         self.player.lastedPosition.removeAll()
         
         //Validar posição dos personagens
         let X = tempPlayer.position.x - self.player.position.x
         let Y = tempPlayer.position.y - self.player.position.y
-        
-        print(X)
-        print(Y)
         
         //Movimentar na vertical
         if X > -30 && X < 30 {
@@ -216,22 +236,23 @@ public class MovementManagement: SKNode {
             }
         }
         
-        //self.player.setLastedPosition(false)
-        
+        //Mover a camera para a posição do novo player
         if !self.isCameraStopped {
             let move = SKAction.moveTo(self.player.position, duration: 0.1)
             self.camera.runAction(move)
         }
     }
     
+    //Function:
     private func calculateDirection(currentPosition: CGPoint, newPosition:CGPoint) -> DirectionPlayer {
         
         var direction: DirectionPlayer = DirectionPlayer.None
         
+        //Obtendo vetor de direção
         let x = newPosition.x - currentPosition.x
         let y = newPosition.y - currentPosition.y
         
-        if x == 0 {
+        if x == 0 /*Direção na Vertical*/ {
             
             if y > 0 {
                 direction = DirectionPlayer.Up
@@ -239,7 +260,7 @@ public class MovementManagement: SKNode {
                 direction = DirectionPlayer.Down
             }
             
-        }else {
+        }else /*Direção na Horizontal*/ {
             
             if x > 0 {
                 direction = DirectionPlayer.Right

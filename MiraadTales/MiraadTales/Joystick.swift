@@ -15,8 +15,6 @@ public class Joystick: SKNode {
     private let upButton: SKSpriteNode
     private let downButton: SKSpriteNode
     
-    private let centerJoystick: SKSpriteNode
-    
     public var velocity: CGPoint
     public var direction: DirectionPlayer
     
@@ -50,8 +48,6 @@ public class Joystick: SKNode {
         self.downButton.alpha = 0.7
         self.downButton.xScale = 3
         self.downButton.yScale = 3
-        
-        self.centerJoystick = SKSpriteNode(imageNamed: "bolinha")
         
         self.velocity = CGPointZero
         

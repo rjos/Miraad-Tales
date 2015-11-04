@@ -12,20 +12,19 @@ public class Player: SKSpriteNode, VLDContextSheetDelegate {
     
     public var race: BaseRace
     public var lastedPosition = [CGPoint]()
-    public var lastedVelocity = [CGPoint]()
     public var menuHasOpened: Bool = false
     public var inCombat: Bool
+    public var lastedDirection: DirectionPlayer
+    public var isRunning: Bool
+    public var selectedMenuContext: String!
     private var playerWalkingFrames = Array<Array<SKTexture>>()
     private let longTapPlayer: NSTimeInterval = 1.0
     private var touchStarted: NSTimeInterval? = nil
     private var contextMenuPlayer: VLDContextSheet? = nil
-    private let viewController: UIView
+    private var viewController: UIView? = nil
     private var locationTouch: CGPoint? = nil
-    public var lastedDirection: DirectionPlayer
-    public var isRunning: Bool
-    public var selectedMenuContext: String!
     
-    public init(race: BaseRace, imageNamed: String, viewController: UIView) {
+    public init(race: BaseRace, imageNamed: String, viewController: UIView?) {
         self.race = race
         let texture = SKTexture(imageNamed: imageNamed)
         self.viewController = viewController
@@ -33,9 +32,20 @@ public class Player: SKSpriteNode, VLDContextSheetDelegate {
         self.inCombat = false
         self.isRunning = false
         self.selectedMenuContext = nil
+        
         super.init(texture: texture, color: UIColor.redColor(), size: texture.size())
+        
+        //Filtro para não suavizar o pixel
         self.texture!.filteringMode = .Nearest
+        
+        //Set atlas animação do player
         setAtlas()
+        
+        //Set physics Body do player
+        setPhysicsBodyPlayer(texture)
+    }
+
+    private func setPhysicsBodyPlayer(texture: SKTexture) {
         self.physicsBody = SKPhysicsBody(texture: texture, alphaThreshold: 0.5, size: texture.size())
         self.physicsBody?.usesPreciseCollisionDetection = true
         self.physicsBody?.affectedByGravity = false
@@ -43,22 +53,23 @@ public class Player: SKSpriteNode, VLDContextSheetDelegate {
         self.physicsBody?.categoryBitMask = CollisionSetUps.Player.rawValue
         self.physicsBody?.contactTestBitMask = CollisionSetUps.NPC.rawValue
         self.physicsBody?.allowsRotation = false
-
-//        self.physicsWorld.gravity = CGVectorMake( 0.0, 0.0 );
     }
-
+    
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     //MARK: - Get Atlas from animated walking
     private func setAtlas() {
+        //Obtem atlas a partir do nome do player
         let playerAnimatedAtlas = SKTextureAtlas(named: self.race.name)
         var walkFrames = [SKTexture]()
         
+        //Obtem a quantidade de frames no atlas
         let numImages = playerAnimatedAtlas.textureNames.count
         
         for var i = 0; i < numImages; i = i + 3 {
+            //Adicionar os frames de acordo com cada direção da animação
             for var j = 1; j <= 3; j++ {
                 let playerTextureName = "\(self.race.name)-\(i + j)"
                 walkFrames.append(playerAnimatedAtlas.textureNamed(playerTextureName))
@@ -110,7 +121,11 @@ public class Player: SKSpriteNode, VLDContextSheetDelegate {
     //MARK: - Event touches
     public override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
-        if let touch = touches.first {
+        if self.viewController == nil {
+            return
+        }
+        
+        if let touch = touches.first{
             
             touchStarted = touch.timestamp
             locationTouch = touch.locationInView(self.viewController)
@@ -124,7 +139,7 @@ public class Player: SKSpriteNode, VLDContextSheetDelegate {
     //MARK: - Update method
     public func update(currentTime: CFTimeInterval) {
         
-        if touchStarted != nil && ((currentTime - touchStarted!) >= longTapPlayer) {
+        if (touchStarted != nil && ((currentTime - touchStarted!) >= longTapPlayer)) && self.viewController != nil {
             
             touchStarted = nil
             if self.contextMenuPlayer == nil {
@@ -151,16 +166,15 @@ public class Player: SKSpriteNode, VLDContextSheetDelegate {
     }
     
     private func openContextMenu() {
-        //let tapRecognizer = UITapGestureRecognizer(target: self.viewController, action: nil)
         self.contextMenuPlayer?.startWithGestureRecognizer(self.locationTouch!, inView: self.viewController)
         self.menuHasOpened = true
     }
     
     public func contextSheet(contextSheet: VLDContextSheet!, didSelectItem item: VLDContextSheetItem!) {
         print(item.title)
+        
         //Open menus!
         self.selectedMenuContext = item.title
-        //self.menuHasOpened = false
     }
     
     public func contextSheet(contextSheet: VLDContextSheet!) {
@@ -171,13 +185,16 @@ public class Player: SKSpriteNode, VLDContextSheetDelegate {
     //MARK: - Generate positions for walking other players
     public func setLastedPosition(positive: Bool, orientation: Orientation) {
         
+        //Sinal de direção para calcular as posições entre a final e inicial
         var sign: CGFloat = -1
         
         if positive {
             sign = 1
         }
         
+        //Posição final do player
         var targetPosition: CGFloat
+        //Posição atual do player
         var current: CGFloat
         
         switch orientation {

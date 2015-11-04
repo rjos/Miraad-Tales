@@ -14,15 +14,15 @@ public class BaseEquip: BaseItem {
     public let status: Status
     public let requiredLevel: NSNumber
     public var skill: Skill?
-    public let unlocked: Bool
+    public var isEquipped: Bool
     
-    public init(name: String, ownerRace: PlayersRace, status: Status, type:ItemType, requiredLevel: NSNumber, skill: Skill?, unlocked: Bool) {
+    public init(name: String, ownerRace: PlayersRace, status: Status, type:ItemType, requiredLevel: NSNumber, skill: Skill?, isEquipped: Bool) {
         
         self.ownerRace = ownerRace
         self.status = status
         self.requiredLevel = requiredLevel
         self.skill = skill
-        self.unlocked = unlocked
+        self.isEquipped = isEquipped
         super.init(name: name, type: type)
     }
 
