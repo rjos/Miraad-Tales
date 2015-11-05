@@ -60,6 +60,12 @@
 		1BA3ED7D1BEA4AC200F9E3E3 /* Punishment.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BA3ED7C1BEA4AC200F9E3E3 /* Punishment.png */; };
 		1BB03DCD1BE26444007E7615 /* EquipmentsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB03DCC1BE26444007E7615 /* EquipmentsMenu.swift */; };
 		1BB03DCF1BE266BC007E7615 /* BackpackMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB03DCE1BE266BC007E7615 /* BackpackMenu.swift */; };
+		1BB6D30F1BEB883C007229DA /* Mvp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB6D30E1BEB883C007229DA /* Mvp.swift */; };
+		1BB6D3111BEB8867007229DA /* Mvp.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1BB6D3101BEB8867007229DA /* Mvp.sks */; };
+		1BB6D3141BEB88BF007229DA /* bgMVP.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BB6D3131BEB88BF007229DA /* bgMVP.png */; };
+		1BB6D3161BEB89E1007229DA /* rocks.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BB6D3151BEB89E1007229DA /* rocks.png */; };
+		1BB6D3181BEBAD72007229DA /* bones.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BB6D3171BEBAD72007229DA /* bones.png */; };
+		1BB6D31A1BEBAD7D007229DA /* stones.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BB6D3191BEBAD7D007229DA /* stones.png */; };
 		1BC1F4191BD1A00C000CE8B3 /* casas.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BC1F4171BD1A00C000CE8B3 /* casas.png */; };
 		1BC1F41A1BD1A00C000CE8B3 /* grama.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BC1F4181BD1A00C000CE8B3 /* grama.png */; };
 		1BC1F41D1BD1C6CB000CE8B3 /* MovementManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC1F41C1BD1C6CB000CE8B3 /* MovementManagement.swift */; };
@@ -259,6 +265,12 @@
 		1BA3ED7C1BEA4AC200F9E3E3 /* Punishment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Punishment.png; sourceTree = "<group>"; };
 		1BB03DCC1BE26444007E7615 /* EquipmentsMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquipmentsMenu.swift; sourceTree = "<group>"; };
 		1BB03DCE1BE266BC007E7615 /* BackpackMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackpackMenu.swift; sourceTree = "<group>"; };
+		1BB6D30E1BEB883C007229DA /* Mvp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Mvp.swift; path = ../Mvp.swift; sourceTree = "<group>"; };
+		1BB6D3101BEB8867007229DA /* Mvp.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Mvp.sks; sourceTree = "<group>"; };
+		1BB6D3131BEB88BF007229DA /* bgMVP.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bgMVP.png; sourceTree = "<group>"; };
+		1BB6D3151BEB89E1007229DA /* rocks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rocks.png; sourceTree = "<group>"; };
+		1BB6D3171BEBAD72007229DA /* bones.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bones.png; sourceTree = "<group>"; };
+		1BB6D3191BEBAD7D007229DA /* stones.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stones.png; sourceTree = "<group>"; };
 		1BC1F4171BD1A00C000CE8B3 /* casas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = casas.png; sourceTree = "<group>"; };
 		1BC1F4181BD1A00C000CE8B3 /* grama.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grama.png; sourceTree = "<group>"; };
 		1BC1F41C1BD1C6CB000CE8B3 /* MovementManagement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovementManagement.swift; sourceTree = "<group>"; };
@@ -484,6 +496,8 @@
 				1B9BE8741BD1357600E9EE27 /* World */,
 				1BE7D7E31BC7E2EB000FA60C /* Assets */,
 				1B8EDC361BC2B0FC009603B6 /* Library */,
+				1BB6D30E1BEB883C007229DA /* Mvp.swift */,
+				1BB6D3101BEB8867007229DA /* Mvp.sks */,
 				1B8EDC061BC2B074009603B6 /* GameScene.sks */,
 				1B8EDC081BC2B074009603B6 /* GameScene.swift */,
 				1B8EDC041BC2B074009603B6 /* AppDelegate.swift */,
@@ -616,11 +630,24 @@
 			name = HUD;
 			sourceTree = "<group>";
 		};
-		1BC9101A1BD7E4AE009E2A9C /* map */ = {
+		1BB6D3121BEB88A0007229DA /* MVP */ = {
 			isa = PBXGroup;
 			children = (
+				1BB6D3191BEBAD7D007229DA /* stones.png */,
+				1BB6D3171BEBAD72007229DA /* bones.png */,
+				1BB6D3151BEB89E1007229DA /* rocks.png */,
+				1BB6D3131BEB88BF007229DA /* bgMVP.png */,
+			);
+			name = MVP;
+			sourceTree = "<group>";
+		};
+		1BC9101A1BD7E4AE009E2A9C /* Maps */ = {
+			isa = PBXGroup;
+			children = (
+				1BB6D3121BEB88A0007229DA /* MVP */,
 				1BC910211BD7E4AE009E2A9C /* public_tileset_by_orohnpokemon-d4vpcfu copy.png */,
 			);
+			name = Maps;
 			path = map;
 			sourceTree = "<group>";
 		};
@@ -666,7 +693,7 @@
 			children = (
 				1BA3ED751BEA4A6A00F9E3E3 /* Equipments */,
 				1B46EAC31BE58F8A005E040B /* HUD */,
-				1BC9101A1BD7E4AE009E2A9C /* map */,
+				1BC9101A1BD7E4AE009E2A9C /* Maps */,
 				BC0F858B1BD90DC5005E424D /* ground.png */,
 				BC0F858F1BD9136A005E424D /* Equipamento */,
 				BCCBB8061BD7B5330026EEB2 /* Aemon */,
@@ -982,6 +1009,7 @@
 				BCCBB8701BD7B5330026EEB2 /* Herb_05.png in Resources */,
 				BC0F85BD1BD9136A005E424D /* moldura.png in Resources */,
 				BCCBB87B1BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_04.png in Resources */,
+				1BB6D3181BEBAD72007229DA /* bones.png in Resources */,
 				BC0F858C1BD90DC5005E424D /* ground.png in Resources */,
 				BCCBB8641BD7B5330026EEB2 /* Bellatrix---Witch_05.png in Resources */,
 				BCCBB8801BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_09.png in Resources */,
@@ -1016,9 +1044,11 @@
 				BCCBB8841BD7B5330026EEB2 /* Ramdall---Black-Mage_01.png in Resources */,
 				BCCBB8931BD7B5330026EEB2 /* Rohan---Bard_04.png in Resources */,
 				BCCBB8891BD7B5330026EEB2 /* Ramdall---Black-Mage_06.png in Resources */,
+				1BB6D31A1BEBAD7D007229DA /* stones.png in Resources */,
 				BCCBB8981BD7B5330026EEB2 /* Rohan---Bard_09.png in Resources */,
 				C76D63FA1BDA7861002BF7F4 /* escudo_semcoisa.png in Resources */,
 				C76D63F41BDA77E8002BF7F4 /* espada_semmoldura.png in Resources */,
+				1BB6D3161BEB89E1007229DA /* rocks.png in Resources */,
 				BCCBB87F1BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_08.png in Resources */,
 				BCCBB88D1BD7B5330026EEB2 /* Ramdall---Black-Mage_10.png in Resources */,
 				BC0F85B61BD9136A005E424D /* desc8.png in Resources */,
@@ -1030,6 +1060,7 @@
 				BCCBB8681BD7B5330026EEB2 /* Bellatrix---Witch_09.png in Resources */,
 				BCCBB85A1BD7B5330026EEB2 /* Aemon---Tyrant_07.png in Resources */,
 				BCCBB8721BD7B5330026EEB2 /* Herb_07.png in Resources */,
+				1BB6D3141BEB88BF007229DA /* bgMVP.png in Resources */,
 				BCCBB8671BD7B5330026EEB2 /* Bellatrix---Witch_08.png in Resources */,
 				1B9BE8761BD1359300E9EE27 /* test-tilemap.tmx in Resources */,
 				1BA3ED721BEA3CB700F9E3E3 /* markAtk.png in Resources */,
@@ -1054,6 +1085,7 @@
 				BCCBB86B1BD7B5330026EEB2 /* Bellatrix---Witch_12.png in Resources */,
 				BCCBB8571BD7B5330026EEB2 /* Aemon---Tyrant_04.png in Resources */,
 				BCCBB8821BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_11.png in Resources */,
+				1BB6D3111BEB8867007229DA /* Mvp.sks in Resources */,
 				BCCBB89A1BD7B5330026EEB2 /* Rohan---Bard_11.png in Resources */,
 				BCCBB8731BD7B5330026EEB2 /* Herb_08.png in Resources */,
 				1B9CD2DC1BE8FABD003C1834 /* bgMenuEquipment.png in Resources */,
@@ -1120,6 +1152,7 @@
 				1BC1F4201BD2360F000CE8B3 /* ActionManagement.swift in Sources */,
 				1B9553761BD52D5C001D1FBD /* Joystick.swift in Sources */,
 				1B881B881BDFB5D8000DC648 /* DBEquipSkill.swift in Sources */,
+				1BB6D30F1BEB883C007229DA /* Mvp.swift in Sources */,
 				1BA00EBA1BC6B4AD00B8972A /* ItemQuest.swift in Sources */,
 				1BE7D8011BC7F855000FA60C /* Joystick.m in Sources */,
 				1B4F29801BCFD28200612BF8 /* VLDContextSheetItemView.m in Sources */,
