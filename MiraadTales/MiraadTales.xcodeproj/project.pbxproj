@@ -78,7 +78,6 @@
 		1BECB4D51BC563F700EDBB8F /* StatusList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BECB4D41BC563F700EDBB8F /* StatusList.swift */; };
 		1BEDA5691BCE8B8800C95A73 /* Hydora.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1BEDA5681BCE8B8800C95A73 /* Hydora.atlas */; };
 		BC0F858C1BD90DC5005E424D /* ground.png in Resources */ = {isa = PBXBuildFile; fileRef = BC0F858B1BD90DC5005E424D /* ground.png */; };
-		BC0F858E1BD911A4005E424D /* EquipScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = BC0F858D1BD911A4005E424D /* EquipScene.sks */; };
 		BC0F85AC1BD9136A005E424D /* bg_equipamento.png in Resources */ = {isa = PBXBuildFile; fileRef = BC0F85921BD9136A005E424D /* bg_equipamento.png */; };
 		BC0F85AD1BD9136A005E424D /* cajado.png in Resources */ = {isa = PBXBuildFile; fileRef = BC0F85931BD9136A005E424D /* cajado.png */; };
 		BC0F85AF1BD9136A005E424D /* desc1.png in Resources */ = {isa = PBXBuildFile; fileRef = BC0F85951BD9136A005E424D /* desc1.png */; };
@@ -99,7 +98,6 @@
 		BC0F85C21BD9136A005E424D /* tela_equipamento.svg in Resources */ = {isa = PBXBuildFile; fileRef = BC0F85A81BD9136A005E424D /* tela_equipamento.svg */; };
 		BC0F85C61BD91D05005E424D /* hydora-retrato.png in Resources */ = {isa = PBXBuildFile; fileRef = BC0F85C41BD91D05005E424D /* hydora-retrato.png */; };
 		BC0F85C71BD91D05005E424D /* tio-retrato.png in Resources */ = {isa = PBXBuildFile; fileRef = BC0F85C51BD91D05005E424D /* tio-retrato.png */; };
-		BC0F85C91BD922F7005E424D /* EquipScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0F85C81BD922F6005E424D /* EquipScene.swift */; };
 		BCCBB8541BD7B5330026EEB2 /* Aemon---Tyrant_01.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8071BD7B5330026EEB2 /* Aemon---Tyrant_01.png */; };
 		BCCBB8551BD7B5330026EEB2 /* Aemon---Tyrant_02.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8081BD7B5330026EEB2 /* Aemon---Tyrant_02.png */; };
 		BCCBB8561BD7B5330026EEB2 /* Aemon---Tyrant_03.png in Resources */ = {isa = PBXBuildFile; fileRef = BCCBB8091BD7B5330026EEB2 /* Aemon---Tyrant_03.png */; };
@@ -282,7 +280,6 @@
 		1BECB4D41BC563F700EDBB8F /* StatusList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusList.swift; sourceTree = "<group>"; };
 		1BEDA5681BCE8B8800C95A73 /* Hydora.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Hydora.atlas; sourceTree = "<group>"; };
 		BC0F858B1BD90DC5005E424D /* ground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ground.png; sourceTree = "<group>"; };
-		BC0F858D1BD911A4005E424D /* EquipScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EquipScene.sks; sourceTree = "<group>"; };
 		BC0F85921BD9136A005E424D /* bg_equipamento.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_equipamento.png; sourceTree = "<group>"; };
 		BC0F85931BD9136A005E424D /* cajado.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cajado.png; sourceTree = "<group>"; };
 		BC0F85951BD9136A005E424D /* desc1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = desc1.png; sourceTree = "<group>"; };
@@ -304,7 +301,6 @@
 		BC0F85A81BD9136A005E424D /* tela_equipamento.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = tela_equipamento.svg; sourceTree = "<group>"; };
 		BC0F85C41BD91D05005E424D /* hydora-retrato.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hydora-retrato.png"; sourceTree = "<group>"; };
 		BC0F85C51BD91D05005E424D /* tio-retrato.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tio-retrato.png"; sourceTree = "<group>"; };
-		BC0F85C81BD922F6005E424D /* EquipScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquipScene.swift; sourceTree = "<group>"; };
 		BCCBB8071BD7B5330026EEB2 /* Aemon---Tyrant_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Aemon---Tyrant_01.png"; sourceTree = "<group>"; };
 		BCCBB8081BD7B5330026EEB2 /* Aemon---Tyrant_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Aemon---Tyrant_02.png"; sourceTree = "<group>"; };
 		BCCBB8091BD7B5330026EEB2 /* Aemon---Tyrant_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Aemon---Tyrant_03.png"; sourceTree = "<group>"; };
@@ -488,8 +484,6 @@
 				1B9BE8741BD1357600E9EE27 /* World */,
 				1BE7D7E31BC7E2EB000FA60C /* Assets */,
 				1B8EDC361BC2B0FC009603B6 /* Library */,
-				BC0F858D1BD911A4005E424D /* EquipScene.sks */,
-				BC0F85C81BD922F6005E424D /* EquipScene.swift */,
 				1B8EDC061BC2B074009603B6 /* GameScene.sks */,
 				1B8EDC081BC2B074009603B6 /* GameScene.swift */,
 				1B8EDC041BC2B074009603B6 /* AppDelegate.swift */,
@@ -1045,7 +1039,6 @@
 				1BA3ED7B1BEA4ABC00F9E3E3 /* Warhammer.png in Resources */,
 				BCCBB8541BD7B5330026EEB2 /* Aemon---Tyrant_01.png in Resources */,
 				1BA3ED6E1BEA3BC600F9E3E3 /* bgAttackSkill.png in Resources */,
-				BC0F858E1BD911A4005E424D /* EquipScene.sks in Resources */,
 				1B9CD2E21BE8FBA0003C1834 /* bgEquip.png in Resources */,
 				BCCBB8661BD7B5330026EEB2 /* Bellatrix---Witch_07.png in Resources */,
 				BCCBB87C1BD7B5330026EEB2 /* Marge---Old-Farmer's-Wife_05.png in Resources */,
@@ -1150,7 +1143,6 @@
 				1B881B831BDFB0AD000DC648 /* TypeEnemy.swift in Sources */,
 				1B4780311BD9297B007E03B5 /* CombatScene.swift in Sources */,
 				1BA00EB41BC6AB2C00B8972A /* Player.swift in Sources */,
-				BC0F85C91BD922F7005E424D /* EquipScene.swift in Sources */,
 				1BC1F41D1BD1C6CB000CE8B3 /* MovementManagement.swift in Sources */,
 				1B8EDC391BC2B959009603B6 /* Status.swift in Sources */,
 				1BB03DCD1BE26444007E7615 /* EquipmentsMenu.swift in Sources */,

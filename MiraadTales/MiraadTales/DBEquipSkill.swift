@@ -166,29 +166,29 @@ public class DBEquipSkill {
     
     private static func createListSkillSwordsman() -> [Skill] {
         let statusBladeSweep = Status(HP: 0, MP: 0, Speed: 0, pAtk: 90, mAtk: 0, pDef: 0, mDef: 0)
-        let bladeSweep = BaseSkill(name: "Blade Sweep", fantasyName: "", equip: nil, ownerRace: PlayersRace.Swordsman, status: statusBladeSweep, criticalRate: 8, missRate: 2, consumeMana: 0, effect: nil, details: "")
+        let bladeSweep = BaseSkill(name: "Blade Sweep", fantasyName: "Basic hit", equip: nil, ownerRace: PlayersRace.Swordsman, status: statusBladeSweep, criticalRate: 8, missRate: 2, consumeMana: 0, effect: nil, details: "")
         
         let statusCrossCut = Status(HP: 0, MP: 0, Speed: 0, pAtk: 160, mAtk: 0, pDef: 0, mDef: 0)
         let effectCrossCut = Effect(target: TargetSkill.SingleEnemy, affect: AffectSkill.pDef, percenteEffects: 20)
-        let crossCut = BaseSkill(name: "Cross Cut", fantasyName: "", equip: nil, ownerRace: PlayersRace.Swordsman, status: statusCrossCut, criticalRate: 5, missRate: 5, consumeMana: 24, effect: effectCrossCut, details: "Decrease target defense")
+        let crossCut = BaseSkill(name: "Cross Cut", fantasyName: "Cross cut", equip: nil, ownerRace: PlayersRace.Swordsman, status: statusCrossCut, criticalRate: 5, missRate: 5, consumeMana: 24, effect: effectCrossCut, details: "Decrease target defense")
         
-        let statusArmorPierce = Status(HP: 0, MP: 0, Speed: 0, pAtk: 250, mAtk: 0, pDef: 0, mDef: 0)
-        let effectArmorPierce = Effect(target: TargetSkill.SingleEnemy, affect: AffectSkill.HP, percenteEffects: 100)
-        let armorPierce = BaseSkill(name: "Armor Pierce", fantasyName: "", equip: nil, ownerRace: PlayersRace.Swordsman, status: statusArmorPierce, criticalRate: 2, missRate: 15, consumeMana: 40, effect: effectArmorPierce, details: "")
+        let statusBackstab = Status(HP: 0, MP: 0, Speed: 0, pAtk: 250, mAtk: 0, pDef: 0, mDef: 0)
+        let effectBackstab = Effect(target: TargetSkill.SingleEnemy, affect: AffectSkill.HP, percenteEffects: 100)
+        let backstab = BaseSkill(name: "Backstab", fantasyName: "Backstab", equip: nil, ownerRace: PlayersRace.Swordsman, status: statusBackstab, criticalRate: 2, missRate: 15, consumeMana: 40, effect: effectBackstab, details: "")
         
         let statusSpeedBoost = Status(HP: 0, MP: 0, Speed: 0, pAtk: 0, mAtk: 0, pDef: 0, mDef: 0)
         let effectSpeedBoost = Effect(target: TargetSkill.SinglePlayer, affect: AffectSkill.Speed, percenteEffects: 20)
-        let speedBoost = BaseSkill(name: "Speed Boost", fantasyName: "", equip: nil, ownerRace: PlayersRace.Swordsman, status: statusSpeedBoost, criticalRate: 0, missRate: 0, consumeMana: 24, effect: effectSpeedBoost, details: "Increase user speed")
+        let speedBoost = BaseSkill(name: "Speed Boost", fantasyName: "Spd. boost", equip: nil, ownerRace: PlayersRace.Swordsman, status: statusSpeedBoost, criticalRate: 0, missRate: 0, consumeMana: 24, effect: effectSpeedBoost, details: "Increase user speed")
         
         let statusAttackBoost = Status(HP: 0, MP: 0, Speed: 0, pAtk: 0, mAtk: 0, pDef: 0, mDef: 0)
         let effectAttackBoost = Effect(target: TargetSkill.SinglePlayer, affect: AffectSkill.pAtk, percenteEffects: 20)
-        let attackBoost = BaseSkill(name: "Attack Boost", fantasyName: "", equip: nil, ownerRace: PlayersRace.Swordsman, status: statusAttackBoost, criticalRate: 0, missRate: 0, consumeMana: 48, effect: effectAttackBoost, details: "Increase user attack")
+        let attackBoost = BaseSkill(name: "Attack Boost", fantasyName: "Atk. boost", equip: nil, ownerRace: PlayersRace.Swordsman, status: statusAttackBoost, criticalRate: 0, missRate: 0, consumeMana: 48, effect: effectAttackBoost, details: "Increase user attack")
         
         let statusDefenseBoost = Status(HP: 0, MP: 0, Speed: 0, pAtk: 0, mAtk: 0, pDef: 0, mDef: 0)
         let effectDefenseBoost = Effect(target: TargetSkill.SinglePlayer, affect: AffectSkill.pDef, percenteEffects: 20)
-        let defenseBoost = BaseSkill(name: "Defense Boost", fantasyName: "", equip: nil, ownerRace: PlayersRace.Swordsman, status: statusDefenseBoost, criticalRate: 0, missRate: 0, consumeMana: 72, effect: effectDefenseBoost, details: "Increase user defense")
+        let defenseBoost = BaseSkill(name: "Defense Boost", fantasyName: "Def. boost", equip: nil, ownerRace: PlayersRace.Swordsman, status: statusDefenseBoost, criticalRate: 0, missRate: 0, consumeMana: 72, effect: effectDefenseBoost, details: "Increase user defense")
         
-        let swordsmanSkills = [Skill(imageNamed: "", baseSkill: bladeSweep), Skill(imageNamed: "", baseSkill: crossCut), Skill(imageNamed: "", baseSkill: armorPierce), Skill(imageNamed: "", baseSkill: speedBoost), Skill(imageNamed: "", baseSkill: attackBoost), Skill(imageNamed: "", baseSkill: defenseBoost)]
+        let swordsmanSkills = [Skill(imageNamed: "", baseSkill: bladeSweep), Skill(imageNamed: "", baseSkill: crossCut), Skill(imageNamed: "", baseSkill: backstab), Skill(imageNamed: "", baseSkill: speedBoost), Skill(imageNamed: "", baseSkill: attackBoost), Skill(imageNamed: "", baseSkill: defenseBoost)]
         
         return swordsmanSkills
     }
@@ -221,28 +221,28 @@ public class DBEquipSkill {
     
     private static func createListSkillMage() -> [Skill] {
         let statusStarffHit = Status(HP: 0, MP: 0, Speed: 0, pAtk: 36, mAtk: 0, pDef: 0, mDef: 0)
-        let starffHit = BaseSkill(name: "Starff Hit", fantasyName: "", equip: nil, ownerRace: PlayersRace.Mage, status: statusStarffHit, criticalRate: 8, missRate: 2, consumeMana: 0, effect: nil, details: "")
+        let starffHit = BaseSkill(name: "Starff Hit", fantasyName: "Basic hit", equip: nil, ownerRace: PlayersRace.Mage, status: statusStarffHit, criticalRate: 8, missRate: 2, consumeMana: 0, effect: nil, details: "")
         
         let statusFireBall = Status(HP: 0, MP: 0, Speed: 0, pAtk: 0, mAtk: 160, pDef: 0, mDef: 0)
-        let fireBall = BaseSkill(name: "Fire Ball", fantasyName: "", equip: nil, ownerRace: PlayersRace.Mage, status: statusFireBall, criticalRate: 5, missRate: 5, consumeMana: 64, effect: nil, details: "")
+        let fireBall = BaseSkill(name: "Fire Ball", fantasyName: "Fire ball", equip: nil, ownerRace: PlayersRace.Mage, status: statusFireBall, criticalRate: 5, missRate: 5, consumeMana: 64, effect: nil, details: "")
         
-        let statusEnergyRay = Status(HP: 0, MP: 0, Speed: 0, pAtk: 0, mAtk: 150, pDef: 0, mDef: 0)
-        let effectEnergyRay = Effect(target: TargetSkill.SingleEnemy, affect: AffectSkill.mAtk, percenteEffects: 20)
-        let energyRay = BaseSkill(name: "Energy Ray", fantasyName: "", equip: nil, ownerRace: PlayersRace.Mage, status: statusEnergyRay, criticalRate: 2, missRate: 8, consumeMana: 100, effect: effectEnergyRay, details: "Decrease target attack")
+        let statusFrost = Status(HP: 0, MP: 0, Speed: 0, pAtk: 0, mAtk: 250, pDef: 0, mDef: 0)
+        let effectFrost = Effect(target: TargetSkill.SingleEnemy, affect: AffectSkill.HP, percenteEffects: 5)
+        let frost = BaseSkill(name: "Frost", fantasyName: "Frost", equip: nil, ownerRace: PlayersRace.Mage, status: statusFrost, criticalRate: 2, missRate: 15, consumeMana: 100, effect: effectFrost, details: "")
         
         let statusLifeSteal = Status(HP: 0, MP: 0, Speed: 0, pAtk: 0, mAtk: 122, pDef: 0, mDef: 0)
         let effectLifeSteal = Effect(target: TargetSkill.SinglePlayer, affect: AffectSkill.HP, percenteEffects: 100)
-        let lifeSteal = BaseSkill(name: "Life Steal", fantasyName: "", equip: nil, ownerRace: PlayersRace.Mage, status: statusLifeSteal, criticalRate: 0, missRate: 8, consumeMana: 24, effect: effectLifeSteal, details: "Restore your HP")
+        let lifeSteal = BaseSkill(name: "Life Steal", fantasyName: "Life steal", equip: nil, ownerRace: PlayersRace.Mage, status: statusLifeSteal, criticalRate: 0, missRate: 8, consumeMana: 24, effect: effectLifeSteal, details: "Restore your HP")
         
         let statusExplosion = Status(HP: 0, MP: 0, Speed: 0, pAtk: 0, mAtk: 302, pDef: 0, mDef: 0)
         let effectExplosion = Effect(target: TargetSkill.PartyEnemy, affect: AffectSkill.HP, percenteEffects: 15)
-        let explosion = BaseSkill(name: "Explosion", fantasyName: "", equip: nil, ownerRace: PlayersRace.Mage, status: statusExplosion, criticalRate: 2, missRate: 8, consumeMana: 120, effect: effectExplosion, details: "Decrease party hp")
+        let explosion = BaseSkill(name: "Explosion", fantasyName: "Explosion", equip: nil, ownerRace: PlayersRace.Mage, status: statusExplosion, criticalRate: 2, missRate: 8, consumeMana: 120, effect: effectExplosion, details: "Decrease party hp")
         
-        let statusPetrifyRay = Status(HP: 0, MP: 0, Speed: 0, pAtk: 0, mAtk: 490, pDef: 0, mDef: 0)
-        let effectPetrifyRay = Effect(target: TargetSkill.SingleEnemy, affect: AffectSkill.HP, percenteEffects: 100)
-        let petrifyRay = BaseSkill(name: "Petrify Ray", fantasyName: "", equip: nil, ownerRace: PlayersRace.Mage, status: statusPetrifyRay, criticalRate: 0, missRate: 15, consumeMana: 196, effect: effectPetrifyRay, details: "")
+        let statusMagicShield = Status(HP: 0, MP: 0, Speed: 0, pAtk: 0, mAtk: 0, pDef: 0, mDef: 0)
+        let effectMagicShield = Effect(target: TargetSkill.SinglePlayer, affect: AffectSkill.HP, percenteEffects: 100)
+        let magicShield = BaseSkill(name: "Magic Shield", fantasyName: "M. shield", equip: nil, ownerRace: PlayersRace.Mage, status: statusMagicShield, criticalRate: 0, missRate: 15, consumeMana: 196, effect: effectMagicShield, details: "")
         
-        let mageSkills = [Skill(imageNamed: "", baseSkill: starffHit), Skill(imageNamed: "", baseSkill: fireBall), Skill(imageNamed: "", baseSkill: energyRay), Skill(imageNamed: "", baseSkill: lifeSteal), Skill(imageNamed: "", baseSkill: explosion), Skill(imageNamed: "", baseSkill: petrifyRay)]
+        let mageSkills = [Skill(imageNamed: "", baseSkill: starffHit), Skill(imageNamed: "", baseSkill: fireBall), Skill(imageNamed: "", baseSkill: frost), Skill(imageNamed: "", baseSkill: lifeSteal), Skill(imageNamed: "", baseSkill: explosion), Skill(imageNamed: "", baseSkill: magicShield)]
         
         return mageSkills
     }
@@ -274,28 +274,28 @@ public class DBEquipSkill {
     
     private static func createListSkillBard() -> [Skill] {
         let statusInstrumentHit = Status(HP: 0, MP: 0, Speed: 0, pAtk: 36, mAtk: 0, pDef: 0, mDef: 0)
-        let instrumentHit = BaseSkill(name: "Instrument Hit", fantasyName: "", equip: nil, ownerRace: PlayersRace.Bard, status: statusInstrumentHit, criticalRate: 8, missRate: 2, consumeMana: 0, effect: nil, details: "")
+        let instrumentHit = BaseSkill(name: "Instrument Hit", fantasyName: "Basic hit", equip: nil, ownerRace: PlayersRace.Bard, status: statusInstrumentHit, criticalRate: 8, missRate: 2, consumeMana: 0, effect: nil, details: "")
         
         let statusPowerChord = Status(HP: 0, MP: 0, Speed: 0, pAtk: 0, mAtk: 96, pDef: 0, mDef: 0)
-        let powerChord = BaseSkill(name: "Power Chord", fantasyName: "", equip: nil, ownerRace: PlayersRace.Bard, status: statusPowerChord, criticalRate: 5, missRate: 5, consumeMana: 64, effect: nil, details: "")
+        let powerChord = BaseSkill(name: "Power Chord", fantasyName: "P. chord", equip: nil, ownerRace: PlayersRace.Bard, status: statusPowerChord, criticalRate: 5, missRate: 5, consumeMana: 64, effect: nil, details: "")
         
         let statusDarkSonata = Status(HP: 0, MP: 0, Speed: 0, pAtk: 0, mAtk: 294, pDef: 0, mDef: 0)
         let effectDarkSonata = Effect(target: TargetSkill.SingleEnemy, affect: AffectSkill.HP, percenteEffects: 100)
-        let darkSonata = BaseSkill(name: "Dark Sonata", fantasyName: "", equip: nil, ownerRace: PlayersRace.Bard, status: statusDarkSonata, criticalRate: 0, missRate: 15, consumeMana: 196, effect: effectDarkSonata, details: "")
+        let darkSonata = BaseSkill(name: "Dark Sonata", fantasyName: "D. sonata", equip: nil, ownerRace: PlayersRace.Bard, status: statusDarkSonata, criticalRate: 0, missRate: 15, consumeMana: 196, effect: effectDarkSonata, details: "")
         
-        let statusHasteSong = Status(HP: 0, MP: 0, Speed: 0, pAtk: 0, mAtk: 0, pDef: 0, mDef: 0)
-        let effectHasteSong = Effect(target: TargetSkill.SinglePlayer, affect: AffectSkill.Speed, percenteEffects: 20)
-        let hasteSong = BaseSkill(name: "Haste Song", fantasyName: "", equip: nil, ownerRace: PlayersRace.Bard, status: statusHasteSong, criticalRate: 0, missRate: 0, consumeMana: 48, effect: effectHasteSong, details: "Increase target speed")
+        let statusSpeedSong = Status(HP: 0, MP: 0, Speed: 0, pAtk: 0, mAtk: 0, pDef: 0, mDef: 0)
+        let effectSpeedSong = Effect(target: TargetSkill.SinglePlayer, affect: AffectSkill.Speed, percenteEffects: 20)
+        let speedSong = BaseSkill(name: "Speed Song", fantasyName: "Spd. Song", equip: nil, ownerRace: PlayersRace.Bard, status: statusSpeedSong, criticalRate: 0, missRate: 0, consumeMana: 48, effect: effectSpeedSong, details: "Increase target speed")
         
         let statusDefenseSong = Status(HP: 0, MP: 0, Speed: 0, pAtk: 0, mAtk: 0, pDef: 0, mDef: 0)
         let effectDefenseSong = Effect(target: TargetSkill.SinglePlayer, affect: AffectSkill.pDef, percenteEffects: 20)
-        let defenseSong = BaseSkill(name: "Defense Song", fantasyName: "", equip: nil, ownerRace: PlayersRace.Bard, status: statusDefenseSong, criticalRate: 0, missRate: 0, consumeMana: 121, effect: effectDefenseSong, details: "Increase target speed")
+        let defenseSong = BaseSkill(name: "Defense Song", fantasyName: "Def. Song", equip: nil, ownerRace: PlayersRace.Bard, status: statusDefenseSong, criticalRate: 0, missRate: 0, consumeMana: 121, effect: effectDefenseSong, details: "Increase target speed")
         
         let statusAttackSong = Status(HP: 0, MP: 0, Speed: 0, pAtk: 0, mAtk: 0, pDef: 0, mDef: 0)
         let effectAttackSong = Effect(target: TargetSkill.SinglePlayer, affect: AffectSkill.pAtk, percenteEffects: 20)
-        let attackSong = BaseSkill(name: "Attack Song", fantasyName: "", equip: nil, ownerRace: PlayersRace.Bard, status: statusAttackSong, criticalRate: 0, missRate: 0, consumeMana: 100, effect: effectAttackSong, details: "Increase target attack")
+        let attackSong = BaseSkill(name: "Attack Song", fantasyName: "Atk. Song", equip: nil, ownerRace: PlayersRace.Bard, status: statusAttackSong, criticalRate: 0, missRate: 0, consumeMana: 100, effect: effectAttackSong, details: "Increase target attack")
         
-        let bardSkills = [Skill(imageNamed: "", baseSkill: instrumentHit), Skill(imageNamed: "", baseSkill: powerChord), Skill(imageNamed: "", baseSkill: darkSonata), Skill(imageNamed: "", baseSkill: hasteSong), Skill(imageNamed: "", baseSkill: defenseSong), Skill(imageNamed: "", baseSkill: attackSong)]
+        let bardSkills = [Skill(imageNamed: "", baseSkill: instrumentHit), Skill(imageNamed: "", baseSkill: powerChord), Skill(imageNamed: "", baseSkill: darkSonata), Skill(imageNamed: "", baseSkill: speedSong), Skill(imageNamed: "", baseSkill: defenseSong), Skill(imageNamed: "", baseSkill: attackSong)]
         
         return bardSkills
     }
@@ -327,28 +327,28 @@ public class DBEquipSkill {
     
     private static func createListSkillPaladin() -> [Skill] {
         let statusHammerHit = Status(HP: 0, MP: 0, Speed: 0, pAtk: 72, mAtk: 0, pDef: 0, mDef: 0)
-        let hammerHit = BaseSkill(name: "Hammer Hit", fantasyName: "", equip: nil, ownerRace: PlayersRace.Paladin, status: statusHammerHit, criticalRate: 8, missRate: 2, consumeMana: 0, effect: nil, details: "")
+        let hammerHit = BaseSkill(name: "Hammer Hit", fantasyName: "Basic hit", equip: nil, ownerRace: PlayersRace.Paladin, status: statusHammerHit, criticalRate: 8, missRate: 2, consumeMana: 0, effect: nil, details: "")
         
         let statusHolyLight = Status(HP: 0, MP: 0, Speed: 0, pAtk: 0, mAtk: 91, pDef: 0, mDef: 0)
-        let holyLight = BaseSkill(name: "Holy Light", fantasyName: "", equip: nil, ownerRace: PlayersRace.Paladin, status: statusHolyLight, criticalRate: 5, missRate: 5, consumeMana: 51, effect: nil, details: "")
+        let holyLight = BaseSkill(name: "Holy Light", fantasyName: "H. light", equip: nil, ownerRace: PlayersRace.Paladin, status: statusHolyLight, criticalRate: 5, missRate: 5, consumeMana: 51, effect: nil, details: "")
         
-        let statusPunish = Status(HP: 0, MP: 0, Speed: 0, pAtk: 392, mAtk: 0, pDef: 0, mDef: 0)
-        let effectPunish = Effect(target: TargetSkill.SingleEnemy, affect: AffectSkill.HP, percenteEffects: 100)
-        let punish = BaseSkill(name: "Punish", fantasyName: "", equip: nil, ownerRace: PlayersRace.Paladin, status: statusPunish, criticalRate: 0, missRate: 15, consumeMana: 156, effect: effectPunish, details: "")
+        let statusExtinction = Status(HP: 0, MP: 0, Speed: 0, pAtk: 392, mAtk: 0, pDef: 0, mDef: 0)
+        let effectExtinction = Effect(target: TargetSkill.SingleEnemy, affect: AffectSkill.HP, percenteEffects: 100)
+        let extinction = BaseSkill(name: "Extinction", fantasyName: "Extinct.", equip: nil, ownerRace: PlayersRace.Paladin, status: statusExtinction, criticalRate: 0, missRate: 15, consumeMana: 156, effect: effectExtinction, details: "")
         
         let statusHeal = Status(HP: 0, MP: 0, Speed: 0, pAtk: 0, mAtk: 0, pDef: 0, mDef: 0)
         let effectHeal = Effect(target: TargetSkill.SinglePlayer, affect: AffectSkill.HP, percenteEffects: 20)
-        let heal = BaseSkill(name: "Heal", fantasyName: "", equip: nil, ownerRace: PlayersRace.Paladin, status: statusHeal, criticalRate: 0, missRate: 8, consumeMana: 62, effect: effectHeal, details: "Restore target hp")
+        let heal = BaseSkill(name: "Heal", fantasyName: "Heal", equip: nil, ownerRace: PlayersRace.Paladin, status: statusHeal, criticalRate: 0, missRate: 8, consumeMana: 62, effect: effectHeal, details: "Restore target hp")
         
-        let statusPurification = Status(HP: 0, MP: 0, Speed: 0, pAtk: 0, mAtk: 0, pDef: 0, mDef: 0)
-        let effectPurification = Effect(target: TargetSkill.SingleEnemy, affect: .HP, percenteEffects: 0)
-        let purification = BaseSkill(name: "Purification", fantasyName: "", equip: nil, ownerRace: PlayersRace.Paladin, status: statusPurification, criticalRate: 0, missRate: 0, consumeMana: 38, effect: effectPurification, details: "Remove target debuffs")
+        let statusPurify = Status(HP: 0, MP: 0, Speed: 0, pAtk: 0, mAtk: 0, pDef: 0, mDef: 0)
+        let effectPurify = Effect(target: TargetSkill.SingleEnemy, affect: .HP, percenteEffects: 0)
+        let purify = BaseSkill(name: "Purify", fantasyName: "Purify", equip: nil, ownerRace: PlayersRace.Paladin, status: statusPurify, criticalRate: 0, missRate: 0, consumeMana: 38, effect: effectPurify, details: "Remove target debuffs")
         
         let statusWarcry = Status(HP: 0, MP: 0, Speed: 0, pAtk: 0, mAtk: 0, pDef: 0, mDef: 0)
         let effectWarcry = Effect(target: TargetSkill.SinglePlayer, affect: AffectSkill.pAtk, percenteEffects: 15)
         let warcry = BaseSkill(name: "Warcry", fantasyName: "", equip: nil, ownerRace: PlayersRace.Paladin, status: statusWarcry, criticalRate: 0, missRate: 0, consumeMana: 96, effect: effectWarcry, details: "Increase user Attack")
         
-        let paladinSkills = [Skill(imageNamed: "", baseSkill: hammerHit), Skill(imageNamed: "", baseSkill: holyLight), Skill(imageNamed: "", baseSkill: punish), Skill(imageNamed: "", baseSkill: heal), Skill(imageNamed: "", baseSkill: purification), Skill(imageNamed: "", baseSkill: warcry)]
+        let paladinSkills = [Skill(imageNamed: "", baseSkill: hammerHit), Skill(imageNamed: "", baseSkill: holyLight), Skill(imageNamed: "", baseSkill: extinction), Skill(imageNamed: "", baseSkill: heal), Skill(imageNamed: "", baseSkill: purify), Skill(imageNamed: "", baseSkill: warcry)]
         
         return paladinSkills
     }
