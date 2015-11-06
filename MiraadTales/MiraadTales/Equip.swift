@@ -6,7 +6,7 @@
 //  Copyright © 2015 Rodolfo José. All rights reserved.
 //
 
-import UIKit
+import SpriteKit
 
 public class Equip: SKSpriteNode {
     

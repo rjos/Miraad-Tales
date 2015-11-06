@@ -24,7 +24,6 @@ public class Joystick: SKNode {
     
     public override init() {
         
-        
         self.leftButton = SKSpriteNode(imageNamed: "arrowLeft")
         self.leftButton.name = "LeftButton"
         self.leftButton.alpha = 0.7
@@ -58,6 +57,10 @@ public class Joystick: SKNode {
         self.selectButton = nil
         
         super.init()
+        
+        self.name = "Joystick"
+        self.xScale = 0.25
+        self.yScale = 0.25
         
         let frameLeft = self.leftButton.calculateAccumulatedFrame()
         

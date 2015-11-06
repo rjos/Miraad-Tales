@@ -13,8 +13,8 @@ class GameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        if let scene = GameScene(fileNamed:"GameScene") {
+        
+        if let scene = MvpScene(fileNamed:"MvpScene") {
             // Configure the view.
             
             let skView = self.view as! SKView

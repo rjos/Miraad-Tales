@@ -12,8 +12,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var isWalking = false
     var players = [Player]()
-    var positionCurrentPlayer: CGPoint = CGPointZero
-    var lastedPositionPlayers: [CGPoint] = []
     var map: SKNode! = nil
     var movementManagement: MovementManagement! = nil
     var actionManagement: ActionManagement! = nil
@@ -64,7 +62,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         map.addChild(player)
         players.append(player)
         
-        positionCurrentPlayer = player.position
+        //positionCurrentPlayer = player.position
         
         //Add Hydora
         let hydora = Paladin(name: "Hydora", status: status, equipments: [Equip](), skills: [Skill](), isDie: false)

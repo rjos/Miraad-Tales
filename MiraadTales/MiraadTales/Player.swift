@@ -35,6 +35,8 @@ public class Player: SKSpriteNode, VLDContextSheetDelegate {
         
         super.init(texture: texture, color: UIColor.redColor(), size: texture.size())
         
+        self.name = self.race.name
+        
         //Filtro para não suavizar o pixel
         self.texture!.filteringMode = .Nearest
         
