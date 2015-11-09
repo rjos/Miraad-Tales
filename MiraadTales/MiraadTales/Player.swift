@@ -36,6 +36,10 @@ public class Player: SKSpriteNode, VLDContextSheetDelegate {
         super.init(texture: texture, color: UIColor.redColor(), size: texture.size())
         
         self.name = self.race.name
+        self.zPosition = 5
+        
+        self.xScale = 2
+        self.yScale = 2
         
         //Filtro para não suavizar o pixel
         self.texture!.filteringMode = .Nearest
@@ -48,7 +52,8 @@ public class Player: SKSpriteNode, VLDContextSheetDelegate {
     }
 
     private func setPhysicsBodyPlayer(texture: SKTexture) {
-        self.physicsBody = SKPhysicsBody(texture: texture, alphaThreshold: 0.5, size: texture.size())
+        self.physicsBody = SKPhysicsBody(rectangleOfSize: texture.size())
+//        self.physicsBody = SKPhysicsBody(texture: texture, alphaThreshold: 0.5, size: texture.size())
         self.physicsBody?.usesPreciseCollisionDetection = true
         self.physicsBody?.affectedByGravity = false
         self.physicsBody?.collisionBitMask = CollisionSetUps.NPC.rawValue
@@ -111,7 +116,7 @@ public class Player: SKSpriteNode, VLDContextSheetDelegate {
         }
         
         if direction != DirectionPlayer.None {
-            self.runAction(SKAction.repeatActionForever(SKAction.animateWithTextures(walkingFramesDirection, timePerFrame: 0.1, resize: false, restore: true)), withKey: "walkingINPlacePlayer\(self.name)")
+            self.runAction(SKAction.repeatActionForever(SKAction.animateWithTextures(walkingFramesDirection, timePerFrame: 0.1, resize: false, restore: false)), withKey: "walkingINPlacePlayer\(self.name)")
         }
     }
     

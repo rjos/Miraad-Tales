@@ -17,7 +17,7 @@ class GameViewController: UIViewController {
         if let scene = MvpScene(fileNamed:"MvpScene") {
             // Configure the view.
             
-            let skView = self.view as! SKView
+            let skView = self.view as! NavigationController
             skView.showsFPS = true
             skView.showsNodeCount = true
             
@@ -32,7 +32,7 @@ class GameViewController: UIViewController {
             /* Set the scale mode to scale to fit the window */
             scene.scaleMode = .AspectFill
             
-            skView.presentScene(scene)
+            skView.Navigate(scene)
         }
     }
 

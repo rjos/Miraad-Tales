@@ -11,7 +11,7 @@ import SpriteKit
 class CombatScene: SKScene {
 
     var players: [Player]!
-    var enimies: [NSObject]!
+    var enimies: [Enemy]!
     
     private var combatScene: SKNode!
     private var skLifePlayers: SKNode!
@@ -38,21 +38,23 @@ class CombatScene: SKScene {
     //MARK: - Touch events
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
-        let touch = touches.first!
+//        let touch = touches.first!
+//        
+//        let location = touch.locationInNode(combatScene!)
+//        
+//        let nodePosition = combatScene!.nodeAtPoint(location)
+//
+//        
+//        for var i = 0; i < players.count; ++i {
+//            players[i].touchesBegan(touches, withEvent: event)
+//            
+//            if nodePosition.name == players[i].name {
+//                //Set skills in SKSkillPlayers
+//                self.setSkillFromPlayer(players[i])
+//            }
+//        }
         
-        let location = touch.locationInNode(combatScene!)
-        
-        let nodePosition = combatScene!.nodeAtPoint(location)
-
-        
-        for var i = 0; i < players.count; ++i {
-            players[i].touchesBegan(touches, withEvent: event)
-            
-            if nodePosition.name == players[i].name {
-                //Set skills in SKSkillPlayers
-                self.setSkillFromPlayer(players[i])
-            }
-        }
+        (self.view! as! NavigationController).GoBack()
     }
     
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {

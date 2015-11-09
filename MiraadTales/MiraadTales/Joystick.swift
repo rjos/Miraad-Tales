@@ -100,21 +100,6 @@ public class Joystick: SKNode {
     
     public override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
-//        for touch in touches {
-//            let location = touch.locationInNode(self)
-//            
-//            let nodeForPosition = self.nodeAtPoint(location)
-//            
-//            if nodeForPosition is SKSpriteNode {
-//                
-//                if self.selectButton != nil && self.selectButton.name == nodeForPosition.name {
-//                    selectButton.alpha = 0.7
-//                    self.selectButton = nil
-//                    self.isClicked = false
-//                }
-//            }
-//        }
-        
         if let selectButton = self.selectButton {
             selectButton.alpha = 0.7
             self.isClicked = false

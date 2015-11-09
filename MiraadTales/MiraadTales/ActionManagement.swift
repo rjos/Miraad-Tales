@@ -19,6 +19,8 @@ public class ActionManagement: SKNode {
     
     private var selectedButton: SKSpriteNode! = nil
     
+    var interactionDelegate: InteractionDelegate? = nil
+    
     public init(imageNamedButtonA: String, imageNamedButtonB: String, imageNamedButtonSwitch: String, movementManagement: MovementManagement?) {
         
         //Botão A
@@ -71,6 +73,8 @@ public class ActionManagement: SKNode {
                 
                 if nodePosition.name == "btnAction" {
                     print("Click em A")
+                    //Interaction
+                    self.interactionDelegate!.interaction()
                 }else if nodePosition.name == "btnBack" {
                     if !self.movementManagement!.player.inCombat {
                         self.movementManagement!.player.isRunning = true

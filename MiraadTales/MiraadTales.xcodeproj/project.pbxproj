@@ -33,6 +33,9 @@
 		1B9553761BD52D5C001D1FBD /* Joystick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9553751BD52D5C001D1FBD /* Joystick.swift */; };
 		1B9553781BD53195001D1FBD /* DirectionPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9553771BD53195001D1FBD /* DirectionPlayer.swift */; };
 		1B9671D41BDBF42D0055D034 /* Skill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9671D31BDBF42D0055D034 /* Skill.swift */; };
+		1B9AD03A1BED3B2700FA04C6 /* key.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B9AD0391BED3B2700FA04C6 /* key.png */; };
+		1B9AD03C1BED43AD00FA04C6 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9AD03B1BED43AD00FA04C6 /* NavigationController.swift */; };
+		1B9AD03E1BED53BF00FA04C6 /* DataScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9AD03D1BED53BF00FA04C6 /* DataScene.swift */; };
 		1B9BE8781BD137E300E9EE27 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B9BE8771BD137E300E9EE27 /* libz.tbd */; };
 		1B9CD2D91BE8F7EE003C1834 /* prospero_bold_nbp.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B9CD2D71BE8F73F003C1834 /* prospero_bold_nbp.ttf */; };
 		1B9CD2DA1BE8F7EE003C1834 /* prospero_nbp.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B9CD2D81BE8F73F003C1834 /* prospero_nbp.ttf */; };
@@ -57,6 +60,11 @@
 		1BA3ED791BEA4AB600F9E3E3 /* Sledgehammer.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BA3ED781BEA4AB600F9E3E3 /* Sledgehammer.png */; };
 		1BA3ED7B1BEA4ABC00F9E3E3 /* Warhammer.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BA3ED7A1BEA4ABC00F9E3E3 /* Warhammer.png */; };
 		1BA3ED7D1BEA4AC200F9E3E3 /* Punishment.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BA3ED7C1BEA4AC200F9E3E3 /* Punishment.png */; };
+		1BA6B98E1BF0D1C600046B7C /* InteractionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA6B98D1BF0D1C600046B7C /* InteractionDelegate.swift */; };
+		1BA6B9911BF0DB6600046B7C /* DBInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA6B9901BF0DB6600046B7C /* DBInteraction.swift */; };
+		1BA6B9931BF0DBD800046B7C /* DBEnemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA6B9921BF0DBD800046B7C /* DBEnemy.swift */; };
+		1BA6B9961BF0EB5B00046B7C /* Dialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA6B9951BF0EB5B00046B7C /* Dialog.swift */; };
+		1BA6B9981BF0EC4900046B7C /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA6B9971BF0EC4900046B7C /* Message.swift */; };
 		1BB03DCD1BE26444007E7615 /* EquipmentsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB03DCC1BE26444007E7615 /* EquipmentsMenu.swift */; };
 		1BB03DCF1BE266BC007E7615 /* BackpackMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB03DCE1BE266BC007E7615 /* BackpackMenu.swift */; };
 		1BB6D30F1BEB883C007229DA /* MvpScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB6D30E1BEB883C007229DA /* MvpScene.swift */; };
@@ -155,6 +163,9 @@
 		1B9553751BD52D5C001D1FBD /* Joystick.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Joystick.swift; sourceTree = "<group>"; };
 		1B9553771BD53195001D1FBD /* DirectionPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionPlayer.swift; sourceTree = "<group>"; };
 		1B9671D31BDBF42D0055D034 /* Skill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Skill.swift; sourceTree = "<group>"; };
+		1B9AD0391BED3B2700FA04C6 /* key.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = key.png; sourceTree = "<group>"; };
+		1B9AD03B1BED43AD00FA04C6 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		1B9AD03D1BED53BF00FA04C6 /* DataScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataScene.swift; sourceTree = "<group>"; };
 		1B9BE8771BD137E300E9EE27 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		1B9CD2D71BE8F73F003C1834 /* prospero_bold_nbp.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = prospero_bold_nbp.ttf; sourceTree = "<group>"; };
 		1B9CD2D81BE8F73F003C1834 /* prospero_nbp.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = prospero_nbp.ttf; sourceTree = "<group>"; };
@@ -179,6 +190,11 @@
 		1BA3ED781BEA4AB600F9E3E3 /* Sledgehammer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sledgehammer.png; sourceTree = "<group>"; };
 		1BA3ED7A1BEA4ABC00F9E3E3 /* Warhammer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Warhammer.png; sourceTree = "<group>"; };
 		1BA3ED7C1BEA4AC200F9E3E3 /* Punishment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Punishment.png; sourceTree = "<group>"; };
+		1BA6B98D1BF0D1C600046B7C /* InteractionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractionDelegate.swift; sourceTree = "<group>"; };
+		1BA6B9901BF0DB6600046B7C /* DBInteraction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBInteraction.swift; sourceTree = "<group>"; };
+		1BA6B9921BF0DBD800046B7C /* DBEnemy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBEnemy.swift; sourceTree = "<group>"; };
+		1BA6B9951BF0EB5B00046B7C /* Dialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dialog.swift; sourceTree = "<group>"; };
+		1BA6B9971BF0EC4900046B7C /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		1BB03DCC1BE26444007E7615 /* EquipmentsMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquipmentsMenu.swift; sourceTree = "<group>"; };
 		1BB03DCE1BE266BC007E7615 /* BackpackMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackpackMenu.swift; sourceTree = "<group>"; };
 		1BB6D30E1BEB883C007229DA /* MvpScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MvpScene.swift; path = ../MvpScene.swift; sourceTree = "<group>"; };
@@ -297,6 +313,8 @@
 			children = (
 				1B881B871BDFB5D8000DC648 /* DBEquipSkill.swift */,
 				1BD0C5841BECEFFB006F4220 /* DBPlayers.swift */,
+				1BA6B9901BF0DB6600046B7C /* DBInteraction.swift */,
+				1BA6B9921BF0DBD800046B7C /* DBEnemy.swift */,
 			);
 			name = Databases;
 			sourceTree = "<group>";
@@ -369,12 +387,16 @@
 				1BC1F41F1BD2360F000CE8B3 /* ActionManagement.swift */,
 				1BC1F41C1BD1C6CB000CE8B3 /* MovementManagement.swift */,
 				BCCBB89E1BD7C3370026EEB2 /* CollisionSetUps.swift */,
+				1BA6B98F1BF0D83F00046B7C /* Delegates */,
 				1B4F29811BCFE29700612BF8 /* TileMap */,
 				1B4F29771BCFD26F00612BF8 /* ContextMenuPlayer */,
 				1BE7D7FD1BC7F834000FA60C /* Joystick */,
 				1BD76E3C1BC4003800A2EDE1 /* Characters */,
 				1B881B861BDFB468000DC648 /* Databases */,
 				1BB03DCB1BE263EE007E7615 /* HUD */,
+				1BA6B9941BF0EB2C00046B7C /* Conversation */,
+				1B9AD03B1BED43AD00FA04C6 /* NavigationController.swift */,
+				1B9AD03D1BED53BF00FA04C6 /* DataScene.swift */,
 			);
 			name = Library;
 			sourceTree = "<group>";
@@ -386,6 +408,14 @@
 				1BECB4D41BC563F700EDBB8F /* StatusList.swift */,
 			);
 			name = Attibutes;
+			sourceTree = "<group>";
+		};
+		1B9AD0381BED3B2700FA04C6 /* Items-Quests */ = {
+			isa = PBXGroup;
+			children = (
+				1B9AD0391BED3B2700FA04C6 /* key.png */,
+			);
+			path = "Items-Quests";
 			sourceTree = "<group>";
 		};
 		1B9CD2D41BE8F229003C1834 /* Equipment */ = {
@@ -440,6 +470,23 @@
 				1BA3ED781BEA4AB600F9E3E3 /* Sledgehammer.png */,
 			);
 			name = Atk;
+			sourceTree = "<group>";
+		};
+		1BA6B98F1BF0D83F00046B7C /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				1BA6B98D1BF0D1C600046B7C /* InteractionDelegate.swift */,
+			);
+			name = Delegates;
+			sourceTree = "<group>";
+		};
+		1BA6B9941BF0EB2C00046B7C /* Conversation */ = {
+			isa = PBXGroup;
+			children = (
+				1BA6B9951BF0EB5B00046B7C /* Dialog.swift */,
+				1BA6B9971BF0EC4900046B7C /* Message.swift */,
+			);
+			name = Conversation;
 			sourceTree = "<group>";
 		};
 		1BB03DCB1BE263EE007E7615 /* HUD */ = {
@@ -554,6 +601,7 @@
 		1BE7D7E31BC7E2EB000FA60C /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				1B9AD0381BED3B2700FA04C6 /* Items-Quests */,
 				1BD0C5751BECE279006F4220 /* Joystick */,
 				1BD0C53B1BECD927006F4220 /* Characters */,
 				1BA3ED751BEA4A6A00F9E3E3 /* Equipments */,
@@ -718,6 +766,7 @@
 				1BD0C54E1BECDCD0006F4220 /* Herb.atlas in Resources */,
 				1BB6D3141BEB88BF007229DA /* bgMVP.png in Resources */,
 				1BA3ED721BEA3CB700F9E3E3 /* markAtk.png in Resources */,
+				1B9AD03A1BED3B2700FA04C6 /* key.png in Resources */,
 				1BA3ED7B1BEA4ABC00F9E3E3 /* Warhammer.png in Resources */,
 				1BA3ED6E1BEA3BC600F9E3E3 /* bgAttackSkill.png in Resources */,
 				1B9CD2E21BE8FBA0003C1834 /* bgEquip.png in Resources */,
@@ -763,6 +812,7 @@
 				BCCBB89F1BD7C3370026EEB2 /* CollisionSetUps.swift in Sources */,
 				1BB03DCF1BE266BC007E7615 /* BackpackMenu.swift in Sources */,
 				1B4F297F1BCFD28200612BF8 /* VLDContextSheetItem.m in Sources */,
+				1B9AD03C1BED43AD00FA04C6 /* NavigationController.swift in Sources */,
 				1BA00EBC1BC6B55100B8972A /* Item.swift in Sources */,
 				1BECB4CF1BC55EB300EDBB8F /* Mage.swift in Sources */,
 				1B881B8B1BDFCA48000DC648 /* BaseEquip.swift in Sources */,
@@ -771,6 +821,7 @@
 				1B4F297E1BCFD28200612BF8 /* VLDContextSheet.m in Sources */,
 				1BECB4CB1BC55CB000EDBB8F /* BaseRace.swift in Sources */,
 				1B8EDC3B1BC2C506009603B6 /* PlayersRace.swift in Sources */,
+				1BA6B98E1BF0D1C600046B7C /* InteractionDelegate.swift in Sources */,
 				1B881B851BDFB360000DC648 /* Enemy.swift in Sources */,
 				1BC1F4201BD2360F000CE8B3 /* ActionManagement.swift in Sources */,
 				1B9553761BD52D5C001D1FBD /* Joystick.swift in Sources */,
@@ -778,8 +829,12 @@
 				1BB6D30F1BEB883C007229DA /* MvpScene.swift in Sources */,
 				1BA00EBA1BC6B4AD00B8972A /* ItemQuest.swift in Sources */,
 				1B4F29801BCFD28200612BF8 /* VLDContextSheetItemView.m in Sources */,
+				1BA6B9911BF0DB6600046B7C /* DBInteraction.swift in Sources */,
+				1BA6B9931BF0DBD800046B7C /* DBEnemy.swift in Sources */,
+				1BA6B9981BF0EC4900046B7C /* Message.swift in Sources */,
 				1BD0C5851BECEFFB006F4220 /* DBPlayers.swift in Sources */,
 				1B4F29871BCFE2EB00612BF8 /* JSTileMap.m in Sources */,
+				1B9AD03E1BED53BF00FA04C6 /* DataScene.swift in Sources */,
 				1BD76E431BC4080D00A2EDE1 /* ItemType.swift in Sources */,
 				1B8EDC091BC2B074009603B6 /* GameScene.swift in Sources */,
 				1BECB4D31BC55F2600EDBB8F /* Paladin.swift in Sources */,
@@ -794,6 +849,7 @@
 				1B9DA41C1BE2BB25007F5921 /* HUD.swift in Sources */,
 				1BA00EB11BC69F3F00B8972A /* Effect.swift in Sources */,
 				1BECB4D51BC563F700EDBB8F /* StatusList.swift in Sources */,
+				1BA6B9961BF0EB5B00046B7C /* Dialog.swift in Sources */,
 				1BD76E3F1BC401CF00A2EDE1 /* Equip.swift in Sources */,
 				1BECB4D11BC55EF700EDBB8F /* Bard.swift in Sources */,
 				1B881B831BDFB0AD000DC648 /* TypeEnemy.swift in Sources */,
