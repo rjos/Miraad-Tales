@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class Effect: NSObject {
+public class Effect {
     
     public let target: TargetSkill
     public let affect: AffectSkill

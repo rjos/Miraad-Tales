@@ -14,22 +14,12 @@ public class NavigationController: SKView {
     
     public func Navigate(scene: SKScene) {
         
-        if scenes.count > 0 {
-            let lastScene = self.scenes.last!
-            //DataScene.SavaData(lastScene, key: lastScene.name!)
-        }
-        
         self.scenes.append(scene)
         
         self.presentScene(scene)
     }
     
     public func Navigate(scene: SKScene, transition: SKTransition) {
-        
-        if scenes.count > 0 {
-            let lastScene = self.scenes.last!
-            //DataScene.SavaData(lastScene, key: lastScene.name!)
-        }
         
         self.scenes.append(scene)
         
@@ -41,8 +31,7 @@ public class NavigationController: SKView {
         self.scenes.removeLast()
         
         let lastScene = self.scenes.last!
-        
-        //let scene = DataScene.LoadData(lastScene.name!)
+        lastScene.userData!["GoBack"] = true
         
         self.presentScene(lastScene)
         
@@ -51,5 +40,10 @@ public class NavigationController: SKView {
     public func GoBack(transition: SKTransition) {
         
         self.scenes.removeLast()
+        
+        let lastScene = self.scenes.last!
+        lastScene.userData!["GoBack"] = true
+        
+        self.presentScene(lastScene, transition: transition)
     }
 }

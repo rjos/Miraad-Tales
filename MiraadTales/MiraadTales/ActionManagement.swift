@@ -52,14 +52,26 @@ public class ActionManagement: SKNode {
         self.addChild(self.btnSwitch)
     }
     
+    //MARK: Decode and Encode data
     required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError()
     }
     
     //MARK: - Touch events
     override public func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
-        if !self.movementManagement!.player.menuHasOpened {
+        var enableClicked = false
+        var menuHasOpened = false
+        
+        if self.movementManagement == nil {
+            enableClicked = true
+        }
+        
+        if !enableClicked && !self.movementManagement!.player.menuHasOpened {
+            menuHasOpened = true
+        }
+        
+        if enableClicked || menuHasOpened {
             let touch = touches.first!
             
             let location = touch.locationInNode(self)
@@ -76,8 +88,15 @@ public class ActionManagement: SKNode {
                     //Interaction
                     self.interactionDelegate!.interaction()
                 }else if nodePosition.name == "btnBack" {
-                    if !self.movementManagement!.player.inCombat {
-                        self.movementManagement!.player.isRunning = true
+                    
+                    if !enableClicked {
+                        if !self.movementManagement!.player.inCombat {
+                            self.movementManagement!.player.isRunning = true
+                        }
+                    }
+                    
+                    if self.interactionDelegate != nil {
+                        self.interactionDelegate!.runningDialog()
                     }
                 }else if nodePosition.name == "btnSwitch" && self.enableSwitch {
                     print("Click em Switch")
@@ -94,7 +113,10 @@ public class ActionManagement: SKNode {
         }
         
         self.selectedButton = nil
-        self.movementManagement!.player.isRunning = false
+        
+        if self.movementManagement != nil {
+            self.movementManagement!.player.isRunning = false
+        }
     }
     
     override public func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
@@ -104,13 +126,15 @@ public class ActionManagement: SKNode {
     
     public func update(currentTime: NSTimeInterval) {
         
-        //Habilitar o switch apenas quando estiver parado
-        if self.movementManagement!.josytick.velocity == CGPointZero {
-            self.enableSwitch = true
-        }else {
-            self.enableSwitch = false
+        if self.movementManagement != nil {
+            
+            //Habilitar o switch apenas quando estiver parado
+            if self.movementManagement!.joystick.velocity == CGPointZero {
+                self.enableSwitch = true
+            }else {
+                self.enableSwitch = false
+            }
         }
-        
     }
     
     //MARK: - Function for Switch players

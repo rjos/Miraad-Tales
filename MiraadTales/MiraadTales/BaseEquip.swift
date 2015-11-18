@@ -12,11 +12,11 @@ public class BaseEquip: BaseItem {
 
     public let ownerRace: PlayersRace
     public let status: Status
-    public let requiredLevel: NSNumber
+    public let requiredLevel: Int
     public var skill: Skill?
     public var isEquipped: Bool
     
-    public init(name: String, ownerRace: PlayersRace, status: Status, type:ItemType, requiredLevel: NSNumber, skill: Skill?, isEquipped: Bool) {
+    public init(name: String, ownerRace: PlayersRace, status: Status, type:ItemType, requiredLevel: Int, skill: Skill?, isEquipped: Bool) {
         
         self.ownerRace = ownerRace
         self.status = status

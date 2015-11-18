@@ -14,15 +14,17 @@ public class Player: SKSpriteNode, VLDContextSheetDelegate {
     public var lastedPosition = [CGPoint]()
     public var menuHasOpened: Bool = false
     public var inCombat: Bool
+    public var inDialog: Bool
     public var lastedDirection: DirectionPlayer
     public var isRunning: Bool
-    public var selectedMenuContext: String!
+    public var selectedMenuContext: String?
     private var playerWalkingFrames = Array<Array<SKTexture>>()
-    private let longTapPlayer: NSTimeInterval = 1.0
+    private var longTapPlayer: NSTimeInterval = 1.0
     private var touchStarted: NSTimeInterval? = nil
     private var contextMenuPlayer: VLDContextSheet? = nil
     private var viewController: UIView? = nil
     private var locationTouch: CGPoint? = nil
+    var decoder = true
     
     public init(race: BaseRace, imageNamed: String, viewController: UIView?) {
         self.race = race
@@ -30,6 +32,7 @@ public class Player: SKSpriteNode, VLDContextSheetDelegate {
         self.viewController = viewController
         self.lastedDirection = DirectionPlayer.None
         self.inCombat = false
+        self.inDialog = false
         self.isRunning = false
         self.selectedMenuContext = nil
         
@@ -38,8 +41,8 @@ public class Player: SKSpriteNode, VLDContextSheetDelegate {
         self.name = self.race.name
         self.zPosition = 5
         
-        self.xScale = 2
-        self.yScale = 2
+//        self.xScale = 2
+//        self.yScale = 2
         
         //Filtro para não suavizar o pixel
         self.texture!.filteringMode = .Nearest
@@ -52,8 +55,10 @@ public class Player: SKSpriteNode, VLDContextSheetDelegate {
     }
 
     private func setPhysicsBodyPlayer(texture: SKTexture) {
-        self.physicsBody = SKPhysicsBody(rectangleOfSize: texture.size())
-//        self.physicsBody = SKPhysicsBody(texture: texture, alphaThreshold: 0.5, size: texture.size())
+//        let img = texture.CGImage
+//        let uimg = UIImage(CGImage: img)
+//        let ntex = SKTexture(image: uimg)
+        self.physicsBody = SKPhysicsBody(texture: texture, size: texture.size())
         self.physicsBody?.usesPreciseCollisionDetection = true
         self.physicsBody?.affectedByGravity = false
         self.physicsBody?.collisionBitMask = CollisionSetUps.NPC.rawValue
@@ -63,7 +68,7 @@ public class Player: SKSpriteNode, VLDContextSheetDelegate {
     }
     
     required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError("")
     }
     
     //MARK: - Get Atlas from animated walking

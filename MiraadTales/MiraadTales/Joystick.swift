@@ -10,10 +10,10 @@ import SpriteKit
 
 public class Joystick: SKNode {
     
-    private let leftButton: SKSpriteNode
-    private let rightButton: SKSpriteNode
-    private let upButton: SKSpriteNode
-    private let downButton: SKSpriteNode
+    private var leftButton: SKSpriteNode
+    private var rightButton: SKSpriteNode
+    private var upButton: SKSpriteNode
+    private var downButton: SKSpriteNode
     
     public var velocity: CGPoint
     public var direction: DirectionPlayer
@@ -78,10 +78,12 @@ public class Joystick: SKNode {
         self.addChild(self.downButton)
     }
 
+    //MARK: Decode and Encode data
     required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError("Error decoder")
     }
     
+    //MARK: Touch's events
     public override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
         for touch in touches {
@@ -136,6 +138,7 @@ public class Joystick: SKNode {
         self.selectButton = nil
     }
     
+    //MARK: Update method
     public func update(currentTime: CFTimeInterval) {
         
         if let selectButton = self.selectButton {

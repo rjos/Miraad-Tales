@@ -13,26 +13,27 @@ class CombatScene: SKScene {
     var players: [Player]!
     var enimies: [Enemy]!
     
-    private var combatScene: SKNode!
-    private var skLifePlayers: SKNode!
-    private var skSkillPlayers: SKNode!
-    private var skDescription: SKNode!
+    public var typeCombat: String = ""
     
     override func didMoveToView(view: SKView) {
         
-        combatScene = self.childNodeWithName("SKCombatScene")!
-        let skInfoPlayers = combatScene.childNodeWithName("SKInfoPlayers")!
-        skInfoPlayers.alpha = 0.7
+        let skCombatBg = self.childNodeWithName("SKCombatBg")!
+        var bgCombat: SKSpriteNode
         
-        self.skLifePlayers = skInfoPlayers.childNodeWithName("SKLifePlayers")!
-        self.skSkillPlayers = skInfoPlayers.childNodeWithName("SKSkillPlayers")!
-        self.skDescription = skInfoPlayers.childNodeWithName("SKDescription")!
-
+        if typeCombat == "Bellatrix" {
+            bgCombat = SKSpriteNode(imageNamed: "")
+        }else {
+            bgCombat = SKSpriteNode(imageNamed: "sceneNormalCombat")
+        }
+        
+        skCombatBg.addChild(bgCombat)
+        
+        
         //Set positions players and enimies in the combat
-        self.setPlayersPositions(self.players!)
+        //self.setPlayersPositions(self.players!)
 //        self.setEnimiesPositions(self.enimies!)
         
-        self.orderPlayerAndEnimies()
+        //self.orderPlayerAndEnimies()
     }
     
     //MARK: - Touch events
@@ -82,28 +83,28 @@ class CombatScene: SKScene {
     //MARK: - Update Method
     override func update(currentTime: NSTimeInterval) {
         
-        for var i = 0; i < players.count; ++i {
-            players[i].update(currentTime)
-        }
+//        for var i = 0; i < players.count; ++i {
+//            players[i].update(currentTime)
+//        }
     }
     
     //MARK: - Set Positions Players and Enimies
-    private func setPlayersPositions(players: [Player]) {
-        
-        let skPositionPlayers = self.combatScene.childNodeWithName("SKPositionPlayers")!
-        
-        var currentPositions = CGPointZero
-        
-        for var i = 0; i < players.count; ++i {
-            
-            players[i].removeFromParent()
-            players[i].setPlayerForCombat()
-            players[i].alpha = 1.0
-            players[i].position = CGPointMake(currentPositions.x, currentPositions.y)
-            skPositionPlayers.addChild(players[i])
-            currentPositions = CGPointMake(players[i].position.x - players[i].frame.width, players[i].frame.height - players[i].position.y)
-        }
-    }
+//    private func setPlayersPositions(players: [Player]) {
+//        
+//        let skPositionPlayers = self.combatScene.childNodeWithName("SKPositionPlayers")!
+//        
+//        var currentPositions = CGPointZero
+//        
+//        for var i = 0; i < players.count; ++i {
+//            
+//            players[i].removeFromParent()
+//            players[i].setPlayerForCombat()
+//            players[i].alpha = 1.0
+//            players[i].position = CGPointMake(currentPositions.x, currentPositions.y)
+//            skPositionPlayers.addChild(players[i])
+//            currentPositions = CGPointMake(players[i].position.x - players[i].frame.width, players[i].frame.height - players[i].position.y)
+//        }
+//    }
     
     private func setEnimiesPositions(enimies: [NSObject]) {
         
@@ -126,4 +127,34 @@ class CombatScene: SKScene {
             
         }
     }
+    
+    private func setCollumsAndRows(size: CGSize, margin: CGPoint, qtdadeCollums: CGFloat, qtdadeRows: CGFloat) -> [CGPoint] {
+        
+        let totalMarginX = margin.x * (qtdadeCollums + 1)
+        let totalMarginY = margin.y * (qtdadeRows + 1)
+        
+        let tempWidth = size.width - totalMarginX
+        let tempHeight = size.height - totalMarginY
+        
+        let heightItem = tempHeight / qtdadeRows
+        let widthItem = tempWidth / qtdadeCollums
+        
+        var current = CGPointMake(-size.width * 0.5, size.height * 0.5)
+        
+        var positionsGrid: [CGPoint] = []
+        
+        for var i = 0; i < Int(qtdadeRows); ++i {
+            
+            for var j = 0; j < Int(qtdadeCollums); ++j {
+                let positionItem = CGPointMake(current.x + (margin.x + (widthItem * 0.5)),current.y - (margin.y + ( heightItem * 0.5)))
+                positionsGrid.append(positionItem)
+                current.x += margin.x + (widthItem)
+            }
+            current.y -= margin.y + heightItem
+            current.x = -size.width * 0.5
+        }
+        
+        return positionsGrid
+    }
+
 }

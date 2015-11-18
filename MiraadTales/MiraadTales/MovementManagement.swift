@@ -13,7 +13,7 @@ public class MovementManagement: SKNode {
     public var player: Player
     public let camera: SKCameraNode
     public var sizeMap: CGRect
-    public let josytick: Joystick
+    public let joystick: Joystick
     
     private let minPositionCamera: CGPoint
     private let maxPositionCamera: CGPoint
@@ -35,7 +35,7 @@ public class MovementManagement: SKNode {
         self.player.zPosition += 2
         self.camera = camera
         self.sizeMap = sizeMap
-        self.josytick = joystick
+        self.joystick = joystick
         self.running = false
         
         let min_X_camera = ((screenSize.bounds.width * camera.xScale) * 0.5)
@@ -60,7 +60,7 @@ public class MovementManagement: SKNode {
     }
     
     required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError()
     }
     
     //MARK: - Update method
@@ -68,7 +68,7 @@ public class MovementManagement: SKNode {
         
         self.player.update(currentTime)
         
-        if !self.player.menuHasOpened && self.josytick.direction != DirectionPlayer.None && !didCollide {
+        if !self.player.menuHasOpened && self.joystick.direction != DirectionPlayer.None && !didCollide {
             
             if self.player.lastedPosition.count == 0 {
                 self.player.lastedPosition.append(self.player.position)
@@ -77,7 +77,7 @@ public class MovementManagement: SKNode {
             }
         }
         
-        movePlayer(self.player, joystick: self.josytick, didCollide: didCollide)
+        movePlayer(self.player, joystick: self.joystick, didCollide: didCollide)
         
         moveCamera(self.camera, player: self.player)
     }
@@ -146,7 +146,7 @@ public class MovementManagement: SKNode {
         
         //Verifica se a direção mudou
         if joystick.direction != player.lastedDirection {
-            player.walkingPlayer(josytick.direction)
+            player.walkingPlayer(joystick.direction)
         }
         
         //Movimentar outros personagens se a direção for diferente de None ou se não tiver colisão

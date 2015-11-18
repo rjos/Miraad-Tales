@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class BaseRace: NSObject, StatusList {
+public class BaseRace: StatusList{
 
     public let name: String
     public let status: PlayerStatus
@@ -23,7 +23,7 @@ public class BaseRace: NSObject, StatusList {
         self.skills = skills
         self.isDie = isDie
     }
-    
+        
     public func incrementHP() {
         preconditionFailure("Function must be implemented by Sub Classes")
     }

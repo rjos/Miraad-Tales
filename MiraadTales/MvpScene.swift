@@ -9,7 +9,6 @@
 import SpriteKit
 
 class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
-    
     var joystick: Joystick? = nil
     var actionManagement: ActionManagement? = nil
     var movementManagement: MovementManagement? = nil
@@ -20,30 +19,41 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
     var bodyPlayer: SKPhysicsBody?
     var bodyEnemy: SKPhysicsBody?
     
+    var currentDialog: Dialog?
+    
+    var beginDialog: Bool = false
+    var startTime: NSTimeInterval = 0.0
+    var velocityDialog: NSTimeInterval = 0.2
+    
     override func didMoveToView(view: SKView) {
         
         self.physicsWorld.contactDelegate = self
         
         self.map = self.childNodeWithName("SKBg")!
         
-        self.currentPlayer = DBPlayers.getPaladin(self.view!)
-        self.players = [self.currentPlayer!]
-        
-        self.joystick = Joystick()
-
-        self.movementManagement = MovementManagement(player: self.currentPlayer!, camera: self.camera!, sizeMap: self.map!.frame, joystick: self.joystick!, players: self.players)
-        
-        self.actionManagement = ActionManagement(imageNamedButtonA: "A", imageNamedButtonB: "B", imageNamedButtonSwitch: "switch", movementManagement: self.movementManagement)
-        self.actionManagement!.interactionDelegate = self
-        
-        let skJoystick = self.camera!.childNodeWithName("SKJoystick")!
-        skJoystick.addChild(self.joystick!)
-        
-        let skButtons = self.camera!.childNodeWithName("SKButtons")!
-        skButtons.addChild(self.actionManagement!)
-        
-        self.currentPlayer!.position = CGPointMake(-733.932, 286.614)
-        self.map!.addChild(self.currentPlayer!)
+        if self.userData != nil && (self.userData!["GoBack"] as! Bool) {
+            self.loadData()
+            self.userData!["GoBack"] = false
+        }else {
+            self.currentPlayer = DBPlayers.getPaladin(self.view!)
+            self.players = [self.currentPlayer!]
+            
+            self.joystick = Joystick()
+            
+            self.movementManagement = MovementManagement(player: self.currentPlayer!, camera: self.camera!, sizeMap: self.map!.frame, joystick: self.joystick!, players: self.players)
+            
+            self.actionManagement = ActionManagement(imageNamedButtonA: "A", imageNamedButtonB: "B", imageNamedButtonSwitch: "switch", movementManagement: self.movementManagement)
+            self.actionManagement!.interactionDelegate = self
+            
+            let skJoystick = self.camera!.childNodeWithName("SKJoystick")!
+            skJoystick.addChild(self.joystick!)
+            
+            let skButtons = self.camera!.childNodeWithName("SKButtons")!
+            skButtons.addChild(self.actionManagement!)
+            
+            self.currentPlayer!.position = CGPointMake(-533.932, 286.614)
+            self.map!.addChild(self.currentPlayer!)
+        }
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -60,6 +70,10 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
                 
                 self.movementManagement!.player.touchesBegan(touches, withEvent: event)
             }
+        }
+        
+        if self.currentDialog != nil {
+            self.currentDialog!.changeMessage = true
         }
     }
     
@@ -83,6 +97,8 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
                 self.joystick!.touchesEnded(touches, withEvent: event)
             }
         }
+        
+        velocityDialog = 0.2
     }
     
     override func update(currentTime: NSTimeInterval) {
@@ -90,6 +106,10 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
         self.joystick!.update(currentTime)
         self.actionManagement!.update(currentTime)
         self.movementManagement!.update(currentTime, didCollide: false)
+        
+        if self.currentDialog != nil {
+            self.currentDialog!.update(currentTime)
+        }
     }
     
     func didBeginContact(contact: SKPhysicsContact) {
@@ -109,10 +129,43 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
     
     func interaction() {
         
-        if self.bodyPlayer != nil && self.bodyEnemy != nil {
-         
-            //Open Combat Scene
-            self.openScene([])
+        if self.currentDialog == nil {
+            if self.bodyPlayer != nil && self.bodyEnemy != nil {
+                
+                let name = self.bodyEnemy!.node!.name
+                
+                if name == "SKRohan" {
+                    let rohan = DBPlayers.getBard(self.view!)
+                    
+                    self.currentDialog = DBInteraction.getInteraction(rohan, player: self.movementManagement!.player, size: CGSizeZero)
+                    self.currentDialog!.zPosition = 30
+                    self.camera!.addChild(self.currentDialog!)
+                    showDialog(self.currentDialog!)
+                }
+                
+                //Open Combat Scene
+//                self.saveData()
+//                self.openScene([])
+            }
+        }else {
+            //Show Dialog
+            self.velocityDialog = 0.3
+            showDialog(self.currentDialog!)
+        }
+    }
+    
+    func runningDialog() {
+        
+    }
+    
+    func showDialog(dialog: Dialog) {
+        
+        if !dialog.isEmpty {
+            self.movementManagement!.player.inDialog = true
+        }else {
+            self.movementManagement!.player.inDialog = false
+            self.currentDialog!.removeFromParent()
+            self.currentDialog = nil
         }
     }
     
@@ -123,5 +176,30 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
         let transition = SKTransition.doorsOpenHorizontalWithDuration(0.5)
         combatScene.scaleMode = SKSceneScaleMode.AspectFill
         (self.view! as! NavigationController).Navigate(combatScene, transition: transition)
+    }
+    
+    func loadData() {
+        self.currentPlayer = self.userData!["currentPlayer"] as? Player
+        self.players = self.userData!["players"] as! [Player]
+        self.actionManagement = self.userData!["actionManagement"] as? ActionManagement
+        self.movementManagement = self.userData!["movementManagement"] as? MovementManagement
+        self.joystick = self.userData!["joystick"] as? Joystick
+        self.bodyPlayer = self.userData!["bodyPlayer"] as? SKPhysicsBody
+        self.bodyEnemy = self.userData!["bodyEnemy"] as? SKPhysicsBody
+        self.currentDialog = self.userData!["dialog"] as? Dialog
+        self.camera = self.userData!["camera"] as? SKCameraNode
+    }
+    
+    func saveData() {
+        self.userData = NSMutableDictionary()
+        self.userData!["currentPlayer"] = self.currentPlayer
+        self.userData!["players"] = self.players
+        self.userData!["actionManagement"] = self.actionManagement
+        self.userData!["movementManagement"] = self.movementManagement
+        self.userData!["joystick"] = self.joystick
+        self.userData!["bodyPlayer"] = self.bodyPlayer
+        self.userData!["bodyEnemy"] = self.bodyEnemy
+        self.userData!["dialog"] = self.currentDialog
+        self.userData!["camera"] = self.camera
     }
 }

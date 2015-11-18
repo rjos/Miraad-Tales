@@ -11,4 +11,5 @@ import Foundation
 protocol InteractionDelegate {
     
     func interaction()
+    func runningDialog()
 }

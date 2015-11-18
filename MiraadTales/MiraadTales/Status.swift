@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class Status: NSObject {
+public class Status {
     
     // MARK: -Attributes
     public var HP: Int
@@ -28,4 +28,5 @@ public class Status: NSObject {
         self.pDef = pDef
         self.mDef = mDef
     }
+    
 }

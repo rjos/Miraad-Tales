@@ -16,4 +16,5 @@ public class BaseEnemy: BaseRace {
         self.typeEnemy = typeEnemy
         super.init(name: name, status: status, equipments: equipments, skills: skills, isDie: isDie)
     }
+
 }

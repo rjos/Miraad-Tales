@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class BaseItem: NSObject {
+public class BaseItem{
 
     public let name: String
     public let type: ItemType
@@ -17,4 +17,5 @@ public class BaseItem: NSObject {
         self.name = name
         self.type = type
     }
+    
 }
