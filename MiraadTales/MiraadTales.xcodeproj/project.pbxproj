@@ -54,6 +54,7 @@
 		1BA00EB81BC6B38F00B8972A /* BaseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA00EB71BC6B38F00B8972A /* BaseItem.swift */; };
 		1BA00EBA1BC6B4AD00B8972A /* ItemQuest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA00EB91BC6B4AD00B8972A /* ItemQuest.swift */; };
 		1BA00EBC1BC6B55100B8972A /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA00EBB1BC6B55100B8972A /* Item.swift */; };
+		1BA0D1101BFF527C00E4482A /* balao.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BA0D10F1BFF527C00E4482A /* balao.png */; };
 		1BA3ED6C1BEA2C7A00F9E3E3 /* nextPlayer.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BA3ED6B1BEA2C7A00F9E3E3 /* nextPlayer.png */; };
 		1BA3ED6E1BEA3BC600F9E3E3 /* bgAttackSkill.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BA3ED6D1BEA3BC600F9E3E3 /* bgAttackSkill.png */; };
 		1BA3ED701BEA3BD500F9E3E3 /* bgDefenseSkill.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BA3ED6F1BEA3BD500F9E3E3 /* bgDefenseSkill.png */; };
@@ -70,17 +71,17 @@
 		1BB03DCD1BE26444007E7615 /* EquipmentsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB03DCC1BE26444007E7615 /* EquipmentsMenu.swift */; };
 		1BB03DCF1BE266BC007E7615 /* BackpackMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB03DCE1BE266BC007E7615 /* BackpackMenu.swift */; };
 		1BB27CC21BFA391E00A5736E /* footer.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BB27CB01BFA391E00A5736E /* footer.png */; };
-		1BB27CC31BFA391E00A5736E /* 01 bgbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BB27CB11BFA391E00A5736E /* 01 bgbar.png */; };
-		1BB27CC41BFA391E00A5736E /* 02 hpbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BB27CB21BFA391E00A5736E /* 02 hpbar.png */; };
-		1BB27CC51BFA391E00A5736E /* 03 mpbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BB27CB31BFA391E00A5736E /* 03 mpbar.png */; };
-		1BB27CC61BFA391E00A5736E /* 04 skillbasichit.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BB27CB41BFA391E00A5736E /* 04 skillbasichit.png */; };
+		1BB27CC31BFA391E00A5736E /* bgbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BB27CB11BFA391E00A5736E /* bgbar.png */; };
+		1BB27CC41BFA391E00A5736E /* hpbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BB27CB21BFA391E00A5736E /* hpbar.png */; };
+		1BB27CC51BFA391E00A5736E /* mpbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BB27CB31BFA391E00A5736E /* mpbar.png */; };
+		1BB27CC61BFA391E00A5736E /* basichit.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BB27CB41BFA391E00A5736E /* basichit.png */; };
 		1BB27CC71BFA391E00A5736E /* 05 skillholylight.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BB27CB51BFA391E00A5736E /* 05 skillholylight.png */; };
 		1BB27CC81BFA391E00A5736E /* 06 skillheal.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BB27CB61BFA391E00A5736E /* 06 skillheal.png */; };
 		1BB27CC91BFA391E00A5736E /* 07 turnfriend.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BB27CB71BFA391E00A5736E /* 07 turnfriend.png */; };
 		1BB27CCA1BFA391E00A5736E /* 08 turnenemy.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BB27CB81BFA391E00A5736E /* 08 turnenemy.png */; };
 		1BB27CCB1BFA391E00A5736E /* 09 waitfriend.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BB27CB91BFA391E00A5736E /* 09 waitfriend.png */; };
 		1BB27CCC1BFA391E00A5736E /* 10 waitenemy.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BB27CBA1BFA391E00A5736E /* 10 waitenemy.png */; };
-		1BB27CCD1BFA391E00A5736E /* 11 reddot.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BB27CBB1BFA391E00A5736E /* 11 reddot.png */; };
+		1BB27CCD1BFA391E00A5736E /* reddot.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BB27CBB1BFA391E00A5736E /* reddot.png */; };
 		1BB27CCE1BFA391E00A5736E /* 12 sound.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BB27CBC1BFA391E00A5736E /* 12 sound.png */; };
 		1BB27CCF1BFA391E00A5736E /* 13 enemybgbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BB27CBD1BFA391E00A5736E /* 13 enemybgbar.png */; };
 		1BB27CD01BFA391E00A5736E /* 14 enemyhpbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BB27CBE1BFA391E00A5736E /* 14 enemyhpbar.png */; };
@@ -204,6 +205,7 @@
 		1BA00EB71BC6B38F00B8972A /* BaseItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseItem.swift; sourceTree = "<group>"; };
 		1BA00EB91BC6B4AD00B8972A /* ItemQuest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemQuest.swift; sourceTree = "<group>"; };
 		1BA00EBB1BC6B55100B8972A /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		1BA0D10F1BFF527C00E4482A /* balao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = balao.png; sourceTree = "<group>"; };
 		1BA3ED6B1BEA2C7A00F9E3E3 /* nextPlayer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nextPlayer.png; sourceTree = "<group>"; };
 		1BA3ED6D1BEA3BC600F9E3E3 /* bgAttackSkill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bgAttackSkill.png; sourceTree = "<group>"; };
 		1BA3ED6F1BEA3BD500F9E3E3 /* bgDefenseSkill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bgDefenseSkill.png; sourceTree = "<group>"; };
@@ -220,17 +222,17 @@
 		1BB03DCC1BE26444007E7615 /* EquipmentsMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquipmentsMenu.swift; sourceTree = "<group>"; };
 		1BB03DCE1BE266BC007E7615 /* BackpackMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackpackMenu.swift; sourceTree = "<group>"; };
 		1BB27CB01BFA391E00A5736E /* footer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = footer.png; sourceTree = "<group>"; };
-		1BB27CB11BFA391E00A5736E /* 01 bgbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "01 bgbar.png"; sourceTree = "<group>"; };
-		1BB27CB21BFA391E00A5736E /* 02 hpbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "02 hpbar.png"; sourceTree = "<group>"; };
-		1BB27CB31BFA391E00A5736E /* 03 mpbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "03 mpbar.png"; sourceTree = "<group>"; };
-		1BB27CB41BFA391E00A5736E /* 04 skillbasichit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "04 skillbasichit.png"; sourceTree = "<group>"; };
+		1BB27CB11BFA391E00A5736E /* bgbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bgbar.png; sourceTree = "<group>"; };
+		1BB27CB21BFA391E00A5736E /* hpbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hpbar.png; sourceTree = "<group>"; };
+		1BB27CB31BFA391E00A5736E /* mpbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mpbar.png; sourceTree = "<group>"; };
+		1BB27CB41BFA391E00A5736E /* basichit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = basichit.png; path = map/Combat/basichit.png; sourceTree = "<group>"; };
 		1BB27CB51BFA391E00A5736E /* 05 skillholylight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "05 skillholylight.png"; sourceTree = "<group>"; };
 		1BB27CB61BFA391E00A5736E /* 06 skillheal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "06 skillheal.png"; sourceTree = "<group>"; };
 		1BB27CB71BFA391E00A5736E /* 07 turnfriend.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "07 turnfriend.png"; sourceTree = "<group>"; };
 		1BB27CB81BFA391E00A5736E /* 08 turnenemy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "08 turnenemy.png"; sourceTree = "<group>"; };
 		1BB27CB91BFA391E00A5736E /* 09 waitfriend.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "09 waitfriend.png"; sourceTree = "<group>"; };
 		1BB27CBA1BFA391E00A5736E /* 10 waitenemy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "10 waitenemy.png"; sourceTree = "<group>"; };
-		1BB27CBB1BFA391E00A5736E /* 11 reddot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "11 reddot.png"; sourceTree = "<group>"; };
+		1BB27CBB1BFA391E00A5736E /* reddot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reddot.png; sourceTree = "<group>"; };
 		1BB27CBC1BFA391E00A5736E /* 12 sound.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "12 sound.png"; sourceTree = "<group>"; };
 		1BB27CBD1BFA391E00A5736E /* 13 enemybgbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "13 enemybgbar.png"; sourceTree = "<group>"; };
 		1BB27CBE1BFA391E00A5736E /* 14 enemyhpbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "14 enemyhpbar.png"; sourceTree = "<group>"; };
@@ -336,6 +338,46 @@
 				1B4F29851BCFE2EB00612BF8 /* JSTileMap.m */,
 			);
 			name = TileMap;
+			sourceTree = "<group>";
+		};
+		1B5C1ECA1BFDF996008B2779 /* Skills */ = {
+			isa = PBXGroup;
+			children = (
+				1BB27CB41BFA391E00A5736E /* basichit.png */,
+				1B5C1ECE1BFDF9BB008B2779 /* Swordsman */,
+				1B5C1ECD1BFDF9B4008B2779 /* Mage */,
+				1B5C1ECC1BFDF9AE008B2779 /* Bard */,
+				1B5C1ECB1BFDF99B008B2779 /* Paladin */,
+			);
+			name = Skills;
+			sourceTree = "<group>";
+		};
+		1B5C1ECB1BFDF99B008B2779 /* Paladin */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Paladin;
+			sourceTree = "<group>";
+		};
+		1B5C1ECC1BFDF9AE008B2779 /* Bard */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Bard;
+			sourceTree = "<group>";
+		};
+		1B5C1ECD1BFDF9B4008B2779 /* Mage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Mage;
+			sourceTree = "<group>";
+		};
+		1B5C1ECE1BFDF9BB008B2779 /* Swordsman */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Swordsman;
 			sourceTree = "<group>";
 		};
 		1B881B7F1BDFB051000DC648 /* Enimies */ = {
@@ -520,6 +562,14 @@
 			name = Font;
 			sourceTree = "<group>";
 		};
+		1BA0D10E1BFF525500E4482A /* Dialog */ = {
+			isa = PBXGroup;
+			children = (
+				1BA0D10F1BFF527C00E4482A /* balao.png */,
+			);
+			name = Dialog;
+			sourceTree = "<group>";
+		};
 		1BA3ED751BEA4A6A00F9E3E3 /* Equipments */ = {
 			isa = PBXGroup;
 			children = (
@@ -578,17 +628,16 @@
 			isa = PBXGroup;
 			children = (
 				1BB27CB01BFA391E00A5736E /* footer.png */,
-				1BB27CB11BFA391E00A5736E /* 01 bgbar.png */,
-				1BB27CB21BFA391E00A5736E /* 02 hpbar.png */,
-				1BB27CB31BFA391E00A5736E /* 03 mpbar.png */,
-				1BB27CB41BFA391E00A5736E /* 04 skillbasichit.png */,
+				1BB27CB11BFA391E00A5736E /* bgbar.png */,
+				1BB27CB21BFA391E00A5736E /* hpbar.png */,
+				1BB27CB31BFA391E00A5736E /* mpbar.png */,
 				1BB27CB51BFA391E00A5736E /* 05 skillholylight.png */,
 				1BB27CB61BFA391E00A5736E /* 06 skillheal.png */,
 				1BB27CB71BFA391E00A5736E /* 07 turnfriend.png */,
 				1BB27CB81BFA391E00A5736E /* 08 turnenemy.png */,
 				1BB27CB91BFA391E00A5736E /* 09 waitfriend.png */,
 				1BB27CBA1BFA391E00A5736E /* 10 waitenemy.png */,
-				1BB27CBB1BFA391E00A5736E /* 11 reddot.png */,
+				1BB27CBB1BFA391E00A5736E /* reddot.png */,
 				1BB27CBC1BFA391E00A5736E /* 12 sound.png */,
 				1BB27CBD1BFA391E00A5736E /* 13 enemybgbar.png */,
 				1BB27CBE1BFA391E00A5736E /* 14 enemyhpbar.png */,
@@ -709,6 +758,8 @@
 		1BE7D7E31BC7E2EB000FA60C /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				1BA0D10E1BFF525500E4482A /* Dialog */,
+				1B5C1ECA1BFDF996008B2779 /* Skills */,
 				1B9AD0381BED3B2700FA04C6 /* Items-Quests */,
 				1BD0C5751BECE279006F4220 /* Joystick */,
 				1BD0C53B1BECD927006F4220 /* Characters */,
@@ -847,6 +898,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BB27CC81BFA391E00A5736E /* 06 skillheal.png in Resources */,
+				1BA0D1101BFF527C00E4482A /* balao.png in Resources */,
 				1B9CD2D91BE8F7EE003C1834 /* prospero_bold_nbp.ttf in Resources */,
 				1BB27CC91BFA391E00A5736E /* 07 turnfriend.png in Resources */,
 				1B9CD2DA1BE8F7EE003C1834 /* prospero_nbp.ttf in Resources */,
@@ -860,14 +912,14 @@
 				1BD0C5721BECE26D006F4220 /* house1.png in Resources */,
 				1BB27CD31BFA391E00A5736E /* sceneNormalCombat.png in Resources */,
 				1BA3ED701BEA3BD500F9E3E3 /* bgDefenseSkill.png in Resources */,
-				1BB27CC31BFA391E00A5736E /* 01 bgbar.png in Resources */,
+				1BB27CC31BFA391E00A5736E /* bgbar.png in Resources */,
 				1B4780331BD9298E007E03B5 /* CombatScene.sks in Resources */,
-				1BB27CC61BFA391E00A5736E /* 04 skillbasichit.png in Resources */,
+				1BB27CC61BFA391E00A5736E /* basichit.png in Resources */,
 				1B8EDC071BC2B074009603B6 /* GameScene.sks in Resources */,
 				1BD0C5711BECE26D006F4220 /* grass.png in Resources */,
 				1BB27CCA1BFA391E00A5736E /* 08 turnenemy.png in Resources */,
 				1BB27CCE1BFA391E00A5736E /* 12 sound.png in Resources */,
-				1BB27CCD1BFA391E00A5736E /* 11 reddot.png in Resources */,
+				1BB27CCD1BFA391E00A5736E /* reddot.png in Resources */,
 				1BE7D8051BC7FEDA000FA60C /* Ylla.atlas in Resources */,
 				1BD0C5791BECE5E0006F4220 /* openeddoor.png in Resources */,
 				1B9CD2DE1BE8FB05003C1834 /* bgTitle.png in Resources */,
@@ -899,13 +951,13 @@
 				1B8EDC131BC2B074009603B6 /* LaunchScreen.storyboard in Resources */,
 				1BD0C5701BECE26D006F4220 /* fundo.png in Resources */,
 				1B8EDC101BC2B074009603B6 /* Assets.xcassets in Resources */,
-				1BB27CC41BFA391E00A5736E /* 02 hpbar.png in Resources */,
+				1BB27CC41BFA391E00A5736E /* hpbar.png in Resources */,
 				1B9CD2EC1BE9022B003C1834 /* bgStatus.png in Resources */,
 				1B9CD2E81BE8FFA7003C1834 /* equipBox.png in Resources */,
 				1BB27CD01BFA391E00A5736E /* 14 enemyhpbar.png in Resources */,
 				1B8EDC0E1BC2B074009603B6 /* Main.storyboard in Resources */,
 				1BD0C5781BECE5E0006F4220 /* closeddoor.png in Resources */,
-				1BB27CC51BFA391E00A5736E /* 03 mpbar.png in Resources */,
+				1BB27CC51BFA391E00A5736E /* mpbar.png in Resources */,
 				1BB27CD11BFA391E00A5736E /* 15 screen.png in Resources */,
 				1BD0C5741BECE26D006F4220 /* mato.png in Resources */,
 				1BA3ED741BEA3CC000F9E3E3 /* markDef.png in Resources */,

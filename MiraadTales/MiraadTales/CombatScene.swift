@@ -12,6 +12,9 @@ class CombatScene: SKScene {
 
     var players: [Player]!
     var enimies: [Enemy]!
+    var currentPlayer: Player!
+    var currentEnemy: Enemy!
+    var indicator: SKSpriteNode!
     
     public var typeCombat: String = ""
     
@@ -28,32 +31,15 @@ class CombatScene: SKScene {
         
         skCombatBg.addChild(bgCombat)
         
+        indicator = SKSpriteNode(imageNamed: "reddot")
+        indicator.name = "indicator"
         
-        //Set positions players and enimies in the combat
-        //self.setPlayersPositions(self.players!)
-//        self.setEnimiesPositions(self.enimies!)
-        
-        //self.orderPlayerAndEnimies()
+        //setStatusPlayers(players)
+        //setSkillFromPlayer(currentPlayer)
     }
     
     //MARK: - Touch events
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        
-//        let touch = touches.first!
-//        
-//        let location = touch.locationInNode(combatScene!)
-//        
-//        let nodePosition = combatScene!.nodeAtPoint(location)
-//
-//        
-//        for var i = 0; i < players.count; ++i {
-//            players[i].touchesBegan(touches, withEvent: event)
-//            
-//            if nodePosition.name == players[i].name {
-//                //Set skills in SKSkillPlayers
-//                self.setSkillFromPlayer(players[i])
-//            }
-//        }
         
         (self.view! as! NavigationController).GoBack()
     }
@@ -63,7 +49,6 @@ class CombatScene: SKScene {
         for var i = 0; i < players.count; ++i {
             players[i].touchesMoved(touches, withEvent: event)
         }
-        
     }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -83,29 +68,9 @@ class CombatScene: SKScene {
     //MARK: - Update Method
     override func update(currentTime: NSTimeInterval) {
         
-//        for var i = 0; i < players.count; ++i {
-//            players[i].update(currentTime)
-//        }
     }
     
-    //MARK: - Set Positions Players and Enimies
-//    private func setPlayersPositions(players: [Player]) {
-//        
-//        let skPositionPlayers = self.combatScene.childNodeWithName("SKPositionPlayers")!
-//        
-//        var currentPositions = CGPointZero
-//        
-//        for var i = 0; i < players.count; ++i {
-//            
-//            players[i].removeFromParent()
-//            players[i].setPlayerForCombat()
-//            players[i].alpha = 1.0
-//            players[i].position = CGPointMake(currentPositions.x, currentPositions.y)
-//            skPositionPlayers.addChild(players[i])
-//            currentPositions = CGPointMake(players[i].position.x - players[i].frame.width, players[i].frame.height - players[i].position.y)
-//        }
-//    }
-    
+    //MARK: Set Enemy Position
     private func setEnimiesPositions(enimies: [NSObject]) {
         
         for var i = 0; i < enimies.count; ++i {
@@ -118,43 +83,95 @@ class CombatScene: SKScene {
         
     }
     
-    private func setSkillFromPlayer(player: Player) {
+    //MARK: Set Status Players
+    private func setStatusPlayers(players: [Player]) {
         
-        let skills = player.race.skills
-        //let currentPosition: CGPoint = CGPointZero
+        let footer = self.childNodeWithName("skFooter")!
+        let labelSkill = footer.childNodeWithName("SKLabelSkill")!
         
-        for var i = 0; i < skills.count; ++i {
+        var position = CGPointMake(0, labelSkill.position.y + (labelSkill.frame.height / 2))
+        
+        for var i = 0; i < players.count; ++i {
             
+            var bgBarStatus = SKSpriteNode(imageNamed: "bgbar")
+            bgBarStatus.position = CGPointMake(position.x - (bgBarStatus.frame.size.width / 2) - 20, position.y)
+            
+            let mpBarStatus = SKSpriteNode(imageNamed: "mpbar")
+            mpBarStatus.name = "mpBar-\(players[i].race.name)"
+            mpBarStatus.zPosition = 2
+            
+            let labelMp = SKLabelNode(text: "\(players[i].race.status.currentMP)/\(players[i].race.status.MP)")
+            labelMp.fontColor = UIColor.whiteColor()
+            labelMp.fontName = "Prospero-Bold-NBP"
+            labelMp.zPosition = 4
+            labelMp.position = CGPointMake(0, -10)
+            labelMp.name = "hpLabel-\(players[i].race.name)"
+            
+            bgBarStatus.addChild(mpBarStatus)
+            bgBarStatus.addChild(labelMp)
+            footer.addChild(bgBarStatus)
+            
+            position = CGPointMake(bgBarStatus.position.x - (bgBarStatus.frame.size.width) - 20, position.y)
+            
+            bgBarStatus = SKSpriteNode(imageNamed: "bgbar")
+            bgBarStatus.position = position
+            
+            let hpBarStatus = SKSpriteNode(imageNamed: "hpbar")
+            hpBarStatus.name = "hpBar-\(players[i].race.name)"
+            hpBarStatus.zPosition = 2
+            
+            let labelHp = SKLabelNode(text: "\(players[i].race.status.currentHP)/\(players[i].race.status.HP)")
+            labelHp.fontColor = UIColor.whiteColor()
+            labelHp.fontName = "Prospero-Bold-NBP"
+            labelHp.zPosition = 4
+            labelHp.position = CGPointMake(0, -10)
+            labelHp.name = "hpLabel-\(players[i].race.name)"
+            
+            bgBarStatus.addChild(hpBarStatus)
+            bgBarStatus.addChild(labelHp)
+            footer.addChild(bgBarStatus)
+            
+            position = CGPointMake(bgBarStatus.position.x - (bgBarStatus.frame.size.width) + 20, position.y - 5)
+            
+            let labelName = SKLabelNode(text: "\(players[i].race.name)")
+            labelName.fontColor = UIColor.whiteColor()
+            labelName.fontName = "Prospero-Bold-NBP"
+            labelName.zPosition = 2
+            labelName.name = "labelName-\(players[i].race.name)"
+            labelName.position = position
+            footer.addChild(labelName)
+            
+            position = CGPointMake(position.x - (labelName.frame.size.width / 2) - 20, bgBarStatus.position.y + 5)
+            
+            if players[i].race.name == currentPlayer.race.name {
+                indicator.position = position
+                indicator.zPosition = 2
+                indicator.xScale = 0.5
+                indicator.yScale = 0.5
+                footer.addChild(indicator)
+            }
+            
+            position = CGPointMake(0, -((footer.frame.height / 2) - (footer.frame.height / 4)))
         }
     }
     
-    private func setCollumsAndRows(size: CGSize, margin: CGPoint, qtdadeCollums: CGFloat, qtdadeRows: CGFloat) -> [CGPoint] {
+    //MARK: Set Skill Player
+    private func setSkillFromPlayer(player: Player) {
         
-        let totalMarginX = margin.x * (qtdadeCollums + 1)
-        let totalMarginY = margin.y * (qtdadeRows + 1)
+        let skills = player.race.skills
         
-        let tempWidth = size.width - totalMarginX
-        let tempHeight = size.height - totalMarginY
+        let footer = self.childNodeWithName("skFooter")!
+        let labelSkill = footer.childNodeWithName("SKLabelSkill")!
         
-        let heightItem = tempHeight / qtdadeRows
-        let widthItem = tempWidth / qtdadeCollums
-        
-        var current = CGPointMake(-size.width * 0.5, size.height * 0.5)
-        
-        var positionsGrid: [CGPoint] = []
-        
-        for var i = 0; i < Int(qtdadeRows); ++i {
+        for var i = 0; i < 3; ++i {
             
-            for var j = 0; j < Int(qtdadeCollums); ++j {
-                let positionItem = CGPointMake(current.x + (margin.x + (widthItem * 0.5)),current.y - (margin.y + ( heightItem * 0.5)))
-                positionsGrid.append(positionItem)
-                current.x += margin.x + (widthItem)
+            if i == 0 {
+                skills[i].position = CGPointMake(labelSkill.position.x + (labelSkill.frame.size.width + (skills[i].frame.size.width / 2)), 0)
+            }else {
+                skills[i].position = CGPointMake(skills[i].position.x + skills[i].frame.size.width + 20, 0)
             }
-            current.y -= margin.y + heightItem
-            current.x = -size.width * 0.5
+            skills[i].zPosition = 10
+            footer.addChild(skills[i])
         }
-        
-        return positionsGrid
     }
-
 }

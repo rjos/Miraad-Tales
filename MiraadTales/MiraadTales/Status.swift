@@ -12,7 +12,9 @@ public class Status {
     
     // MARK: -Attributes
     public var HP: Int
+    public var currentHP: Int
     public var MP: Int
+    public var currentMP: Int
     public var Speed: Int
     public var pAtk: Int
     public var mAtk: Int
@@ -21,7 +23,9 @@ public class Status {
     
     public init(HP:Int, MP:Int, Speed:Int, pAtk: Int, mAtk:Int, pDef: Int, mDef:Int) {
         self.HP = HP
+        self.currentHP = self.HP
         self.MP = MP
+        self.currentMP = self.MP
         self.Speed = Speed
         self.pAtk = pAtk
         self.mAtk = mAtk

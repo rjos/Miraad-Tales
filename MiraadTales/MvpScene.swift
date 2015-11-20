@@ -21,10 +21,6 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
     
     var currentDialog: Dialog?
     
-    var beginDialog: Bool = false
-    var startTime: NSTimeInterval = 0.0
-    var velocityDialog: NSTimeInterval = 0.2
-    
     override func didMoveToView(view: SKView) {
         
         self.physicsWorld.contactDelegate = self
@@ -71,10 +67,6 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
                 self.movementManagement!.player.touchesBegan(touches, withEvent: event)
             }
         }
-        
-        if self.currentDialog != nil {
-            self.currentDialog!.changeMessage = true
-        }
     }
     
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -98,7 +90,9 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
             }
         }
         
-        velocityDialog = 0.2
+        if self.currentDialog != nil {
+            self.currentDialog!.velocity = 0.1
+        }
     }
     
     override func update(currentTime: NSTimeInterval) {
@@ -137,7 +131,8 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
                 if name == "SKRohan" {
                     let rohan = DBPlayers.getBard(self.view!)
                     
-                    self.currentDialog = DBInteraction.getInteraction(rohan, player: self.movementManagement!.player, size: CGSizeZero)
+                    self.currentDialog = DBInteraction.getInteraction(rohan, player: self.movementManagement!.player, size: CGSizeMake(500, 200))
+                    self.currentDialog!.backgroundDialog = true
                     self.currentDialog!.zPosition = 30
                     self.camera!.addChild(self.currentDialog!)
                     showDialog(self.currentDialog!)
@@ -149,19 +144,22 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
             }
         }else {
             //Show Dialog
-            self.velocityDialog = 0.3
             showDialog(self.currentDialog!)
         }
     }
     
     func runningDialog() {
         
+        if self.currentDialog != nil {
+            self.currentDialog!.velocity = 0.05
+        }
     }
     
     func showDialog(dialog: Dialog) {
         
         if !dialog.isEmpty {
             self.movementManagement!.player.inDialog = true
+            self.currentDialog!.changeMessage = true
         }else {
             self.movementManagement!.player.inDialog = false
             self.currentDialog!.removeFromParent()

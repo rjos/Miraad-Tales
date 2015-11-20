@@ -20,6 +20,9 @@ class GameViewController: UIViewController {
             skView.showsFPS = true
             skView.showsNodeCount = true
             
+//            scene.typeCombat = "Normal"
+//            scene.players = [DBPlayers.getBard(skView)]
+            
             skView.showsPhysics = false
             
             /* Sprite Kit applies additional optimizations to improve rendering performance */

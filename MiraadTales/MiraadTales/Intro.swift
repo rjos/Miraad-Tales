@@ -74,8 +74,6 @@ class Intro: SKScene, InteractionDelegate {
                     let transition = SKTransition.fadeWithDuration(1)
                     
                     (self.view as? NavigationController)!.Navigate(mvpScene, transition: transition)
-                }else if self.currentDialog!.action == ActionDialog.ShowMessage {
-                    //Show Message
                 }
                 
                 self.currentDialog = nil
