@@ -238,8 +238,8 @@ public class Player: SKSpriteNode, VLDContextSheetDelegate {
     //MARK: - Configure Combat and Exploration Scene
     public func setPlayerForCombat() {
         self.inCombat = true
-        self.xScale = 3
-        self.yScale = 3
+        self.xScale = 1.5
+        self.yScale = 1.5
         self.runAction(SKAction.animateWithTextures([self.playerWalkingFrames[2][1]], timePerFrame: 0.1, resize: false, restore: false), withKey: "Combat-\(self.race.name)")
     }
     

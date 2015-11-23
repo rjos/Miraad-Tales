@@ -8,21 +8,34 @@
 
 import SpriteKit
 
+public enum TypeHUD: String {
+    case Equip = "Equip"
+    case Chapter = "Chapter"
+    case Backpack = "Backpack"
+}
+
 public class HUD: SKNode {
     
     public var btnClose: SKSpriteNode
-    public var bg: SKSpriteNode
+    public var bg: SKSpriteNode!
     public var bgTitle: SKSpriteNode
     public var players: [Player]
     public var currentPlayer: Player
     private let title: SKLabelNode
     
-    public init(players: [Player], currentPlayer: Player, size: CGSize, name: String) {
+    public init(players: [Player], currentPlayer: Player, size: CGSize, name: String, typeHUD: TypeHUD) {
         
         self.players = players
         self.currentPlayer = currentPlayer
         
-        self.bg = SKSpriteNode(imageNamed: "bgMenuEquipment")
+        if typeHUD == .Equip {
+            self.bg = SKSpriteNode(imageNamed: "bgMenuEquipment")
+        }else if typeHUD == .Chapter {
+            self.bg = SKSpriteNode(imageNamed: "bgMenuEquipment")
+        }else if typeHUD == .Backpack {
+            self.bg = SKSpriteNode(imageNamed: "bgMenuEquipment")
+        }
+        
         bg.zPosition = 1
         bg.name = "bg"
         

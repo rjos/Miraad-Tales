@@ -21,6 +21,8 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
     
     var currentDialog: Dialog?
     
+    var equipMenu: EquipmentsMenu! = nil
+    
     override func didMoveToView(view: SKView) {
         
         self.physicsWorld.contactDelegate = self
@@ -54,7 +56,14 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
-        self.joystick!.touchesBegan(touches, withEvent: event)
+        if self.movementManagement!.player.menuHasOpened && equipMenu != nil {
+            equipMenu.touchesBegan(touches, withEvent: event)
+        }
+        
+        if !self.movementManagement!.player.inDialog {
+            self.joystick!.touchesBegan(touches, withEvent: event)
+        }
+        
         self.actionManagement!.touchesBegan(touches, withEvent: event)
         
         for touch in touches {
@@ -85,9 +94,13 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
             
             if node.name == "btnBack" || node.name == "btnAction" || node.name == "btnSwitch" {
                 self.actionManagement!.touchesEnded(touches, withEvent: event)
-            }else {
+            }else if !self.movementManagement!.player.inDialog {
                 self.joystick!.touchesEnded(touches, withEvent: event)
             }
+        }
+        
+        if equipMenu != nil {
+            equipMenu.touchesEnded(touches, withEvent: event)
         }
         
         if self.currentDialog != nil {
@@ -97,12 +110,28 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
     
     override func update(currentTime: NSTimeInterval) {
         
-        self.joystick!.update(currentTime)
-        self.actionManagement!.update(currentTime)
-        self.movementManagement!.update(currentTime, didCollide: false)
-        
         if self.currentDialog != nil {
             self.currentDialog!.update(currentTime)
+        }
+        
+        if !self.movementManagement!.player.menuHasOpened {
+            self.joystick!.update(currentTime)
+            self.actionManagement!.update(currentTime)
+            self.movementManagement!.update(currentTime, didCollide: false)
+        }else {
+            
+            if self.movementManagement!.player.selectedMenuContext != nil {
+                equipMenu = EquipmentsMenu(players: players, currentPlayer: self.movementManagement!.player, size: self.size, name: "Equipment", typeHUD: TypeHUD.Equip)
+                equipMenu.position = (self.camera?.position)!
+                equipMenu.xScale = 0.01
+                equipMenu.yScale = 0.01
+                //                equipMenu.zPosition = 100
+                map!.addChild(equipMenu)
+                
+                equipMenu.open()
+                
+                self.movementManagement!.player.selectedMenuContext = nil
+            }
         }
     }
     
@@ -160,7 +189,7 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
         if !dialog.isEmpty {
             self.movementManagement!.player.inDialog = true
             self.currentDialog!.changeMessage = true
-        }else {
+        }else if dialog.ended {
             self.movementManagement!.player.inDialog = false
             self.currentDialog!.removeFromParent()
             self.currentDialog = nil

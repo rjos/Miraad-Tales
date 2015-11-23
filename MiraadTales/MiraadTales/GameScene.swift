@@ -205,7 +205,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }else /* Open menu */ {
             
             if self.movementManagement.player.selectedMenuContext != nil {
-                equipMenu = EquipmentsMenu(players: players, currentPlayer: self.movementManagement.player, size: self.size, name: "Equipment")
+                equipMenu = EquipmentsMenu(players: players, currentPlayer: self.movementManagement.player, size: self.size, name: "Equipment", typeHUD: TypeHUD.Equip)
                 equipMenu.position = (self.camera?.position)!
                 equipMenu.xScale = 0.01
                 equipMenu.yScale = 0.01

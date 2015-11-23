@@ -16,9 +16,9 @@ public class EquipmentsMenu: HUD {
     private var selectedNodeAtk: Equip? = nil
     private var selectedNodeDef: Equip? = nil
     
-    override init(players: [Player], currentPlayer: Player , size: CGSize, name: String) {
+    override init(players: [Player], currentPlayer: Player , size: CGSize, name: String, typeHUD: TypeHUD) {
         
-        super.init(players: players, currentPlayer: currentPlayer ,size: size, name: name)
+        super.init(players: players, currentPlayer: currentPlayer ,size: size, name: name, typeHUD: typeHUD)
         
         let bgEquip = SKSpriteNode(imageNamed: "bgEquip")
         bgEquip.zPosition = 2
@@ -132,8 +132,8 @@ public class EquipmentsMenu: HUD {
         
         //Set Player width animations
         let currentPlayer = Player(race: player.race, imageNamed: "\(player.race.name)-2", viewController: nil)
-        currentPlayer.xScale = 5
-        currentPlayer.yScale = 5
+        currentPlayer.xScale = 3
+        currentPlayer.yScale = 3
         currentPlayer.position = CGPointMake(0, 0)
         currentPlayer.physicsBody = nil
         currentPlayer.zPosition = 3

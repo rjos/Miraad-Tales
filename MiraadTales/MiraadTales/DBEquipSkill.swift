@@ -295,7 +295,7 @@ public class DBEquipSkill {
         let effectAttackSong = Effect(target: TargetSkill.SinglePlayer, affect: AffectSkill.pAtk, percenteEffects: 20)
         let attackSong = BaseSkill(name: "Attack Song", fantasyName: "Atk. Song", equip: nil, ownerRace: PlayersRace.Bard, status: statusAttackSong, criticalRate: 0, missRate: 0, consumeMana: 100, effect: effectAttackSong, details: "Increase target attack")
         
-        let bardSkills = [Skill(imageNamed: "", baseSkill: instrumentHit), Skill(imageNamed: "", baseSkill: powerChord), Skill(imageNamed: "", baseSkill: darkSonata), Skill(imageNamed: "", baseSkill: speedSong), Skill(imageNamed: "", baseSkill: defenseSong), Skill(imageNamed: "", baseSkill: attackSong)]
+        let bardSkills = [Skill(imageNamed: "basichit", baseSkill: instrumentHit), Skill(imageNamed: "powerchord", baseSkill: powerChord), Skill(imageNamed: "", baseSkill: darkSonata), Skill(imageNamed: "", baseSkill: speedSong), Skill(imageNamed: "", baseSkill: defenseSong), Skill(imageNamed: "", baseSkill: attackSong)]
         
         return bardSkills
     }
@@ -348,7 +348,7 @@ public class DBEquipSkill {
         let effectWarcry = Effect(target: TargetSkill.SinglePlayer, affect: AffectSkill.pAtk, percenteEffects: 15)
         let warcry = BaseSkill(name: "Warcry", fantasyName: "", equip: nil, ownerRace: PlayersRace.Paladin, status: statusWarcry, criticalRate: 0, missRate: 0, consumeMana: 96, effect: effectWarcry, details: "Increase user Attack")
         
-        let paladinSkills = [Skill(imageNamed: "", baseSkill: hammerHit), Skill(imageNamed: "", baseSkill: holyLight), Skill(imageNamed: "", baseSkill: extinction), Skill(imageNamed: "", baseSkill: heal), Skill(imageNamed: "", baseSkill: purify), Skill(imageNamed: "", baseSkill: warcry)]
+        let paladinSkills = [Skill(imageNamed: "basichit", baseSkill: hammerHit), Skill(imageNamed: "holylight", baseSkill: holyLight), Skill(imageNamed: "", baseSkill: extinction), Skill(imageNamed: "heal", baseSkill: heal), Skill(imageNamed: "", baseSkill: purify), Skill(imageNamed: "", baseSkill: warcry)]
         
         return paladinSkills
     }

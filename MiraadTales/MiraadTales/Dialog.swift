@@ -24,6 +24,10 @@ public class Dialog: SKNode {
     
     private var textureBgDialog: SKTexture? = nil
     
+    private var showAction: Bool = false
+    
+    public var ended: Bool = false
+    
     public var backgroundDialog: Bool = false {
         didSet {
             
@@ -95,14 +99,21 @@ public class Dialog: SKNode {
                 self.countLine = 0
                 self.currentMessage.removeAll()
                 self.changeMessage = false
+                
+                if self.isEmpty && self.showAction {
+                    self.ended = true
+                }
             }
         }
         
-        if self.isEmpty {
-            
+        if self.isEmpty && !self.showAction {
+            self.showAction = true
             if self.action == ActionDialog.ShowMessage {
                 self.message = self.messages[self.messages.count - 1]
                 self.currentMessage.append(self.message!.text)
+                self.skBgDialog!.removeAllChildren()
+                self.skNodeMessage!.removeAllChildren()
+                self.skBgDialog!.addChild(self.skNodeMessage!)
             }
         }
     }
@@ -217,7 +228,7 @@ public class Dialog: SKNode {
             let name = (person as! Player).race.name
             self.skNodePerson = SKSpriteNode(imageNamed: "\(name)-2")
             
-            self.skNodePerson!.position = CGPointMake((self.skNodePerson!.frame.width / 2)-(self.skBgDialog!.frame.width / 2) + 5, (self.skBgDialog!.frame.height / 2) - (self.skNodePerson!.frame.height / 2)  - 5)
+            self.skNodePerson!.position = CGPointMake((self.skNodePerson!.frame.width / 2)-(self.skBgDialog!.frame.width / 2) + 5, 0)
             
             self.skNodeMessage!.position = CGPointMake(self.skNodePerson!.position.x + (self.skNodePerson!.frame.width / 2) + (self.skNodeMessage!.frame.width / 2) - 5, 0)
             
@@ -225,7 +236,7 @@ public class Dialog: SKNode {
             let name = (person as! Enemy).race.name
             self.skNodePerson = SKSpriteNode(imageNamed: "\(name)-2")
             
-            self.skNodePerson!.position = CGPointMake((self.skBgDialog!.frame.width / 2) - (self.skNodePerson!.frame.width / 2) + 10, (self.skNodePerson!.frame.height / 2)-(self.skBgDialog!.frame.height / 2) + 10)
+            self.skNodePerson!.position = CGPointMake((self.skBgDialog!.frame.width / 2) - (self.skNodePerson!.frame.width / 2) + 10, 0)
             
             self.skNodeMessage!.position = CGPointMake((self.skNodeMessage!.frame.width / 2) - (self.skBgDialog!.frame.width / 2), 0)
         }

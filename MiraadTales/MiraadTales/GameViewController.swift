@@ -14,14 +14,15 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let scene = Intro(fileNamed: "Intro") {
+        if let scene = Start(fileNamed: "Start") {
             // Configure the view.
             let skView = self.view as! NavigationController
+            
             skView.showsFPS = true
             skView.showsNodeCount = true
             
 //            scene.typeCombat = "Normal"
-//            scene.players = [DBPlayers.getBard(skView)]
+//            scene.players = [DBPlayers.getBard(skView), DBPlayers.getPaladin(skView)]
             
             skView.showsPhysics = false
             
