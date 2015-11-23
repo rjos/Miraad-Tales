@@ -14,6 +14,8 @@ class Start: SKScene {
     var bgNode : SKSpriteNode!
     var bgNodeNext : SKSpriteNode!
     var logo: SKSpriteNode!
+    var campfire: SKSpriteNode!
+    var campfireAtlas: Array<SKTexture>! = []
     
     // Tap Button
     var labelButton: SKLabelNode!
@@ -29,6 +31,9 @@ class Start: SKScene {
         bgNode = self.childNodeWithName("SKStartBg") as! SKSpriteNode
         labelButton = bgNode.childNodeWithName("SKTapStart") as! SKLabelNode
         logo = bgNode.childNodeWithName("SKLogo") as! SKSpriteNode
+        campfire = bgNode.childNodeWithName("SKCampFire") as! SKSpriteNode
+        
+        setAtlas()
         
         //Action logo
         let moveUpAction = SKAction.moveTo(CGPointMake(logo.position.x, logo.position.y + 10), duration: 2)
@@ -45,6 +50,11 @@ class Start: SKScene {
         let sequenceLabel = SKAction.sequence([fadeInAction, fadeOutAction])
         
         self.labelButton.runAction(SKAction.repeatActionForever(sequenceLabel))
+        
+        //Action campfire
+        let actionForever = SKAction.repeatActionForever(SKAction.animateWithTextures(self.campfireAtlas, timePerFrame: 0.5, resize: false, restore: false))
+        
+        self.campfire.runAction(actionForever, withKey: "actionCampfire")
     }
     
     //MARK: Touch Event's
@@ -103,5 +113,20 @@ class Start: SKScene {
         // Next, move each of the four pairs of sprites.
         // Objects that should appear move slower than foreground objects.
         //self.moveSprite(bgNode!, nextSprite:bgNodeNext!, speed:25.0)
+    }
+    
+    //MARK: - Get Atlas to animated
+    private func setAtlas() {
+        //Obtem atlas a partir do nome do player
+        let atlasAnimated = SKTextureAtlas(named: "campfire")
+        
+        //Obtem a quantidade de frames no atlas
+        let numImages = atlasAnimated.textureNames.count
+        
+        for var i = 0; i < numImages; ++i {
+            
+            let campfireTextureName = "campfire-\(i + 1)"
+            campfireAtlas.append(atlasAnimated.textureNamed(campfireTextureName))
+        }
     }
 }

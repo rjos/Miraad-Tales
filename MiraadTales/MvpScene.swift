@@ -163,6 +163,15 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
                     self.currentDialog = DBInteraction.getInteraction(rohan, player: self.movementManagement!.player, size: CGSizeMake(500, 200))
                     self.currentDialog!.backgroundDialog = true
                     self.currentDialog!.zPosition = 30
+                    
+                    let skJoystick = self.camera!.childNodeWithName("SKJoystick")!
+                    let skButtons = self.camera!.childNodeWithName("SKButtons")!
+                    
+                    let positionInit = (skJoystick.position.x + (skJoystick.frame.width / 2))
+                    let positionEnd = (skButtons.position.x - (skButtons.frame.width / 2))
+                    
+                    self.currentDialog!.position = CGPointMake((positionInit + positionEnd) / 2, 0)
+                    
                     self.camera!.addChild(self.currentDialog!)
                     showDialog(self.currentDialog!)
                 }

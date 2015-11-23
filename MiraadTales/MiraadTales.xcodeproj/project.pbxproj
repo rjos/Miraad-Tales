@@ -15,6 +15,7 @@
 		1B38007A1C0360F800D10E42 /* Hydora.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1B3800761C0360F800D10E42 /* Hydora.atlas */; };
 		1B38007B1C0360F800D10E42 /* Rohan.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1B3800771C0360F800D10E42 /* Rohan.atlas */; };
 		1B38007C1C0360F800D10E42 /* Zumbi.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1B3800781C0360F800D10E42 /* Zumbi.atlas */; };
+		1B38007F1C03651C00D10E42 /* campfire.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1B38007E1C03651C00D10E42 /* campfire.atlas */; };
 		1B4780311BD9297B007E03B5 /* CombatScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4780301BD9297B007E03B5 /* CombatScene.swift */; };
 		1B4780331BD9298E007E03B5 /* CombatScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1B4780321BD9298E007E03B5 /* CombatScene.sks */; };
 		1B4F297E1BCFD28200612BF8 /* VLDContextSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B4F29791BCFD28200612BF8 /* VLDContextSheet.m */; };
@@ -164,6 +165,7 @@
 		1B3800761C0360F800D10E42 /* Hydora.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Hydora.atlas; sourceTree = "<group>"; };
 		1B3800771C0360F800D10E42 /* Rohan.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Rohan.atlas; sourceTree = "<group>"; };
 		1B3800781C0360F800D10E42 /* Zumbi.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Zumbi.atlas; sourceTree = "<group>"; };
+		1B38007E1C03651C00D10E42 /* campfire.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = campfire.atlas; sourceTree = "<group>"; };
 		1B4780301BD9297B007E03B5 /* CombatScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombatScene.swift; sourceTree = "<group>"; };
 		1B4780321BD9298E007E03B5 /* CombatScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CombatScene.sks; sourceTree = "<group>"; };
 		1B4F29781BCFD28200612BF8 /* VLDContextSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLDContextSheet.h; sourceTree = "<group>"; };
@@ -329,8 +331,8 @@
 		1B3800671C034B8500D10E42 /* Start */ = {
 			isa = PBXGroup;
 			children = (
-				1B38006A1C034BB400D10E42 /* Start.sks */,
 				1B38006C1C034CCA00D10E42 /* Start.swift */,
+				1B38006A1C034BB400D10E42 /* Start.sks */,
 			);
 			name = Start;
 			sourceTree = "<group>";
@@ -357,6 +359,14 @@
 				1B3800731C035BC100D10E42 /* ChapterMenu.swift */,
 			);
 			name = Chapter;
+			sourceTree = "<group>";
+		};
+		1B38007D1C0364C600D10E42 /* Start */ = {
+			isa = PBXGroup;
+			children = (
+				1B38007E1C03651C00D10E42 /* campfire.atlas */,
+			);
+			name = Start;
 			sourceTree = "<group>";
 		};
 		1B46EAC31BE58F8A005E040B /* HUD */ = {
@@ -728,6 +738,7 @@
 		1BC9101A1BD7E4AE009E2A9C /* Maps */ = {
 			isa = PBXGroup;
 			children = (
+				1B38007D1C0364C600D10E42 /* Start */,
 				1BB27CAF1BFA391E00A5736E /* Combat */,
 				1BD0C5621BECE26D006F4220 /* City-Forest */,
 				1BB6D3121BEB88A0007229DA /* MVP */,
@@ -1020,6 +1031,7 @@
 				1B9CD2E81BE8FFA7003C1834 /* equipBox.png in Resources */,
 				1BB27CD01BFA391E00A5736E /* 14 enemyhpbar.png in Resources */,
 				1B8EDC0E1BC2B074009603B6 /* Main.storyboard in Resources */,
+				1B38007F1C03651C00D10E42 /* campfire.atlas in Resources */,
 				1BD0C5781BECE5E0006F4220 /* closeddoor.png in Resources */,
 				1BB27CC51BFA391E00A5736E /* mpbar.png in Resources */,
 				1BB27CD11BFA391E00A5736E /* 15 screen.png in Resources */,
