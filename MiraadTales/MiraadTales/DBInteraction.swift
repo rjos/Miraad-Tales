@@ -6,7 +6,7 @@
 //  Copyright © 2015 Rodolfo José. All rights reserved.
 //
 
-import Foundation
+import SpriteKit
 
 public class DBInteraction {
     
@@ -27,8 +27,17 @@ public class DBInteraction {
             
         }else if person is Enemy {
             
-        }else {
+        }else if person is SKSpriteNode {
             
+            namePerson = (person as! SKSpriteNode).name!
+            
+            if namePerson == "SKKey" {
+                currentDialog = setConversationKey(size)
+            }else if namePerson == "SKDoor" {
+                currentDialog = setConversationCloseDoor(size)
+            }else if namePerson == "OpenDoor" {
+                currentDialog = setConversationOpenDoor(size)
+            }
         }
         
         if currentDialog == nil || namePerson == "" {
@@ -86,6 +95,33 @@ public class DBInteraction {
         ]
         
         let dialog = Dialog(messages: messages, action: ActionDialog.OpenPage, size: size)
+        
+        return dialog
+    }
+    
+    private static func setConversationKey(size: CGSize) -> Dialog {
+        let messages = [
+            Message(id: 1, text: "Você pegou a chave", owner: nil, shown: false, item: nil)]
+
+        let dialog = Dialog(messages: messages, action: nil, size: size)
+        
+        return dialog
+    }
+    
+    private static func setConversationCloseDoor(size: CGSize) -> Dialog {
+        let messages = [
+            Message(id: 1, text: "A porta está fechada. Pegue a chave para abri-la", owner: nil, shown: false, item: nil)]
+        
+        let dialog = Dialog(messages: messages, action: nil, size: size)
+        
+        return dialog
+    }
+    
+    private static func setConversationOpenDoor(size: CGSize) -> Dialog {
+        let messages = [
+            Message(id: 1, text: "Você abriu a porta.", owner: nil, shown: false, item: nil)]
+        
+        let dialog = Dialog(messages: messages, action: nil, size: size)
         
         return dialog
     }

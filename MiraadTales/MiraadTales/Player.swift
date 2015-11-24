@@ -18,13 +18,18 @@ public class Player: SKSpriteNode, VLDContextSheetDelegate {
     public var lastedDirection: DirectionPlayer
     public var isRunning: Bool
     public var selectedMenuContext: String?
+    public var usingItem: String? = nil
+    
+    private var itemsMenus: [VLDContextSheetItem] = []
     private var playerWalkingFrames = Array<Array<SKTexture>>()
     private var longTapPlayer: NSTimeInterval = 1.0
     private var touchStarted: NSTimeInterval? = nil
     private var contextMenuPlayer: VLDContextSheet? = nil
     private var viewController: UIView? = nil
     private var locationTouch: CGPoint? = nil
+    
     var decoder = true
+    
     
     public init(race: BaseRace, imageNamed: String, viewController: UIView?) {
         self.race = race
@@ -41,9 +46,6 @@ public class Player: SKSpriteNode, VLDContextSheetDelegate {
         self.name = self.race.name
         self.zPosition = 5
         
-//        self.xScale = 2
-//        self.yScale = 2
-        
         //Filtro para não suavizar o pixel
         self.texture!.filteringMode = .Nearest
         
@@ -55,15 +57,12 @@ public class Player: SKSpriteNode, VLDContextSheetDelegate {
     }
 
     private func setPhysicsBodyPlayer(texture: SKTexture) {
-//        let img = texture.CGImage
-//        let uimg = UIImage(CGImage: img)
-//        let ntex = SKTexture(image: uimg)
-        self.physicsBody = SKPhysicsBody(texture: texture, size: texture.size())
+        self.physicsBody = SKPhysicsBody(texture: texture, alphaThreshold: 0.5, size: texture.size())
         self.physicsBody?.usesPreciseCollisionDetection = true
         self.physicsBody?.affectedByGravity = false
-        self.physicsBody?.collisionBitMask = CollisionSetUps.NPC.rawValue
+        self.physicsBody?.collisionBitMask = CollisionSetUps.NPC.rawValue | CollisionSetUps.Items.rawValue | CollisionSetUps.Buildings.rawValue
         self.physicsBody?.categoryBitMask = CollisionSetUps.Player.rawValue
-        self.physicsBody?.contactTestBitMask = CollisionSetUps.NPC.rawValue
+        self.physicsBody?.contactTestBitMask = CollisionSetUps.NPC.rawValue | CollisionSetUps.Items.rawValue | CollisionSetUps.Buildings.rawValue
         self.physicsBody?.allowsRotation = false
     }
     
@@ -167,14 +166,35 @@ public class Player: SKSpriteNode, VLDContextSheetDelegate {
     //MARK: - Creating and Opening Menu
     private func creatingContextMenu() {
         
-        let item1 = VLDContextSheetItem(title: "Backpack", image: UIImage(named: "backpack"), highlightedImage: UIImage(named: "backpack"))
+        let item = VLDContextSheetItem(title: "Inventário", image: UIImage(named: "inventorio"), highlightedImage: UIImage(named: "inventorio"))
         
-        let item2 = VLDContextSheetItem(title: "Diário", image: UIImage(named: "diario"), highlightedImage: UIImage(named: "diario"))
+        var contains = false
         
-        let item3 = VLDContextSheetItem(title: "Inventário", image: UIImage(named: "inventorio"), highlightedImage: UIImage(named: "inventorio"))
+        for i in self.itemsMenus {
+            
+            if i.title == item.title {
+                contains = true
+                break
+            }
+        }
         
-        self.contextMenuPlayer = VLDContextSheet(items: [item1,item2,item3])
+        if !contains && self.itemsMenus.count > 0 {
+            self.itemsMenus.insert(item, atIndex: 0)
+        }else if self.itemsMenus.count == 0 {
+            self.itemsMenus.append(item)
+        }
+        
+        self.contextMenuPlayer = VLDContextSheet(items: self.itemsMenus)
         self.contextMenuPlayer?.delegate = self
+    }
+    
+    public func setItemIntoMenu(item: VLDContextSheetItem) {
+        
+        if !self.itemsMenus.contains(item) {
+            self.itemsMenus.append(item)
+        }
+        
+        creatingContextMenu()
     }
     
     private func openContextMenu() {

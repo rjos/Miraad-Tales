@@ -84,6 +84,10 @@ public class HUD: SKNode {
     
     public override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
+    }
+    
+    public override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        
         for touch in touches {
             let location = touch.locationInNode(self)
             

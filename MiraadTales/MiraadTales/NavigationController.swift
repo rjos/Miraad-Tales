@@ -39,10 +39,12 @@ public class NavigationController: SKView {
     
     public func GoBack(transition: SKTransition) {
         
-        self.scenes.removeLast()
+         self.scenes.removeLast()
         
         let lastScene = self.scenes.last!
         lastScene.userData!["GoBack"] = true
+        
+        self.scene!.removeFromParent()
         
         self.presentScene(lastScene, transition: transition)
     }

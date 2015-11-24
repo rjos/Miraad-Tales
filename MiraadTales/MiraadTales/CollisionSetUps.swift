@@ -13,5 +13,6 @@ public enum CollisionSetUps: UInt32{
     case Player = 1
     case NPC = 2
     case Buildings = 3
-    
+    case Items = 4
+    case Enemies = 5
 }

@@ -236,6 +236,7 @@ static CGRect VLDOrientedScreenBounds() {
     [self createZones];
     
     self.starterGestureRecognizer = [[UITapGestureRecognizer alloc] init];
+    self.starterGestureRecognizer.cancelsTouchesInView = NO;
     [view addGestureRecognizer:self.starterGestureRecognizer];
     
     //self.touchCenter = [self.starterGestureRecognizer locationInView: self];

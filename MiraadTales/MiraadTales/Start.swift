@@ -33,6 +33,12 @@ class Start: SKScene {
         logo = bgNode.childNodeWithName("SKLogo") as! SKSpriteNode
         campfire = bgNode.childNodeWithName("SKCampFire") as! SKSpriteNode
         
+        let hydora = bgNode.childNodeWithName("SKHydora") as! SKSpriteNode
+        let rohan = bgNode.childNodeWithName("SKRohan") as! SKSpriteNode
+        
+        hydora.texture!.filteringMode = .Nearest
+        rohan.texture!.filteringMode = .Nearest
+        
         setAtlas()
         
         //Action logo

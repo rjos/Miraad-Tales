@@ -10,7 +10,7 @@ import SpriteKit
 public class Dialog: SKNode {
     
     public let messages: [Message]
-    public let action: ActionDialog
+    public let action: ActionDialog?
     public var isEmpty: Bool
     public var changeMessage: Bool
     public var velocity: NSTimeInterval = 0.1
@@ -45,7 +45,7 @@ public class Dialog: SKNode {
     var countCharacter = 0
     var countLine = 0
     
-    public init(messages: [Message], action: ActionDialog, size: CGSize) {
+    public init(messages: [Message], action: ActionDialog?, size: CGSize) {
         self.messages = messages
         self.action = action
         
@@ -100,7 +100,10 @@ public class Dialog: SKNode {
                 self.currentMessage.removeAll()
                 self.changeMessage = false
                 
-                if self.isEmpty && self.showAction {
+                if (self.isEmpty && self.showAction) {
+                    self.ended = true
+                }else if self.action == nil {
+                    self.isEmpty = true
                     self.ended = true
                 }
             }
@@ -114,6 +117,10 @@ public class Dialog: SKNode {
                 self.skBgDialog!.removeAllChildren()
                 self.skNodeMessage!.removeAllChildren()
                 self.skBgDialog!.addChild(self.skNodeMessage!)
+            }
+            
+            if self.isEmpty && self.action == nil {
+                self.ended = true
             }
         }
     }
@@ -133,7 +140,9 @@ public class Dialog: SKNode {
             
             if !messages.isEmpty {
                 let message = messages.first!
+                
                 message.shown = true
+                
                 //Set nodes from dialog
                 self.message = message
                 

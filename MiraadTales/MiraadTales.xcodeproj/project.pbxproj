@@ -12,7 +12,6 @@
 		1B3800701C0355D300D10E42 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B38006F1C0355D300D10E42 /* logo.png */; };
 		1B3800741C035BC100D10E42 /* ChapterMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3800731C035BC100D10E42 /* ChapterMenu.swift */; };
 		1B3800791C0360F800D10E42 /* Bellatrix.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1B3800751C0360F800D10E42 /* Bellatrix.atlas */; };
-		1B38007A1C0360F800D10E42 /* Hydora.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1B3800761C0360F800D10E42 /* Hydora.atlas */; };
 		1B38007B1C0360F800D10E42 /* Rohan.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1B3800771C0360F800D10E42 /* Rohan.atlas */; };
 		1B38007C1C0360F800D10E42 /* Zumbi.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1B3800781C0360F800D10E42 /* Zumbi.atlas */; };
 		1B38007F1C03651C00D10E42 /* campfire.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1B38007E1C03651C00D10E42 /* campfire.atlas */; };
@@ -27,6 +26,7 @@
 		1B8418DE1C0133BB003F0130 /* heal.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B8418DC1C0133BB003F0130 /* heal.png */; };
 		1B8418E11C01354B003F0130 /* powerchord.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B8418DF1C01354B003F0130 /* powerchord.png */; };
 		1B8418E21C01354B003F0130 /* haste.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B8418E01C01354B003F0130 /* haste.png */; };
+		1B861F671C04918400E0C555 /* Hydora.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1B861F661C04918400E0C555 /* Hydora.atlas */; };
 		1B881B811BDFB074000DC648 /* BaseEnemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B881B801BDFB074000DC648 /* BaseEnemy.swift */; };
 		1B881B831BDFB0AD000DC648 /* TypeEnemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B881B821BDFB0AD000DC648 /* TypeEnemy.swift */; };
 		1B881B851BDFB360000DC648 /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B881B841BDFB360000DC648 /* Enemy.swift */; };
@@ -123,13 +123,20 @@
 		1BD0C5731BECE26D006F4220 /* house2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BD0C56A1BECE26D006F4220 /* house2.png */; };
 		1BD0C5741BECE26D006F4220 /* mato.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BD0C56B1BECE26D006F4220 /* mato.png */; };
 		1BD0C5781BECE5E0006F4220 /* closeddoor.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BD0C5761BECE5E0006F4220 /* closeddoor.png */; };
-		1BD0C5791BECE5E0006F4220 /* openeddoor.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BD0C5771BECE5E0006F4220 /* openeddoor.png */; };
 		1BD0C5851BECEFFB006F4220 /* DBPlayers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD0C5841BECEFFB006F4220 /* DBPlayers.swift */; };
 		1BD76E3F1BC401CF00A2EDE1 /* Equip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD76E3E1BC401CF00A2EDE1 /* Equip.swift */; };
 		1BD76E431BC4080D00A2EDE1 /* ItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD76E421BC4080D00A2EDE1 /* ItemType.swift */; };
 		1BD76E451BC4093900A2EDE1 /* PlayerStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD76E441BC4093900A2EDE1 /* PlayerStatus.swift */; };
 		1BD76E4E1BC4135900A2EDE1 /* BaseSkill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD76E4D1BC4135900A2EDE1 /* BaseSkill.swift */; };
+		1BE64BC11C03EF2F009729ED /* openedDoorUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BE64BBF1C03EF2F009729ED /* openedDoorUp.png */; };
+		1BE64BC21C03EF2F009729ED /* openedDoorDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BE64BC01C03EF2F009729ED /* openedDoorDown.png */; };
 		1BE7D8051BC7FEDA000FA60C /* Ylla.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1BE7D8041BC7FEDA000FA60C /* Ylla.atlas */; };
+		1BE8DF841C050B5700BCBE1C /* CastleScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE8DF831C050B5700BCBE1C /* CastleScene.swift */; };
+		1BE8DF861C050B6A00BCBE1C /* CastleScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1BE8DF851C050B6A00BCBE1C /* CastleScene.sks */; };
+		1BE8DF891C050B9F00BCBE1C /* floor.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BE8DF881C050B9F00BCBE1C /* floor.png */; };
+		1BE8DF8B1C050BD300BCBE1C /* rocksCastle.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BE8DF8A1C050BD300BCBE1C /* rocksCastle.png */; };
+		1BE8DF8D1C050DA900BCBE1C /* cauldron.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BE8DF8C1C050DA900BCBE1C /* cauldron.png */; };
+		1BE8DF8F1C0519A700BCBE1C /* PositionManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE8DF8E1C0519A700BCBE1C /* PositionManagement.swift */; };
 		1BECB4CB1BC55CB000EDBB8F /* BaseRace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BECB4CA1BC55CB000EDBB8F /* BaseRace.swift */; };
 		1BECB4CD1BC55E2200EDBB8F /* Swordsman.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BECB4CC1BC55E2200EDBB8F /* Swordsman.swift */; };
 		1BECB4CF1BC55EB300EDBB8F /* Mage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BECB4CE1BC55EB300EDBB8F /* Mage.swift */; };
@@ -162,7 +169,6 @@
 		1B38006F1C0355D300D10E42 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		1B3800731C035BC100D10E42 /* ChapterMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChapterMenu.swift; sourceTree = "<group>"; };
 		1B3800751C0360F800D10E42 /* Bellatrix.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Bellatrix.atlas; sourceTree = "<group>"; };
-		1B3800761C0360F800D10E42 /* Hydora.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Hydora.atlas; sourceTree = "<group>"; };
 		1B3800771C0360F800D10E42 /* Rohan.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Rohan.atlas; sourceTree = "<group>"; };
 		1B3800781C0360F800D10E42 /* Zumbi.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Zumbi.atlas; sourceTree = "<group>"; };
 		1B38007E1C03651C00D10E42 /* campfire.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = campfire.atlas; sourceTree = "<group>"; };
@@ -182,6 +188,7 @@
 		1B8418DC1C0133BB003F0130 /* heal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heal.png; sourceTree = "<group>"; };
 		1B8418DF1C01354B003F0130 /* powerchord.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = powerchord.png; sourceTree = "<group>"; };
 		1B8418E01C01354B003F0130 /* haste.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = haste.png; sourceTree = "<group>"; };
+		1B861F661C04918400E0C555 /* Hydora.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Hydora.atlas; sourceTree = "<group>"; };
 		1B881B801BDFB074000DC648 /* BaseEnemy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseEnemy.swift; sourceTree = "<group>"; };
 		1B881B821BDFB0AD000DC648 /* TypeEnemy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeEnemy.swift; sourceTree = "<group>"; };
 		1B881B841BDFB360000DC648 /* Enemy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
@@ -270,7 +277,6 @@
 		1BB6D3191BEBAD7D007229DA /* stones.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stones.png; sourceTree = "<group>"; };
 		1BC1F41C1BD1C6CB000CE8B3 /* MovementManagement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovementManagement.swift; sourceTree = "<group>"; };
 		1BC1F41F1BD2360F000CE8B3 /* ActionManagement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionManagement.swift; sourceTree = "<group>"; };
-		1BC910211BD7E4AE009E2A9C /* public_tileset_by_orohnpokemon-d4vpcfu copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "public_tileset_by_orohnpokemon-d4vpcfu copy.png"; sourceTree = "<group>"; };
 		1BD0C53C1BECDCD0006F4220 /* Herb.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Herb.atlas; sourceTree = "<group>"; };
 		1BD0C54B1BECDCD0006F4220 /* Aemon.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Aemon.atlas; sourceTree = "<group>"; };
 		1BD0C54C1BECDCD0006F4220 /* Ramdall.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Ramdall.atlas; sourceTree = "<group>"; };
@@ -285,14 +291,21 @@
 		1BD0C56A1BECE26D006F4220 /* house2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = house2.png; sourceTree = "<group>"; };
 		1BD0C56B1BECE26D006F4220 /* mato.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mato.png; sourceTree = "<group>"; };
 		1BD0C5761BECE5E0006F4220 /* closeddoor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = closeddoor.png; sourceTree = "<group>"; };
-		1BD0C5771BECE5E0006F4220 /* openeddoor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = openeddoor.png; sourceTree = "<group>"; };
 		1BD0C5841BECEFFB006F4220 /* DBPlayers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBPlayers.swift; sourceTree = "<group>"; };
 		1BD76E3E1BC401CF00A2EDE1 /* Equip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Equip.swift; sourceTree = "<group>"; };
 		1BD76E421BC4080D00A2EDE1 /* ItemType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemType.swift; sourceTree = "<group>"; };
 		1BD76E441BC4093900A2EDE1 /* PlayerStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerStatus.swift; sourceTree = "<group>"; };
 		1BD76E4D1BC4135900A2EDE1 /* BaseSkill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseSkill.swift; sourceTree = "<group>"; };
+		1BE64BBF1C03EF2F009729ED /* openedDoorUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = openedDoorUp.png; sourceTree = "<group>"; };
+		1BE64BC01C03EF2F009729ED /* openedDoorDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = openedDoorDown.png; sourceTree = "<group>"; };
 		1BE7D7FE1BC7F854000FA60C /* MiraadTales-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MiraadTales-Bridging-Header.h"; sourceTree = "<group>"; };
 		1BE7D8041BC7FEDA000FA60C /* Ylla.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Ylla.atlas; sourceTree = "<group>"; };
+		1BE8DF831C050B5700BCBE1C /* CastleScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CastleScene.swift; sourceTree = "<group>"; };
+		1BE8DF851C050B6A00BCBE1C /* CastleScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CastleScene.sks; sourceTree = "<group>"; };
+		1BE8DF881C050B9F00BCBE1C /* floor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = floor.png; sourceTree = "<group>"; };
+		1BE8DF8A1C050BD300BCBE1C /* rocksCastle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rocksCastle.png; sourceTree = "<group>"; };
+		1BE8DF8C1C050DA900BCBE1C /* cauldron.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cauldron.png; sourceTree = "<group>"; };
+		1BE8DF8E1C0519A700BCBE1C /* PositionManagement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PositionManagement.swift; sourceTree = "<group>"; };
 		1BECB4CA1BC55CB000EDBB8F /* BaseRace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRace.swift; sourceTree = "<group>"; };
 		1BECB4CC1BC55E2200EDBB8F /* Swordsman.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swordsman.swift; sourceTree = "<group>"; };
 		1BECB4CE1BC55EB300EDBB8F /* Mage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mage.swift; sourceTree = "<group>"; };
@@ -541,6 +554,7 @@
 				1BB27CD41BFA614E00A5736E /* Extensions */,
 				1BA6B9941BF0EB2C00046B7C /* Conversation */,
 				1B9AD03B1BED43AD00FA04C6 /* NavigationController.swift */,
+				1BE8DF8E1C0519A700BCBE1C /* PositionManagement.swift */,
 			);
 			name = Library;
 			sourceTree = "<group>";
@@ -557,9 +571,10 @@
 		1B90C99C1BFCB83500B198FB /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				1BE8DF821C050B4100BCBE1C /* Castle */,
 				1B3800671C034B8500D10E42 /* Start */,
 				1B90C9A01BFCB85D00B198FB /* Combat */,
-				1B90C99F1BFCB85500B198FB /* Map */,
+				1B90C99F1BFCB85500B198FB /* Mvp */,
 				1B90C99E1BFCB84E00B198FB /* Intro */,
 			);
 			name = Pages;
@@ -574,13 +589,13 @@
 			name = Intro;
 			sourceTree = "<group>";
 		};
-		1B90C99F1BFCB85500B198FB /* Map */ = {
+		1B90C99F1BFCB85500B198FB /* Mvp */ = {
 			isa = PBXGroup;
 			children = (
 				1BB6D30E1BEB883C007229DA /* MvpScene.swift */,
 				1BB6D3101BEB8867007229DA /* MvpScene.sks */,
 			);
-			name = Map;
+			name = Mvp;
 			sourceTree = "<group>";
 		};
 		1B90C9A01BFCB85D00B198FB /* Combat */ = {
@@ -725,8 +740,9 @@
 		1BB6D3121BEB88A0007229DA /* MVP */ = {
 			isa = PBXGroup;
 			children = (
+				1BE64BBF1C03EF2F009729ED /* openedDoorUp.png */,
+				1BE64BC01C03EF2F009729ED /* openedDoorDown.png */,
 				1BD0C5761BECE5E0006F4220 /* closeddoor.png */,
-				1BD0C5771BECE5E0006F4220 /* openeddoor.png */,
 				1BB6D3191BEBAD7D007229DA /* stones.png */,
 				1BB6D3171BEBAD72007229DA /* bones.png */,
 				1BB6D3151BEB89E1007229DA /* rocks.png */,
@@ -738,11 +754,11 @@
 		1BC9101A1BD7E4AE009E2A9C /* Maps */ = {
 			isa = PBXGroup;
 			children = (
+				1BE8DF871C050B8B00BCBE1C /* Castle */,
 				1B38007D1C0364C600D10E42 /* Start */,
 				1BB27CAF1BFA391E00A5736E /* Combat */,
 				1BD0C5621BECE26D006F4220 /* City-Forest */,
 				1BB6D3121BEB88A0007229DA /* MVP */,
-				1BC910211BD7E4AE009E2A9C /* public_tileset_by_orohnpokemon-d4vpcfu copy.png */,
 			);
 			name = Maps;
 			path = map;
@@ -751,8 +767,8 @@
 		1BD0C53B1BECD927006F4220 /* Characters */ = {
 			isa = PBXGroup;
 			children = (
+				1B861F661C04918400E0C555 /* Hydora.atlas */,
 				1B3800751C0360F800D10E42 /* Bellatrix.atlas */,
-				1B3800761C0360F800D10E42 /* Hydora.atlas */,
 				1B3800771C0360F800D10E42 /* Rohan.atlas */,
 				1B3800781C0360F800D10E42 /* Zumbi.atlas */,
 				1BD0C55F1BECDCF6006F4220 /* Marge.atlas */,
@@ -846,6 +862,25 @@
 				1B9553751BD52D5C001D1FBD /* Joystick.swift */,
 			);
 			name = Joystick;
+			sourceTree = "<group>";
+		};
+		1BE8DF821C050B4100BCBE1C /* Castle */ = {
+			isa = PBXGroup;
+			children = (
+				1BE8DF831C050B5700BCBE1C /* CastleScene.swift */,
+				1BE8DF851C050B6A00BCBE1C /* CastleScene.sks */,
+			);
+			name = Castle;
+			sourceTree = "<group>";
+		};
+		1BE8DF871C050B8B00BCBE1C /* Castle */ = {
+			isa = PBXGroup;
+			children = (
+				1BE8DF8C1C050DA900BCBE1C /* cauldron.png */,
+				1BE8DF8A1C050BD300BCBE1C /* rocksCastle.png */,
+				1BE8DF881C050B9F00BCBE1C /* floor.png */,
+			);
+			name = Castle;
 			sourceTree = "<group>";
 		};
 		1BECB4C91BC55C9900EDBB8F /* Race */ = {
@@ -975,7 +1010,7 @@
 				1B9CD2DA1BE8F7EE003C1834 /* prospero_nbp.ttf in Resources */,
 				1BA3ED6C1BEA2C7A00F9E3E3 /* nextPlayer.png in Resources */,
 				1B8418E21C01354B003F0130 /* haste.png in Resources */,
-				1B38007A1C0360F800D10E42 /* Hydora.atlas in Resources */,
+				1BE8DF861C050B6A00BCBE1C /* CastleScene.sks in Resources */,
 				1BD0C56F1BECE26D006F4220 /* flores.png in Resources */,
 				1BD0C55D1BECDCD0006F4220 /* Ramdall.atlas in Resources */,
 				1BB27CC21BFA391E00A5736E /* footer.png in Resources */,
@@ -993,10 +1028,12 @@
 				1BD0C5711BECE26D006F4220 /* grass.png in Resources */,
 				1BB27CCA1BFA391E00A5736E /* 08 turnenemy.png in Resources */,
 				1BB27CCE1BFA391E00A5736E /* 12 sound.png in Resources */,
+				1BE8DF8B1C050BD300BCBE1C /* rocksCastle.png in Resources */,
 				1BB27CCD1BFA391E00A5736E /* reddot.png in Resources */,
 				1BE7D8051BC7FEDA000FA60C /* Ylla.atlas in Resources */,
-				1BD0C5791BECE5E0006F4220 /* openeddoor.png in Resources */,
+				1B861F671C04918400E0C555 /* Hydora.atlas in Resources */,
 				1B9CD2DE1BE8FB05003C1834 /* bgTitle.png in Resources */,
+				1BE64BC11C03EF2F009729ED /* openedDoorUp.png in Resources */,
 				1BD0C5601BECDCF6006F4220 /* Marge.atlas in Resources */,
 				1B9CD2E01BE8FB62003C1834 /* closeButton.png in Resources */,
 				1B9CD2E41BE8FECF003C1834 /* bgEquips.png in Resources */,
@@ -1014,6 +1051,7 @@
 				1BB6D3141BEB88BF007229DA /* bgMVP.png in Resources */,
 				1BA3ED721BEA3CB700F9E3E3 /* markAtk.png in Resources */,
 				1B8418DD1C0133BB003F0130 /* holylight.png in Resources */,
+				1BE64BC21C03EF2F009729ED /* openedDoorDown.png in Resources */,
 				1B9AD03A1BED3B2700FA04C6 /* key.png in Resources */,
 				1BA3ED7B1BEA4ABC00F9E3E3 /* Warhammer.png in Resources */,
 				1BA3ED6E1BEA3BC600F9E3E3 /* bgAttackSkill.png in Resources */,
@@ -1029,6 +1067,7 @@
 				1BB27CC41BFA391E00A5736E /* hpbar.png in Resources */,
 				1B9CD2EC1BE9022B003C1834 /* bgStatus.png in Resources */,
 				1B9CD2E81BE8FFA7003C1834 /* equipBox.png in Resources */,
+				1BE8DF891C050B9F00BCBE1C /* floor.png in Resources */,
 				1BB27CD01BFA391E00A5736E /* 14 enemyhpbar.png in Resources */,
 				1B8EDC0E1BC2B074009603B6 /* Main.storyboard in Resources */,
 				1B38007F1C03651C00D10E42 /* campfire.atlas in Resources */,
@@ -1037,6 +1076,7 @@
 				1BB27CD11BFA391E00A5736E /* 15 screen.png in Resources */,
 				1BD0C5741BECE26D006F4220 /* mato.png in Resources */,
 				1BA3ED741BEA3CC000F9E3E3 /* markDef.png in Resources */,
+				1BE8DF8D1C050DA900BCBE1C /* cauldron.png in Resources */,
 				1B38006B1C034BB400D10E42 /* Start.sks in Resources */,
 				1BD0C56D1BECE26D006F4220 /* casas.png in Resources */,
 				1B38007B1C0360F800D10E42 /* Rohan.atlas in Resources */,
@@ -1109,10 +1149,12 @@
 				1B9DA41C1BE2BB25007F5921 /* HUD.swift in Sources */,
 				1BA00EB11BC69F3F00B8972A /* Effect.swift in Sources */,
 				1BECB4D51BC563F700EDBB8F /* StatusList.swift in Sources */,
+				1BE8DF841C050B5700BCBE1C /* CastleScene.swift in Sources */,
 				1BA6B9961BF0EB5B00046B7C /* Dialog.swift in Sources */,
 				1BD76E3F1BC401CF00A2EDE1 /* Equip.swift in Sources */,
 				1BECB4D11BC55EF700EDBB8F /* Bard.swift in Sources */,
 				1B881B831BDFB0AD000DC648 /* TypeEnemy.swift in Sources */,
+				1BE8DF8F1C0519A700BCBE1C /* PositionManagement.swift in Sources */,
 				1B4780311BD9297B007E03B5 /* CombatScene.swift in Sources */,
 				1BA00EB41BC6AB2C00B8972A /* Player.swift in Sources */,
 				1BC1F41D1BD1C6CB000CE8B3 /* MovementManagement.swift in Sources */,

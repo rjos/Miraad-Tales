@@ -144,21 +144,29 @@ public class Joystick: SKNode {
         if let selectButton = self.selectButton {
             
             if selectButton.name == "LeftButton" {
-                self.velocity = CGPointMake(-0.99, 0)
+                self.velocity = CGPointMake(-1.5, 0)
                 self.direction = DirectionPlayer.Left
             }else if selectButton.name == "RightButton" {
-                self.velocity = CGPointMake(0.99, 0)
+                self.velocity = CGPointMake(1.5, 0)
                 self.direction = DirectionPlayer.Right
             }else if selectButton.name == "UpButton" {
-                self.velocity = CGPointMake(0, 0.99)
+                self.velocity = CGPointMake(0, 1.5)
                 self.direction = DirectionPlayer.Up
             }else if selectButton.name == "DownButton" {
-                self.velocity = CGPointMake(0, -0.99)
+                self.velocity = CGPointMake(0, -1.5)
                 self.direction = DirectionPlayer.Down
             }
         }else {
             self.velocity = CGPointZero
             self.direction = DirectionPlayer.None
+        }
+    }
+    
+    //MARK: Reset Joystick 
+    public func reset() {
+        if let selectButton = self.selectButton {
+            self.selectButton.alpha = 0.7
+            self.selectButton = nil
         }
     }
 }

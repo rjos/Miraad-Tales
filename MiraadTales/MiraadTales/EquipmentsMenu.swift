@@ -59,10 +59,11 @@ public class EquipmentsMenu: HUD {
         
         self.setPlayer(self.currentPlayer)
         
-        
         let indexPlayer = self.players.indexOf(self.currentPlayer)!
         
-        if indexPlayer == 0 {
+        if self.players.count == 1 {
+            self.disableTwoButtons()
+        }else if indexPlayer == 0 {
             self.disableButtons(false)
         }else if indexPlayer + 1 == self.players.count {
             self.disableButtons(true)
@@ -114,7 +115,7 @@ public class EquipmentsMenu: HUD {
     }
     
     public override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        
+        super.touchesEnded(touches, withEvent: event)
     }
     
     //MARK: Update Method
@@ -132,8 +133,8 @@ public class EquipmentsMenu: HUD {
         
         //Set Player width animations
         let currentPlayer = Player(race: player.race, imageNamed: "\(player.race.name)-2", viewController: nil)
-        currentPlayer.xScale = 3
-        currentPlayer.yScale = 3
+        currentPlayer.xScale = 2
+        currentPlayer.yScale = 2
         currentPlayer.position = CGPointMake(0, 0)
         currentPlayer.physicsBody = nil
         currentPlayer.zPosition = 3
@@ -399,6 +400,18 @@ public class EquipmentsMenu: HUD {
                 disableButtons(isNext)
             }
         }
+    }
+    
+    private func disableTwoButtons() {
+        let bgPlayer = self.bg.childNodeWithName("bgPlayer")!
+        
+        let bgInteraction = bgPlayer.childNodeWithName("bgInteraction")!
+        
+        let nextButton = bgInteraction.childNodeWithName("next")!
+        let previewButton = bgInteraction.childNodeWithName("preview")!
+        
+        nextButton.alpha = 0.7
+        previewButton.alpha = 0.7
     }
     
     private func disableButtons(isNext: Bool) {
