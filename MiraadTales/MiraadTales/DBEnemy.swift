@@ -10,17 +10,37 @@ import Foundation
 
 public class DBEnemy {
     
-    public static func getEnemy(nameTarget: String) -> [Enemy] {
+    public static func getEnemy(nameTarget: String, qtdade: Int) -> [Enemy] {
      
-        return []
+        var enemies: [Enemy] = []
+        var enemy: Enemy! = nil
+        
+        for var i = 0; i < qtdade; ++i {
+            
+            if nameTarget == "Zumbi" {
+                enemy = self.getChaserWolf()!
+            }
+            
+            enemies.append(enemy)
+        }
+        
+        return enemies
     }
     
     //MARK: Enemy Chaser Wolf
     private static func getChaserWolf() -> Enemy? {
-        return nil
+        
+        let status = PlayerStatus(HP: 20, MP: 0, Speed: 0, pAtk: 0, mAtk: 0, pDef: 0, mDef: 0)
+        let base = BaseEnemy(name: "Chaser Wolf", status: status, equipments: [], skills: [], isDie: false, typeEnemy: TypeEnemy.AngryChicken)
+        
+        let chaserWolf = Enemy(imageNamed: "Zumbi-5", race: base)
+        chaserWolf.name = "Zumbi"
+        
+        return chaserWolf
     }
     
     private static func getSkillChaserWolf() -> [Skill] {
+        
         return []
     }
     

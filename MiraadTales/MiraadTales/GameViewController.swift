@@ -23,6 +23,7 @@ class GameViewController: UIViewController {
             
 //            scene.typeCombat = "Normal"
 //            scene.players = [DBPlayers.getBard(skView), DBPlayers.getPaladin(skView)]
+//            scene.enimies = DBEnemy.getEnemy("Zumbi", qtdade: 2)
             
             skView.showsPhysics = false
             

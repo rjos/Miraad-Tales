@@ -56,14 +56,19 @@ public class Player: SKSpriteNode, VLDContextSheetDelegate {
         setPhysicsBodyPlayer(texture)
     }
 
-    private func setPhysicsBodyPlayer(texture: SKTexture) {
-        self.physicsBody = SKPhysicsBody(texture: texture, alphaThreshold: 0.5, size: texture.size())
+    public func setPhysicsBodyPlayer(texture: SKTexture) {
+        let size = texture.size()
+        self.physicsBody = SKPhysicsBody(circleOfRadius: size.width / 2)
         self.physicsBody?.usesPreciseCollisionDetection = true
         self.physicsBody?.affectedByGravity = false
         self.physicsBody?.collisionBitMask = CollisionSetUps.NPC.rawValue | CollisionSetUps.Items.rawValue | CollisionSetUps.Buildings.rawValue
         self.physicsBody?.categoryBitMask = CollisionSetUps.Player.rawValue
         self.physicsBody?.contactTestBitMask = CollisionSetUps.NPC.rawValue | CollisionSetUps.Items.rawValue | CollisionSetUps.Buildings.rawValue
         self.physicsBody?.allowsRotation = false
+    }
+    
+    public func removePhysicsBodyPlayer() {
+        self.physicsBody = nil
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -240,7 +245,7 @@ public class Player: SKSpriteNode, VLDContextSheetDelegate {
             break
         }
         
-        while Int(current) != Int(targetPosition) {
+        while Int(current) > Int(targetPosition) {
             
             switch orientation {
             case .Horizontal:
@@ -251,7 +256,7 @@ public class Player: SKSpriteNode, VLDContextSheetDelegate {
                 break
             }
             
-            current = current - (0.99 * sign)
+            current = current - (1.5 * sign)
         }
     }
     
@@ -265,6 +270,8 @@ public class Player: SKSpriteNode, VLDContextSheetDelegate {
     
     public func setPlayerForExploration() {
         self.inCombat = false
-        self.removeAction()
+        self.xScale = 1.0
+        self.yScale = 1.0
+        self.removeActionForKey("Combat-\(self.race.name)")
     }
 }

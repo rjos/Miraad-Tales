@@ -28,9 +28,16 @@ public class NavigationController: SKView {
     
     public func GoBack() {
         
-        self.scenes.removeLast()
+        let currScene = self.scenes.removeLast()
         
         let lastScene = self.scenes.last!
+        
+        if currScene is CombatScene {
+            lastScene.userData!["CombatScene"] = true
+        }else {
+            lastScene.userData!["CombatScene"] = false
+        }
+        
         lastScene.userData!["GoBack"] = true
         
         self.presentScene(lastScene)
@@ -39,9 +46,16 @@ public class NavigationController: SKView {
     
     public func GoBack(transition: SKTransition) {
         
-         self.scenes.removeLast()
+        let currScene = self.scenes.removeLast()
         
         let lastScene = self.scenes.last!
+        
+        if currScene is CombatScene {
+            lastScene.userData!["CombatScene"] = true
+        }else {
+            lastScene.userData!["CombatScene"] = false
+        }
+        
         lastScene.userData!["GoBack"] = true
         
         self.scene!.removeFromParent()

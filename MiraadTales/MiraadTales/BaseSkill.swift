@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class BaseSkill {
+public class BaseSkill : DamageList {
     
     public let name: String
     public let fantasyName: String
@@ -46,5 +46,15 @@ public class BaseSkill {
     
     public func increaseSpeed() -> Int {
         return self.status.Speed
+    }
+    
+    public func calculateAtk() -> Int {
+        let totalAtk = self.status.pAtk + self.status.mAtk
+        return totalAtk
+    }
+    
+    public func calculateDef() -> Int {
+        let totalDef = self.status.mDef + self.status.mDef
+        return totalDef
     }
 }

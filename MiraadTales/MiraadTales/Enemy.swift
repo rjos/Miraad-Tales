@@ -16,6 +16,8 @@ public class Enemy: SKSpriteNode {
         self.race = race
         let texture = SKTexture(imageNamed: imageNamed)
         super.init(texture: texture, color: UIColor.blackColor(), size: texture.size())
+        
+        texture.filteringMode = .Nearest
     }
 
     required public init?(coder aDecoder: NSCoder) {

@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class BaseRace: StatusList{
+public class BaseRace: StatusList, DamageList{
 
     public let name: String
     public let status: PlayerStatus
@@ -50,5 +50,15 @@ public class BaseRace: StatusList{
     
     public func incremmentSpeed() {
         preconditionFailure("Function must be implemented by Sub Classes")
+    }
+    
+    public func calculateAtk() -> Int {
+        let totalAtk = self.status.pAtk + self.status.mAtk
+        return totalAtk
+    }
+    
+    public func calculateDef() -> Int {
+        let totalDef = self.status.pDef + self.status.mDef
+        return totalDef
     }
 }

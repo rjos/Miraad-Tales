@@ -81,6 +81,10 @@
 		1BA6B9931BF0DBD800046B7C /* DBEnemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA6B9921BF0DBD800046B7C /* DBEnemy.swift */; };
 		1BA6B9961BF0EB5B00046B7C /* Dialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA6B9951BF0EB5B00046B7C /* Dialog.swift */; };
 		1BA6B9981BF0EC4900046B7C /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA6B9971BF0EC4900046B7C /* Message.swift */; };
+		1BAD48F71C088B35005FBDD3 /* DamageList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAD48F61C088B35005FBDD3 /* DamageList.swift */; };
+		1BAD48FF1C08929C005FBDD3 /* Heal.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1BAD48FE1C08929C005FBDD3 /* Heal.atlas */; };
+		1BAD49011C089341005FBDD3 /* H. light.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1BAD49001C089341005FBDD3 /* H. light.atlas */; };
+		1BAD49031C0898DE005FBDD3 /* Basichit.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1BAD49021C0898DE005FBDD3 /* Basichit.atlas */; };
 		1BB03DCD1BE26444007E7615 /* EquipmentsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB03DCC1BE26444007E7615 /* EquipmentsMenu.swift */; };
 		1BB03DCF1BE266BC007E7615 /* BackpackMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB03DCE1BE266BC007E7615 /* BackpackMenu.swift */; };
 		1BB27CC21BFA391E00A5736E /* footer.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BB27CB01BFA391E00A5736E /* footer.png */; };
@@ -90,10 +94,10 @@
 		1BB27CC61BFA391E00A5736E /* basichit.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BB27CB41BFA391E00A5736E /* basichit.png */; };
 		1BB27CC71BFA391E00A5736E /* 05 skillholylight.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BB27CB51BFA391E00A5736E /* 05 skillholylight.png */; };
 		1BB27CC81BFA391E00A5736E /* 06 skillheal.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BB27CB61BFA391E00A5736E /* 06 skillheal.png */; };
-		1BB27CC91BFA391E00A5736E /* 07 turnfriend.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BB27CB71BFA391E00A5736E /* 07 turnfriend.png */; };
-		1BB27CCA1BFA391E00A5736E /* 08 turnenemy.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BB27CB81BFA391E00A5736E /* 08 turnenemy.png */; };
-		1BB27CCB1BFA391E00A5736E /* 09 waitfriend.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BB27CB91BFA391E00A5736E /* 09 waitfriend.png */; };
-		1BB27CCC1BFA391E00A5736E /* 10 waitenemy.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BB27CBA1BFA391E00A5736E /* 10 waitenemy.png */; };
+		1BB27CC91BFA391E00A5736E /* turnfriend-0.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BB27CB71BFA391E00A5736E /* turnfriend-0.png */; };
+		1BB27CCA1BFA391E00A5736E /* turnenemy-0.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BB27CB81BFA391E00A5736E /* turnenemy-0.png */; };
+		1BB27CCB1BFA391E00A5736E /* turnfriend-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BB27CB91BFA391E00A5736E /* turnfriend-1.png */; };
+		1BB27CCC1BFA391E00A5736E /* turnenemy-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BB27CBA1BFA391E00A5736E /* turnenemy-1.png */; };
 		1BB27CCD1BFA391E00A5736E /* reddot.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BB27CBB1BFA391E00A5736E /* reddot.png */; };
 		1BB27CCE1BFA391E00A5736E /* 12 sound.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BB27CBC1BFA391E00A5736E /* 12 sound.png */; };
 		1BB27CCF1BFA391E00A5736E /* 13 enemybgbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BB27CBD1BFA391E00A5736E /* 13 enemybgbar.png */; };
@@ -128,6 +132,9 @@
 		1BD76E431BC4080D00A2EDE1 /* ItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD76E421BC4080D00A2EDE1 /* ItemType.swift */; };
 		1BD76E451BC4093900A2EDE1 /* PlayerStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD76E441BC4093900A2EDE1 /* PlayerStatus.swift */; };
 		1BD76E4E1BC4135900A2EDE1 /* BaseSkill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD76E4D1BC4135900A2EDE1 /* BaseSkill.swift */; };
+		1BD7C5901C0C87FD00F7D6BC /* Warhammer@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BD7C58D1C0C87FD00F7D6BC /* Warhammer@2x.png */; };
+		1BD7C5911C0C87FD00F7D6BC /* Punishment@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BD7C58E1C0C87FD00F7D6BC /* Punishment@2x.png */; };
+		1BD7C5921C0C87FD00F7D6BC /* Sledgehammer@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BD7C58F1C0C87FD00F7D6BC /* Sledgehammer@2x.png */; };
 		1BE64BC11C03EF2F009729ED /* openedDoorUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BE64BBF1C03EF2F009729ED /* openedDoorUp.png */; };
 		1BE64BC21C03EF2F009729ED /* openedDoorDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BE64BC01C03EF2F009729ED /* openedDoorDown.png */; };
 		1BE7D8051BC7FEDA000FA60C /* Ylla.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1BE7D8041BC7FEDA000FA60C /* Ylla.atlas */; };
@@ -249,6 +256,10 @@
 		1BA6B9921BF0DBD800046B7C /* DBEnemy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBEnemy.swift; sourceTree = "<group>"; };
 		1BA6B9951BF0EB5B00046B7C /* Dialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dialog.swift; sourceTree = "<group>"; };
 		1BA6B9971BF0EC4900046B7C /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		1BAD48F61C088B35005FBDD3 /* DamageList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DamageList.swift; sourceTree = "<group>"; };
+		1BAD48FE1C08929C005FBDD3 /* Heal.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Heal.atlas; sourceTree = "<group>"; };
+		1BAD49001C089341005FBDD3 /* H. light.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = "H. light.atlas"; sourceTree = "<group>"; };
+		1BAD49021C0898DE005FBDD3 /* Basichit.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Basichit.atlas; sourceTree = "<group>"; };
 		1BB03DCC1BE26444007E7615 /* EquipmentsMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquipmentsMenu.swift; sourceTree = "<group>"; };
 		1BB03DCE1BE266BC007E7615 /* BackpackMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackpackMenu.swift; sourceTree = "<group>"; };
 		1BB27CB01BFA391E00A5736E /* footer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = footer.png; sourceTree = "<group>"; };
@@ -258,10 +269,10 @@
 		1BB27CB41BFA391E00A5736E /* basichit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = basichit.png; path = map/Combat/basichit.png; sourceTree = "<group>"; };
 		1BB27CB51BFA391E00A5736E /* 05 skillholylight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "05 skillholylight.png"; sourceTree = "<group>"; };
 		1BB27CB61BFA391E00A5736E /* 06 skillheal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "06 skillheal.png"; sourceTree = "<group>"; };
-		1BB27CB71BFA391E00A5736E /* 07 turnfriend.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "07 turnfriend.png"; sourceTree = "<group>"; };
-		1BB27CB81BFA391E00A5736E /* 08 turnenemy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "08 turnenemy.png"; sourceTree = "<group>"; };
-		1BB27CB91BFA391E00A5736E /* 09 waitfriend.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "09 waitfriend.png"; sourceTree = "<group>"; };
-		1BB27CBA1BFA391E00A5736E /* 10 waitenemy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "10 waitenemy.png"; sourceTree = "<group>"; };
+		1BB27CB71BFA391E00A5736E /* turnfriend-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "turnfriend-0.png"; sourceTree = "<group>"; };
+		1BB27CB81BFA391E00A5736E /* turnenemy-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "turnenemy-0.png"; sourceTree = "<group>"; };
+		1BB27CB91BFA391E00A5736E /* turnfriend-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "turnfriend-1.png"; sourceTree = "<group>"; };
+		1BB27CBA1BFA391E00A5736E /* turnenemy-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "turnenemy-1.png"; sourceTree = "<group>"; };
 		1BB27CBB1BFA391E00A5736E /* reddot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reddot.png; sourceTree = "<group>"; };
 		1BB27CBC1BFA391E00A5736E /* 12 sound.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "12 sound.png"; sourceTree = "<group>"; };
 		1BB27CBD1BFA391E00A5736E /* 13 enemybgbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "13 enemybgbar.png"; sourceTree = "<group>"; };
@@ -296,6 +307,9 @@
 		1BD76E421BC4080D00A2EDE1 /* ItemType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemType.swift; sourceTree = "<group>"; };
 		1BD76E441BC4093900A2EDE1 /* PlayerStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerStatus.swift; sourceTree = "<group>"; };
 		1BD76E4D1BC4135900A2EDE1 /* BaseSkill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseSkill.swift; sourceTree = "<group>"; };
+		1BD7C58D1C0C87FD00F7D6BC /* Warhammer@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Warhammer@2x.png"; sourceTree = "<group>"; };
+		1BD7C58E1C0C87FD00F7D6BC /* Punishment@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Punishment@2x.png"; sourceTree = "<group>"; };
+		1BD7C58F1C0C87FD00F7D6BC /* Sledgehammer@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sledgehammer@2x.png"; sourceTree = "<group>"; };
 		1BE64BBF1C03EF2F009729ED /* openedDoorUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = openedDoorUp.png; sourceTree = "<group>"; };
 		1BE64BC01C03EF2F009729ED /* openedDoorDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = openedDoorDown.png; sourceTree = "<group>"; };
 		1BE7D7FE1BC7F854000FA60C /* MiraadTales-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MiraadTales-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -417,6 +431,7 @@
 		1B5C1ECA1BFDF996008B2779 /* Skills */ = {
 			isa = PBXGroup;
 			children = (
+				1BAD48FA1C08923E005FBDD3 /* Animations */,
 				1BB27CB41BFA391E00A5736E /* basichit.png */,
 				1B5C1ECE1BFDF9BB008B2779 /* Swordsman */,
 				1B5C1ECD1BFDF9B4008B2779 /* Mage */,
@@ -670,6 +685,9 @@
 		1BA3ED771BEA4AAB00F9E3E3 /* Atk */ = {
 			isa = PBXGroup;
 			children = (
+				1BD7C58D1C0C87FD00F7D6BC /* Warhammer@2x.png */,
+				1BD7C58E1C0C87FD00F7D6BC /* Punishment@2x.png */,
+				1BD7C58F1C0C87FD00F7D6BC /* Sledgehammer@2x.png */,
 				1BA3ED7C1BEA4AC200F9E3E3 /* Punishment.png */,
 				1BA3ED7A1BEA4ABC00F9E3E3 /* Warhammer.png */,
 				1BA3ED781BEA4AB600F9E3E3 /* Sledgehammer.png */,
@@ -695,6 +713,24 @@
 			name = Conversation;
 			sourceTree = "<group>";
 		};
+		1BAD48FA1C08923E005FBDD3 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				1BAD49021C0898DE005FBDD3 /* Basichit.atlas */,
+				1BAD48FD1C08928F005FBDD3 /* Paladin */,
+			);
+			name = Animations;
+			sourceTree = "<group>";
+		};
+		1BAD48FD1C08928F005FBDD3 /* Paladin */ = {
+			isa = PBXGroup;
+			children = (
+				1BAD49001C089341005FBDD3 /* H. light.atlas */,
+				1BAD48FE1C08929C005FBDD3 /* Heal.atlas */,
+			);
+			name = Paladin;
+			sourceTree = "<group>";
+		};
 		1BB03DCB1BE263EE007E7615 /* HUD */ = {
 			isa = PBXGroup;
 			children = (
@@ -715,10 +751,10 @@
 				1BB27CB31BFA391E00A5736E /* mpbar.png */,
 				1BB27CB51BFA391E00A5736E /* 05 skillholylight.png */,
 				1BB27CB61BFA391E00A5736E /* 06 skillheal.png */,
-				1BB27CB71BFA391E00A5736E /* 07 turnfriend.png */,
-				1BB27CB81BFA391E00A5736E /* 08 turnenemy.png */,
-				1BB27CB91BFA391E00A5736E /* 09 waitfriend.png */,
-				1BB27CBA1BFA391E00A5736E /* 10 waitenemy.png */,
+				1BB27CB71BFA391E00A5736E /* turnfriend-0.png */,
+				1BB27CB81BFA391E00A5736E /* turnenemy-0.png */,
+				1BB27CB91BFA391E00A5736E /* turnfriend-1.png */,
+				1BB27CBA1BFA391E00A5736E /* turnenemy-1.png */,
 				1BB27CBB1BFA391E00A5736E /* reddot.png */,
 				1BB27CBC1BFA391E00A5736E /* 12 sound.png */,
 				1BB27CBD1BFA391E00A5736E /* 13 enemybgbar.png */,
@@ -813,6 +849,7 @@
 				1BD76E3D1BC401B400A2EDE1 /* Items */,
 				1B8EDC371BC2B11A009603B6 /* Attibutes */,
 				1B881B7F1BDFB051000DC648 /* Enimies */,
+				1BAD48F61C088B35005FBDD3 /* DamageList.swift */,
 			);
 			name = Characters;
 			sourceTree = "<group>";
@@ -1006,7 +1043,7 @@
 				1BA0D1101BFF527C00E4482A /* balao.png in Resources */,
 				1B38007C1C0360F800D10E42 /* Zumbi.atlas in Resources */,
 				1B9CD2D91BE8F7EE003C1834 /* prospero_bold_nbp.ttf in Resources */,
-				1BB27CC91BFA391E00A5736E /* 07 turnfriend.png in Resources */,
+				1BB27CC91BFA391E00A5736E /* turnfriend-0.png in Resources */,
 				1B9CD2DA1BE8F7EE003C1834 /* prospero_nbp.ttf in Resources */,
 				1BA3ED6C1BEA2C7A00F9E3E3 /* nextPlayer.png in Resources */,
 				1B8418E21C01354B003F0130 /* haste.png in Resources */,
@@ -1026,11 +1063,12 @@
 				1B3800701C0355D300D10E42 /* logo.png in Resources */,
 				1B8EDC071BC2B074009603B6 /* GameScene.sks in Resources */,
 				1BD0C5711BECE26D006F4220 /* grass.png in Resources */,
-				1BB27CCA1BFA391E00A5736E /* 08 turnenemy.png in Resources */,
+				1BB27CCA1BFA391E00A5736E /* turnenemy-0.png in Resources */,
 				1BB27CCE1BFA391E00A5736E /* 12 sound.png in Resources */,
 				1BE8DF8B1C050BD300BCBE1C /* rocksCastle.png in Resources */,
 				1BB27CCD1BFA391E00A5736E /* reddot.png in Resources */,
 				1BE7D8051BC7FEDA000FA60C /* Ylla.atlas in Resources */,
+				1BD7C5911C0C87FD00F7D6BC /* Punishment@2x.png in Resources */,
 				1B861F671C04918400E0C555 /* Hydora.atlas in Resources */,
 				1B9CD2DE1BE8FB05003C1834 /* bgTitle.png in Resources */,
 				1BE64BC11C03EF2F009729ED /* openedDoorUp.png in Resources */,
@@ -1047,17 +1085,21 @@
 				1B8418E11C01354B003F0130 /* powerchord.png in Resources */,
 				1B3800791C0360F800D10E42 /* Bellatrix.atlas in Resources */,
 				1BD0C54E1BECDCD0006F4220 /* Herb.atlas in Resources */,
-				1BB27CCC1BFA391E00A5736E /* 10 waitenemy.png in Resources */,
+				1BB27CCC1BFA391E00A5736E /* turnenemy-1.png in Resources */,
 				1BB6D3141BEB88BF007229DA /* bgMVP.png in Resources */,
 				1BA3ED721BEA3CB700F9E3E3 /* markAtk.png in Resources */,
+				1BD7C5921C0C87FD00F7D6BC /* Sledgehammer@2x.png in Resources */,
 				1B8418DD1C0133BB003F0130 /* holylight.png in Resources */,
 				1BE64BC21C03EF2F009729ED /* openedDoorDown.png in Resources */,
+				1BAD49031C0898DE005FBDD3 /* Basichit.atlas in Resources */,
 				1B9AD03A1BED3B2700FA04C6 /* key.png in Resources */,
 				1BA3ED7B1BEA4ABC00F9E3E3 /* Warhammer.png in Resources */,
 				1BA3ED6E1BEA3BC600F9E3E3 /* bgAttackSkill.png in Resources */,
+				1BD7C5901C0C87FD00F7D6BC /* Warhammer@2x.png in Resources */,
 				1B9CD2E21BE8FBA0003C1834 /* bgEquip.png in Resources */,
 				1BA3ED791BEA4AB600F9E3E3 /* Sledgehammer.png in Resources */,
 				1BB6D3111BEB8867007229DA /* MvpScene.sks in Resources */,
+				1BAD48FF1C08929C005FBDD3 /* Heal.atlas in Resources */,
 				1B9CD2DC1BE8FABD003C1834 /* bgMenuEquipment.png in Resources */,
 				1BD0C55C1BECDCD0006F4220 /* Aemon.atlas in Resources */,
 				1BD0C5731BECE26D006F4220 /* house2.png in Resources */,
@@ -1074,13 +1116,14 @@
 				1BD0C5781BECE5E0006F4220 /* closeddoor.png in Resources */,
 				1BB27CC51BFA391E00A5736E /* mpbar.png in Resources */,
 				1BB27CD11BFA391E00A5736E /* 15 screen.png in Resources */,
+				1BAD49011C089341005FBDD3 /* H. light.atlas in Resources */,
 				1BD0C5741BECE26D006F4220 /* mato.png in Resources */,
 				1BA3ED741BEA3CC000F9E3E3 /* markDef.png in Resources */,
 				1BE8DF8D1C050DA900BCBE1C /* cauldron.png in Resources */,
 				1B38006B1C034BB400D10E42 /* Start.sks in Resources */,
 				1BD0C56D1BECE26D006F4220 /* casas.png in Resources */,
 				1B38007B1C0360F800D10E42 /* Rohan.atlas in Resources */,
-				1BB27CCB1BFA391E00A5736E /* 09 waitfriend.png in Resources */,
+				1BB27CCB1BFA391E00A5736E /* turnfriend-1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1135,6 +1178,7 @@
 				1B4F29871BCFE2EB00612BF8 /* JSTileMap.m in Sources */,
 				1B3800741C035BC100D10E42 /* ChapterMenu.swift in Sources */,
 				1BD76E431BC4080D00A2EDE1 /* ItemType.swift in Sources */,
+				1BAD48F71C088B35005FBDD3 /* DamageList.swift in Sources */,
 				1B8EDC091BC2B074009603B6 /* GameScene.swift in Sources */,
 				1BECB4D31BC55F2600EDBB8F /* Paladin.swift in Sources */,
 				1B8EDC0B1BC2B074009603B6 /* GameViewController.swift in Sources */,

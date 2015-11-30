@@ -70,10 +70,12 @@ public class MovementManagement: SKNode {
         
         if !self.player.menuHasOpened && self.joystick.direction != DirectionPlayer.None && !didCollide {
             
-            if self.player.lastedPosition.count == 0 {
-                self.player.lastedPosition.append(self.player.position)
-            }else {
-                self.player.lastedPosition.insert(self.player.position, atIndex: 0)
+            if self.players.count > 1 {
+                if self.player.lastedPosition.count == 0 {
+                    self.player.lastedPosition.append(self.player.position)
+                }else {
+                    self.player.lastedPosition.insert(self.player.position, atIndex: 0)
+                }
             }
         }
         
@@ -201,12 +203,14 @@ public class MovementManagement: SKNode {
         
         //Trocando posições do array
         let tempPlayer = self.players[0]
+        tempPlayer.removePhysicsBodyPlayer()
         tempPlayer.alpha = 0.7
         
         self.players[0] = newPlayer
         self.players[indexNewPlayer] = tempPlayer
         
         self.player = newPlayer
+        self.player.setPhysicsBodyPlayer(self.player.texture!)
         self.player.alpha = 1
         self.player.zPosition += 2
         
@@ -270,6 +274,33 @@ public class MovementManagement: SKNode {
         }
         
         return direction
+    }
+    
+    public func addNewPlayer(p: Player) {
+        self.players.append(p)
+        
+        //Validar posição dos personagens
+        let X = p.position.x - self.player.position.x
+        let Y = p.position.y - self.player.position.y
+        
+        //Movimentar na vertical
+        if X > -30 && X < 30 {
+            
+            //Pra cima
+            if Y < 0 {
+                self.player.setLastedPosition(true, orientation: Orientation.Vertical)
+            }else /*Pra baixo*/ {
+                self.player.setLastedPosition(false, orientation: Orientation.Vertical)
+            }
+        }else if Y > -30 && Y < 30 /*Movimentar na horizontal*/ {
+            
+            //Pra direita
+            if X < 0 {
+                self.player.setLastedPosition(true, orientation: Orientation.Horizontal)
+            }else /*Pra esquerda*/ {
+                self.player.setLastedPosition(false, orientation: Orientation.Horizontal)
+            }
+        }
     }
     
 }

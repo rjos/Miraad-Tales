@@ -43,6 +43,24 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
             self.setPositionCamera()
             
             self.currentPlayer!.removeFromParent()
+            self.currentPlayer!.setPlayerForExploration()
+            
+            if (self.userData!["CombatScene"] as! Bool) {
+                if !self.currentPlayer!.race.isDie {
+                    let nodeEnemy = self.bodyEnemy!.node!
+                    nodeEnemy.removeFromParent()
+                }else {
+                    
+                }
+            }else {
+                
+            }
+            
+            let openDoorDown = map!.childNodeWithName("openedDoorDown")
+            
+            if openDoorDown != nil {
+                openDoorDown!.zPosition = 20
+            }
             
             let skJoystick = self.camera!.childNodeWithName("SKJoystick")!
             skJoystick.removeAllChildren()
@@ -57,7 +75,11 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
             self.currentPlayer = DBPlayers.getPaladin(self.view!)
             self.players = [self.currentPlayer!]
             
-//            self.currentPlayer!.position = CGPointMake(-533.932, 286.614)
+            self.currentPlayer!.race.equipments.append(DBEquipSkill.getEquip("Sledgehammer"))
+            self.currentPlayer!.race.equipments[0].baseEquip.isEquipped = true
+            self.currentPlayer!.race.skills.append(DBEquipSkill.getSkill("Hammer Hit"))
+            
+            //self.currentPlayer!.position = CGPointMake(-733.932, 286.614)
             self.currentPlayer!.position = CGPointMake(96.715, -287.777)
             
             let rohan = map!.childNodeWithName("SKRohan") as! SKSpriteNode
@@ -84,6 +106,7 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
         
         if self.movementManagement!.player.menuHasOpened && equipMenu != nil {
             equipMenu.touchesBegan(touches, withEvent: event)
+            return
         }
         
         if !self.movementManagement!.player.inDialog {
@@ -198,24 +221,12 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
         
         let node = bodyPlayer.node!
         
-        if node.name!.containsString("ydora") {
-            self.bodyPlayer = bodyPlayer
-            self.bodyEnemy = bodyEnemy
+        if !node.name!.containsString("ydora") && bodyPlayer.contactTestBitMask != 0 {
+            let temp = bodyEnemy
+            bodyEnemy = bodyPlayer
+            bodyPlayer = temp
+        }else if bodyPlayer.contactTestBitMask == 0 {
             return
-        }
-        
-        if (bodyPlayer.contactTestBitMask & CollisionSetUps.Player.rawValue) == CollisionSetUps.Player.rawValue {
-            let temp = bodyEnemy
-            bodyEnemy = bodyPlayer
-            bodyPlayer = temp
-        }else if (bodyPlayer.contactTestBitMask & CollisionSetUps.Items.rawValue) == CollisionSetUps.Items.rawValue {
-            let temp = bodyEnemy
-            bodyEnemy = bodyPlayer
-            bodyPlayer = temp
-        }else if (bodyPlayer.contactTestBitMask & CollisionSetUps.Buildings.rawValue) == CollisionSetUps.Buildings.rawValue {
-            let temp = bodyEnemy
-            bodyEnemy = bodyPlayer
-            bodyPlayer = temp
         }
         
         self.bodyPlayer = bodyPlayer
@@ -241,7 +252,7 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
         
         let limiar = (self.bodyPlayer!.node!.frame.width / 2) + (self.bodyEnemy!.node!.frame.width / 2)
         
-        if distance > limiar {
+        if distance > (limiar + 5) {
             print("retornou")
             return
         }
@@ -278,8 +289,17 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
             self.currentDialog = DBInteraction.getInteraction(self.bodyEnemy!.node!, player: self.movementManagement!.player, size: CGSizeMake(500,200))
             self.setupDialog()
             showDialog(self.currentDialog!)
-        }else {
+        }else if name!.containsString("Zumbi") {
             /*Combat scene*/
+            
+            let range = name!.characters.count - 1
+            
+            let qtdade = Int(name![range...range])
+            
+            let enemies = DBEnemy.getEnemy(name![0...(range - 2)], qtdade: qtdade!)
+            
+            saveData()
+            openCombatScene(enemies)
         }
     }
     
@@ -302,7 +322,7 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
     func runningDialog() {
         
         if self.currentDialog != nil {
-            self.currentDialog!.velocity = 0.05
+            self.currentDialog!.velocity = 0.03
         }
     }
     
@@ -321,8 +341,6 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
                 if self.bodyEnemy!.node!.name == "SKKey" {
                     self.bodyEnemy!.node!.removeFromParent()
                     
-                    self.bodyEnemy = nil
-                    
                 }else if self.bodyEnemy!.node!.name == "SKDoor" && self.movementManagement!.player.usingItem == "Key" {
                     let skDoor = self.bodyEnemy!.node!
                     
@@ -333,23 +351,36 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
                     let doorDown = SKSpriteNode(imageNamed: "openedDoorDown")
                     doorDown.zPosition = self.movementManagement!.player.zPosition + 3
                     doorDown.position = skDoor.position
+                    doorDown.name = "openedDoorDown"
                     
                     skDoor.removeFromParent()
                     
-                    self.bodyEnemy = nil
-                    
                     map!.addChild(doorUp)
                     map!.addChild(doorDown)
+                }else if self.bodyEnemy!.node!.name == "SKRohan" {
+                    let rohan = DBPlayers.getBard(self.view!)
+                    self.players.append(rohan)
+                    rohan.position = self.bodyEnemy!.node!.position
+                    rohan.zPosition = self.currentPlayer!.zPosition
+                    rohan.removePhysicsBodyPlayer()
+                    map!.addChild(rohan)
+                    
+                    self.movementManagement!.addNewPlayer(rohan)
+                    
+                    self.bodyEnemy!.node!.removeFromParent()
                 }
+                
+                self.bodyEnemy = nil
             }
         }
     }
     
-    func openScene(enemies: [Enemy]) {
+    func openCombatScene(enemies: [Enemy]) {
         
         let combatScene = CombatScene(fileNamed: "CombatScene")!
         combatScene.players = self.players
-        let transition = SKTransition.doorsOpenHorizontalWithDuration(0.5)
+        combatScene.enimies = enemies
+        let transition = SKTransition.fadeWithDuration(0.5)
         combatScene.scaleMode = SKSceneScaleMode.AspectFill
         (self.view! as! NavigationController).Navigate(combatScene, transition: transition)
     }
@@ -374,22 +405,20 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
         self.positionManagement = self.userData!["positionManagement"] as! PositionManagement
         self.currentPlayer = self.userData!["currentPlayer"] as? Player
         self.players = self.userData!["players"] as! [Player]
-//        self.actionManagement = self.userData!["actionManagement"] as? ActionManagement
-//        self.movementManagement = self.userData!["movementManagement"] as? MovementManagement
-//        self.joystick = self.userData!["joystick"] as? Joystick
         self.camera = self.userData!["camera"] as? SKCameraNode
+        self.bodyEnemy = self.userData!["enemy"] as? SKPhysicsBody
     }
     
     func saveData() {
         self.positionManagement!.setPosition(self.players)
         self.positionManagement!.setPosition(self.camera!)
+        
         self.userData = NSMutableDictionary()
+        
         self.userData!["currentPlayer"] = self.currentPlayer
         self.userData!["players"] = self.players
-//        self.userData!["actionManagement"] = self.actionManagement
-//        self.userData!["movementManagement"] = self.movementManagement
-//        self.userData!["joystick"] = self.joystick
         self.userData!["camera"] = self.camera
         self.userData!["positionManagement"] = self.positionManagement
+        self.userData!["enemy"] = self.bodyEnemy
     }
 }

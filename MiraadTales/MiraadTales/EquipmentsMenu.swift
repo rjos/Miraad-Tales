@@ -192,7 +192,7 @@ public class EquipmentsMenu: HUD {
         
         let hasItems = player.race.equipments.count > 0
         
-        for var i = 0; i < 6; ++i {
+        for var i = 0; i < player.race.equipments.count; ++i {
             
             let item = SKSpriteNode(imageNamed: "equipBox")
             item.position = gridPosition[i]
@@ -455,7 +455,9 @@ public class EquipmentsMenu: HUD {
         if self.selectedNodeAtk != nil {
             increaseAtk.text = "+ \(self.selectedNodeAtk!.baseEquip.status.pAtk + self.selectedNodeAtk!.baseEquip.status.mAtk)"
             
-            let atkSkill = SKLabelNode(text: self.selectedNodeAtk!.baseEquip.name)
+            let baseSkill = self.selectedNodeAtk!.baseEquip.skill!.baseSkill
+            
+            let atkSkill = SKLabelNode(text: baseSkill.fantasyName)
             atkSkill.fontColor = SKColor(red: 0.50, green: 0.10, blue: 0.06, alpha: 1)
             atkSkill.fontSize = 30
             atkSkill.fontName = "Prospero-Bold-NBP"
@@ -468,7 +470,9 @@ public class EquipmentsMenu: HUD {
         if self.selectedNodeDef != nil {
             increaseDef.text = "+ \(self.selectedNodeDef!.baseEquip.status.pDef + self.selectedNodeDef!.baseEquip.status.mDef)"
             
-            let defSkill = SKLabelNode(text: self.selectedNodeAtk!.baseEquip.name)
+            let baseSkill = self.selectedNodeDef!.baseEquip.skill!.baseSkill
+            
+            let defSkill = SKLabelNode(text: baseSkill.fantasyName)
             defSkill.fontColor = SKColor(red: 0.02, green: 0.20, blue: 0.49, alpha: 1)
             defSkill.fontSize = 30
             defSkill.fontName = "Prospero-Bold-NBP"
