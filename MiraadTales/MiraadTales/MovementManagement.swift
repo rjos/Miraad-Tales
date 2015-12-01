@@ -284,7 +284,7 @@ public class MovementManagement: SKNode {
         let Y = p.position.y - self.player.position.y
         
         //Movimentar na vertical
-        if X > -30 && X < 30 {
+        if X > -64 && X < 64 {
             
             //Pra cima
             if Y < 0 {
@@ -292,7 +292,7 @@ public class MovementManagement: SKNode {
             }else /*Pra baixo*/ {
                 self.player.setLastedPosition(false, orientation: Orientation.Vertical)
             }
-        }else if Y > -30 && Y < 30 /*Movimentar na horizontal*/ {
+        }else if Y > -64 && Y < 64 /*Movimentar na horizontal*/ {
             
             //Pra direita
             if X < 0 {

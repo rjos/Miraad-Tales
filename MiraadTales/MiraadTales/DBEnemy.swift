@@ -30,8 +30,11 @@ public class DBEnemy {
     //MARK: Enemy Chaser Wolf
     private static func getChaserWolf() -> Enemy? {
         
-        let status = PlayerStatus(HP: 20, MP: 0, Speed: 0, pAtk: 0, mAtk: 0, pDef: 0, mDef: 0)
-        let base = BaseEnemy(name: "Chaser Wolf", status: status, equipments: [], skills: [], isDie: false, typeEnemy: TypeEnemy.AngryChicken)
+        let status = PlayerStatus(HP: 400, MP: 0, Speed: 0, pAtk: 0, mAtk: 0, pDef: 0, mDef: 0)
+        
+        let skills = getSkillChaserWolf()
+        
+        let base = BaseEnemy(name: "Chaser Wolf", status: status, equipments: [], skills: skills, isDie: false, typeEnemy: TypeEnemy.AngryChicken)
         
         let chaserWolf = Enemy(imageNamed: "Zumbi-5", race: base)
         chaserWolf.name = "Zumbi"
@@ -41,7 +44,13 @@ public class DBEnemy {
     
     private static func getSkillChaserWolf() -> [Skill] {
         
-        return []
+        let statusArranhao = Status(HP: 0, MP: 0, Speed: 0, pAtk: 100, mAtk: 0, pDef: 0, mDef: 0)
+        let arranhao = BaseSkill(name: "Arranhão", fantasyName: "Arranhao", equip: nil, ownerRace: PlayersRace.Bard, status: statusArranhao, criticalRate: 0, missRate: 0, consumeMana: 0, effect: nil, details: "")
+        
+        let statusMordida = Status(HP: 0, MP: 0, Speed: 0, pAtk: 100, mAtk: 0, pDef: 0, mDef: 0)
+        let mordida = BaseSkill(name: "Mordida", fantasyName: "Mordida", equip: nil, ownerRace: PlayersRace.Bard, status: statusArranhao, criticalRate: 0, missRate: 0, consumeMana: 0, effect: nil, details: "")
+        
+        return [Skill(imageNamed: "", baseSkill: arranhao), Skill(imageNamed: "", baseSkill: mordida)]
     }
     
     private static func getEquipmentChaserWolf() -> [Equip] {

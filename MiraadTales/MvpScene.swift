@@ -35,6 +35,7 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
         
         if self.userData != nil && (self.userData!["GoBack"] as! Bool) {
             self.loadData()
+            self.bodyPlayer = nil
             self.userData!["GoBack"] = false
             
             goback = true
@@ -43,12 +44,18 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
             self.setPositionCamera()
             
             self.currentPlayer!.removeFromParent()
-            self.currentPlayer!.setPlayerForExploration()
+            self.currentPlayer!.setPhysicsBodyPlayer(self.currentPlayer!.texture!)
+            
+            for p in self.players {
+                p.setPlayerForExploration()
+                map!.addChild(p)
+            }
             
             if (self.userData!["CombatScene"] as! Bool) {
                 if !self.currentPlayer!.race.isDie {
                     let nodeEnemy = self.bodyEnemy!.node!
                     nodeEnemy.removeFromParent()
+                    
                 }else {
                     
                 }
@@ -80,10 +87,13 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
             self.currentPlayer!.race.skills.append(DBEquipSkill.getSkill("Hammer Hit"))
             
             //self.currentPlayer!.position = CGPointMake(-733.932, 286.614)
-            self.currentPlayer!.position = CGPointMake(96.715, -287.777)
+            self.currentPlayer!.position = CGPointMake(-433.932, 286.614)
+            //self.currentPlayer!.position = CGPointMake(96.715, -287.777)
             
             let rohan = map!.childNodeWithName("SKRohan") as! SKSpriteNode
             rohan.texture!.filteringMode = .Nearest
+            
+            self.map!.addChild(self.currentPlayer!)
         }
         
         self.joystick = Joystick()
@@ -98,8 +108,6 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
         
         let skButtons = self.camera!.childNodeWithName("SKButtons")!
         skButtons.addChild(self.actionManagement!)
-        
-        self.map!.addChild(self.currentPlayer!)
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -298,6 +306,7 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
             
             let enemies = DBEnemy.getEnemy(name![0...(range - 2)], qtdade: qtdade!)
             
+            self.currentPlayer!.removePhysicsBodyPlayer()
             saveData()
             openCombatScene(enemies)
         }
@@ -359,9 +368,14 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
                     map!.addChild(doorDown)
                 }else if self.bodyEnemy!.node!.name == "SKRohan" {
                     let rohan = DBPlayers.getBard(self.view!)
+                    let equips = DBEquipSkill.getEquips(PlayersRace.Bard)
+                    let skills = [DBEquipSkill.getSkill("Instrument Hit"), DBEquipSkill.getSkill("Power Chord"), DBEquipSkill.getSkill("Dark Sonata")]
+                    rohan.alpha = 0.7
+                    rohan.race.equipments = equips
+                    rohan.race.skills = skills
                     self.players.append(rohan)
                     rohan.position = self.bodyEnemy!.node!.position
-                    rohan.zPosition = self.currentPlayer!.zPosition
+                    rohan.zPosition = self.currentPlayer!.zPosition - 1
                     rohan.removePhysicsBodyPlayer()
                     map!.addChild(rohan)
                     
@@ -377,12 +391,27 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
     
     func openCombatScene(enemies: [Enemy]) {
         
-        let combatScene = CombatScene(fileNamed: "CombatScene")!
-        combatScene.players = self.players
-        combatScene.enimies = enemies
-        let transition = SKTransition.fadeWithDuration(0.5)
-        combatScene.scaleMode = SKSceneScaleMode.AspectFill
-        (self.view! as! NavigationController).Navigate(combatScene, transition: transition)
+        let node = SKSpriteNode(color: UIColor.whiteColor(), size: UIScreen.mainScreen().applicationFrame.size)
+        node.zPosition = 50
+        node.position = self.camera!.position
+        
+        let fadeIn = SKAction.fadeInWithDuration(0.1)
+        let fadeOut = SKAction.fadeOutWithDuration(0.1)
+        
+        let sequence = SKAction.sequence([fadeIn, fadeOut, fadeIn, fadeOut, fadeIn])
+        
+        node.runAction(sequence) { () -> Void in
+            node.removeFromParent()
+            
+            let combatScene = CombatScene(fileNamed: "CombatScene")!
+            combatScene.players = self.players
+            combatScene.enimies = enemies
+            let transition = SKTransition.fadeWithDuration(0.5)
+            combatScene.scaleMode = SKSceneScaleMode.AspectFill
+            (self.view! as! NavigationController).Navigate(combatScene, transition: transition)
+        }
+        
+        map!.addChild(node)
     }
     
     func setPositionPlayer() {
@@ -397,7 +426,6 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
     func setPositionCamera() {
         
         let position = self.positionManagement!.getPositionCamera()
-        
         self.camera!.position = position
     }
     

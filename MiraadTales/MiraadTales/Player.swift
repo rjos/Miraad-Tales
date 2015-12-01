@@ -245,18 +245,32 @@ public class Player: SKSpriteNode, VLDContextSheetDelegate {
             break
         }
         
-        while Int(current) > Int(targetPosition) {
-            
-            switch orientation {
-            case .Horizontal:
-                self.lastedPosition.append(CGPointMake(current, self.position.y))
-                break
-            case .Vertical:
-                self.lastedPosition.append(CGPointMake(self.position.x, current))
-                break
+        if positive {
+            while Int(current) > Int(targetPosition) {
+                switch orientation {
+                case .Horizontal:
+                    self.lastedPosition.append(CGPointMake(current, self.position.y))
+                    break
+                case .Vertical:
+                    self.lastedPosition.append(CGPointMake(self.position.x, current))
+                    break
+                }
+                
+                current = current - (1.5 * sign)
             }
-            
-            current = current - (1.5 * sign)
+        }else {
+            while Int(current) < Int(targetPosition) {
+                switch orientation {
+                case .Horizontal:
+                    self.lastedPosition.append(CGPointMake(current, self.position.y))
+                    break
+                case .Vertical:
+                    self.lastedPosition.append(CGPointMake(self.position.x, current))
+                    break
+                }
+                
+                current = current - (1.5 * sign)
+            }
         }
     }
     
