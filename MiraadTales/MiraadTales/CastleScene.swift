@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class CastleScene: SKScene, InteractionDelegate {
+class CastleScene: SKScene, InteractionDelegate, SKPhysicsContactDelegate {
 
     var joystick: Joystick!
     var actionManagement: ActionManagement!
@@ -17,7 +17,14 @@ class CastleScene: SKScene, InteractionDelegate {
     var currentPlayer: Player!
     var map: SKNode!
     
+    var bodyPlayer: SKPhysicsBody?
+    var bodyEnemy: SKPhysicsBody?
+    
+    var currentDialog: Dialog?
+    
     override func didMoveToView(view: SKView) {
+        
+        self.physicsWorld.contactDelegate = self
         
         map = self.childNodeWithName("SKBg")!
         
@@ -121,9 +128,91 @@ class CastleScene: SKScene, InteractionDelegate {
     //MARK: Interaction Delegate
     func interaction() {
         
+        if self.bodyPlayer == nil || self.bodyEnemy == nil {
+            return
+        }
+        
+        let posPlayer = self.bodyPlayer!.node!.position
+        let posTarget = self.bodyEnemy!.node!.position
+        
+        let x = posPlayer.x - posTarget.x
+        let y = posPlayer.y - posTarget.y
+        
+        let powX = pow(x, 2)
+        let powY = pow(y, 2)
+        
+        let distance = sqrt(powX + powY)
+        
+        let limiar = (self.bodyPlayer!.node!.frame.width / 2) + (self.bodyEnemy!.node!.frame.width / 2)
+        
+        if distance > (limiar + 5) {
+            print("retornou")
+            return
+        }
+        
+        let name = self.bodyEnemy!.node!.name
+        
+        if name == "SKRohan" && self.currentDialog == nil { /* mudar valores para bellatrix */
+            let rohan = DBPlayers.getBard(self.view!)
+            
+            self.currentDialog = DBInteraction.getInteraction(rohan, player: self.movementManagement!.player, size: CGSizeMake(500, 200))
+            self.setupDialog()
+            showDialog(self.currentDialog!)
+        }
     }
     
     func runningDialog() {
         
+    }
+    
+    private func setupDialog() {
+        
+        self.currentDialog!.backgroundDialog = true
+        self.currentDialog!.zPosition = 30
+        
+        let skJoystick = self.camera!.childNodeWithName("SKJoystick")!
+        let skButtons = self.camera!.childNodeWithName("SKButtons")!
+        
+        let positionInit = (skJoystick.position.x + (skJoystick.frame.width / 2))
+        let positionEnd = (skButtons.position.x - (skButtons.frame.width / 2))
+        
+        self.currentDialog!.position = CGPointMake((positionInit + positionEnd) / 2, 0)
+        
+        self.camera!.addChild(self.currentDialog!)
+    }
+    
+    func showDialog(dialog: Dialog) {
+        
+        if !dialog.isEmpty {
+            self.movementManagement!.player.inDialog = true
+            self.currentDialog!.changeMessage = true
+        }else if dialog.ended {
+            self.movementManagement!.player.inDialog = false
+            self.currentDialog!.removeFromParent()
+            self.currentDialog = nil
+            
+            if self.bodyEnemy != nil {
+                
+                if self.bodyEnemy!.node!.name == "SKRohan" { /* mudar valores para bellatrix */
+                    let rohan = DBPlayers.getBard(self.view!)
+                    let equips = DBEquipSkill.getEquips(PlayersRace.Bard)
+                    let skills = [DBEquipSkill.getSkill("Instrument Hit"), DBEquipSkill.getSkill("Power Chord"), DBEquipSkill.getSkill("Dark Sonata")]
+                    rohan.alpha = 0.7
+                    rohan.race.equipments = equips
+                    rohan.race.skills = skills
+                    self.players.append(rohan)
+                    rohan.position = self.bodyEnemy!.node!.position
+                    rohan.zPosition = self.currentPlayer!.zPosition - 1
+                    rohan.removePhysicsBodyPlayer()
+                    map!.addChild(rohan)
+                    
+                    self.movementManagement!.addNewPlayer(rohan)
+                    
+                    self.bodyEnemy!.node!.removeFromParent()
+                }
+                
+                self.bodyEnemy = nil
+            }
+        }
     }
 }

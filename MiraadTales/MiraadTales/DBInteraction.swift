@@ -27,6 +27,12 @@ public class DBInteraction {
             
         }else if person is Enemy {
             
+            namePerson = (person as! Enemy).race.name
+            
+            if namePerson == "Bellatrix" {
+                //currentDialog = setConversationBellatrix()
+            }
+            
         }else if person is SKSpriteNode {
             
             namePerson = (person as! SKSpriteNode).name!
