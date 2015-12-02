@@ -43,24 +43,21 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
             self.setPositionPlayer()
             self.setPositionCamera()
             
-            self.currentPlayer!.removeFromParent()
             self.currentPlayer!.setPhysicsBodyPlayer(self.currentPlayer!.texture!)
             
             for p in self.players {
+                p.removeFromParent()
                 p.setPlayerForExploration()
+                p.race.status.currentHP = p.race.status.HP
+                p.race.status.currentMP = p.race.status.MP
                 map!.addChild(p)
             }
             
             if (self.userData!["CombatScene"] as! Bool) {
-                if !self.currentPlayer!.race.isDie {
+                if (self.userData!["Win"] as! Bool) {
                     let nodeEnemy = self.bodyEnemy!.node!
                     nodeEnemy.removeFromParent()
-                    
-                }else {
-                    
                 }
-            }else {
-                
             }
             
             let openDoorDown = map!.childNodeWithName("openedDoorDown")
@@ -159,6 +156,10 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
         
         if equipMenu != nil {
             equipMenu.touchesEnded(touches, withEvent: event)
+            
+            if equipMenu.isClosed {
+                equipMenu = nil
+            }
         }
         
         if self.currentDialog != nil {
@@ -195,6 +196,7 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
             self.joystick!.update(currentTime)
             self.actionManagement!.update(currentTime)
             self.movementManagement!.update(currentTime, didCollide: false)
+            self.currentPlayer = self.movementManagement!.player
         }else if self.movementManagement!.player.menuHasOpened {
             openHUD()
         }
@@ -354,7 +356,7 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
                     let skDoor = self.bodyEnemy!.node!
                     
                     let doorUp = SKSpriteNode(imageNamed: "openedDoorUp")
-                    doorUp.zPosition = self.movementManagement!.player.zPosition - 3
+                    doorUp.zPosition = self.currentPlayer!.zPosition - 5
                     doorUp.position = skDoor.position
                     
                     let doorDown = SKSpriteNode(imageNamed: "openedDoorDown")

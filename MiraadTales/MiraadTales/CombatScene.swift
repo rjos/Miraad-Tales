@@ -21,18 +21,20 @@ class CombatScene: SKScene {
     var showHpEnemy = false
     var beginTime: NSTimeInterval = 0.0
     
-    public var typeCombat: String = ""
-    
     var currentIndexPlayer = 0
     var startTurn = false
     
     var executeTurn: Bool = false
     
     var otherPlayer: [Player] = []
-    var prepareAtk: [Player: (Enemy, Skill)] = [:]
+    var prepareAtk: [Player: (SKSpriteNode, Skill)] = [:]
+    
     var skillCurr: Skill!
-    var enemyCurr: Enemy!
-    var tempEnemy: Enemy!
+    var tempSkill: Skill!
+    
+    var targetCurr: SKSpriteNode!
+    var tempTarget: SKSpriteNode!
+    
     var liveIsPerson: [SKSpriteNode] = []
     
     var timeExecute: NSTimeInterval = 0
@@ -40,6 +42,14 @@ class CombatScene: SKScene {
     
     var skCombatBg: SKNode!
     var completedAnimation = true
+    
+    var targetSkill: TargetSkill!
+    
+    var velocityAtk = 0.5
+    var spriteSKillToAnimated: SKSpriteNode!
+    
+    public var win: Bool = false
+    public var typeCombat: String = ""
     
     override func didMoveToView(view: SKView) {
         
@@ -73,28 +83,20 @@ class CombatScene: SKScene {
             if (node is Enemy) && self.skillCurr == nil {
                 self.setLifeEnemy((node as! Enemy))
                 showHpEnemy = true
-            }else if (node is Skill) && (self.skillCurr == nil) && !executeTurn {
-                skillCurr = (node as! Skill)
+            }else if (node is Skill) && !executeTurn {
+                tempSkill = (node as! Skill)
                 
-                if skillCurr.baseSkill.consumeMana > self.currentPlayer!.race.status.currentMP {
-                    skillCurr = nil
-                    print("sem mana")
-                    return
+                if tempSkill != self.skillCurr {
+                    
+                    self.skillCurr = tempSkill
+                    
+                    if self.skillCurr.baseSkill.effect != nil {
+                        self.targetSkill = self.skillCurr.baseSkill.effect!.target
+                    }
+                    
+                    applyAnimationSkill(self.skillCurr)
                 }
-                
-                self.currentPlayer!.race.status.currentMP -= skillCurr.baseSkill.consumeMana
-                
-                let rotR = SKAction.rotateByAngle(0.05, duration: 0.2)
-                let rotL = SKAction.rotateByAngle(-0.05, duration: 0.2)
-                let cycle = SKAction.sequence([rotR, rotL, rotL, rotR])
-                let wiggle = SKAction.repeatActionForever(cycle)
-                
-                skillCurr.runAction(wiggle, withKey: "animatedSkill")
-                
             }
-//            else if (node is Enemy) && (self.skillCurr != nil) && !executeTurn {
-//                enemyCurr = (node as! Enemy)
-//            }
         }
     }
     
@@ -110,27 +112,48 @@ class CombatScene: SKScene {
             
             let node = self.nodeAtPoint(location)
             
-            if (node is Enemy) && skillCurr != nil && (node as! Enemy) != tempEnemy {
+            if (node is Skill) && (node as! Skill) != self.skillCurr {
                 
-                if tempEnemy != (node as! Enemy) && tempEnemy != nil {
-                    tempEnemy.removeActionForKey("wiggle")
-                    let restoreAnimate = SKAction.scaleTo(1.5, duration: 0.1)
-                    tempEnemy.runAction(restoreAnimate)
+                disapplyAnimationSkill(self.skillCurr)
+                
+                tempSkill = (node as! Skill)
+                self.skillCurr = tempSkill
+                
+                applyAnimationSkill(self.skillCurr)
+            }else if targetSkill == nil || targetSkill == TargetSkill.SingleEnemy {
+                
+                if (node is Enemy) {
+                    
+                    if tempTarget != nil && (node as! Enemy) != tempTarget {
+                        disapplyAnimationTarget(tempTarget)
+                    }
+                    
+                    tempTarget = (node as! Enemy)
+                    applyAnimationTarget(tempTarget)
+                    
+                }else {
+                    
+                    if tempTarget != nil {
+                        disapplyAnimationTarget(tempTarget)
+                        tempTarget = nil
+                    }
                 }
+            }else if targetSkill == TargetSkill.SinglePlayer {
                 
-                let wiggleIn = SKAction.scaleXTo(1.0, duration: 0.1)
-                let wiggleOut = SKAction.scaleXTo(1.2, duration: 0.1)
-                let wiggle = SKAction.sequence([wiggleIn, wiggleOut])
-                let wiggleRepeat = SKAction.repeatActionForever(wiggle)
-                
-                (node as! Enemy).runAction(wiggleRepeat, withKey: "wiggle")
-                tempEnemy = (node as! Enemy)
-            }else {
-                
-                if tempEnemy != nil {
-                    tempEnemy.removeActionForKey("wiggle")
-                    let restoreAnimate = SKAction.scaleTo(1.5, duration: 0.1)
-                    tempEnemy.runAction(restoreAnimate)
+                if (node is Player) {
+                    
+                    if tempTarget != nil && (node as! Player) != tempTarget {
+                        disapplyAnimationTarget(tempTarget)
+                    }
+                    
+                    tempTarget = (node as! Player)
+                    applyAnimationTarget(tempTarget)
+                }else {
+                    
+                    if tempTarget != nil {
+                        disapplyAnimationTarget(tempTarget)
+                        tempTarget = nil
+                    }
                 }
             }
         }
@@ -147,23 +170,19 @@ class CombatScene: SKScene {
             
             let node = self.nodeAtPoint(location)
             
-            if (node is Enemy) && skillCurr != nil && (node as! Enemy) == tempEnemy {
-                
-                self.enemyCurr = tempEnemy
+            if (node is Enemy) && (node as! Enemy) == tempTarget {
+                self.targetCurr = tempTarget
+            }else if (node is Player) && (node as! Player) == tempTarget {
+                self.targetCurr = tempTarget
             }
             
-            if tempEnemy != nil {
-                tempEnemy.removeActionForKey("wiggle")
-                let restoreAnimate = SKAction.scaleTo(1.5, duration: 0.1)
-                tempEnemy.runAction(restoreAnimate)
-            }
-            
-            if tempEnemy == nil && self.skillCurr != nil {
+            if tempTarget != nil {
+                disapplyAnimationTarget(tempTarget)
+            }else if self.skillCurr != nil {
+                disapplyAnimationSkill(self.skillCurr)
                 
-                self.skillCurr.removeActionForKey("animatedSkill")
-                
-                let restoreAngle = SKAction.rotateToAngle(0, duration: 0.1)
-                self.skillCurr.runAction(restoreAngle)
+                self.tempSkill = nil
+                self.skillCurr = nil
             }
         }
     }
@@ -185,23 +204,20 @@ class CombatScene: SKScene {
             otherPlayer = self.players.filter({ (p) -> Bool in
                 return !p.race.isDie
             })
+            velocityAtk = 0.5
         }
         
         //Damage turn
-        if self.skillCurr != nil && self.enemyCurr != nil && !executeTurn { /* prepare atk */
+        if self.skillCurr != nil && self.targetCurr != nil && !executeTurn { /* prepare atk */
             
-            prepareAtk[self.currentPlayer] = (enemyCurr, skillCurr)
+            prepareAtk[self.currentPlayer] = (targetCurr, skillCurr)
             
-            self.skillCurr.removeActionForKey("animatedSkill")
+            disapplyAnimationSkill(self.skillCurr)
             
-            let restoreAngle = SKAction.rotateToAngle(0, duration: 0.1)
-            self.skillCurr.runAction(restoreAngle)
-            
-            let restoreAnimate = SKAction.scaleTo(1.5, duration: 0.2)
-            self.enemyCurr.runAction(restoreAnimate)
+            disapplyAnimationTarget(self.targetCurr)
             
             self.skillCurr = nil
-            self.enemyCurr = nil
+            self.targetCurr = nil
             
             ++currentIndexPlayer
             
@@ -223,9 +239,8 @@ class CombatScene: SKScene {
                 setIndicatorPlayer(self.currentPlayer)
                 setSkillFromPlayer(self.currentPlayer)
             }
-        }else if executeTurn && (currentTime - timeExecute) >= 0.5 && completedAnimation { /* execute atk */
+        }else if executeTurn && (currentTime - timeExecute) >= velocityAtk && completedAnimation { /* execute atk */
             completedAnimation = false
-            timeExecute = currentTime
             
             self.liveIsPerson = self.orderPerson!.filter({ (s) -> Bool in
                 if s is Player {
@@ -237,7 +252,7 @@ class CombatScene: SKScene {
             
             let actualPerson = self.liveIsPerson[countAtks]
             var target: SKSpriteNode!
-            var skill: SKSpriteNode!
+            var skill: Skill!
             
             if actualPerson is Player {
                 let item = prepareAtk.first!
@@ -255,32 +270,25 @@ class CombatScene: SKScene {
                 skill = generateRandomSkillAtk((actualPerson as! Enemy))
             }
             
-            var totalAtkActualPerson: Int = 0
-            var totalDefActualPerson: Int = 0
-            
-            //Calculate Damage
-            if actualPerson is Player {
-                totalAtkActualPerson = (actualPerson as! Player).race.calculateAtk() + (skill as! Skill).baseSkill.calculateAtk()
-                
-                totalDefActualPerson = (target as! Enemy).race.calculateDef()
-            }else {
-                totalAtkActualPerson = (actualPerson as! Enemy).race.calculateAtk() + (skill as! Skill).baseSkill.calculateAtk()
-                
-                totalDefActualPerson = (target as! Player).race.calculateDef()
-            }
-            
             //Execute Skill animation
             var nameSkill = (skill as! Skill).baseSkill.fantasyName
             nameSkill = nameSkill.stringByReplacingOccurrencesOfString(" ", withString: "")
+            
+            if actualPerson is Player && skill.baseSkill.fantasyName == "Basic hit" {
+                nameSkill = "\(nameSkill)\((actualPerson as! Player).race.name)"
+            }
+            
+            nameSkill = nameSkill.stringByReplacingOccurrencesOfString(".", withString: "")
+
             let animationSKill = SKTextureAtlas(named: "\(nameSkill)")
             var textureAnimationSkill = [SKTexture]()
             
-            for var i = 0; i < animationSKill.textureNames.count; ++i {
+            for var i = 0; i < (animationSKill.textureNames.count / 2); ++i {
                 let texture = animationSKill.textureNamed("\(nameSkill)-\((i + 1))")
                 textureAnimationSkill.append(texture)
             }
             
-            var spriteSKillToAnimated = SKSpriteNode(texture: textureAnimationSkill[0])
+            spriteSKillToAnimated = SKSpriteNode(texture: textureAnimationSkill[0])
             spriteSKillToAnimated.position = CGPointMake(target.position.x, target.position.y + (target.frame.height / 2) + 5)
             spriteSKillToAnimated.zPosition = target.zPosition + 1
             spriteSKillToAnimated.xScale = 1.5
@@ -291,66 +299,84 @@ class CombatScene: SKScene {
             let animation = SKAction.animateWithTextures(textureAnimationSkill, timePerFrame: 0.2)
             spriteSKillToAnimated.runAction(animation, completion: { () -> Void in
                 
-                spriteSKillToAnimated.removeFromParent()
+                var targetSkill: TargetSkill!
+                var affectSkill: AffectSkill!
+                var percente: Int = 0
                 
-                //Decrease Hp target
-                var race: BaseRace
-                
-                if target is Player {
-                    race = (target as! Player).race
-                }else {
-                    race = (target as! Enemy).race
+                if skill.baseSkill.effect != nil {
+                    targetSkill = skill.baseSkill.effect!.target
+                    affectSkill = skill.baseSkill.effect!.affect
+                    percente = skill.baseSkill.effect!.percenteEffects
                 }
                 
-                var reduce: Int = 0
+                var totalAtkActualPerson: Int = 0
+                var totalDefActualPerson: Int = 0
                 
-                if totalAtkActualPerson > totalDefActualPerson {
-                    reduce = (totalAtkActualPerson - totalDefActualPerson)
-                }else {
-                    reduce = 1
-                }
-                
-                let curr = race.status.currentHP
-                
-                race.status.currentHP = max(race.status.currentHP - reduce, 0)
-                
-                if target is Player {
+                if targetSkill == nil || targetSkill == TargetSkill.SingleEnemy {
                     
-                    let footer = self.childNodeWithName("skFooter")!
-                    let bgBar = footer.childNodeWithName("bgBarStatusHp-\(race.name)")!
+                    print("dano aqui - 1")
                     
-                    let hpBar = bgBar.childNodeWithName("hpBar-\(race.name)")!
-                    hpBar.removeFromParent()
-
-                    let currWidth = CGFloat((race.status.currentHP * Int(hpBar.frame.size.width)) / curr)
+                    //Calculate Damage
+                    if actualPerson is Player {
+                        totalAtkActualPerson = (actualPerson as! Player).race.calculateAtk() + (skill as! Skill).baseSkill.calculateAtk()
+                        
+                        totalDefActualPerson = (target as! Enemy).race.calculateDef()
+                    }else {
+                        totalAtkActualPerson = (actualPerson as! Enemy).race.calculateAtk() + (skill as! Skill).baseSkill.calculateAtk()
+                        
+                        totalDefActualPerson = (target as! Player).race.calculateDef()
+                    }
                     
-                    let newHpBar = SKSpriteNode(color: UIColor.redColor(), size: CGSizeMake(currWidth, hpBar.frame.size.height))
-                    newHpBar.zPosition = hpBar.zPosition
-                    newHpBar.position = CGPointMake(hpBar.position.x - ((hpBar.frame.size.width - currWidth) / 2), hpBar.position.y)
-                    newHpBar.name = hpBar.name
+                    var reduce: Int = 0
                     
-                    bgBar.addChild(newHpBar)
+                    if totalAtkActualPerson > totalDefActualPerson {
+                        reduce = (totalAtkActualPerson - totalDefActualPerson)
+                    }else {
+                        reduce = 1
+                    }
                     
-                    let labelHp = bgBar.childNodeWithName("hpLabel-\(race.name)") as! SKLabelNode
-                    labelHp.removeFromParent()
+                    print("decrementar hp")
                     
-                    let newLabelHP = SKLabelNode(text: "\(race.status.currentHP)/\(race.status.HP)")
-                    newLabelHP.fontColor = labelHp.fontColor
-                    newLabelHP.fontSize = labelHp.fontSize
-                    newLabelHP.fontName = labelHp.fontName
-                    newLabelHP.name = labelHp.name
-                    newLabelHP.zPosition = labelHp.zPosition
-                    newLabelHP.position = labelHp.position
+                    //Decrease Hp target
+                    var race: BaseRace
                     
-                    bgBar.addChild(newLabelHP)
+                    if target is Player {
+                        race = (target as! Player).race
+                    }else {
+                        race = (target as! Enemy).race
+                    }
                     
-                }else {
-                    self.setLifeEnemy(target as! Enemy)
-                }
-                
-                if race.status.currentHP == 0 {
-                    target.removeFromParent()
-                    race.isDie = true
+                    let curr = race.status.currentHP
+                    race.status.currentHP = max(race.status.currentHP - reduce, 0)
+                    
+                    //Update bar Hp player
+                    if target is Player {
+                        
+                        self.decreaseHP(target as! Player)
+                    }else { /* Update bar hp enemy */
+                        
+                        self.setLifeEnemy(target as! Enemy)
+                    }
+                    
+                    print("decrementar mp")
+                    
+                    //Decrease MP
+                    if actualPerson is Player {
+                        
+                        (actualPerson as! Player).race.status.currentMP = max((actualPerson as! Player).race.status.currentMP - skill.baseSkill.consumeMana, 0)
+                        self.decreaseMP(actualPerson as! Player)
+                    }
+                    
+                    // Check if target is die
+                    if race.status.currentHP == 0 {
+                        target.removeFromParent()
+                        race.isDie = true
+                    }
+                    
+                    print("fim do decremento")
+                    
+                }else if targetSkill == TargetSkill.SinglePlayer {
+                    //Buffer or debuffer
                 }
                 
                 let isFinish = self.checkIsEndBattle()
@@ -361,9 +387,13 @@ class CombatScene: SKScene {
                 }else {
                     
                     if self.countAtks != self.liveIsPerson.count {
+                        self.timeExecute = currentTime
+                        self.velocityAtk = 1.5
                         self.completedAnimation = true
                     }
                 }
+                
+                self.spriteSKillToAnimated.removeFromParent()
             })
             
             //Exit turn
@@ -396,8 +426,10 @@ class CombatScene: SKScene {
                 if enemiesLive.isEmpty {
                     //win
                     print("você venceu")
+                    win = true
                 }else {
                     print("vecê perdeu")
+                    win = false
                 }
                 
                 //Return mvp ou other scene
@@ -622,7 +654,7 @@ class CombatScene: SKScene {
             labelMp.fontName = "Prospero-Bold-NBP"
             labelMp.zPosition = 4
             labelMp.position = CGPointMake(0, -10)
-            labelMp.name = "hpLabel-\(players[i].race.name)"
+            labelMp.name = "mpLabel-\(players[i].race.name)"
             
             bgBarStatus.addChild(mpBarStatus)
             bgBarStatus.addChild(labelMp)
@@ -740,10 +772,10 @@ class CombatScene: SKScene {
         
         for var i = 0; i < self.orderPerson!.count; ++i {
             
-            if self.orderPerson![i] is Player && !(self.orderPerson![i] as! Player).race.isDie {
+            if (self.orderPerson![i] is Player) && !(self.orderPerson![i] as! Player).race.isDie {
                 isPlayer = true
                 continue
-            }else if !(self.orderPerson![i] as! Enemy).race.isDie {
+            }else if (self.orderPerson![i] is Enemy) && !(self.orderPerson![i] as! Enemy).race.isDie {
                 isEnemy = true
                 continue
             }
@@ -785,5 +817,113 @@ class CombatScene: SKScene {
         }
         
         return p
+    }
+    
+    //MARK: Animation Target
+    private func applyAnimationTarget(target: SKSpriteNode) {
+        
+        let wiggleIn = SKAction.scaleXTo(1.0, duration: 0.2)
+        let wiggleOut = SKAction.scaleXTo(1.2, duration: 0.2)
+        let wiggle = SKAction.sequence([wiggleIn, wiggleOut, wiggleOut, wiggleIn])
+        let wiggleRepeat = SKAction.repeatActionForever(wiggle)
+        
+        target.runAction(wiggleRepeat, withKey: "animationTarget")
+    }
+    
+    private func disapplyAnimationTarget(target: SKSpriteNode) {
+        
+        target.removeActionForKey("animationTarget")
+        
+        let restoreAnimate = SKAction.scaleTo(1.5, duration: 0.2)
+        target.runAction(restoreAnimate)
+    }
+    
+    //MARK: Animation Skill
+    private func applyAnimationSkill(skill: Skill) {
+        
+        let rotR = SKAction.rotateByAngle(0.05, duration: 0.2)
+        let rotL = SKAction.rotateByAngle(-0.05, duration: 0.2)
+        let cycle = SKAction.sequence([rotR, rotL, rotL, rotR])
+        let wiggle = SKAction.repeatActionForever(cycle)
+        
+        skill.runAction(wiggle, withKey: "animatedSkill")
+    }
+    
+    private func disapplyAnimationSkill(skill: Skill) {
+        
+        skill.removeActionForKey("animatedSkill")
+        
+        let restoreAngle = SKAction.rotateToAngle(0, duration: 0.1)
+        skill.runAction(restoreAngle)
+    }
+    
+    //MARK: Decrement MP using Skill
+    private func decreaseMP(target: Player) {
+        
+        let footer = self.childNodeWithName("skFooter")!
+        let bgBarMp = footer.childNodeWithName("bgBarStatusMp-\(target.race.name)")!
+        
+        let mpBar = bgBarMp.childNodeWithName("mpBar-\(target.race.name)")!
+        mpBar.removeFromParent()
+        
+        let curr = (Int(mpBar.frame.size.width) * target.race.status.MP) / Int(bgBarMp.frame.size.width - 5)
+        let currWidth = CGFloat((target.race.status.currentMP * Int(mpBar.frame.size.width)) / curr)
+        
+        let newMpBar = SKSpriteNode(color: UIColor(red: 0.1, green: 0.71, blue: 0.83, alpha: 1), size: CGSizeMake(currWidth, mpBar.frame.size.height))
+        newMpBar.zPosition = mpBar.zPosition
+        newMpBar.position = CGPointMake(mpBar.position.x - ((mpBar.frame.size.width - currWidth) / 2), mpBar.position.y)
+        newMpBar.name = mpBar.name
+        
+        bgBarMp.addChild(newMpBar)
+        
+        let labelMp = bgBarMp.childNodeWithName("mpLabel-\(target.race.name)") as! SKLabelNode
+        labelMp.removeFromParent()
+        
+        let newLabelMp = SKLabelNode(text: "\(target.race.status.currentMP)/\(target.race.status.MP)")
+        newLabelMp.zPosition = labelMp.zPosition
+        newLabelMp.position = labelMp.position
+        newLabelMp.fontColor = labelMp.fontColor
+        newLabelMp.fontName = labelMp.fontName
+        newLabelMp.fontSize = labelMp.fontSize
+        newLabelMp.name = labelMp.name
+        
+        bgBarMp.addChild(newLabelMp)
+    }
+    
+    private func decreaseHP(target: Player) {
+        let footer = self.childNodeWithName("skFooter")!
+        let bgBar = footer.childNodeWithName("bgBarStatusHp-\(target.race.name)")!
+        
+        let hpBar = bgBar.childNodeWithName("hpBar-\(target.race.name)")!
+        hpBar.removeFromParent()
+        
+        let curr = (Int(hpBar.frame.size.width) * target.race.status.HP) / Int(bgBar.frame.width - 5)
+        
+        let currWidth = CGFloat((target.race.status.currentHP * Int(hpBar.frame.size.width)) / curr)
+        
+        let newHpBar = SKSpriteNode(color: UIColor.redColor(), size: CGSizeMake(currWidth, hpBar.frame.size.height))
+        newHpBar.zPosition = hpBar.zPosition
+        newHpBar.position = CGPointMake(hpBar.position.x - ((hpBar.frame.size.width - currWidth) / 2), hpBar.position.y)
+        newHpBar.name = hpBar.name
+        
+        bgBar.addChild(newHpBar)
+        
+        let labelHp = bgBar.childNodeWithName("hpLabel-\(target.race.name)") as! SKLabelNode
+        labelHp.removeFromParent()
+        
+        let newLabelHP = SKLabelNode(text: "\(target.race.status.currentHP)/\(target.race.status.HP)")
+        newLabelHP.fontColor = labelHp.fontColor
+        newLabelHP.fontSize = labelHp.fontSize
+        newLabelHP.fontName = labelHp.fontName
+        newLabelHP.name = labelHp.name
+        newLabelHP.zPosition = labelHp.zPosition
+        newLabelHP.position = labelHp.position
+        
+        bgBar.addChild(newLabelHP)
+    }
+    
+    //MARK: Disable status player if is die
+    private func disableStatusPlayer(target: Player) {
+        
     }
 }

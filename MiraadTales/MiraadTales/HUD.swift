@@ -21,12 +21,14 @@ public class HUD: SKNode {
     public var bgTitle: SKSpriteNode
     public var players: [Player]
     public var currentPlayer: Player
+    public var isClosed: Bool
     private let title: SKLabelNode
     
     public init(players: [Player], currentPlayer: Player, size: CGSize, name: String, typeHUD: TypeHUD) {
         
         self.players = players
         self.currentPlayer = currentPlayer
+        self.isClosed = false
         
         if typeHUD == .Equip {
             self.bg = SKSpriteNode(imageNamed: "bgMenuEquipment")
@@ -117,6 +119,8 @@ public class HUD: SKNode {
             for p in self.players {
                 p.menuHasOpened = false
             }
+            
+            self.isClosed = true
         }
     }
 }

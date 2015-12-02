@@ -34,9 +34,11 @@ class CastleScene: SKScene, InteractionDelegate {
         skJoystick.addChild(self.joystick!)
         skButtons.addChild(self.actionManagement!)
         
-        self.currentPlayer!.removeFromParent()
-        self.currentPlayer!.position = CGPointMake(-160, -96)
-        self.map!.addChild(self.currentPlayer!)
+        for p in players {
+            p.removeFromParent()
+            p.position = CGPointMake(-160, -96)
+            self.map!.addChild(p)
+        }
         
         let bellatrix = map!.childNodeWithName("SKBellatrix") as! SKSpriteNode
         bellatrix.texture!.filteringMode = .Nearest

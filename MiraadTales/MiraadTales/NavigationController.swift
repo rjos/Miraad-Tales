@@ -34,6 +34,7 @@ public class NavigationController: SKView {
         
         if currScene is CombatScene {
             lastScene.userData!["CombatScene"] = true
+            lastScene.userData!["Win"] = (currScene as! CombatScene).win
         }else {
             lastScene.userData!["CombatScene"] = false
         }

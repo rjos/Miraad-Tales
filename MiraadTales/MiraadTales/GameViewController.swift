@@ -22,7 +22,12 @@ class GameViewController: UIViewController {
             skView.showsNodeCount = true
             
 //            scene.typeCombat = "Normal"
-//            scene.players = [DBPlayers.getBard(skView), DBPlayers.getPaladin(skView)]
+//            let bard = DBPlayers.getBard(skView)
+//            let equips = DBEquipSkill.getEquips(PlayersRace.Bard)
+//            let skills = [DBEquipSkill.getSkill("Instrument Hit"), DBEquipSkill.getSkill("Power Chord"), DBEquipSkill.getSkill("Dark Sonata")]
+//            bard.race.skills = skills
+//            bard.race.equipments = equips
+//            scene.players = [bard]
 //            scene.enimies = DBEnemy.getEnemy("Zumbi", qtdade: 2)
             
             skView.showsPhysics = false

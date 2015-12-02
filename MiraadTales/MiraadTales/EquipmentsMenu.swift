@@ -201,7 +201,7 @@ public class EquipmentsMenu: HUD {
             if hasItems {
                 //set items
                 player.race.equipments[i].name = "item-\(i)"
-                player.race.equipments[i].zPosition = item.zPosition + 1
+                player.race.equipments[i].zPosition = 5
                 item.addChild(player.race.equipments[i])
                 
                 if player.race.equipments[i].baseEquip.isEquipped  &&  i < 3{

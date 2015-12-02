@@ -82,9 +82,6 @@
 		1BA6B9961BF0EB5B00046B7C /* Dialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA6B9951BF0EB5B00046B7C /* Dialog.swift */; };
 		1BA6B9981BF0EC4900046B7C /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA6B9971BF0EC4900046B7C /* Message.swift */; };
 		1BAD48F71C088B35005FBDD3 /* DamageList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAD48F61C088B35005FBDD3 /* DamageList.swift */; };
-		1BAD48FF1C08929C005FBDD3 /* Heal.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1BAD48FE1C08929C005FBDD3 /* Heal.atlas */; };
-		1BAD49011C089341005FBDD3 /* H. light.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1BAD49001C089341005FBDD3 /* H. light.atlas */; };
-		1BAD49031C0898DE005FBDD3 /* Basichit.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1BAD49021C0898DE005FBDD3 /* Basichit.atlas */; };
 		1BB03DCD1BE26444007E7615 /* EquipmentsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB03DCC1BE26444007E7615 /* EquipmentsMenu.swift */; };
 		1BB03DCF1BE266BC007E7615 /* BackpackMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB03DCE1BE266BC007E7615 /* BackpackMenu.swift */; };
 		1BB27CC21BFA391E00A5736E /* footer.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BB27CB01BFA391E00A5736E /* footer.png */; };
@@ -110,6 +107,12 @@
 		1BB6D3161BEB89E1007229DA /* rocks.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BB6D3151BEB89E1007229DA /* rocks.png */; };
 		1BB6D3181BEBAD72007229DA /* bones.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BB6D3171BEBAD72007229DA /* bones.png */; };
 		1BB6D31A1BEBAD7D007229DA /* stones.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BB6D3191BEBAD7D007229DA /* stones.png */; };
+		1BB80C581C0E3FA6001D3C89 /* BasichitRohan.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1BB80C571C0E3FA6001D3C89 /* BasichitRohan.atlas */; };
+		1BB80C5B1C0E4073001D3C89 /* BasichitHydora.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1BB80C5A1C0E4073001D3C89 /* BasichitHydora.atlas */; };
+		1BB80C5D1C0E414B001D3C89 /* H.light.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1BB80C5C1C0E414B001D3C89 /* H.light.atlas */; };
+		1BB80C5F1C0E4183001D3C89 /* Heal.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1BB80C5E1C0E4183001D3C89 /* Heal.atlas */; };
+		1BB80C631C0E4361001D3C89 /* Haste.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1BB80C621C0E4361001D3C89 /* Haste.atlas */; };
+		1BB80C651C0E6047001D3C89 /* Pchord.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1BB80C641C0E6047001D3C89 /* Pchord.atlas */; };
 		1BC1F41D1BD1C6CB000CE8B3 /* MovementManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC1F41C1BD1C6CB000CE8B3 /* MovementManagement.swift */; };
 		1BC1F4201BD2360F000CE8B3 /* ActionManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC1F41F1BD2360F000CE8B3 /* ActionManagement.swift */; };
 		1BD0C54E1BECDCD0006F4220 /* Herb.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1BD0C53C1BECDCD0006F4220 /* Herb.atlas */; };
@@ -262,9 +265,6 @@
 		1BA6B9951BF0EB5B00046B7C /* Dialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dialog.swift; sourceTree = "<group>"; };
 		1BA6B9971BF0EC4900046B7C /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		1BAD48F61C088B35005FBDD3 /* DamageList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DamageList.swift; sourceTree = "<group>"; };
-		1BAD48FE1C08929C005FBDD3 /* Heal.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Heal.atlas; sourceTree = "<group>"; };
-		1BAD49001C089341005FBDD3 /* H. light.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = "H. light.atlas"; sourceTree = "<group>"; };
-		1BAD49021C0898DE005FBDD3 /* Basichit.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Basichit.atlas; sourceTree = "<group>"; };
 		1BB03DCC1BE26444007E7615 /* EquipmentsMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquipmentsMenu.swift; sourceTree = "<group>"; };
 		1BB03DCE1BE266BC007E7615 /* BackpackMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackpackMenu.swift; sourceTree = "<group>"; };
 		1BB27CB01BFA391E00A5736E /* footer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = footer.png; sourceTree = "<group>"; };
@@ -290,6 +290,12 @@
 		1BB6D3151BEB89E1007229DA /* rocks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rocks.png; sourceTree = "<group>"; };
 		1BB6D3171BEBAD72007229DA /* bones.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bones.png; sourceTree = "<group>"; };
 		1BB6D3191BEBAD7D007229DA /* stones.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stones.png; sourceTree = "<group>"; };
+		1BB80C571C0E3FA6001D3C89 /* BasichitRohan.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = BasichitRohan.atlas; sourceTree = "<group>"; };
+		1BB80C5A1C0E4073001D3C89 /* BasichitHydora.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = BasichitHydora.atlas; sourceTree = "<group>"; };
+		1BB80C5C1C0E414B001D3C89 /* H.light.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = H.light.atlas; sourceTree = "<group>"; };
+		1BB80C5E1C0E4183001D3C89 /* Heal.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Heal.atlas; sourceTree = "<group>"; };
+		1BB80C621C0E4361001D3C89 /* Haste.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Haste.atlas; sourceTree = "<group>"; };
+		1BB80C641C0E6047001D3C89 /* Pchord.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Pchord.atlas; sourceTree = "<group>"; };
 		1BC1F41C1BD1C6CB000CE8B3 /* MovementManagement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovementManagement.swift; sourceTree = "<group>"; };
 		1BC1F41F1BD2360F000CE8B3 /* ActionManagement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionManagement.swift; sourceTree = "<group>"; };
 		1BD0C53C1BECDCD0006F4220 /* Herb.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Herb.atlas; sourceTree = "<group>"; };
@@ -728,8 +734,10 @@
 		1BAD48FA1C08923E005FBDD3 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
-				1BAD49021C0898DE005FBDD3 /* Basichit.atlas */,
+				1BB80C5A1C0E4073001D3C89 /* BasichitHydora.atlas */,
+				1BB80C571C0E3FA6001D3C89 /* BasichitRohan.atlas */,
 				1BAD48FD1C08928F005FBDD3 /* Paladin */,
+				1BB80C591C0E3FD0001D3C89 /* Bard */,
 				1BE2E96F1C0D655500215177 /* Enimies */,
 			);
 			name = Animations;
@@ -738,8 +746,8 @@
 		1BAD48FD1C08928F005FBDD3 /* Paladin */ = {
 			isa = PBXGroup;
 			children = (
-				1BAD49001C089341005FBDD3 /* H. light.atlas */,
-				1BAD48FE1C08929C005FBDD3 /* Heal.atlas */,
+				1BB80C5E1C0E4183001D3C89 /* Heal.atlas */,
+				1BB80C5C1C0E414B001D3C89 /* H.light.atlas */,
 			);
 			name = Paladin;
 			sourceTree = "<group>";
@@ -798,6 +806,15 @@
 				1BB6D3131BEB88BF007229DA /* bgMVP.png */,
 			);
 			name = MVP;
+			sourceTree = "<group>";
+		};
+		1BB80C591C0E3FD0001D3C89 /* Bard */ = {
+			isa = PBXGroup;
+			children = (
+				1BB80C641C0E6047001D3C89 /* Pchord.atlas */,
+				1BB80C621C0E4361001D3C89 /* Haste.atlas */,
+			);
+			name = Bard;
 			sourceTree = "<group>";
 		};
 		1BC9101A1BD7E4AE009E2A9C /* Maps */ = {
@@ -1089,6 +1106,7 @@
 				1BE8DF861C050B6A00BCBE1C /* CastleScene.sks in Resources */,
 				1BD0C56F1BECE26D006F4220 /* flores.png in Resources */,
 				1BD0C55D1BECDCD0006F4220 /* Ramdall.atlas in Resources */,
+				1BB80C5F1C0E4183001D3C89 /* Heal.atlas in Resources */,
 				1BB27CC21BFA391E00A5736E /* footer.png in Resources */,
 				1BA3ED7D1BEA4AC200F9E3E3 /* Punishment.png in Resources */,
 				1BE2E9771C0D6A8E00215177 /* Arranhao.atlas in Resources */,
@@ -1104,9 +1122,12 @@
 				1BD0C5711BECE26D006F4220 /* grass.png in Resources */,
 				1BB27CCA1BFA391E00A5736E /* turnenemy-0.png in Resources */,
 				1BB27CCE1BFA391E00A5736E /* 12 sound.png in Resources */,
+				1BB80C631C0E4361001D3C89 /* Haste.atlas in Resources */,
 				1BE8DF8B1C050BD300BCBE1C /* rocksCastle.png in Resources */,
 				1BB27CCD1BFA391E00A5736E /* reddot.png in Resources */,
 				1BE7D8051BC7FEDA000FA60C /* Ylla.atlas in Resources */,
+				1BB80C581C0E3FA6001D3C89 /* BasichitRohan.atlas in Resources */,
+				1BB80C5D1C0E414B001D3C89 /* H.light.atlas in Resources */,
 				1BD7C5911C0C87FD00F7D6BC /* Punishment@2x.png in Resources */,
 				1B861F671C04918400E0C555 /* Hydora.atlas in Resources */,
 				1B9CD2DE1BE8FB05003C1834 /* bgTitle.png in Resources */,
@@ -1120,6 +1141,7 @@
 				1BE2E96D1C0D616400215177 /* basichit.png in Resources */,
 				1BD0C56C1BECE26D006F4220 /* arvore.png in Resources */,
 				1BD0C56E1BECE26D006F4220 /* chao.png in Resources */,
+				1BB80C5B1C0E4073001D3C89 /* BasichitHydora.atlas in Resources */,
 				1BB27CCF1BFA391E00A5736E /* 13 enemybgbar.png in Resources */,
 				1BB6D3161BEB89E1007229DA /* rocks.png in Resources */,
 				1BB27CC71BFA391E00A5736E /* 05 skillholylight.png in Resources */,
@@ -1132,7 +1154,6 @@
 				1BD7C5921C0C87FD00F7D6BC /* Sledgehammer@2x.png in Resources */,
 				1B8418DD1C0133BB003F0130 /* holylight.png in Resources */,
 				1BE64BC21C03EF2F009729ED /* openedDoorDown.png in Resources */,
-				1BAD49031C0898DE005FBDD3 /* Basichit.atlas in Resources */,
 				1B9AD03A1BED3B2700FA04C6 /* key.png in Resources */,
 				1BA3ED7B1BEA4ABC00F9E3E3 /* Warhammer.png in Resources */,
 				1BA3ED6E1BEA3BC600F9E3E3 /* bgAttackSkill.png in Resources */,
@@ -1140,8 +1161,8 @@
 				1B9CD2E21BE8FBA0003C1834 /* bgEquip.png in Resources */,
 				1BA3ED791BEA4AB600F9E3E3 /* Sledgehammer.png in Resources */,
 				1BB6D3111BEB8867007229DA /* MvpScene.sks in Resources */,
-				1BAD48FF1C08929C005FBDD3 /* Heal.atlas in Resources */,
 				1B9CD2DC1BE8FABD003C1834 /* bgMenuEquipment.png in Resources */,
+				1BB80C651C0E6047001D3C89 /* Pchord.atlas in Resources */,
 				1BD0C55C1BECDCD0006F4220 /* Aemon.atlas in Resources */,
 				1BD0C5731BECE26D006F4220 /* house2.png in Resources */,
 				1B8EDC131BC2B074009603B6 /* LaunchScreen.storyboard in Resources */,
@@ -1158,7 +1179,6 @@
 				1BD0C5781BECE5E0006F4220 /* closeddoor.png in Resources */,
 				1BB27CC51BFA391E00A5736E /* mpbar.png in Resources */,
 				1BB27CD11BFA391E00A5736E /* 15 screen.png in Resources */,
-				1BAD49011C089341005FBDD3 /* H. light.atlas in Resources */,
 				1BD0C5741BECE26D006F4220 /* mato.png in Resources */,
 				1BA3ED741BEA3CC000F9E3E3 /* markDef.png in Resources */,
 				1BE8DF8D1C050DA900BCBE1C /* cauldron.png in Resources */,
