@@ -11,7 +11,6 @@
 		1B38006D1C034CCA00D10E42 /* Start.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B38006C1C034CCA00D10E42 /* Start.swift */; };
 		1B3800701C0355D300D10E42 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B38006F1C0355D300D10E42 /* logo.png */; };
 		1B3800741C035BC100D10E42 /* ChapterMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3800731C035BC100D10E42 /* ChapterMenu.swift */; };
-		1B3800791C0360F800D10E42 /* Bellatrix2.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1B3800751C0360F800D10E42 /* Bellatrix2.atlas */; };
 		1B38007B1C0360F800D10E42 /* Rohan.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1B3800771C0360F800D10E42 /* Rohan.atlas */; };
 		1B38007C1C0360F800D10E42 /* Zumbi.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1B3800781C0360F800D10E42 /* Zumbi.atlas */; };
 		1B38007F1C03651C00D10E42 /* campfire.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1B38007E1C03651C00D10E42 /* campfire.atlas */; };
@@ -188,7 +187,6 @@
 		1B38006C1C034CCA00D10E42 /* Start.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Start.swift; sourceTree = "<group>"; };
 		1B38006F1C0355D300D10E42 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		1B3800731C035BC100D10E42 /* ChapterMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChapterMenu.swift; sourceTree = "<group>"; };
-		1B3800751C0360F800D10E42 /* Bellatrix2.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Bellatrix2.atlas; sourceTree = "<group>"; };
 		1B3800771C0360F800D10E42 /* Rohan.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Rohan.atlas; sourceTree = "<group>"; };
 		1B3800781C0360F800D10E42 /* Zumbi.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Zumbi.atlas; sourceTree = "<group>"; };
 		1B38007E1C03651C00D10E42 /* campfire.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = campfire.atlas; sourceTree = "<group>"; };
@@ -849,7 +847,6 @@
 				BC8C618E1C0E8B30002625F8 /* Buggy.atlas */,
 				BC8C618C1C0E8A58002625F8 /* Bones.atlas */,
 				1B861F661C04918400E0C555 /* Hydora.atlas */,
-				1B3800751C0360F800D10E42 /* Bellatrix2.atlas */,
 				1B3800771C0360F800D10E42 /* Rohan.atlas */,
 				1B3800781C0360F800D10E42 /* Zumbi.atlas */,
 				1BD0C55F1BECDCF6006F4220 /* Marge.atlas */,
@@ -1164,7 +1161,6 @@
 				1BB6D3161BEB89E1007229DA /* rocks.png in Resources */,
 				1BB27CC71BFA391E00A5736E /* 05 skillholylight.png in Resources */,
 				1B8418E11C01354B003F0130 /* powerchord.png in Resources */,
-				1B3800791C0360F800D10E42 /* Bellatrix2.atlas in Resources */,
 				1BD0C54E1BECDCD0006F4220 /* Herb.atlas in Resources */,
 				1BB27CCC1BFA391E00A5736E /* turnenemy-1.png in Resources */,
 				1BB6D3141BEB88BF007229DA /* bgMVP.png in Resources */,
