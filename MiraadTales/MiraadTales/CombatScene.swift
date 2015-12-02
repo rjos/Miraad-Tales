@@ -207,7 +207,7 @@ class CombatScene: SKScene {
             velocityAtk = 0.5
         }
         
-        //Damage turn
+        //Prepare atks
         if self.skillCurr != nil && self.targetCurr != nil && !executeTurn { /* prepare atk */
             
             prepareAtk[self.currentPlayer] = (targetCurr, skillCurr)
@@ -268,6 +268,22 @@ class CombatScene: SKScene {
                 
                 target = generateRandomTargetAtk(playersInLive)
                 skill = generateRandomSkillAtk((actualPerson as! Enemy))
+            }
+            
+            if (target is Player) && (target as! Player).race.isDie {
+                //atk other player
+                let tempPlayers = self.players.filter({ (p) -> Bool in
+                    return !p.race.isDie
+                })
+                
+                target = tempPlayers.first!
+            }else if (target is Enemy) && (target as! Enemy).race.isDie {
+                //atk other enemy
+                let tempEnemies = self.enimies.filter({ (e) -> Bool in
+                    return !e.race.isDie
+                })
+                
+                target = tempEnemies.first!
             }
             
             //Execute Skill animation
@@ -491,13 +507,13 @@ class CombatScene: SKScene {
         
         for var i = 0; i < enimies.count; ++i {
             
-            enimies[i].removeFromParent()
+            //enimies[i].removeFromParent()
             enimies[i].position = positionCur
-            enimies[i].zPosition = 5
+            enimies[i].zPosition = 10
             enimies[i].xScale = 1.5
             enimies[i].yScale = 1.5
             
-            if i == 0 {
+            if i == 1 {
                 positionCur = CGPointMake(positionCur.x + 120, positionCur.y - 80)
             }else {
                 positionCur = CGPointMake(positionCur.x - 220, positionCur.y + 130)
@@ -505,7 +521,6 @@ class CombatScene: SKScene {
             
             skCombatBg.addChild(enimies[i])
         }
-
     }
     
     //MARK: - Ordenation player and enimy for speed
