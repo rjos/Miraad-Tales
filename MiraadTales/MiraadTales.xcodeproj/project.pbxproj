@@ -11,7 +11,7 @@
 		1B38006D1C034CCA00D10E42 /* Start.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B38006C1C034CCA00D10E42 /* Start.swift */; };
 		1B3800701C0355D300D10E42 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B38006F1C0355D300D10E42 /* logo.png */; };
 		1B3800741C035BC100D10E42 /* ChapterMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3800731C035BC100D10E42 /* ChapterMenu.swift */; };
-		1B3800791C0360F800D10E42 /* Bellatrix.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1B3800751C0360F800D10E42 /* Bellatrix.atlas */; };
+		1B3800791C0360F800D10E42 /* Bellatrix2.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1B3800751C0360F800D10E42 /* Bellatrix2.atlas */; };
 		1B38007B1C0360F800D10E42 /* Rohan.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1B3800771C0360F800D10E42 /* Rohan.atlas */; };
 		1B38007C1C0360F800D10E42 /* Zumbi.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1B3800781C0360F800D10E42 /* Zumbi.atlas */; };
 		1B38007F1C03651C00D10E42 /* campfire.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1B38007E1C03651C00D10E42 /* campfire.atlas */; };
@@ -158,6 +158,11 @@
 		1BECB4D11BC55EF700EDBB8F /* Bard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BECB4D01BC55EF700EDBB8F /* Bard.swift */; };
 		1BECB4D31BC55F2600EDBB8F /* Paladin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BECB4D21BC55F2600EDBB8F /* Paladin.swift */; };
 		1BECB4D51BC563F700EDBB8F /* StatusList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BECB4D41BC563F700EDBB8F /* StatusList.swift */; };
+		BC8C61891C0E8668002625F8 /* hydoraArmor1.png in Resources */ = {isa = PBXBuildFile; fileRef = BC8C61871C0E8668002625F8 /* hydoraArmor1.png */; };
+		BC8C618A1C0E8668002625F8 /* hydoraArmor2.png in Resources */ = {isa = PBXBuildFile; fileRef = BC8C61881C0E8668002625F8 /* hydoraArmor2.png */; };
+		BC8C618D1C0E8A58002625F8 /* Bones.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BC8C618C1C0E8A58002625F8 /* Bones.atlas */; };
+		BC8C618F1C0E8B30002625F8 /* Buggy.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BC8C618E1C0E8B30002625F8 /* Buggy.atlas */; };
+		BC8C61911C0E8D54002625F8 /* Bellatrix.Atlas in Resources */ = {isa = PBXBuildFile; fileRef = BC8C61901C0E8D54002625F8 /* Bellatrix.Atlas */; };
 		BCCBB89F1BD7C3370026EEB2 /* CollisionSetUps.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCBB89E1BD7C3370026EEB2 /* CollisionSetUps.swift */; };
 /* End PBXBuildFile section */
 
@@ -183,7 +188,7 @@
 		1B38006C1C034CCA00D10E42 /* Start.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Start.swift; sourceTree = "<group>"; };
 		1B38006F1C0355D300D10E42 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		1B3800731C035BC100D10E42 /* ChapterMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChapterMenu.swift; sourceTree = "<group>"; };
-		1B3800751C0360F800D10E42 /* Bellatrix.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Bellatrix.atlas; sourceTree = "<group>"; };
+		1B3800751C0360F800D10E42 /* Bellatrix2.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Bellatrix2.atlas; sourceTree = "<group>"; };
 		1B3800771C0360F800D10E42 /* Rohan.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Rohan.atlas; sourceTree = "<group>"; };
 		1B3800781C0360F800D10E42 /* Zumbi.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Zumbi.atlas; sourceTree = "<group>"; };
 		1B38007E1C03651C00D10E42 /* campfire.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = campfire.atlas; sourceTree = "<group>"; };
@@ -342,6 +347,11 @@
 		1BECB4D01BC55EF700EDBB8F /* Bard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bard.swift; sourceTree = "<group>"; };
 		1BECB4D21BC55F2600EDBB8F /* Paladin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Paladin.swift; sourceTree = "<group>"; };
 		1BECB4D41BC563F700EDBB8F /* StatusList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusList.swift; sourceTree = "<group>"; };
+		BC8C61871C0E8668002625F8 /* hydoraArmor1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hydoraArmor1.png; sourceTree = "<group>"; };
+		BC8C61881C0E8668002625F8 /* hydoraArmor2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hydoraArmor2.png; sourceTree = "<group>"; };
+		BC8C618C1C0E8A58002625F8 /* Bones.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Bones.atlas; sourceTree = "<group>"; };
+		BC8C618E1C0E8B30002625F8 /* Buggy.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Buggy.atlas; sourceTree = "<group>"; };
+		BC8C61901C0E8D54002625F8 /* Bellatrix.Atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Bellatrix.Atlas; sourceTree = "<group>"; };
 		BCCBB89E1BD7C3370026EEB2 /* CollisionSetUps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollisionSetUps.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -695,6 +705,8 @@
 		1BA3ED761BEA4A9F00F9E3E3 /* Paladin */ = {
 			isa = PBXGroup;
 			children = (
+				BC8C61871C0E8668002625F8 /* hydoraArmor1.png */,
+				BC8C61881C0E8668002625F8 /* hydoraArmor2.png */,
 				1BA3ED771BEA4AAB00F9E3E3 /* Atk */,
 			);
 			name = Paladin;
@@ -833,8 +845,11 @@
 		1BD0C53B1BECD927006F4220 /* Characters */ = {
 			isa = PBXGroup;
 			children = (
+				BC8C61901C0E8D54002625F8 /* Bellatrix.Atlas */,
+				BC8C618E1C0E8B30002625F8 /* Buggy.atlas */,
+				BC8C618C1C0E8A58002625F8 /* Bones.atlas */,
 				1B861F661C04918400E0C555 /* Hydora.atlas */,
-				1B3800751C0360F800D10E42 /* Bellatrix.atlas */,
+				1B3800751C0360F800D10E42 /* Bellatrix2.atlas */,
 				1B3800771C0360F800D10E42 /* Rohan.atlas */,
 				1B3800781C0360F800D10E42 /* Zumbi.atlas */,
 				1BD0C55F1BECDCF6006F4220 /* Marge.atlas */,
@@ -1058,7 +1073,7 @@
 				TargetAttributes = {
 					1B8EDC001BC2B073009603B6 = {
 						CreatedOnToolsVersion = 7.0;
-						DevelopmentTeam = GHP2MP7KV3;
+						DevelopmentTeam = 855H77G8PZ;
 					};
 					1B8EDC181BC2B074009603B6 = {
 						CreatedOnToolsVersion = 7.0;
@@ -1098,6 +1113,7 @@
 				1BB27CC81BFA391E00A5736E /* 06 skillheal.png in Resources */,
 				1BA0D1101BFF527C00E4482A /* balao.png in Resources */,
 				1B38007C1C0360F800D10E42 /* Zumbi.atlas in Resources */,
+				BC8C618A1C0E8668002625F8 /* hydoraArmor2.png in Resources */,
 				1B9CD2D91BE8F7EE003C1834 /* prospero_bold_nbp.ttf in Resources */,
 				1BB27CC91BFA391E00A5736E /* turnfriend-0.png in Resources */,
 				1B9CD2DA1BE8F7EE003C1834 /* prospero_nbp.ttf in Resources */,
@@ -1109,6 +1125,7 @@
 				1BB80C5F1C0E4183001D3C89 /* Heal.atlas in Resources */,
 				1BB27CC21BFA391E00A5736E /* footer.png in Resources */,
 				1BA3ED7D1BEA4AC200F9E3E3 /* Punishment.png in Resources */,
+				BC8C61891C0E8668002625F8 /* hydoraArmor1.png in Resources */,
 				1BE2E9771C0D6A8E00215177 /* Arranhao.atlas in Resources */,
 				1BB6D3181BEBAD72007229DA /* bones.png in Resources */,
 				1BD0C5721BECE26D006F4220 /* house1.png in Resources */,
@@ -1137,6 +1154,7 @@
 				1BE2E96E1C0D616400215177 /* basichit@2x.png in Resources */,
 				1B9CD2E41BE8FECF003C1834 /* bgEquips.png in Resources */,
 				1B90C9A41BFCB8CC00B198FB /* Intro.sks in Resources */,
+				BC8C618F1C0E8B30002625F8 /* Buggy.atlas in Resources */,
 				1BB6D31A1BEBAD7D007229DA /* stones.png in Resources */,
 				1BE2E96D1C0D616400215177 /* basichit.png in Resources */,
 				1BD0C56C1BECE26D006F4220 /* arvore.png in Resources */,
@@ -1146,7 +1164,7 @@
 				1BB6D3161BEB89E1007229DA /* rocks.png in Resources */,
 				1BB27CC71BFA391E00A5736E /* 05 skillholylight.png in Resources */,
 				1B8418E11C01354B003F0130 /* powerchord.png in Resources */,
-				1B3800791C0360F800D10E42 /* Bellatrix.atlas in Resources */,
+				1B3800791C0360F800D10E42 /* Bellatrix2.atlas in Resources */,
 				1BD0C54E1BECDCD0006F4220 /* Herb.atlas in Resources */,
 				1BB27CCC1BFA391E00A5736E /* turnenemy-1.png in Resources */,
 				1BB6D3141BEB88BF007229DA /* bgMVP.png in Resources */,
@@ -1167,6 +1185,7 @@
 				1BD0C5731BECE26D006F4220 /* house2.png in Resources */,
 				1B8EDC131BC2B074009603B6 /* LaunchScreen.storyboard in Resources */,
 				1BD0C5701BECE26D006F4220 /* fundo.png in Resources */,
+				BC8C618D1C0E8A58002625F8 /* Bones.atlas in Resources */,
 				1B8EDC101BC2B074009603B6 /* Assets.xcassets in Resources */,
 				1BD7C5981C0CA2F000F7D6BC /* CreditsScene.sks in Resources */,
 				1BB27CC41BFA391E00A5736E /* hpbar.png in Resources */,
@@ -1180,6 +1199,7 @@
 				1BB27CC51BFA391E00A5736E /* mpbar.png in Resources */,
 				1BB27CD11BFA391E00A5736E /* 15 screen.png in Resources */,
 				1BD0C5741BECE26D006F4220 /* mato.png in Resources */,
+				BC8C61911C0E8D54002625F8 /* Bellatrix.Atlas in Resources */,
 				1BA3ED741BEA3CC000F9E3E3 /* markDef.png in Resources */,
 				1BE8DF8D1C050DA900BCBE1C /* cauldron.png in Resources */,
 				1B38006B1C034BB400D10E42 /* Start.sks in Resources */,
