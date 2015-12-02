@@ -299,6 +299,10 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
             self.currentDialog = DBInteraction.getInteraction(self.bodyEnemy!.node!, player: self.movementManagement!.player, size: CGSizeMake(500,200))
             self.setupDialog()
             showDialog(self.currentDialog!)
+        }else if name == "armor1"{
+            let armor1 = VLDContextSheetItem(title: "armor1", image:UIImage(named: "hydoraArmor1"), highlightedImage: UIImage(named:"hydoraArmor1"))
+            self.movementManagement!.player.setItemIntoMenu(armor1)
+            
         }else if name!.containsString("Zumbi") {
             /*Combat scene*/
             
