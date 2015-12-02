@@ -78,7 +78,7 @@ public class EquipmentsMenu: HUD {
     public override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
         super.touchesBegan(touches, withEvent: event)
-
+        
         for touch in touches {
             
             let location = touch.locationInNode(self)
@@ -86,23 +86,66 @@ public class EquipmentsMenu: HUD {
             let node = self.nodeAtPoint(location)
             
             if node.name == "next" && node.alpha > 0.7 {
+                self.selectedNodeAtk = nil
+                self.selectedNodeDef = nil
+                
                 self.changePlayer(true)
             }else if node.name == "preview" && node.alpha > 0.7 {
+                self.selectedNodeAtk = nil
+                self.selectedNodeDef = nil
+                
                 self.changePlayer(false)
             }else if (node.name != nil && (node.name?.containsString("item-"))!) {
                 
                 if node.name == "item-0" || node.name == "item-1" || node.name == "item-2" {
                     //Mark Attack
-                    self.selectedNodeAtk!.removeAllChildren()
+                    
+                    if self.selectedNodeAtk != nil {
+                        if self.selectedNodeAtk!.children.count > 0 {
+                            self.selectedNodeAtk!.removeAllChildren()
+                        }
+                        
+                        self.selectedNodeAtk!.baseEquip.isEquipped = false
+                        
+                        let skillForEquip = self.selectedNodeAtk!.baseEquip.skill!
+                        
+                        let indexSkill = self.currentPlayer.race.skills.indexOf(skillForEquip)!
+                        
+                        self.currentPlayer.race.skills.removeAtIndex(indexSkill)
+                    }
+                    
                     let markAtk = SKSpriteNode(imageNamed: "markAtk")
                     node.addChild(markAtk)
                     self.selectedNodeAtk = (node as! Equip)
+                    self.selectedNodeAtk!.baseEquip.isEquipped = true
+                    
+                    let skill = self.selectedNodeAtk!.baseEquip.skill!
+                    
+                    self.currentPlayer.race.skills.append(skill)
                 }else {
                     //Mark defense
-                    self.selectedNodeDef!.removeAllChildren()
+                    
+                    if self.selectedNodeDef != nil {
+                        if self.selectedNodeDef!.children.count > 0 {
+                            self.selectedNodeDef!.removeAllChildren()
+                        }
+                        self.selectedNodeDef!.baseEquip.isEquipped = false
+                        
+                        let skillForEquip = self.selectedNodeDef!.baseEquip.skill!
+                        
+                        let indexSkill = self.currentPlayer.race.skills.indexOf(skillForEquip)!
+                        
+                        self.currentPlayer.race.skills.removeAtIndex(indexSkill)
+                    }
+                    
                     let markDef = SKSpriteNode(imageNamed: "markDef")
                     node.addChild(markDef)
                     self.selectedNodeDef = (node as! Equip)
+                    self.selectedNodeDef!.baseEquip.isEquipped = true
+                    
+                    let skill = self.selectedNodeDef!.baseEquip.skill!
+                    
+                    self.currentPlayer.race.skills.append(skill)
                 }
                 
                 self.incrementStatus()
@@ -190,21 +233,35 @@ public class EquipmentsMenu: HUD {
         
         var items:[SKSpriteNode] = []
         
+        //        var indexArmor: Int = 3
+        //        var indexWeapons: Int = 0
+        
         let hasItems = player.race.equipments.count > 0
         
         for var i = 0; i < player.race.equipments.count; ++i {
             
             let item = SKSpriteNode(imageNamed: "equipBox")
-            item.position = gridPosition[i]
             item.zPosition = 4
             
             if hasItems {
                 //set items
-                player.race.equipments[i].name = "item-\(i)"
-                player.race.equipments[i].zPosition = 5
+                let name = player.race.equipments[i].baseEquip.name
+                
+                let lengthName = name.characters.count
+                
+                let index = Int(name[(lengthName - 1)...(lengthName - 1)])
+                
+                item.position = gridPosition[index!]
+                
+                player.race.equipments[i].name = "item-\(index!)"
+                
+                if player.race.equipments[i].zPosition < 5 {
+                    player.race.equipments[i].zPosition = 5
+                }
+                
                 item.addChild(player.race.equipments[i])
                 
-                if player.race.equipments[i].baseEquip.isEquipped  &&  i < 3{
+                if player.race.equipments[i].baseEquip.isEquipped  &&  (!name.containsString("Armor") && !name.containsString("Clothes")){
                     let markAttack = SKSpriteNode(imageNamed: "markAtk")
                     player.race.equipments[i].addChild(markAttack)
                     self.selectedNodeAtk = player.race.equipments[i]

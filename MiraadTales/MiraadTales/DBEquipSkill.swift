@@ -250,22 +250,22 @@ public class DBEquipSkill {
     //MARK: - Equipments and Skills Bard
     private static func createListEquipmentBard() -> [Equip] {
         let statusOldLute = Status(HP: 0, MP: 0, Speed: 0, pAtk: 36, mAtk: 54, pDef: 0, mDef: 0)
-        let oldLute = BaseEquip(name: "Old lute", ownerRace: PlayersRace.Bard, status: statusOldLute, type: ItemType.Weapon, requiredLevel: 0, skill: nil, isEquipped: false)
+        let oldLute = BaseEquip(name: "Old lute-0", ownerRace: PlayersRace.Bard, status: statusOldLute, type: ItemType.Weapon, requiredLevel: 0, skill: nil, isEquipped: false)
         
         let statusClassicGuitar = Status(HP: 0, MP: 0, Speed: 0, pAtk: 100, mAtk: 150, pDef: 0, mDef: 0)
-        let classicGuitar = BaseEquip(name: "Classi Guitar", ownerRace: PlayersRace.Bard, status: statusClassicGuitar, type: ItemType.Weapon, requiredLevel: 5, skill: nil, isEquipped: false)
+        let classicGuitar = BaseEquip(name: "Classi Guitar-1", ownerRace: PlayersRace.Bard, status: statusClassicGuitar, type: ItemType.Weapon, requiredLevel: 5, skill: nil, isEquipped: false)
         
         let statusSilverHarp = Status(HP: 0, MP: 0, Speed: 0, pAtk: 196, mAtk: 294, pDef: 0, mDef: 0)
-        let silverHarp = BaseEquip(name: "Silver Harp", ownerRace: PlayersRace.Bard, status: statusSilverHarp, type: ItemType.Weapon, requiredLevel: 9, skill: nil, isEquipped: false)
+        let silverHarp = BaseEquip(name: "Silver Harp-2", ownerRace: PlayersRace.Bard, status: statusSilverHarp, type: ItemType.Weapon, requiredLevel: 9, skill: nil, isEquipped: false)
         
         let statusTroubadourClothes = Status(HP: 0, MP: 0, Speed: 0, pAtk: 0, mAtk: 0, pDef: 36, mDef: 54)
-        let troubadourClothes = BaseEquip(name: "Troubadour Clothes", ownerRace: PlayersRace.Bard, status: statusTroubadourClothes, type: ItemType.Armor, requiredLevel: 0, skill: nil, isEquipped: false)
+        let troubadourClothes = BaseEquip(name: "Troubadour Clothes-3", ownerRace: PlayersRace.Bard, status: statusTroubadourClothes, type: ItemType.Armor, requiredLevel: 0, skill: nil, isEquipped: false)
         
         let statusMusicianClothes = Status(HP: 0, MP: 0, Speed: 0, pAtk: 0, mAtk: 0, pDef: 81, mDef: 121)
-        let musicianClothes = BaseEquip(name: "Musician Clothes", ownerRace: PlayersRace.Bard, status: statusMusicianClothes, type: ItemType.Armor, requiredLevel: 4, skill: nil, isEquipped: false)
+        let musicianClothes = BaseEquip(name: "Musician Clothes-4", ownerRace: PlayersRace.Bard, status: statusMusicianClothes, type: ItemType.Armor, requiredLevel: 4, skill: nil, isEquipped: false)
         
         let statusBardClothes = Status(HP: 0, MP: 0, Speed: 0, pAtk: 0, mAtk: 0, pDef: 169, mDef: 253)
-        let bardClothes = BaseEquip(name: "Bard Clothes", ownerRace: PlayersRace.Bard, status: statusBardClothes, type: ItemType.Armor, requiredLevel: 8, skill: nil, isEquipped: false)
+        let bardClothes = BaseEquip(name: "Bard Clothes-5", ownerRace: PlayersRace.Bard, status: statusBardClothes, type: ItemType.Armor, requiredLevel: 8, skill: nil, isEquipped: false)
         
         let bardEquip = [Equip(imageNamed: "", baseEquip: oldLute), Equip(imageNamed: "", baseEquip: classicGuitar), Equip(imageNamed: "", baseEquip: silverHarp), Equip(imageNamed: "", baseEquip: troubadourClothes), Equip(imageNamed: "", baseEquip: musicianClothes), Equip(imageNamed: "", baseEquip: bardClothes)]
         
@@ -303,24 +303,24 @@ public class DBEquipSkill {
     //MARK: - Equipments and Skills Paladin
     private static func createListEquipmentsPaladin() -> [Equip] {
         let statusSledgehammer = Status(HP: 0, MP: 0, Speed: 0, pAtk: 72, mAtk: 54, pDef: 0, mDef: 0)
-        let sledgehammer = BaseEquip(name: "Sledgehammer", ownerRace: PlayersRace.Paladin, status: statusSledgehammer, type: ItemType.Weapon, requiredLevel: 0, skill: nil, isEquipped: false)
+        let sledgehammer = BaseEquip(name: "Sledgehammer-0", ownerRace: PlayersRace.Paladin, status: statusSledgehammer, type: ItemType.Weapon, requiredLevel: 0, skill: nil, isEquipped: false)
         
         let statusWarhammer = Status(HP: 0, MP: 0, Speed: 0, pAtk: 200, mAtk: 150, pDef: 0, mDef: 0)
-        let warhammer = BaseEquip(name: "Warhammer", ownerRace: PlayersRace.Paladin, status: statusWarhammer, type: ItemType.Weapon, requiredLevel: 5, skill: nil, isEquipped: false)
+        let warhammer = BaseEquip(name: "Warhammer-1", ownerRace: PlayersRace.Paladin, status: statusWarhammer, type: ItemType.Weapon, requiredLevel: 5, skill: nil, isEquipped: false)
         
         let statusPunishment = Status(HP: 0, MP: 0, Speed: 0, pAtk: 392, mAtk: 294, pDef: 0, mDef: 0)
-        let punishment = BaseEquip(name: "Punishment", ownerRace: PlayersRace.Paladin, status: statusPunishment, type: ItemType.Weapon, requiredLevel: 9, skill: nil, isEquipped: false)
+        let punishment = BaseEquip(name: "Punishment-2", ownerRace: PlayersRace.Paladin, status: statusPunishment, type: ItemType.Weapon, requiredLevel: 9, skill: nil, isEquipped: false)
         
         let statusHeavyArmor = Status(HP: 0, MP: 0, Speed: 0, pAtk: 0, mAtk: 0, pDef: 90, mDef: 54)
-        let heavyArmor = BaseEquip(name: "Heavy Armor", ownerRace: PlayersRace.Paladin, status: statusHeavyArmor, type: ItemType.Armor, requiredLevel: 0, skill: nil, isEquipped: false)
+        let heavyArmor = BaseEquip(name: "Heavy Armor-3", ownerRace: PlayersRace.Paladin, status: statusHeavyArmor, type: ItemType.Armor, requiredLevel: 0, skill: nil, isEquipped: false)
         
         let statusPaladinArmor = Status(HP: 0, MP: 0, Speed: 0, pAtk: 0, mAtk: 0, pDef: 202, mDef: 121)
-        let paladinArmor = BaseEquip(name: "Paladin Armor", ownerRace: PlayersRace.Paladin, status: statusPaladinArmor, type: ItemType.Armor, requiredLevel: 4, skill: nil, isEquipped: false)
+        let paladinArmor = BaseEquip(name: "Paladin Armor-4", ownerRace: PlayersRace.Paladin, status: statusPaladinArmor, type: ItemType.Armor, requiredLevel: 4, skill: nil, isEquipped: false)
         
         let statusCorruptedArmor = Status(HP: 0, MP: 0, Speed: 0, pAtk: 0, mAtk: 0, pDef: 422, mDef: 253)
-        let corruptedArmor = BaseEquip(name: "Corrupted Armor", ownerRace: PlayersRace.Paladin, status: statusCorruptedArmor, type: ItemType.Armor, requiredLevel: 8, skill: nil, isEquipped: false)
+        let corruptedArmor = BaseEquip(name: "Corrupted Armor-5", ownerRace: PlayersRace.Paladin, status: statusCorruptedArmor, type: ItemType.Armor, requiredLevel: 8, skill: nil, isEquipped: false)
         
-        let paladinEquip = [Equip(imageNamed: "Sledgehammer", baseEquip: sledgehammer), Equip(imageNamed: "Warhammer", baseEquip: warhammer), Equip(imageNamed: "Punishment", baseEquip: punishment), Equip(imageNamed: "", baseEquip: heavyArmor), Equip(imageNamed: "", baseEquip: paladinArmor), Equip(imageNamed: "", baseEquip: corruptedArmor)]
+        let paladinEquip = [Equip(imageNamed: "Sledgehammer", baseEquip: sledgehammer), Equip(imageNamed: "Warhammer", baseEquip: warhammer), Equip(imageNamed: "Punishment", baseEquip: punishment), Equip(imageNamed: "", baseEquip: heavyArmor), Equip(imageNamed: "hydoraArmor2", baseEquip: paladinArmor), Equip(imageNamed: "", baseEquip: corruptedArmor)]
         
         return paladinEquip
     }

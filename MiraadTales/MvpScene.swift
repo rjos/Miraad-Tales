@@ -79,7 +79,7 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
             self.currentPlayer = DBPlayers.getPaladin(self.view!)
             self.players = [self.currentPlayer!]
             
-            self.currentPlayer!.race.equipments.append(DBEquipSkill.getEquip("Sledgehammer"))
+            self.currentPlayer!.race.equipments.append(DBEquipSkill.getEquip("Sledgehammer-0"))
             self.currentPlayer!.race.equipments[0].baseEquip.isEquipped = true
             self.currentPlayer!.race.skills.append(DBEquipSkill.getSkill("Hammer Hit"))
             
@@ -300,8 +300,11 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
             self.setupDialog()
             showDialog(self.currentDialog!)
         }else if name == "armor1"{
-            let armor1 = VLDContextSheetItem(title: "armor1", image:UIImage(named: "hydoraArmor1"), highlightedImage: UIImage(named:"hydoraArmor1"))
-            self.movementManagement!.player.setItemIntoMenu(armor1)
+            //            let armor1 = VLDContextSheetItem(title: "armor1", image:UIImage(named: "hydoraArmor1"), highlightedImage: UIImage(named:"hydoraArmor1"))
+            self.players[0].race.equipments.append(DBEquipSkill.getEquip("Paladin Armor-4"))
+            //                self.movementManagement!.player.setItemIntoMenu(armor1)
+            self.bodyEnemy!.node!.removeFromParent()
+            self.bodyEnemy = nil
             
         }else if name!.containsString("Zumbi") {
             /*Combat scene*/
@@ -337,7 +340,7 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
     func runningDialog() {
         
         if self.currentDialog != nil {
-            self.currentDialog!.velocity = 0.03
+            self.currentDialog!.velocity = -100000000
         }
     }
     
