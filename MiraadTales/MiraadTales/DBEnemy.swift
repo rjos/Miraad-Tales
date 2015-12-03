@@ -20,6 +20,9 @@ public class DBEnemy {
             if nameTarget == "Zumbi" {
                 enemy = self.getChaserWolf()!
             }
+            else if nameTarget == "Bellatrix"{
+                enemy = self.getBellatrix()!
+            }
             
             enemies.append(enemy)
         }
@@ -137,11 +140,26 @@ public class DBEnemy {
     
     //MARK: Enemy Bellatrix and Bellatrix (2nd battle)
     private static func getBellatrix() -> Enemy? {
-        return nil
+        let status = PlayerStatus(HP: 400, MP: 0, Speed: 0, pAtk: 0, mAtk: 0, pDef: 0, mDef: 0)
+        
+        let skills = getSkillChaserWolf()
+        
+        let base = BaseEnemy(name: "Bellatrix", status: status, equipments: [], skills: skills, isDie: false, typeEnemy: TypeEnemy.AngryChicken)
+        
+        let bellatrix = Enemy(imageNamed: "Bellatrix", race: base)
+        bellatrix.name = "Bellatrix"
+        
+        return bellatrix
     }
     
     private static func getSkillBellatrix() -> [Skill] {
-        return []
+        let statusFireBall = Status(HP: 0, MP: 0, Speed: 0, pAtk: 100, mAtk: 0, pDef: 0, mDef: 0)
+        let fireBall = BaseSkill(name: "Fire Ball", fantasyName: "Fire Ball", equip: nil, ownerRace: PlayersRace.Bard, status: statusFireBall, criticalRate: 0, missRate: 0, consumeMana: 0, effect: nil, details: "")
+        
+        let statusPoisonSmoke = Status(HP: 0, MP: 0, Speed: 0, pAtk: 100, mAtk: 0, pDef: 0, mDef: 0)
+        let poisonSmoke = BaseSkill(name: "Poison Smoke", fantasyName: "Poison", equip: nil, ownerRace: PlayersRace.Bard, status: statusPoisonSmoke, criticalRate: 0, missRate: 0, consumeMana: 0, effect: nil, details: "")
+        
+        return [Skill(imageNamed: "", baseSkill: fireBall), Skill(imageNamed: "", baseSkill: poisonSmoke)]
     }
     
     private static func getSkillBellatrixAgain() -> [Skill] {

@@ -25,14 +25,6 @@ public class DBInteraction {
                 currentDialog = setConversationRohan((person as! Player), player: player, size: size)
             }
             
-        }else if person is Enemy {
-            
-            namePerson = (person as! Enemy).race.name
-            
-            if namePerson == "Bellatrix" {
-                //currentDialog = setConversationBellatrix()
-            }
-            
         }else if person is SKSpriteNode {
             
             namePerson = (person as! SKSpriteNode).name!
@@ -44,6 +36,34 @@ public class DBInteraction {
             }else if namePerson == "OpenDoor" {
                 currentDialog = setConversationOpenDoor(size)
             }
+        }
+        
+        if currentDialog == nil || namePerson == "" {
+            return nil
+        }
+        
+        if !conversation.keys.contains(namePerson){
+            conversation[namePerson] = currentDialog
+            return currentDialog
+        }
+        
+        return conversation[namePerson]
+    }
+    
+    
+    public static func getInteraction(person: AnyObject?, player: Player, player2: Player, size: CGSize) -> Dialog? {
+        var currentDialog: Dialog? = nil
+        var namePerson: String = ""
+
+        if person is Enemy {
+            
+            namePerson = (person as! Enemy).race.name
+            
+            if namePerson == "Bellatrix" {
+                currentDialog = setConversationBellatrix((person as! Enemy), hydora: player, rohan: player2, size: size)
+                //currentDialog = setConversationBellatrix()
+            }
+            
         }
         
         if currentDialog == nil || namePerson == "" {
@@ -90,6 +110,16 @@ public class DBInteraction {
         
         return dialog
         
+    }
+    
+    private static func setConversationBellatrix(bellatrix: Enemy, hydora:Player, rohan:Player, size:CGSize) -> Dialog{
+        let messages = [
+            Message(id: 1, text: "Quem são vocês? O QUE ESTÃo FAZENDO AQUI?", owner: bellatrix, shown: false, item: nil),
+            Message(id: 2, text: "Tenha cuidado Hydora. Essa é Bellatrix, a bruxa que está por trás dos ataques em Miraad. Não confie nela", owner: rohan, shown: false, item: nil),
+            Message(id: 3, text: "Vocês INVADEM a minha casa e ainda me ATACAM?! Isso não vai ficar assim!", owner: bellatrix, shown: false, item: nil),
+            Message(id: 4, text: "Rohan, cuidado!", owner: hydora, shown: false, item: nil)]
+        let dialog = Dialog(messages: messages, action: ActionDialog.ShowMessage, size: size)
+        return dialog
     }
     
     private static func setConversationProlog(size: CGSize) -> Dialog {

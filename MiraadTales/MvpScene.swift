@@ -271,7 +271,6 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
         
         if name == "SKRohan" && self.currentDialog == nil {
             let rohan = DBPlayers.getBard(self.view!)
-            
             self.currentDialog = DBInteraction.getInteraction(rohan, player: self.movementManagement!.player, size: CGSizeMake(500, 200))
             self.setupDialog()
             showDialog(self.currentDialog!)

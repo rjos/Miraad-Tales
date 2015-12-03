@@ -125,6 +125,24 @@ class CastleScene: SKScene, InteractionDelegate, SKPhysicsContactDelegate {
         }
     }
     
+    func didBeginContact(contact: SKPhysicsContact) {
+        
+        var bodyPlayer = contact.bodyA
+        var bodyEnemy = contact.bodyB
+        
+        let node = bodyPlayer.node!
+        
+        if !node.name!.containsString("ydora") && bodyPlayer.contactTestBitMask != 0 {
+            let temp = bodyEnemy
+            bodyEnemy = bodyPlayer
+            bodyPlayer = temp
+        }else if bodyPlayer.contactTestBitMask == 0 {
+            return
+        }
+        
+        self.bodyPlayer = bodyPlayer
+        self.bodyEnemy = bodyEnemy
+    }
     //MARK: Interaction Delegate
     func interaction() {
         
@@ -152,12 +170,12 @@ class CastleScene: SKScene, InteractionDelegate, SKPhysicsContactDelegate {
         
         let name = self.bodyEnemy!.node!.name
         
-        if name == "SKRohan" && self.currentDialog == nil { /* mudar valores para bellatrix */
-            let rohan = DBPlayers.getBard(self.view!)
-            
-            self.currentDialog = DBInteraction.getInteraction(rohan, player: self.movementManagement!.player, size: CGSizeMake(500, 200))
+        if name == "SKBellatrix" && self.currentDialog == nil { /* mudar valores para bellatrix */
+            let bellatrix = DBEnemy.getEnemy("Bellatrix", qtdade: 1)
+            self.currentDialog = DBInteraction.getInteraction(bellatrix, player: players[0], player2:players[1], size: CGSizeMake(500, 200))
             self.setupDialog()
             showDialog(self.currentDialog!)
+            
         }
     }
     

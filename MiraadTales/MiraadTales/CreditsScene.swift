@@ -8,6 +8,6 @@
 
 import SpriteKit
 
-class CreditsScene: SKScene {
+class CreditsScene: HUD {
 
 }
