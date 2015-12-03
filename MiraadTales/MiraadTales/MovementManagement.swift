@@ -242,7 +242,10 @@ public class MovementManagement: SKNode {
         
         //Mover a camera para a posição do novo player
         if !self.isCameraStopped {
-            let move = SKAction.moveTo(self.player.position, duration: 0.1)
+            
+            let move = SKAction.moveToX(self.player.position.x, duration: 0.1)
+            
+            //            let move = SKAction.moveTo(self.player.position, duration: 0.1)
             self.camera.runAction(move)
         }
     }
@@ -253,8 +256,8 @@ public class MovementManagement: SKNode {
         var direction: DirectionPlayer = DirectionPlayer.None
         
         //Obtendo vetor de direção
-        let x = newPosition.x - currentPosition.x
-        let y = newPosition.y - currentPosition.y
+        let x = (Int(newPosition.x) - Int(currentPosition.x))
+        let y = (Int(newPosition.y) - Int(currentPosition.y))
         
         if x == 0 /*Direção na Vertical*/ {
             
@@ -284,7 +287,7 @@ public class MovementManagement: SKNode {
         let Y = p.position.y - self.player.position.y
         
         //Movimentar na vertical
-        if X > -64 && X < 64 {
+        if X > -30 && X < 30 {
             
             //Pra cima
             if Y < 0 {
@@ -292,7 +295,7 @@ public class MovementManagement: SKNode {
             }else /*Pra baixo*/ {
                 self.player.setLastedPosition(false, orientation: Orientation.Vertical)
             }
-        }else if Y > -64 && Y < 64 /*Movimentar na horizontal*/ {
+        }else /*Movimentar na horizontal*/ {
             
             //Pra direita
             if X < 0 {
@@ -302,7 +305,6 @@ public class MovementManagement: SKNode {
             }
         }
     }
-    
 }
 
 public enum Orientation : String {

@@ -9,7 +9,7 @@
 import SpriteKit
 
 class CombatScene: SKScene {
-
+    
     var players: [Player]!
     var enimies: [Enemy]!
     var currentPlayer: Player!
@@ -47,6 +47,8 @@ class CombatScene: SKScene {
     
     var velocityAtk = 0.5
     var spriteSKillToAnimated: SKSpriteNode!
+    
+    var orderAtksPerson: [SKSpriteNode] = []
     
     public var win: Bool = false
     public var typeCombat: String = ""
@@ -86,7 +88,7 @@ class CombatScene: SKScene {
             }else if (node is Skill) && !executeTurn {
                 tempSkill = (node as! Skill)
                 
-                if tempSkill != self.skillCurr {
+                if tempSkill != self.skillCurr && self.currentPlayer.race.status.currentMP >= tempSkill.baseSkill.consumeMana {
                     
                     self.skillCurr = tempSkill
                     
@@ -95,6 +97,8 @@ class CombatScene: SKScene {
                     }
                     
                     applyAnimationSkill(self.skillCurr)
+                }else {
+                    tempSkill = nil
                 }
             }
         }
@@ -102,87 +106,84 @@ class CombatScene: SKScene {
     
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
-        for var i = 0; i < players.count; ++i {
-            players[i].touchesMoved(touches, withEvent: event)
-        }
-        
-        for touch in touches {
-            
-            let location = touch.locationInNode(self)
-            
-            let node = self.nodeAtPoint(location)
-            
-            if (node is Skill) && (node as! Skill) != self.skillCurr {
+        if tempSkill != nil {
+            for touch in touches {
                 
-                disapplyAnimationSkill(self.skillCurr)
+                let location = touch.locationInNode(self)
                 
-                tempSkill = (node as! Skill)
-                self.skillCurr = tempSkill
+                let node = self.nodeAtPoint(location)
                 
-                applyAnimationSkill(self.skillCurr)
-            }else if targetSkill == nil || targetSkill == TargetSkill.SingleEnemy {
-                
-                if (node is Enemy) {
+                if (node is Skill) && (node as! Skill) != self.skillCurr {
                     
-                    if tempTarget != nil && (node as! Enemy) != tempTarget {
-                        disapplyAnimationTarget(tempTarget)
+                    disapplyAnimationSkill(self.skillCurr)
+                    
+                    tempSkill = (node as! Skill)
+                    self.skillCurr = tempSkill
+                    
+                    applyAnimationSkill(self.skillCurr)
+                }else if targetSkill == nil || targetSkill == TargetSkill.SingleEnemy {
+                    
+                    if (node is Enemy) {
+                        
+                        if tempTarget != nil && (node as! Enemy) != tempTarget {
+                            disapplyAnimationTarget(tempTarget)
+                        }
+                        
+                        tempTarget = (node as! Enemy)
+                        applyAnimationTarget(tempTarget)
+                        
+                    }else {
+                        
+                        if tempTarget != nil {
+                            disapplyAnimationTarget(tempTarget)
+                            tempTarget = nil
+                        }
                     }
+                }else if targetSkill == TargetSkill.SinglePlayer {
                     
-                    tempTarget = (node as! Enemy)
-                    applyAnimationTarget(tempTarget)
-                    
-                }else {
-                    
-                    if tempTarget != nil {
-                        disapplyAnimationTarget(tempTarget)
-                        tempTarget = nil
-                    }
-                }
-            }else if targetSkill == TargetSkill.SinglePlayer {
-                
-                if (node is Player) {
-                    
-                    if tempTarget != nil && (node as! Player) != tempTarget {
-                        disapplyAnimationTarget(tempTarget)
-                    }
-                    
-                    tempTarget = (node as! Player)
-                    applyAnimationTarget(tempTarget)
-                }else {
-                    
-                    if tempTarget != nil {
-                        disapplyAnimationTarget(tempTarget)
-                        tempTarget = nil
+                    if (node is Player) {
+                        
+                        if tempTarget != nil && (node as! Player) != tempTarget {
+                            disapplyAnimationTarget(tempTarget)
+                        }
+                        
+                        tempTarget = (node as! Player)
+                        applyAnimationTarget(tempTarget)
+                    }else {
+                        
+                        if tempTarget != nil {
+                            disapplyAnimationTarget(tempTarget)
+                            tempTarget = nil
+                        }
                     }
                 }
             }
+            
         }
     }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
-        for var i = 0; i < players.count; ++i {
-            players[i].touchesEnded(touches, withEvent: event)
-        }
-        
-        for touch in touches {
-            let location = touch.locationInNode(self)
-            
-            let node = self.nodeAtPoint(location)
-            
-            if (node is Enemy) && (node as! Enemy) == tempTarget {
-                self.targetCurr = tempTarget
-            }else if (node is Player) && (node as! Player) == tempTarget {
-                self.targetCurr = tempTarget
-            }
-            
-            if tempTarget != nil {
-                disapplyAnimationTarget(tempTarget)
-            }else if self.skillCurr != nil {
-                disapplyAnimationSkill(self.skillCurr)
+        if self.skillCurr != nil {
+            for touch in touches {
+                let location = touch.locationInNode(self)
                 
-                self.tempSkill = nil
-                self.skillCurr = nil
+                let node = self.nodeAtPoint(location)
+                
+                if (node is Enemy) && (node as! Enemy) == tempTarget {
+                    self.targetCurr = tempTarget
+                }else if (node is Player) && (node as! Player) == tempTarget {
+                    self.targetCurr = tempTarget
+                }
+                
+                if tempTarget != nil {
+                    disapplyAnimationTarget(tempTarget)
+                }else if self.skillCurr != nil {
+                    disapplyAnimationSkill(self.skillCurr)
+                    
+                    self.tempSkill = nil
+                    self.skillCurr = nil
+                }
             }
         }
     }
@@ -196,7 +197,7 @@ class CombatScene: SKScene {
     
     //MARK: - Update Method
     override func update(currentTime: NSTimeInterval) {
-
+        
         //Start turn
         if startTurn {
             startTurn = false
@@ -219,6 +220,9 @@ class CombatScene: SKScene {
             self.skillCurr = nil
             self.targetCurr = nil
             
+            self.tempSkill = nil
+            self.tempTarget = nil
+            
             ++currentIndexPlayer
             
             if currentIndexPlayer == self.players.count {
@@ -227,12 +231,14 @@ class CombatScene: SKScene {
                 countAtks = 0
                 timeExecute = currentTime
                 completedAnimation = true
+                
+                self.removeSkillFromFooter()
             }else{
                 
                 otherPlayer = otherPlayer.filter({ (p) -> Bool in
                     return p.name != self.currentPlayer.name
                 })
-             
+                
                 let p = otherPlayer.first!
                 otherPlayer.removeFirst()
                 self.currentPlayer = p
@@ -258,6 +264,8 @@ class CombatScene: SKScene {
                 let item = prepareAtk.first!
                 target = item.1.0
                 skill = item.1.1
+                
+                print(skill.baseSkill.name)
                 
                 prepareAtk.removeValueForKey((actualPerson as! Player))
             }else {
@@ -295,7 +303,7 @@ class CombatScene: SKScene {
             }
             
             nameSkill = nameSkill.stringByReplacingOccurrencesOfString(".", withString: "")
-
+            
             let animationSKill = SKTextureAtlas(named: "\(nameSkill)")
             var textureAnimationSkill = [SKTexture]()
             
@@ -315,7 +323,7 @@ class CombatScene: SKScene {
             let animation = SKAction.animateWithTextures(textureAnimationSkill, timePerFrame: 0.2)
             spriteSKillToAnimated.runAction(animation, completion: { () -> Void in
                 
-                var targetSkill: TargetSkill!
+                var targetSkill: TargetSkill! = nil
                 var affectSkill: AffectSkill!
                 var percente: Int = 0
                 
@@ -323,14 +331,14 @@ class CombatScene: SKScene {
                     targetSkill = skill.baseSkill.effect!.target
                     affectSkill = skill.baseSkill.effect!.affect
                     percente = skill.baseSkill.effect!.percenteEffects
+                }else {
+                    affectSkill = nil
                 }
                 
                 var totalAtkActualPerson: Int = 0
                 var totalDefActualPerson: Int = 0
                 
                 if targetSkill == nil || targetSkill == TargetSkill.SingleEnemy {
-                    
-                    print("dano aqui - 1")
                     
                     //Calculate Damage
                     if actualPerson is Player {
@@ -350,8 +358,6 @@ class CombatScene: SKScene {
                     }else {
                         reduce = 1
                     }
-                    
-                    print("decrementar hp")
                     
                     //Decrease Hp target
                     var race: BaseRace
@@ -374,8 +380,6 @@ class CombatScene: SKScene {
                         self.setLifeEnemy(target as! Enemy)
                     }
                     
-                    print("decrementar mp")
-                    
                     //Decrease MP
                     if actualPerson is Player {
                         
@@ -389,11 +393,20 @@ class CombatScene: SKScene {
                         race.isDie = true
                     }
                     
-                    print("fim do decremento")
-                    
                 }else if targetSkill == TargetSkill.SinglePlayer {
                     //Buffer or debuffer
                 }
+                
+                //                //Affects
+                //                if affectSkill == AffectSkill.HP {
+                //                    //increment HP
+                //                }else if affectSkill == AffectSkill.MP {
+                //                    //increment MP
+                //                }else if affectSkill == AffectSkill.mAtk || affectSkill == AffectSkill.pAtk {
+                //                    //incremet Atk
+                //                }else if affectSkill == AffectSkill.mDef || affectSkill == AffectSkill.pDef {
+                //                    //increment Def
+                //                }
                 
                 let isFinish = self.checkIsEndBattle()
                 
@@ -404,12 +417,22 @@ class CombatScene: SKScene {
                     
                     if self.countAtks != self.liveIsPerson.count {
                         self.timeExecute = currentTime
-                        self.velocityAtk = 1.5
-                        self.completedAnimation = true
+                        self.velocityAtk = 2.0
                     }
                 }
                 
+                self.completedAnimation = true
                 self.spriteSKillToAnimated.removeFromParent()
+                
+                self.orderAtksPerson = self.orderAtksPerson.filter({ (p) -> Bool in
+                    if p is Player {
+                        return !(p as! Player).race.isDie
+                    }else {
+                        return !(p as! Enemy).race.isDie
+                    }
+                })
+                
+                self.nextPlayerEnemiesFromSpeed()
             })
             
             //Exit turn
@@ -421,7 +444,7 @@ class CombatScene: SKScene {
         }
         
         //End turn
-        if endTurn {
+        if endTurn && completedAnimation {
             
             endTurn = false
             startTurn = true
@@ -449,7 +472,7 @@ class CombatScene: SKScene {
                 }
                 
                 //Return mvp ou other scene
-                (self.view! as! NavigationController).GoBack()
+                //(self.view! as! NavigationController).GoBack()
             }
         }
         
@@ -478,7 +501,7 @@ class CombatScene: SKScene {
     //MARK: Set Player Position
     private func setPlayersPositions(players: [Player]) {
         
-//        var positionCur = CGPointMake(-250,-150)
+        //        var positionCur = CGPointMake(-250,-150)
         var positionCur = CGPointMake(-130, -70)
         let skCombatBg = self.childNodeWithName("SKCombatBg")!
         
@@ -501,7 +524,7 @@ class CombatScene: SKScene {
     //MARK: Set Enemy Position
     private func setEnimiesPositions(enimies: [Enemy]) {
         
-//        var positionCur = CGPointMake(250,-150)
+        //        var positionCur = CGPointMake(250,-150)
         var positionCur = CGPointMake(130, -70)
         let skCombatBg = self.childNodeWithName("SKCombatBg")!
         
@@ -513,7 +536,7 @@ class CombatScene: SKScene {
             enimies[i].xScale = 1.5
             enimies[i].yScale = 1.5
             
-            if i == 1 {
+            if i == 0 {
                 positionCur = CGPointMake(positionCur.x + 120, positionCur.y - 80)
             }else {
                 positionCur = CGPointMake(positionCur.x - 220, positionCur.y + 130)
@@ -560,10 +583,12 @@ class CombatScene: SKScene {
         
         if p is Player && (p as! Player) != self.currentPlayer {
             self.currentPlayer = (p as! Player)
-            setIndicatorPlayer(self.currentPlayer)
-            setSkillFromPlayer(self.currentPlayer)
         }
         
+        setIndicatorPlayer(self.currentPlayer)
+        setSkillFromPlayer(self.currentPlayer)
+        
+        self.orderAtksPerson = self.orderPerson!
         setPlayerEnemiesFromSpeed(self.orderPerson)
     }
     
@@ -598,6 +623,7 @@ class CombatScene: SKScene {
             posCurr = CGPointMake(-450 - currDecrease, posCurr.y - (turnPerson.frame.height / 2))
             
             turnPerson.zPosition = 5
+            turnPerson.name = "turnAtk-\(i)"
             turnPerson.position = posCurr
             
             var person = SKSpriteNode(imageNamed: "\(p.name!)-2")
@@ -608,6 +634,27 @@ class CombatScene: SKScene {
             
             posCurr = CGPointMake(-450, posCurr.y - ((turnPerson.frame.height / 2) + 5))
         }
+    }
+    
+    private func nextPlayerEnemiesFromSpeed() {
+        
+        let first = self.orderAtksPerson.removeFirst()
+        
+        if ((first is Player) && !(first as! Player).race.isDie) ||
+            ((first is Enemy) && !(first as! Enemy).race.isDie) {
+                self.orderAtksPerson.append(first)
+        }
+        
+        let skCombat = self.childNodeWithName("SKCombatBg")!
+        
+        for child in skCombat.children {
+            
+            if (child is SKSpriteNode) && (child as! SKSpriteNode).name != nil && (child as! SKSpriteNode).name!.containsString("turnAtk") {
+                child.removeFromParent()
+            }
+        }
+        
+        self.setPlayerEnemiesFromSpeed(self.orderAtksPerson)
     }
     
     //MARK: Set Indicator Player
@@ -719,15 +766,7 @@ class CombatScene: SKScene {
         let footer = self.childNodeWithName("skFooter")!
         let labelSkill = footer.childNodeWithName("SKLabelSkill")!
         
-        //Remove skills from footer
-        for var i = 0; i < 3; ++i {
-            
-            let currSkill = footer.childNodeWithName("skill-\(i)")
-            
-            if currSkill != nil {
-                currSkill!.removeFromParent()
-            }
-        }
+        self.removeSkillFromFooter()
         
         for var i = 0; i < skills.count; ++i {
             
@@ -742,6 +781,21 @@ class CombatScene: SKScene {
             }
             skills[i].zPosition = 10
             footer.addChild(skills[i])
+        }
+    }
+    
+    private func removeSkillFromFooter() {
+        
+        let footer = self.childNodeWithName("skFooter")!
+        
+        //Remove skills from footer
+        for var i = 0; i < 3; ++i {
+            
+            let currSkill = footer.childNodeWithName("skill-\(i)")
+            
+            if currSkill != nil {
+                currSkill!.removeFromParent()
+            }
         }
     }
     
@@ -905,6 +959,7 @@ class CombatScene: SKScene {
         bgBarMp.addChild(newLabelMp)
     }
     
+    //MARK: Decrease HP from damage
     private func decreaseHP(target: Player) {
         let footer = self.childNodeWithName("skFooter")!
         let bgBar = footer.childNodeWithName("bgBarStatusHp-\(target.race.name)")!
