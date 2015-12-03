@@ -78,17 +78,28 @@ public class DBInteraction {
         return conversation[namePerson]
     }
     
-    public static func getInteraction(size: CGSize) -> Dialog? {
+    public static func getInteraction(size: CGSize, isProlog: Bool) -> Dialog? {
         var currentDialog: Dialog? = nil
         
-        currentDialog = setConversationProlog(size)
+        if isProlog {
+            currentDialog = setConversationProlog(size)
+        }else {
+            currentDialog = setConversationGameover(size)
+        }
         
-        if !conversation.keys.contains("Prolog") {
+        if !conversation.keys.contains("Prolog") && isProlog {
             conversation["Prolog"] = currentDialog
+            return currentDialog
+        }else if !conversation.keys.contains("Gameover") {
+            conversation["Gameover"] = currentDialog
             return currentDialog
         }
         
-        return conversation["Prolog"]
+        if isProlog {
+            return conversation["Prolog"]
+        }else {
+            return conversation["Gameover"]
+        }
     }
     
     private static func setConversationRohan(rohan: Player, player: Player, size: CGSize) -> Dialog {
@@ -158,6 +169,17 @@ public class DBInteraction {
             Message(id: 1, text: "Você abriu a porta.", owner: nil, shown: false, item: nil)]
         
         let dialog = Dialog(messages: messages, action: nil, size: size)
+        
+        return dialog
+    }
+    
+    private static func setConversationGameover(size: CGSize) -> Dialog {
+        let messages = [
+            Message(id: 1, text: "Contra todas as possibilidades, Hydora sobrevivera.", owner: nil, shown: false, item: nil),
+            Message(id: 2, text: "A morte da bruxa ecoará por todo o reino. Esse é o começo da saga de Hydora.", owner: nil, shown: false, item: nil)
+        ]
+        
+        let dialog = Dialog(messages: messages, action: ActionDialog.OpenPage, size: size)
         
         return dialog
     }

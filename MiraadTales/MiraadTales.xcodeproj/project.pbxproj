@@ -25,6 +25,9 @@
 		1B5B6A461C10D0460053006D /* cauldronCombat.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1B5B6A451C10D0460053006D /* cauldronCombat.atlas */; };
 		1B5B6A481C10D0A40053006D /* cauldronCastle.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1B5B6A471C10D0A40053006D /* cauldronCastle.atlas */; };
 		1B5B6A4A1C10D70D0053006D /* Bellatrix.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1B5B6A491C10D70D0053006D /* Bellatrix.atlas */; };
+		1B5B6A4D1C10E1F60053006D /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5B6A4C1C10E1F60053006D /* GameOverScene.swift */; };
+		1B5B6A4F1C10E20A0053006D /* GameOverScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1B5B6A4E1C10E20A0053006D /* GameOverScene.sks */; };
+		1B5B6A511C10F6350053006D /* Backpack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5B6A501C10F6350053006D /* Backpack.swift */; };
 		1B8418DD1C0133BB003F0130 /* holylight.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B8418DB1C0133BB003F0130 /* holylight.png */; };
 		1B8418DE1C0133BB003F0130 /* heal.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B8418DC1C0133BB003F0130 /* heal.png */; };
 		1B8418E11C01354B003F0130 /* powerchord.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B8418DF1C01354B003F0130 /* powerchord.png */; };
@@ -230,6 +233,9 @@
 		1B5B6A451C10D0460053006D /* cauldronCombat.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = cauldronCombat.atlas; sourceTree = "<group>"; };
 		1B5B6A471C10D0A40053006D /* cauldronCastle.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = cauldronCastle.atlas; sourceTree = "<group>"; };
 		1B5B6A491C10D70D0053006D /* Bellatrix.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Bellatrix.atlas; sourceTree = "<group>"; };
+		1B5B6A4C1C10E1F60053006D /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
+		1B5B6A4E1C10E20A0053006D /* GameOverScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameOverScene.sks; sourceTree = "<group>"; };
+		1B5B6A501C10F6350053006D /* Backpack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Backpack.swift; sourceTree = "<group>"; };
 		1B8418DB1C0133BB003F0130 /* holylight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = holylight.png; sourceTree = "<group>"; };
 		1B8418DC1C0133BB003F0130 /* heal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heal.png; sourceTree = "<group>"; };
 		1B8418DF1C01354B003F0130 /* powerchord.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = powerchord.png; sourceTree = "<group>"; };
@@ -503,6 +509,15 @@
 			name = TileMap;
 			sourceTree = "<group>";
 		};
+		1B5B6A4B1C10E1DE0053006D /* GameOver */ = {
+			isa = PBXGroup;
+			children = (
+				1B5B6A4C1C10E1F60053006D /* GameOverScene.swift */,
+				1B5B6A4E1C10E20A0053006D /* GameOverScene.sks */,
+			);
+			name = GameOver;
+			sourceTree = "<group>";
+		};
 		1B5C1ECA1BFDF996008B2779 /* Skills */ = {
 			isa = PBXGroup;
 			children = (
@@ -662,6 +677,7 @@
 		1B90C99C1BFCB83500B198FB /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				1B5B6A4B1C10E1DE0053006D /* GameOver */,
 				BC8BBDCE1C106D8000031EFA /* Chapter */,
 				1BD7C5941C0CA2BB00F7D6BC /* Credits */,
 				1BE8DF821C050B4100BCBE1C /* Castle */,
@@ -954,6 +970,7 @@
 		1BD76E3D1BC401B400A2EDE1 /* Items */ = {
 			isa = PBXGroup;
 			children = (
+				1B5B6A501C10F6350053006D /* Backpack.swift */,
 				1BD76E3E1BC401CF00A2EDE1 /* Equip.swift */,
 				1BA00EB71BC6B38F00B8972A /* BaseItem.swift */,
 				1B881B8A1BDFCA48000DC648 /* BaseEquip.swift */,
@@ -1235,6 +1252,7 @@
 				BC8BBDC81C106D5B00031EFA /* arrowrightChapter.png in Resources */,
 				1B9CD2D91BE8F7EE003C1834 /* prospero_bold_nbp.ttf in Resources */,
 				1BB27CC91BFA391E00A5736E /* turnfriend-0.png in Resources */,
+				1B5B6A4F1C10E20A0053006D /* GameOverScene.sks in Resources */,
 				1B9CD2DA1BE8F7EE003C1834 /* prospero_nbp.ttf in Resources */,
 				BC8BBDD21C10713600031EFA /* credits.png in Resources */,
 				1BA3ED6C1BEA2C7A00F9E3E3 /* nextPlayer.png in Resources */,
@@ -1380,6 +1398,7 @@
 				1BECB4CF1BC55EB300EDBB8F /* Mage.swift in Sources */,
 				1B881B8B1BDFCA48000DC648 /* BaseEquip.swift in Sources */,
 				1BA00EB81BC6B38F00B8972A /* BaseItem.swift in Sources */,
+				1B5B6A4D1C10E1F60053006D /* GameOverScene.swift in Sources */,
 				1BD76E4E1BC4135900A2EDE1 /* BaseSkill.swift in Sources */,
 				1B4F297E1BCFD28200612BF8 /* VLDContextSheet.m in Sources */,
 				1BECB4CB1BC55CB000EDBB8F /* BaseRace.swift in Sources */,
@@ -1429,6 +1448,7 @@
 				1BC1F41D1BD1C6CB000CE8B3 /* MovementManagement.swift in Sources */,
 				1B8EDC391BC2B959009603B6 /* Status.swift in Sources */,
 				1BB03DCD1BE26444007E7615 /* EquipmentsMenu.swift in Sources */,
+				1B5B6A511C10F6350053006D /* Backpack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

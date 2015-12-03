@@ -1,14 +1,14 @@
 //
-//  Intro.swift
+//  GameOverScene.swift
 //  MiraadTales
 //
-//  Created by Rodolfo José on 18/11/15.
+//  Created by Rodolfo José on 03/12/15.
 //  Copyright © 2015 Rodolfo José. All rights reserved.
 //
 
 import SpriteKit
 
-class Intro: SKScene, InteractionDelegate {
+class GameOverScene: SKScene, InteractionDelegate {
 
     var joystick: Joystick? = nil
     var actionManagement: ActionManagement? = nil
@@ -27,7 +27,7 @@ class Intro: SKScene, InteractionDelegate {
         
         let skDialog = self.childNodeWithName("SKDialog")!
         
-        self.currentDialog = DBInteraction.getInteraction(CGSizeMake(500, 200), isProlog: true)
+        self.currentDialog = DBInteraction.getInteraction(CGSizeMake(500, 200), isProlog: false)
         self.currentDialog!.changeMessage = true
         
         skDialog.addChild(self.currentDialog!)
@@ -37,8 +37,6 @@ class Intro: SKScene, InteractionDelegate {
         
         let skButtons = self.camera!.childNodeWithName("SKButtons")!
         skButtons.addChild(self.actionManagement!)
-        
-
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -70,10 +68,10 @@ class Intro: SKScene, InteractionDelegate {
                 
                 if self.currentDialog!.action == ActionDialog.OpenPage {
                     //Open Page
-                    let mvpScene = MvpScene(fileNamed: "MvpScene")!
+                    let credits = CreditsScene(fileNamed: "CreditsScene")!
                     let transition = SKTransition.fadeWithDuration(1)
                     
-                    (self.view as? NavigationController)!.Navigate(mvpScene, transition: transition)
+                    (self.view as? NavigationController)!.Navigate(credits, transition: transition)
                 }
                 
                 self.currentDialog = nil

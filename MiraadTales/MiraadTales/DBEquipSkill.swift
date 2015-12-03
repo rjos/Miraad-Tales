@@ -320,7 +320,7 @@ public class DBEquipSkill {
         let statusCorruptedArmor = Status(HP: 0, MP: 0, Speed: 0, pAtk: 0, mAtk: 0, pDef: 422, mDef: 253)
         let corruptedArmor = BaseEquip(name: "Corrupted Armor-5", ownerRace: PlayersRace.Paladin, status: statusCorruptedArmor, type: ItemType.Armor, requiredLevel: 8, skill: nil, isEquipped: false)
         
-        let paladinEquip = [Equip(imageNamed: "Sledgehammer", baseEquip: sledgehammer), Equip(imageNamed: "Warhammer", baseEquip: warhammer), Equip(imageNamed: "Punishment", baseEquip: punishment), Equip(imageNamed: "", baseEquip: heavyArmor), Equip(imageNamed: "hydoraArmor2", baseEquip: paladinArmor), Equip(imageNamed: "", baseEquip: corruptedArmor)]
+        let paladinEquip = [Equip(imageNamed: "Sledgehammer", baseEquip: sledgehammer), Equip(imageNamed: "Warhammer", baseEquip: warhammer), Equip(imageNamed: "Punishment", baseEquip: punishment), Equip(imageNamed: "hydoraArmor1", baseEquip: heavyArmor), Equip(imageNamed: "hydoraArmor2", baseEquip: paladinArmor), Equip(imageNamed: "", baseEquip: corruptedArmor)]
         
         return paladinEquip
     }

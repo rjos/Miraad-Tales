@@ -550,7 +550,17 @@ class CombatScene: SKScene {
                 
                 battleEnd.open()
             }else if battleEnd.typeBattleEnd == TypeBattleEnd.Continue {
-                (self.view as! NavigationController).GoBack()
+                
+                if self.typeCombat != "Bellatrix" {
+                    let transition = SKTransition.fadeWithDuration(1)
+                    
+                    (self.view as! NavigationController).GoBack(transition)
+                }else {
+                    let gameover = GameOverScene(fileNamed: "GameOverScene")!
+                    let transition = SKTransition.fadeWithDuration(3)
+                    
+                    (self.view as! NavigationController).Navigate(gameover, transition: transition)
+                }
             }else if battleEnd.typeBattleEnd == TypeBattleEnd.TryAgain {
                 (self.view as! NavigationController).GoBack()
             }else if battleEnd.typeBattleEnd == TypeBattleEnd.CanBack {
@@ -596,8 +606,8 @@ class CombatScene: SKScene {
             //enimies[i].removeFromParent()
             enimies[i].position = positionCur
             enimies[i].zPosition = 10
-            enimies[i].xScale = 1.5
-            enimies[i].yScale = 1.5
+            enimies[i].xScale = enimies[i].xScale * 1.5
+            enimies[i].yScale = enimies[i].yScale * 1.5
             
             if i == 0 {
                 positionCur = CGPointMake(positionCur.x + 120, positionCur.y - 80)
@@ -845,6 +855,8 @@ class CombatScene: SKScene {
             skills[i].zPosition = 10
             footer.addChild(skills[i])
         }
+        
+        checkSkills()
     }
     
     private func removeSkillFromFooter() {
@@ -1058,5 +1070,56 @@ class CombatScene: SKScene {
     //MARK: Disable status player if is die
     private func disableStatusPlayer(target: Player) {
         
+    }
+    
+    //MARK: Check Skills from MP
+    private func checkSkills() {
+        
+        let skills = self.currentPlayer!.race.skills
+        
+        for s in skills {
+            
+            if s.baseSkill.consumeMana > self.currentPlayer!.race.status.currentMP {
+                disableSkill(s)
+            }
+        }
+    }
+    
+    //MARK: Enable and disable skill from combat
+    private func enableSkill() {
+        
+        let footer = self.childNodeWithName("skFooter")!
+        
+        for var i = 0; i < 3; ++i {
+            
+            let disable = footer.childNodeWithName("disableSkill")
+            
+            if disable != nil {
+                
+                for child in footer.children {
+                    
+                    if (child is Skill) && (child.position.x == disable!.position.x && child.position.y == disable!.position.y) && (child as! Skill).baseSkill.consumeMana <= self.currentPlayer!.race.status.currentMP {
+                        disable!.removeFromParent()
+                        break
+                    }
+                }
+            }else if i == 0 {
+                break
+            }
+        }
+    }
+    
+    private func disableSkill(skill: Skill) {
+        
+        let footer = self.childNodeWithName("skFooter")!
+        
+        let shadow = SKSpriteNode(color: UIColor.blackColor(), size: skill.size)
+        shadow.zPosition = 20
+        shadow.position = skill.position
+        shadow.name = "disabelSkill"
+        
+        skill.addChild(shadow)
+        
+        //footer.addChild(shadow)
     }
 }

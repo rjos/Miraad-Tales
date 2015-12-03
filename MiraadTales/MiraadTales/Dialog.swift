@@ -245,7 +245,7 @@ public class Dialog: SKNode {
             let name = (person as! Enemy).race.name
             self.skNodePerson = SKSpriteNode(imageNamed: "\(name)-2")
             
-            self.skNodePerson!.position = CGPointMake((self.skBgDialog!.frame.width / 2) - (self.skNodePerson!.frame.width / 2) + 10, 0)
+            self.skNodePerson!.position = CGPointMake((self.skBgDialog!.frame.width / 2) - (self.skNodePerson!.frame.width / 2) - 10, 0)
             
             self.skNodeMessage!.position = CGPointMake((self.skNodeMessage!.frame.width / 2) - (self.skBgDialog!.frame.width / 2), 0)
         }

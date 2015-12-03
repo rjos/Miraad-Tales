@@ -78,13 +78,13 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
             self.currentPlayer = DBPlayers.getPaladin(self.view!)
             self.players = [self.currentPlayer!]
             
-            self.currentPlayer!.race.equipments.append(DBEquipSkill.getEquip("Sledgehammer-0"))
-            self.currentPlayer!.race.equipments[0].baseEquip.isEquipped = true
-            self.currentPlayer!.race.skills.append(DBEquipSkill.getSkill("Hammer Hit"))
+            //self.currentPlayer!.race.equipments.append(DBEquipSkill.getEquip("Sledgehammer-0"))
+            //self.currentPlayer!.race.equipments[0].baseEquip.isEquipped = true
+            //self.currentPlayer!.race.skills.append(DBEquipSkill.getSkill("Hammer Hit"))
             
-            //self.currentPlayer!.position = CGPointMake(-733.932, 286.614)
+            self.currentPlayer!.position = CGPointMake(-733.932, 286.614)
             //self.currentPlayer!.position = CGPointMake(-433.932, 286.614)
-            self.currentPlayer!.position = CGPointMake(96.715, -287.777)
+            //self.currentPlayer!.position = CGPointMake(96.715, -287.777)
             
             let rohan = map!.childNodeWithName("SKRohan") as! SKSpriteNode
             rohan.texture!.filteringMode = .Nearest
@@ -195,9 +195,15 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
             self.joystick!.update(currentTime)
             self.actionManagement!.update(currentTime)
             self.movementManagement!.update(currentTime, didCollide: false)
-            self.currentPlayer = self.movementManagement!.player
         }else if self.movementManagement!.player.menuHasOpened {
             openHUD()
+        }
+        
+        if self.movementManagement!.player.race.name != self.currentPlayer!.race.name {
+            let temp = self.players[0]
+            self.players[0] = self.players[1]
+            self.players[1] = temp
+            self.currentPlayer = self.movementManagement!.player
         }
     }
     
@@ -277,10 +283,10 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
             showDialog(self.currentDialog!)
         }else if name == "SKDoor" {
             /*Animated open the door*/
-            if self.movementManagement!.player.usingItem == "Key" {
+            if Backpack.hasItem("Key") {
                 let newDoor: SKSpriteNode = self.bodyEnemy!.node!.copy() as! SKSpriteNode
                 newDoor.name = "OpenDoor"
-                
+                    
                 self.currentDialog = DBInteraction.getInteraction(newDoor, player: self.movementManagement!.player, size: CGSizeMake(500,200))
             }else {
                 self.currentDialog = DBInteraction.getInteraction(self.bodyEnemy!.node!, player: self.movementManagement!.player, size: CGSizeMake(500,200))
@@ -291,20 +297,47 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
             
         }else if name == "SKKey" {
             /*Get key*/
-            let key = VLDContextSheetItem(title: "Key", image: UIImage(named: "key"), highlightedImage: UIImage(named: "key"))
-            self.movementManagement!.player.setItemIntoMenu(key)
+            let baseItem = BaseItem(name: "Key", type: ItemType.Quest)
+            let key = Item(item: baseItem, imageNamed: "key")
+            
+            Backpack.addItem(key)
             
             self.currentDialog = DBInteraction.getInteraction(self.bodyEnemy!.node!, player: self.movementManagement!.player, size: CGSizeMake(500,200))
             self.setupDialog()
             showDialog(self.currentDialog!)
-        }else if name == "armor1"{
-            //            let armor1 = VLDContextSheetItem(title: "armor1", image:UIImage(named: "hydoraArmor1"), highlightedImage: UIImage(named:"hydoraArmor1"))
-            self.players[0].race.equipments.append(DBEquipSkill.getEquip("Paladin Armor-4"))
-            //                self.movementManagement!.player.setItemIntoMenu(armor1)
+        }else if name == "armor1" || name == "hammer1" || name == "armor2" {
+            
+            var equip: Equip!
+            
+            if name == "armor1" {
+                equip = DBEquipSkill.getEquip("Paladin Armor-4")
+            }else if name == "hammer1" {
+                equip = DBEquipSkill.getEquip("Sledgehammer-0")
+                equip.baseEquip.isEquipped = true
+            }else if name == "armor2" {
+                equip = DBEquipSkill.getEquip("Heavy Armor-3")
+            }
+            
+            if self.currentPlayer!.race.name == "Hydora" {
+                
+                if equip!.baseEquip.isEquipped {
+                    self.players[0].race.skills.append(equip!.baseEquip.skill!)
+                }
+                
+                self.players[0].race.equipments.append(equip!)
+            }else {
+                
+                if equip!.baseEquip.isEquipped {
+                    self.players[1].race.skills.append(equip!.baseEquip.skill!)
+                }
+                
+                self.players[1].race.equipments.append(equip!)
+            }
+            
             self.bodyEnemy!.node!.removeFromParent()
             self.bodyEnemy = nil
             
-        }else if name!.containsString("Zumbi") {
+        }else if name!.containsString("Zumbi") || name!.containsString("Bones") || name!.containsString("Buggy") {
             /*Combat scene*/
             
             let range = name!.characters.count - 1
@@ -330,7 +363,11 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
         let positionInit = (skJoystick.position.x + (skJoystick.frame.width / 2))
         let positionEnd = (skButtons.position.x - (skButtons.frame.width / 2))
         
-        self.currentDialog!.position = CGPointMake((positionInit + positionEnd) / 2, 0)
+        if self.currentPlayer!.position.y <= 0 {
+            self.currentDialog!.position = CGPointMake((positionInit + positionEnd) / 2, ((self.size.height / 2) - (self.currentDialog!.frame.height + 110)))
+        }else {
+            self.currentDialog!.position = CGPointMake((positionInit + positionEnd) / 2, (skButtons.position.y + skJoystick.position.y) / 2)
+        }
         
         self.camera!.addChild(self.currentDialog!)
     }
@@ -357,7 +394,7 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
                 if self.bodyEnemy!.node!.name == "SKKey" {
                     self.bodyEnemy!.node!.removeFromParent()
                     
-                }else if self.bodyEnemy!.node!.name == "SKDoor" && self.movementManagement!.player.usingItem == "Key" {
+                }else if self.bodyEnemy!.node!.name == "SKDoor" && Backpack.hasItem("Key") {
                     let skDoor = self.bodyEnemy!.node!
                     
                     let doorUp = SKSpriteNode(imageNamed: "openedDoorUp")

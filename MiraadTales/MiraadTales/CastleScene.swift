@@ -241,7 +241,7 @@ class CastleScene: SKScene, InteractionDelegate, SKPhysicsContactDelegate {
         let positionInit = (skJoystick.position.x + (skJoystick.frame.width / 2))
         let positionEnd = (skButtons.position.x - (skButtons.frame.width / 2))
         
-        self.currentDialog!.position = CGPointMake((positionInit + positionEnd) / 2, 0)
+        self.currentDialog!.position = CGPointMake((positionInit + positionEnd) / 2, (skButtons.position.y + skJoystick.position.y) / 2)
         
         self.camera!.addChild(self.currentDialog!)
     }

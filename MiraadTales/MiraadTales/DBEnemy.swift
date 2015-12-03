@@ -19,9 +19,12 @@ public class DBEnemy {
             
             if nameTarget == "Zumbi" {
                 enemy = self.getChaserWolf()!
-            }
-            else if nameTarget == "Bellatrix"{
+            }else if nameTarget == "Bellatrix"{
                 enemy = self.getBellatrix()!
+            }else if nameTarget == "Bones" {
+                enemy = self.getAngryChicken()!
+            }else if nameTarget == "Buggy" {
+                enemy = self.getChickKing()!
             }
             
             enemies.append(enemy)
@@ -37,7 +40,7 @@ public class DBEnemy {
         
         let skills = getSkillChaserWolf()
         
-        let base = BaseEnemy(name: "Chaser Wolf", status: status, equipments: [], skills: skills, isDie: false, typeEnemy: TypeEnemy.AngryChicken)
+        let base = BaseEnemy(name: "Chaser Wolf", status: status, equipments: [], skills: skills, isDie: false, typeEnemy: TypeEnemy.ChaserWolf)
         
         let chaserWolf = Enemy(imageNamed: "Zumbi-5", race: base)
         chaserWolf.name = "Zumbi"
@@ -62,7 +65,16 @@ public class DBEnemy {
     
     //MARK: Enemy Angry Chicken
     private static func getAngryChicken() -> Enemy? {
-        return nil
+        let status = PlayerStatus(HP: 400, MP: 0, Speed: 0, pAtk: 0, mAtk: 0, pDef: 0, mDef: 0)
+        
+        let skills = getSkillChaserWolf()
+        
+        let base = BaseEnemy(name: "Bones", status: status, equipments: [], skills: skills, isDie: false, typeEnemy: TypeEnemy.AngryChicken)
+        
+        let bones = Enemy(imageNamed: "Bones-5", race: base)
+        bones.name = "Bones"
+        
+        return bones
     }
     
     private static func getSkillAngryChicken() -> [Skill] {
@@ -75,7 +87,17 @@ public class DBEnemy {
     
     //MARK: Enemy Chick King
     private static func getChickKing() -> Enemy? {
-        return nil
+        let status = PlayerStatus(HP: 400, MP: 0, Speed: 0, pAtk: 0, mAtk: 0, pDef: 0, mDef: 0)
+        
+        let skills = getSkillChaserWolf()
+        
+        let base = BaseEnemy(name: "Buggy", status: status, equipments: [], skills: skills, isDie: false, typeEnemy: TypeEnemy.ChickKing)
+        
+        let buggy = Enemy(imageNamed: "Buggy-5", race: base)
+        buggy.name = "Buggy"
+        buggy.xScale = -1
+        
+        return buggy
     }
     
     private static func getSkillChickKing() -> [Skill] {
