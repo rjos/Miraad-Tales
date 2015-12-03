@@ -145,6 +145,13 @@
 		1BE64BC11C03EF2F009729ED /* openedDoorUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BE64BBF1C03EF2F009729ED /* openedDoorUp.png */; };
 		1BE64BC21C03EF2F009729ED /* openedDoorDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BE64BC01C03EF2F009729ED /* openedDoorDown.png */; };
 		1BE7D8051BC7FEDA000FA60C /* Ylla.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1BE7D8041BC7FEDA000FA60C /* Ylla.atlas */; };
+		1BE8CC9E1C10983400813019 /* buttonBattleEnd.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BE8CC811C10983400813019 /* buttonBattleEnd.png */; };
+		1BE8CC9F1C10983400813019 /* buttonBattleEnd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BE8CC821C10983400813019 /* buttonBattleEnd@2x.png */; };
+		1BE8CCB71C10994E00813019 /* BattleEnd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE8CCB61C10994E00813019 /* BattleEnd.swift */; };
+		1BE8CCDE1C10A0A600813019 /* HydoraCry.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1BE8CCDA1C10A0A600813019 /* HydoraCry.atlas */; };
+		1BE8CCDF1C10A0A600813019 /* HydoraJump.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1BE8CCDB1C10A0A600813019 /* HydoraJump.atlas */; };
+		1BE8CCE01C10A0A600813019 /* RohanCry.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1BE8CCDC1C10A0A600813019 /* RohanCry.atlas */; };
+		1BE8CCE11C10A0A600813019 /* RohanJump.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1BE8CCDD1C10A0A600813019 /* RohanJump.atlas */; };
 		1BE8DF841C050B5700BCBE1C /* CastleScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE8DF831C050B5700BCBE1C /* CastleScene.swift */; };
 		1BE8DF861C050B6A00BCBE1C /* CastleScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1BE8DF851C050B6A00BCBE1C /* CastleScene.sks */; };
 		1BE8DF891C050B9F00BCBE1C /* floor.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BE8DF881C050B9F00BCBE1C /* floor.png */; };
@@ -348,6 +355,13 @@
 		1BE64BC01C03EF2F009729ED /* openedDoorDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = openedDoorDown.png; sourceTree = "<group>"; };
 		1BE7D7FE1BC7F854000FA60C /* MiraadTales-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MiraadTales-Bridging-Header.h"; sourceTree = "<group>"; };
 		1BE7D8041BC7FEDA000FA60C /* Ylla.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Ylla.atlas; sourceTree = "<group>"; };
+		1BE8CC811C10983400813019 /* buttonBattleEnd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonBattleEnd.png; sourceTree = "<group>"; };
+		1BE8CC821C10983400813019 /* buttonBattleEnd@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buttonBattleEnd@2x.png"; sourceTree = "<group>"; };
+		1BE8CCB61C10994E00813019 /* BattleEnd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleEnd.swift; sourceTree = "<group>"; };
+		1BE8CCDA1C10A0A600813019 /* HydoraCry.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = HydoraCry.atlas; sourceTree = "<group>"; };
+		1BE8CCDB1C10A0A600813019 /* HydoraJump.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = HydoraJump.atlas; sourceTree = "<group>"; };
+		1BE8CCDC1C10A0A600813019 /* RohanCry.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = RohanCry.atlas; sourceTree = "<group>"; };
+		1BE8CCDD1C10A0A600813019 /* RohanJump.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = RohanJump.atlas; sourceTree = "<group>"; };
 		1BE8DF831C050B5700BCBE1C /* CastleScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CastleScene.swift; sourceTree = "<group>"; };
 		1BE8DF851C050B6A00BCBE1C /* CastleScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CastleScene.sks; sourceTree = "<group>"; };
 		1BE8DF881C050B9F00BCBE1C /* floor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = floor.png; sourceTree = "<group>"; };
@@ -453,6 +467,8 @@
 		1B46EAC31BE58F8A005E040B /* HUD */ = {
 			isa = PBXGroup;
 			children = (
+				BC8BBDCD1C106D6200031EFA /* Chapter */,
+				1BE8CC7C1C10983400813019 /* BattleEnd */,
 				BC8E985C1C0FE7CF005E48B5 /* Credits */,
 				1B9CD2D41BE8F229003C1834 /* Equipment */,
 			);
@@ -797,6 +813,7 @@
 		1BB03DCB1BE263EE007E7615 /* HUD */ = {
 			isa = PBXGroup;
 			children = (
+				1BE8CCB51C10993800813019 /* BattleEnd */,
 				1B3800721C035B8600D10E42 /* Chapter */,
 				1B3800711C035B7B00D10E42 /* Equip */,
 				1BB03DCE1BE266BC007E7615 /* BackpackMenu.swift */,
@@ -980,7 +997,6 @@
 		1BE7D7E31BC7E2EB000FA60C /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				BC8BBDCD1C106D6200031EFA /* Chapter */,
 				1B38006E1C0355BF00D10E42 /* Logo */,
 				1BA0D10E1BFF525500E4482A /* Dialog */,
 				1B5C1ECA1BFDF996008B2779 /* Skills */,
@@ -1000,6 +1016,35 @@
 				1B9553751BD52D5C001D1FBD /* Joystick.swift */,
 			);
 			name = Joystick;
+			sourceTree = "<group>";
+		};
+		1BE8CC7C1C10983400813019 /* BattleEnd */ = {
+			isa = PBXGroup;
+			children = (
+				1BE8CCD91C10A0A600813019 /* sprites */,
+				1BE8CC811C10983400813019 /* buttonBattleEnd.png */,
+				1BE8CC821C10983400813019 /* buttonBattleEnd@2x.png */,
+			);
+			path = BattleEnd;
+			sourceTree = "<group>";
+		};
+		1BE8CCB51C10993800813019 /* BattleEnd */ = {
+			isa = PBXGroup;
+			children = (
+				1BE8CCB61C10994E00813019 /* BattleEnd.swift */,
+			);
+			name = BattleEnd;
+			sourceTree = "<group>";
+		};
+		1BE8CCD91C10A0A600813019 /* sprites */ = {
+			isa = PBXGroup;
+			children = (
+				1BE8CCDA1C10A0A600813019 /* HydoraCry.atlas */,
+				1BE8CCDB1C10A0A600813019 /* HydoraJump.atlas */,
+				1BE8CCDC1C10A0A600813019 /* RohanCry.atlas */,
+				1BE8CCDD1C10A0A600813019 /* RohanJump.atlas */,
+			);
+			path = sprites;
 			sourceTree = "<group>";
 		};
 		1BE8DF821C050B4100BCBE1C /* Castle */ = {
@@ -1216,11 +1261,14 @@
 				BC8BBDC51C106D5B00031EFA /* arrowleftChapter@2x.png in Resources */,
 				1BE8DF8B1C050BD300BCBE1C /* rocksCastle.png in Resources */,
 				BC8BBDCA1C106D5B00031EFA /* bookprologue@2x.png in Resources */,
+				1BE8CC9E1C10983400813019 /* buttonBattleEnd.png in Resources */,
 				1BB27CCD1BFA391E00A5736E /* reddot.png in Resources */,
 				1BE7D8051BC7FEDA000FA60C /* Ylla.atlas in Resources */,
 				1BB80C581C0E3FA6001D3C89 /* BasichitRohan.atlas in Resources */,
+				1BE8CC9F1C10983400813019 /* buttonBattleEnd@2x.png in Resources */,
 				1BB80C5D1C0E414B001D3C89 /* H.light.atlas in Resources */,
 				1BD7C5911C0C87FD00F7D6BC /* Punishment@2x.png in Resources */,
+				1BE8CCDF1C10A0A600813019 /* HydoraJump.atlas in Resources */,
 				1B861F671C04918400E0C555 /* Hydora.atlas in Resources */,
 				1B9CD2DE1BE8FB05003C1834 /* bgTitle.png in Resources */,
 				BC8BBDCC1C106D5B00031EFA /* booksoon@2x.png in Resources */,
@@ -1248,6 +1296,7 @@
 				1BA3ED721BEA3CB700F9E3E3 /* markAtk.png in Resources */,
 				1BD7C5921C0C87FD00F7D6BC /* Sledgehammer@2x.png in Resources */,
 				1B8418DD1C0133BB003F0130 /* holylight.png in Resources */,
+				1BE8CCE11C10A0A600813019 /* RohanJump.atlas in Resources */,
 				1BE64BC21C03EF2F009729ED /* openedDoorDown.png in Resources */,
 				1B9AD03A1BED3B2700FA04C6 /* key.png in Resources */,
 				1BA3ED7B1BEA4ABC00F9E3E3 /* Warhammer.png in Resources */,
@@ -1260,12 +1309,14 @@
 				1BB80C651C0E6047001D3C89 /* Pchord.atlas in Resources */,
 				1BD0C55C1BECDCD0006F4220 /* Aemon.atlas in Resources */,
 				1BD0C5731BECE26D006F4220 /* house2.png in Resources */,
+				1BE8CCDE1C10A0A600813019 /* HydoraCry.atlas in Resources */,
 				1B8EDC131BC2B074009603B6 /* LaunchScreen.storyboard in Resources */,
 				1BD0C5701BECE26D006F4220 /* fundo.png in Resources */,
 				BC8C618D1C0E8A58002625F8 /* Bones.atlas in Resources */,
 				1B8EDC101BC2B074009603B6 /* Assets.xcassets in Resources */,
 				1BD7C5981C0CA2F000F7D6BC /* CreditsScene.sks in Resources */,
 				1BB27CC41BFA391E00A5736E /* hpbar.png in Resources */,
+				1BE8CCE01C10A0A600813019 /* RohanCry.atlas in Resources */,
 				BC8BBDC11C106D5B00031EFA /* bgChapter.png in Resources */,
 				1B9CD2EC1BE9022B003C1834 /* bgStatus.png in Resources */,
 				1B9CD2E81BE8FFA7003C1834 /* equipBox.png in Resources */,
@@ -1337,6 +1388,7 @@
 				1BA6B9911BF0DB6600046B7C /* DBInteraction.swift in Sources */,
 				1BA6B9931BF0DBD800046B7C /* DBEnemy.swift in Sources */,
 				1BA6B9981BF0EC4900046B7C /* Message.swift in Sources */,
+				1BE8CCB71C10994E00813019 /* BattleEnd.swift in Sources */,
 				1BD0C5851BECEFFB006F4220 /* DBPlayers.swift in Sources */,
 				1B4F29871BCFE2EB00612BF8 /* JSTileMap.m in Sources */,
 				1B3800741C035BC100D10E42 /* ChapterMenu.swift in Sources */,

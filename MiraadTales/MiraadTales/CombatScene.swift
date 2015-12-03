@@ -50,6 +50,10 @@ class CombatScene: SKScene {
     
     var orderAtksPerson: [SKSpriteNode] = []
     
+    var battleEnd: BattleEnd!
+    var openBattleEnd: NSTimeInterval = 0.0
+    var endBattle: Bool = false
+    
     public var win: Bool = false
     public var typeCombat: String = ""
     
@@ -75,6 +79,11 @@ class CombatScene: SKScene {
     
     //MARK: - Touch events
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        
+        if battleEnd != nil {
+            battleEnd.touchesBegan(touches, withEvent: event)
+            return
+        }
         
         for touch in touches {
             
@@ -471,6 +480,9 @@ class CombatScene: SKScene {
                     win = false
                 }
                 
+                openBattleEnd = currentTime
+                endBattle = true
+                
                 //Return mvp ou other scene
                 //(self.view! as! NavigationController).GoBack()
             }
@@ -494,6 +506,38 @@ class CombatScene: SKScene {
                 hpEnemy!.runAction(action, completion: { () -> Void in
                     hpEnemy!.removeFromParent()
                 })
+            }
+        }
+        
+        if (currentTime - openBattleEnd) >= 1.0  && endBattle {
+            
+            if battleEnd == nil {
+                
+                var name: String = ""
+                
+                if win {
+                    name = "Você venceu"
+                }else {
+                    name = "Você perdeu"
+                }
+                
+                battleEnd = BattleEnd(players: self.players!, currentPlayer: self.currentPlayer!, size: self.size, name: name, typeHUD: TypeHUD.BattleEnd)
+                
+                battleEnd.zPosition = 20
+                battleEnd.xScale = 0.01
+                battleEnd.yScale = 0.01
+                
+                self.addChild(battleEnd)
+                
+                battleEnd.open()
+            }else if battleEnd.typeBattleEnd == TypeBattleEnd.Continue {
+                (self.view as! NavigationController).GoBack()
+            }else if battleEnd.typeBattleEnd == TypeBattleEnd.TryAgain {
+                (self.view as! NavigationController).GoBack()
+            }else if battleEnd.typeBattleEnd == TypeBattleEnd.CanBack {
+                let start = Start(fileNamed: "Start")!
+                let transition = SKTransition.fadeWithDuration(1)
+                (self.view as! NavigationController).Navigate(start, transition: transition)
             }
         }
     }

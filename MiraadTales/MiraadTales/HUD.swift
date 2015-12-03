@@ -12,11 +12,12 @@ public enum TypeHUD: String {
     case Equip = "Equip"
     case Chapter = "Chapter"
     case Backpack = "Backpack"
+    case BattleEnd = "BattleEnd"
 }
 
 public class HUD: SKNode {
     
-    public var btnClose: SKSpriteNode
+    public var btnClose: SKSpriteNode!
     public var bg: SKSpriteNode!
     public var bgTitle: SKSpriteNode!
     public var players: [Player]
@@ -32,7 +33,7 @@ public class HUD: SKNode {
         
         if typeHUD == .Equip {
             self.bg = SKSpriteNode(imageNamed: "bgMenuEquipment")
-        }else if typeHUD == .Chapter {
+        }else if typeHUD == .Chapter || typeHUD == .BattleEnd {
             self.bg = SKSpriteNode(imageNamed: "bgChapter")
         }else if typeHUD == .Backpack {
             self.bg = SKSpriteNode(imageNamed: "bgMenuEquipment")
@@ -88,9 +89,11 @@ public class HUD: SKNode {
             self.bg.addChild(bgTitle)
             bgTitle.addChild(self.btnClose)
             bgTitle.addChild(self.title)
-        }else {
+        }else if typeHUD == .Chapter {
             self.bg.addChild(self.btnClose)
             self.bg.addChild(self.title)
+        }else {
+            self.bg!.addChild(self.title)
         }
     }
 

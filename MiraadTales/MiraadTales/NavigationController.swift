@@ -14,12 +14,20 @@ public class NavigationController: SKView {
     
     public func Navigate(scene: SKScene) {
         
+        if scene is Start {
+            self.scenes.removeAll()
+        }
+        
         self.scenes.append(scene)
         
         self.presentScene(scene)
     }
     
     public func Navigate(scene: SKScene, transition: SKTransition) {
+        
+        if scene is Start {
+            self.scenes.removeAll()
+        }
         
         self.scenes.append(scene)
         
@@ -42,7 +50,6 @@ public class NavigationController: SKView {
         lastScene.userData!["GoBack"] = true
         
         self.presentScene(lastScene)
-        
     }
     
     public func GoBack(transition: SKTransition) {
