@@ -47,9 +47,8 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
             
             for p in self.players {
                 p.removeFromParent()
+                p.restoreStatus()
                 p.setPlayerForExploration()
-                p.race.status.currentHP = p.race.status.HP
-                p.race.status.currentMP = p.race.status.MP
                 map!.addChild(p)
             }
             
@@ -84,8 +83,8 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
             self.currentPlayer!.race.skills.append(DBEquipSkill.getSkill("Hammer Hit"))
             
             //self.currentPlayer!.position = CGPointMake(-733.932, 286.614)
-            self.currentPlayer!.position = CGPointMake(-433.932, 286.614)
-            //self.currentPlayer!.position = CGPointMake(96.715, -287.777)
+            //self.currentPlayer!.position = CGPointMake(-433.932, 286.614)
+            self.currentPlayer!.position = CGPointMake(96.715, -287.777)
             
             let rohan = map!.childNodeWithName("SKRohan") as! SKSpriteNode
             rohan.texture!.filteringMode = .Nearest
@@ -172,7 +171,7 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
         let posPlayer = self.movementManagement!.player.position
         let framePlayer = self.movementManagement!.player.frame
         
-        if (posPlayer.x >= (736.222 + (framePlayer.width / 2) + 10)  && (posPlayer.y <= -217 && posPlayer.y >= -287.98)) && self.joystick!.direction == DirectionPlayer.Right{
+        if (posPlayer.x >= (736.222 + (framePlayer.width / 2) + 10)  && (posPlayer.y <= -200 && posPlayer.y >= -287.98)) && self.joystick!.direction == DirectionPlayer.Right{
             
             self.saveData()
             

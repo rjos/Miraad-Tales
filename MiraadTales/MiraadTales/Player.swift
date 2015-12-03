@@ -30,7 +30,6 @@ public class Player: SKSpriteNode, VLDContextSheetDelegate {
     
     var decoder = true
     
-    
     public init(race: BaseRace, imageNamed: String, viewController: UIView?) {
         self.race = race
         let texture = SKTexture(imageNamed: imageNamed)
@@ -287,5 +286,10 @@ public class Player: SKSpriteNode, VLDContextSheetDelegate {
         self.xScale = 1.0
         self.yScale = 1.0
         self.removeActionForKey("Combat-\(self.race.name)")
+    }
+    
+    //MARK: Restore Status After Combat
+    public func restoreStatus() {
+        self.race.restoreStatus()
     }
 }

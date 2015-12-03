@@ -8,6 +8,13 @@
 
 import SpriteKit
 
-class CreditsScene: HUD {
-
+class CreditsScene: SKScene {
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        
+        let start = Start(fileNamed: "Start")!
+        let transition = SKTransition.fadeWithDuration(1)
+        
+        (self.view as! NavigationController).Navigate(start, transition: transition)
+    }
 }

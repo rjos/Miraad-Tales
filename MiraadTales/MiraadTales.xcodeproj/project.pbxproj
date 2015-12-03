@@ -21,6 +21,9 @@
 		1B4F29801BCFD28200612BF8 /* VLDContextSheetItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B4F297D1BCFD28200612BF8 /* VLDContextSheetItemView.m */; };
 		1B4F29861BCFE2EB00612BF8 /* LFCGzipUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B4F29831BCFE2EB00612BF8 /* LFCGzipUtility.m */; };
 		1B4F29871BCFE2EB00612BF8 /* JSTileMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B4F29851BCFE2EB00612BF8 /* JSTileMap.m */; };
+		1B5B6A421C10CC580053006D /* combatscenarioBellatrix.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B5B6A411C10CC580053006D /* combatscenarioBellatrix.png */; };
+		1B5B6A461C10D0460053006D /* cauldronCombat.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1B5B6A451C10D0460053006D /* cauldronCombat.atlas */; };
+		1B5B6A481C10D0A40053006D /* cauldronCastle.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1B5B6A471C10D0A40053006D /* cauldronCastle.atlas */; };
 		1B8418DD1C0133BB003F0130 /* holylight.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B8418DB1C0133BB003F0130 /* holylight.png */; };
 		1B8418DE1C0133BB003F0130 /* heal.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B8418DC1C0133BB003F0130 /* heal.png */; };
 		1B8418E11C01354B003F0130 /* powerchord.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B8418DF1C01354B003F0130 /* powerchord.png */; };
@@ -156,7 +159,6 @@
 		1BE8DF861C050B6A00BCBE1C /* CastleScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1BE8DF851C050B6A00BCBE1C /* CastleScene.sks */; };
 		1BE8DF891C050B9F00BCBE1C /* floor.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BE8DF881C050B9F00BCBE1C /* floor.png */; };
 		1BE8DF8B1C050BD300BCBE1C /* rocksCastle.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BE8DF8A1C050BD300BCBE1C /* rocksCastle.png */; };
-		1BE8DF8D1C050DA900BCBE1C /* cauldron.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BE8DF8C1C050DA900BCBE1C /* cauldron.png */; };
 		1BE8DF8F1C0519A700BCBE1C /* PositionManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE8DF8E1C0519A700BCBE1C /* PositionManagement.swift */; };
 		1BECB4CB1BC55CB000EDBB8F /* BaseRace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BECB4CA1BC55CB000EDBB8F /* BaseRace.swift */; };
 		1BECB4CD1BC55E2200EDBB8F /* Swordsman.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BECB4CC1BC55E2200EDBB8F /* Swordsman.swift */; };
@@ -183,7 +185,6 @@
 		BC8C618A1C0E8668002625F8 /* hydoraArmor2.png in Resources */ = {isa = PBXBuildFile; fileRef = BC8C61881C0E8668002625F8 /* hydoraArmor2.png */; };
 		BC8C618D1C0E8A58002625F8 /* Bones.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BC8C618C1C0E8A58002625F8 /* Bones.atlas */; };
 		BC8C618F1C0E8B30002625F8 /* Buggy.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BC8C618E1C0E8B30002625F8 /* Buggy.atlas */; };
-		BC8C61911C0E8D54002625F8 /* Bellatrix.Atlas in Resources */ = {isa = PBXBuildFile; fileRef = BC8C61901C0E8D54002625F8 /* Bellatrix.Atlas */; };
 		BCCBB89F1BD7C3370026EEB2 /* CollisionSetUps.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCBB89E1BD7C3370026EEB2 /* CollisionSetUps.swift */; };
 /* End PBXBuildFile section */
 
@@ -224,6 +225,9 @@
 		1B4F29831BCFE2EB00612BF8 /* LFCGzipUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFCGzipUtility.m; sourceTree = "<group>"; };
 		1B4F29841BCFE2EB00612BF8 /* JSTileMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSTileMap.h; sourceTree = "<group>"; };
 		1B4F29851BCFE2EB00612BF8 /* JSTileMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSTileMap.m; sourceTree = "<group>"; };
+		1B5B6A411C10CC580053006D /* combatscenarioBellatrix.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = combatscenarioBellatrix.png; sourceTree = "<group>"; };
+		1B5B6A451C10D0460053006D /* cauldronCombat.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = cauldronCombat.atlas; sourceTree = "<group>"; };
+		1B5B6A471C10D0A40053006D /* cauldronCastle.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = cauldronCastle.atlas; sourceTree = "<group>"; };
 		1B8418DB1C0133BB003F0130 /* holylight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = holylight.png; sourceTree = "<group>"; };
 		1B8418DC1C0133BB003F0130 /* heal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heal.png; sourceTree = "<group>"; };
 		1B8418DF1C01354B003F0130 /* powerchord.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = powerchord.png; sourceTree = "<group>"; };
@@ -366,7 +370,6 @@
 		1BE8DF851C050B6A00BCBE1C /* CastleScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CastleScene.sks; sourceTree = "<group>"; };
 		1BE8DF881C050B9F00BCBE1C /* floor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = floor.png; sourceTree = "<group>"; };
 		1BE8DF8A1C050BD300BCBE1C /* rocksCastle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rocksCastle.png; sourceTree = "<group>"; };
-		1BE8DF8C1C050DA900BCBE1C /* cauldron.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cauldron.png; sourceTree = "<group>"; };
 		1BE8DF8E1C0519A700BCBE1C /* PositionManagement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PositionManagement.swift; sourceTree = "<group>"; };
 		1BECB4CA1BC55CB000EDBB8F /* BaseRace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRace.swift; sourceTree = "<group>"; };
 		1BECB4CC1BC55E2200EDBB8F /* Swordsman.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swordsman.swift; sourceTree = "<group>"; };
@@ -393,7 +396,6 @@
 		BC8C61881C0E8668002625F8 /* hydoraArmor2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hydoraArmor2.png; sourceTree = "<group>"; };
 		BC8C618C1C0E8A58002625F8 /* Bones.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Bones.atlas; sourceTree = "<group>"; };
 		BC8C618E1C0E8B30002625F8 /* Buggy.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Buggy.atlas; sourceTree = "<group>"; };
-		BC8C61901C0E8D54002625F8 /* Bellatrix.Atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Bellatrix.Atlas; sourceTree = "<group>"; };
 		BCCBB89E1BD7C3370026EEB2 /* CollisionSetUps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollisionSetUps.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -825,6 +827,8 @@
 		1BB27CAF1BFA391E00A5736E /* Combat */ = {
 			isa = PBXGroup;
 			children = (
+				1B5B6A451C10D0460053006D /* cauldronCombat.atlas */,
+				1B5B6A411C10CC580053006D /* combatscenarioBellatrix.png */,
 				1BB27CB01BFA391E00A5736E /* footer.png */,
 				1BB27CB11BFA391E00A5736E /* bgbar.png */,
 				1BB27CB21BFA391E00A5736E /* hpbar.png */,
@@ -892,7 +896,6 @@
 		1BD0C53B1BECD927006F4220 /* Characters */ = {
 			isa = PBXGroup;
 			children = (
-				BC8C61901C0E8D54002625F8 /* Bellatrix.Atlas */,
 				BC8C618E1C0E8B30002625F8 /* Buggy.atlas */,
 				BC8C618C1C0E8A58002625F8 /* Bones.atlas */,
 				1B861F661C04918400E0C555 /* Hydora.atlas */,
@@ -1059,7 +1062,7 @@
 		1BE8DF871C050B8B00BCBE1C /* Castle */ = {
 			isa = PBXGroup;
 			children = (
-				1BE8DF8C1C050DA900BCBE1C /* cauldron.png */,
+				1B5B6A471C10D0A40053006D /* cauldronCastle.atlas */,
 				1BE8DF8A1C050BD300BCBE1C /* rocksCastle.png */,
 				1BE8DF881C050B9F00BCBE1C /* floor.png */,
 			);
@@ -1270,6 +1273,7 @@
 				1BD7C5911C0C87FD00F7D6BC /* Punishment@2x.png in Resources */,
 				1BE8CCDF1C10A0A600813019 /* HydoraJump.atlas in Resources */,
 				1B861F671C04918400E0C555 /* Hydora.atlas in Resources */,
+				1B5B6A461C10D0460053006D /* cauldronCombat.atlas in Resources */,
 				1B9CD2DE1BE8FB05003C1834 /* bgTitle.png in Resources */,
 				BC8BBDCC1C106D5B00031EFA /* booksoon@2x.png in Resources */,
 				1BE64BC11C03EF2F009729ED /* openedDoorUp.png in Resources */,
@@ -1279,6 +1283,7 @@
 				1BE2E96E1C0D616400215177 /* basichit@2x.png in Resources */,
 				1B9CD2E41BE8FECF003C1834 /* bgEquips.png in Resources */,
 				1B90C9A41BFCB8CC00B198FB /* Intro.sks in Resources */,
+				1B5B6A481C10D0A40053006D /* cauldronCastle.atlas in Resources */,
 				BC8C618F1C0E8B30002625F8 /* Buggy.atlas in Resources */,
 				1BB6D31A1BEBAD7D007229DA /* stones.png in Resources */,
 				1BE2E96D1C0D616400215177 /* basichit.png in Resources */,
@@ -1328,9 +1333,8 @@
 				1BB27CC51BFA391E00A5736E /* mpbar.png in Resources */,
 				1BB27CD11BFA391E00A5736E /* 15 screen.png in Resources */,
 				1BD0C5741BECE26D006F4220 /* mato.png in Resources */,
-				BC8C61911C0E8D54002625F8 /* Bellatrix.Atlas in Resources */,
+				1B5B6A421C10CC580053006D /* combatscenarioBellatrix.png in Resources */,
 				1BA3ED741BEA3CC000F9E3E3 /* markDef.png in Resources */,
-				1BE8DF8D1C050DA900BCBE1C /* cauldron.png in Resources */,
 				BC8BBDC91C106D5B00031EFA /* bookprologue.png in Resources */,
 				1B38006B1C034BB400D10E42 /* Start.sks in Resources */,
 				1BD0C56D1BECE26D006F4220 /* casas.png in Resources */,

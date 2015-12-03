@@ -51,6 +51,25 @@ class CastleScene: SKScene, InteractionDelegate, SKPhysicsContactDelegate {
         bellatrix.texture!.filteringMode = .Nearest
     }
     
+    func didBeginContact(contact: SKPhysicsContact) {
+        
+        var bodyPlayer = contact.bodyA
+        var bodyEnemy = contact.bodyB
+        
+        let node = bodyPlayer.node!
+        
+        if !node.name!.containsString("ydora") && bodyPlayer.contactTestBitMask != 0 {
+            let temp = bodyEnemy
+            bodyEnemy = bodyPlayer
+            bodyPlayer = temp
+        }else if bodyPlayer.contactTestBitMask == 0 {
+            return
+        }
+        
+        self.bodyPlayer = bodyPlayer
+        self.bodyEnemy = bodyEnemy
+    }
+    
     //MARK: Touch Event's
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
@@ -100,9 +119,9 @@ class CastleScene: SKScene, InteractionDelegate, SKPhysicsContactDelegate {
 //            equipMenu.touchesEnded(touches, withEvent: event)
 //        }
 //        
-//        if self.currentDialog != nil {
-//            self.currentDialog!.velocity = 0.1
-//        }
+        if self.currentDialog != nil {
+            self.currentDialog!.velocity = 0.03
+        }
     }
     
     //MARK: Update Method
@@ -123,26 +142,33 @@ class CastleScene: SKScene, InteractionDelegate, SKPhysicsContactDelegate {
             
             (self.view as! NavigationController).GoBack(transition)
         }
+        
+        if self.currentDialog != nil {
+            self.currentDialog!.update(currentTime)
+            
+            if self.currentDialog!.isEmpty {
+                self.currentDialog!.removeFromParent()
+                
+                if self.currentDialog!.action == ActionDialog.OpenPage {
+                    //Open Page
+                    let combatScene = CombatScene(fileNamed: "CombatScene")!
+                    
+                    let bellatrix = DBEnemy.getEnemy("Bellatrix", qtdade: 1)
+                    let zumbi = DBEnemy.getEnemy("Zumbi", qtdade: 1)
+                    
+                    combatScene.typeCombat = "Bellatrix"
+                    combatScene.players = self.players
+                    combatScene.enimies = [bellatrix[0], zumbi[0]]
+                    let transition = SKTransition.fadeWithDuration(1)
+                    
+                    (self.view as? NavigationController)!.Navigate(combatScene, transition: transition)
+                }
+                
+                self.currentDialog = nil
+            }
+        }
     }
     
-    func didBeginContact(contact: SKPhysicsContact) {
-        
-        var bodyPlayer = contact.bodyA
-        var bodyEnemy = contact.bodyB
-        
-        let node = bodyPlayer.node!
-        
-        if !node.name!.containsString("ydora") && bodyPlayer.contactTestBitMask != 0 {
-            let temp = bodyEnemy
-            bodyEnemy = bodyPlayer
-            bodyPlayer = temp
-        }else if bodyPlayer.contactTestBitMask == 0 {
-            return
-        }
-        
-        self.bodyPlayer = bodyPlayer
-        self.bodyEnemy = bodyEnemy
-    }
     //MARK: Interaction Delegate
     func interaction() {
         
@@ -171,16 +197,20 @@ class CastleScene: SKScene, InteractionDelegate, SKPhysicsContactDelegate {
         let name = self.bodyEnemy!.node!.name
         
         if name == "SKBellatrix" && self.currentDialog == nil { /* mudar valores para bellatrix */
-            let bellatrix = DBEnemy.getEnemy("Bellatrix", qtdade: 1)
-            self.currentDialog = DBInteraction.getInteraction(bellatrix, player: players[0], player2:players[1], size: CGSizeMake(500, 200))
+            let bellatrix = DBEnemy.getEnemy("Bellatrix", qtdade: 1)[0]
+            self.currentDialog = DBInteraction.getInteraction(bellatrix, player: self.currentPlayer!, player2:players[0], size: CGSizeMake(500, 200))
             self.setupDialog()
             showDialog(self.currentDialog!)
-            
+        }else if self.movementManagement!.player.inDialog {
+            showDialog(self.currentDialog!)
         }
     }
     
     func runningDialog() {
         
+        if self.currentDialog != nil {
+            self.currentDialog!.velocity = 0
+        }
     }
     
     private func setupDialog() {
@@ -233,4 +263,5 @@ class CastleScene: SKScene, InteractionDelegate, SKPhysicsContactDelegate {
             }
         }
     }
+    
 }

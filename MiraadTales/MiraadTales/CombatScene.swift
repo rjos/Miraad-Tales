@@ -54,8 +54,8 @@ class CombatScene: SKScene {
     var openBattleEnd: NSTimeInterval = 0.0
     var endBattle: Bool = false
     
-    public var win: Bool = false
-    public var typeCombat: String = ""
+    internal var win: Bool = false
+    internal var typeCombat: String = ""
     
     override func didMoveToView(view: SKView) {
         
@@ -63,7 +63,26 @@ class CombatScene: SKScene {
         var bgCombat: SKSpriteNode
         
         if typeCombat == "Bellatrix" {
-            bgCombat = SKSpriteNode(imageNamed: "")
+            bgCombat = SKSpriteNode(imageNamed: "combatscenarioBellatrix")
+            
+            let atlasCauldron = SKTextureAtlas(named: "cauldronCombat")
+            let countTexture = atlasCauldron.textureNames.count
+            var textures: [SKTexture] = []
+            
+            for var i = 0; i < countTexture; ++i {
+                let texture = atlasCauldron.textureNamed("cauldronCombat-\(i+1)")
+                textures.append(texture)
+            }
+            
+            let action = SKAction.animateWithTextures(textures, timePerFrame: 0.2, resize: false, restore: false)
+            
+            let cauldron = SKSpriteNode(texture: textures[0])
+            cauldron.zPosition = 5
+            cauldron.position = CGPointMake(300,(bgCombat.frame.height / 2) - (cauldron.frame.height + 10))
+            cauldron.runAction(SKAction.repeatActionForever(action))
+            
+            bgCombat.addChild(cauldron)
+            
         }else {
             bgCombat = SKSpriteNode(imageNamed: "sceneNormalCombat")
         }

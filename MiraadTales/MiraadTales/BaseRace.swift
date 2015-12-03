@@ -61,4 +61,9 @@ public class BaseRace: StatusList, DamageList{
         let totalDef = self.status.pDef + self.status.mDef
         return totalDef
     }
+    
+    public func restoreStatus() {
+        self.status.currentHP = self.status.HP
+        self.status.currentMP = self.status.currentMP
+    }
 }

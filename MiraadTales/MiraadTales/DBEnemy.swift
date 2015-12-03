@@ -144,9 +144,9 @@ public class DBEnemy {
         
         let skills = getSkillChaserWolf()
         
-        let base = BaseEnemy(name: "Bellatrix", status: status, equipments: [], skills: skills, isDie: false, typeEnemy: TypeEnemy.AngryChicken)
+        let base = BaseEnemy(name: "Bellatrix", status: status, equipments: [], skills: skills, isDie: false, typeEnemy: TypeEnemy.Bellatrix)
         
-        let bellatrix = Enemy(imageNamed: "Bellatrix", race: base)
+        let bellatrix = Enemy(imageNamed: "Bellatrix-5", race: base)
         bellatrix.name = "Bellatrix"
         
         return bellatrix

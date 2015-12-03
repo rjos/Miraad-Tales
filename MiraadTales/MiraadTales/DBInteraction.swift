@@ -118,7 +118,7 @@ public class DBInteraction {
             Message(id: 2, text: "Tenha cuidado Hydora. Essa é Bellatrix, a bruxa que está por trás dos ataques em Miraad. Não confie nela", owner: rohan, shown: false, item: nil),
             Message(id: 3, text: "Vocês INVADEM a minha casa e ainda me ATACAM?! Isso não vai ficar assim!", owner: bellatrix, shown: false, item: nil),
             Message(id: 4, text: "Rohan, cuidado!", owner: hydora, shown: false, item: nil)]
-        let dialog = Dialog(messages: messages, action: ActionDialog.ShowMessage, size: size)
+        let dialog = Dialog(messages: messages, action: ActionDialog.OpenPage, size: size)
         return dialog
     }
     
