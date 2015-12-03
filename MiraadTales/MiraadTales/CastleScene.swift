@@ -49,6 +49,23 @@ class CastleScene: SKScene, InteractionDelegate, SKPhysicsContactDelegate {
         
         let bellatrix = map!.childNodeWithName("SKBellatrix") as! SKSpriteNode
         bellatrix.texture!.filteringMode = .Nearest
+        
+        let cauldron = map!.childNodeWithName("SKCauldron") as! SKSpriteNode
+        cauldron.texture!.filteringMode = .Nearest
+        
+        let atlasCauldron = SKTextureAtlas(named: "cauldronCastle")
+        let countTextures = atlasCauldron.textureNames.count
+        
+        var textures: [SKTexture] = []
+        
+        for var i = 0; i < (countTextures / 2); ++i {
+            let texture = atlasCauldron.textureNamed("cauldronCastle-\(i+1)")
+            textures.append(texture)
+        }
+        
+        let action = SKAction.animateWithTextures(textures, timePerFrame: 0.2, resize: false, restore: false)
+        
+        cauldron.runAction(SKAction.repeatActionForever(action))
     }
     
     func didBeginContact(contact: SKPhysicsContact) {
