@@ -53,7 +53,7 @@ class Intro: SKScene, InteractionDelegate {
         self.joystick!.touchesEnded(touches, withEvent: event)
         
         if self.currentDialog != nil {
-            self.currentDialog!.velocity = 0.1
+            self.currentDialog!.velocity = 0.03
         }
     }
     
@@ -89,7 +89,7 @@ class Intro: SKScene, InteractionDelegate {
     func runningDialog() {
         
         if self.currentDialog != nil {
-            self.currentDialog!.velocity = 0.05
+            self.currentDialog!.velocity = -100000000
         }
     }
     

@@ -26,6 +26,9 @@ class Start: SKScene {
     // Time since last frame
     var deltaTime : NSTimeInterval = 0
     
+    var chapters: ChapterMenu!
+    var openChapters: Bool = false
+    
     override func didMoveToView(view: SKView) {
         
         bgNode = self.childNodeWithName("SKStartBg") as! SKSpriteNode
@@ -67,10 +70,28 @@ class Start: SKScene {
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         //Open Menu Ep.
         
-        let introScene = Intro(fileNamed: "Intro")
-        let transition = SKTransition.fadeWithDuration(1)
+        if !openChapters {
+            openChapters = true
+            chapters = ChapterMenu(players: [], currentPlayer: DBPlayers.getBard(self.view!), size: self.size, name: "Seleção de Capítulo", typeHUD: TypeHUD.Chapter)
+            chapters.zPosition = 10
+            chapters.xScale = 0.01
+            chapters.yScale = 0.01
+            
+            bgNode.addChild(chapters)
+            
+            chapters.open()
+        }
         
-        (self.view as! NavigationController).Navigate(introScene!, transition: transition)
+        if chapters != nil {
+            chapters.touchesBegan(touches, withEvent: event)
+        }
+    }
+    
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        
+        if chapters != nil {
+            chapters.touchesEnded(touches, withEvent: event)
+        }
     }
     
     //MARK: Parallax method
@@ -119,6 +140,16 @@ class Start: SKScene {
         // Next, move each of the four pairs of sprites.
         // Objects that should appear move slower than foreground objects.
         //self.moveSprite(bgNode!, nextSprite:bgNodeNext!, speed:25.0)
+        
+        if chapters != nil && chapters.isClosed {
+            openChapters = false
+            chapters = nil
+        }else if chapters != nil && chapters.isOpenPage {
+            let introScene = Intro(fileNamed: "Intro")
+            let transition = SKTransition.fadeWithDuration(1)
+            
+            (self.view as! NavigationController).Navigate(introScene!, transition: transition)
+        }
     }
     
     //MARK: - Get Atlas to animated

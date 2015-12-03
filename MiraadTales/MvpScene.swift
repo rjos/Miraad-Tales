@@ -163,7 +163,7 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
         }
         
         if self.currentDialog != nil {
-            self.currentDialog!.velocity = 0.1
+            self.currentDialog!.velocity = 0.03
         }
     }
     

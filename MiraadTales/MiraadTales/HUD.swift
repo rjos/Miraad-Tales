@@ -18,7 +18,7 @@ public class HUD: SKNode {
     
     public var btnClose: SKSpriteNode
     public var bg: SKSpriteNode!
-    public var bgTitle: SKSpriteNode
+    public var bgTitle: SKSpriteNode!
     public var players: [Player]
     public var currentPlayer: Player
     public var isClosed: Bool
@@ -33,7 +33,7 @@ public class HUD: SKNode {
         if typeHUD == .Equip {
             self.bg = SKSpriteNode(imageNamed: "bgMenuEquipment")
         }else if typeHUD == .Chapter {
-            self.bg = SKSpriteNode(imageNamed: "bgMenuEquipment")
+            self.bg = SKSpriteNode(imageNamed: "bgChapter")
         }else if typeHUD == .Backpack {
             self.bg = SKSpriteNode(imageNamed: "bgMenuEquipment")
         }
@@ -45,19 +45,29 @@ public class HUD: SKNode {
         self.title.fontSize = 48
         self.title.fontName = "Prospero-Bold-NBP"
         self.title.fontColor = UIColor.whiteColor()
-        self.title.position = CGPointMake(((self.bg.frame.width * 0.5) * 0.1), (self.title.frame.height * -0.5) + 5)
+        
         self.title.zPosition = 3
         
         self.btnClose = SKSpriteNode(imageNamed: "closeButton")
         self.btnClose.name = "closeMenu"
         self.btnClose.zPosition = 3
         
-        bgTitle = SKSpriteNode(imageNamed: "bgTitle")
-        bgTitle.name = "bgTitle"
-        bgTitle.position = CGPointMake(((bg.frame.width * -0.5) + (bgTitle.frame.width * 0.5)), ((bg.frame.height * 0.5) - (bgTitle.frame.height * 0.75)))
-        bgTitle.zPosition = 2
+        if typeHUD == .Equip {
+            bgTitle = SKSpriteNode(imageNamed: "bgTitle")
+            bgTitle.name = "bgTitle"
+            bgTitle.position = CGPointMake(((bg.frame.width * -0.5) + (bgTitle.frame.width * 0.5)), ((bg.frame.height * 0.5) - (bgTitle.frame.height * 0.75)))
+            bgTitle.zPosition = 2
+            
+            self.btnClose.position = CGPointMake((bgTitle.frame.width * -0.5) + (self.btnClose.frame.width * 0.5) + 10,0)
+        }else {
+            self.btnClose.position = CGPointMake(-(bg.frame.width / 2) + (self.btnClose.frame.width), (bg.frame.height / 2) - ((self.btnClose.frame.height * 2.5) + (self.btnClose.frame.height / 2)))
+        }
         
-        self.btnClose.position = CGPointMake((bgTitle.frame.width * -0.5) + (self.btnClose.frame.width * 0.5) + 10,0)
+        if typeHUD == .Equip {
+            self.title.position = CGPointMake(((self.bg.frame.width * 0.5) * 0.1), (self.title.frame.height * -0.5) + 5)
+        }else {
+            self.title.position = CGPointMake(((self.bg.frame.width * 0.5) * 0.1) - 50, self.btnClose.position.y - 10)
+        }
         
         let shadow = SKSpriteNode(color: UIColor.clearColor(), size: size)
         shadow.name = "shadow"
@@ -74,10 +84,14 @@ public class HUD: SKNode {
         //add bg menu
         self.addChild(self.bg)
         
-        self.bg.addChild(bgTitle)
-        
-        bgTitle.addChild(self.btnClose)
-        bgTitle.addChild(self.title)
+        if typeHUD == .Equip {
+            self.bg.addChild(bgTitle)
+            bgTitle.addChild(self.btnClose)
+            bgTitle.addChild(self.title)
+        }else {
+            self.bg.addChild(self.btnClose)
+            self.bg.addChild(self.title)
+        }
     }
 
     required public init?(coder aDecoder: NSCoder) {
