@@ -80,11 +80,18 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
             
             //self.currentPlayer!.race.equipments.append(DBEquipSkill.getEquip("Sledgehammer-0"))
             //self.currentPlayer!.race.equipments[0].baseEquip.isEquipped = true
-            //self.currentPlayer!.race.skills.append(DBEquipSkill.getSkill("Hammer Hit"))
+            self.currentPlayer!.race.skills.append(DBEquipSkill.getSkill("Hammer Hit"))
             
             self.currentPlayer!.position = CGPointMake(-733.932, 286.614)
             //self.currentPlayer!.position = CGPointMake(-433.932, 286.614)
             //self.currentPlayer!.position = CGPointMake(96.715, -287.777)
+            
+            let actionInitial_in  = SKAction.fadeInWithDuration(0.1)
+            let actionInitial_out = SKAction.fadeOutWithDuration(0.1)
+            
+            let sequence = SKAction.sequence([actionInitial_in, actionInitial_out, actionInitial_in, actionInitial_out, actionInitial_in])
+            
+            self.currentPlayer!.runAction(sequence)
             
             let rohan = map!.childNodeWithName("SKRohan") as! SKSpriteNode
             rohan.texture!.filteringMode = .Nearest
@@ -310,12 +317,12 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
             var equip: Equip!
             
             if name == "armor1" {
-                equip = DBEquipSkill.getEquip("Paladin Armor-4")
+                equip = DBEquipSkill.getEquip("Heavy Armor-3")
             }else if name == "hammer1" {
                 equip = DBEquipSkill.getEquip("Sledgehammer-0")
                 equip.baseEquip.isEquipped = true
             }else if name == "armor2" {
-                equip = DBEquipSkill.getEquip("Heavy Armor-3")
+                equip = DBEquipSkill.getEquip("Paladin Armor-4")
             }
             
             if self.currentPlayer!.race.name == "Hydora" {

@@ -2,11 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "Direita.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "arrowRight@2x.png",
+      "filename" : "Direita@2x.png",
       "scale" : "2x"
     },
     {

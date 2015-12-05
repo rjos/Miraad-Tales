@@ -2,11 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "Cima.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "arrowUp@2x.png",
+      "filename" : "Cima@2x.png",
       "scale" : "2x"
     },
     {

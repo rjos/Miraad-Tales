@@ -215,7 +215,18 @@ class CastleScene: SKScene, InteractionDelegate, SKPhysicsContactDelegate {
         
         if name == "SKBellatrix" && self.currentDialog == nil { /* mudar valores para bellatrix */
             let bellatrix = DBEnemy.getEnemy("Bellatrix", qtdade: 1)[0]
-            self.currentDialog = DBInteraction.getInteraction(bellatrix, player: self.currentPlayer!, player2:players[0], size: CGSizeMake(500, 200))
+            
+            if self.players.count > 1 {
+                
+                if self.currentPlayer!.race.name == "Hydora" {
+                    self.currentDialog = DBInteraction.getInteraction(bellatrix, player: self.currentPlayer!, player2:players[1], size: CGSizeMake(500, 200))
+                }else {
+                    self.currentDialog = DBInteraction.getInteraction(bellatrix, player: players[1], player2:self.currentPlayer!, size: CGSizeMake(500, 200))
+                }
+                
+            }else {
+                self.currentDialog = DBInteraction.getInteraction(bellatrix, player: self.currentPlayer!, size: CGSizeMake(500, 200))
+            }
             self.setupDialog()
             showDialog(self.currentDialog!)
         }else if self.movementManagement!.player.inDialog {

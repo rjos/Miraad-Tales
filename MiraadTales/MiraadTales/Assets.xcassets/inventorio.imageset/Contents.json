@@ -2,11 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "inventório.png",
+      "filename" : "Equips.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "Equips@2x.png",
       "scale" : "2x"
     },
     {

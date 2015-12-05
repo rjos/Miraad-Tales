@@ -32,7 +32,7 @@ class BattleEnd: HUD {
         btnContinue.zPosition = 5
         btnContinue.name = "btnContinue"
         
-        let labelBtnContine = SKLabelNode(text: "Continuar")
+        let labelBtnContine = SKLabelNode(text: "Continue")
         labelBtnContine.horizontalAlignmentMode = .Center
         labelBtnContine.verticalAlignmentMode = .Center
         labelBtnContine.fontColor = UIColor(red: 1, green: 0.98, blue: 0.76, alpha: 1)
@@ -47,7 +47,7 @@ class BattleEnd: HUD {
         btnTryAgain.zPosition = 5
         btnTryAgain.name = "btnTryAgain"
         
-        let labelBtnTryAgain_1 = SKLabelNode(text: "Tentar")
+        let labelBtnTryAgain_1 = SKLabelNode(text: "Try")
         labelBtnTryAgain_1.horizontalAlignmentMode = .Center
         labelBtnTryAgain_1.verticalAlignmentMode = .Bottom
         labelBtnTryAgain_1.fontColor = UIColor(red: 1, green: 0.98, blue: 0.76, alpha: 1)
@@ -56,7 +56,7 @@ class BattleEnd: HUD {
         labelBtnTryAgain_1.zPosition = 1
         labelBtnTryAgain_1.name = "btnTryAgainLabel-1"
         
-        let labelBtnTryAgain_2 = SKLabelNode(text: "Novamente")
+        let labelBtnTryAgain_2 = SKLabelNode(text: "Again")
         labelBtnTryAgain_2.horizontalAlignmentMode = .Center
         labelBtnTryAgain_2.verticalAlignmentMode = .Top
         labelBtnTryAgain_2.fontColor = UIColor(red: 1, green: 0.98, blue: 0.76, alpha: 1)
@@ -72,7 +72,7 @@ class BattleEnd: HUD {
         btnCanBack.zPosition = 5
         btnCanBack.name = "btnCanBack"
         
-        let labelBtnCanBack_1 = SKLabelNode(text: "Seleção")
+        let labelBtnCanBack_1 = SKLabelNode(text: "Chapter")
         labelBtnCanBack_1.horizontalAlignmentMode = .Center
         labelBtnCanBack_1.verticalAlignmentMode = .Bottom
         labelBtnCanBack_1.fontColor = UIColor(red: 1, green: 0.98, blue: 0.76, alpha: 1)
@@ -81,7 +81,7 @@ class BattleEnd: HUD {
         labelBtnCanBack_1.zPosition = 1
         labelBtnCanBack_1.name = "btnCanBackLabel-1"
         
-        let labelBtnCanBack_2 = SKLabelNode(text: "de Capítulos")
+        let labelBtnCanBack_2 = SKLabelNode(text: "Selection")
         labelBtnCanBack_2.horizontalAlignmentMode = .Center
         labelBtnCanBack_2.verticalAlignmentMode = .Top
         labelBtnCanBack_2.fontColor = UIColor(red: 1, green: 0.98, blue: 0.76, alpha: 1)
@@ -93,7 +93,7 @@ class BattleEnd: HUD {
         btnCanBack.addChild(labelBtnCanBack_1)
         btnCanBack.addChild(labelBtnCanBack_2)
         
-        if name == "Você venceu" {
+        if name == "You won!" {
             setPlayer(self.players, win: true)
             
             btnContinue.position = CGPointMake(0, (btnContinue.frame.height * 0.75) - (self.bg!.frame.height / 2))
@@ -122,15 +122,17 @@ class BattleEnd: HUD {
             
             let node = self.nodeAtPoint(location)
             
-            if node.name!.containsString("btnContinue") {
-                //continue
-                typeBattleEnd = TypeBattleEnd.Continue
-            }else if node.name!.containsString("btnTryAgain") {
-                //lutar novamente
-                typeBattleEnd = TypeBattleEnd.TryAgain
-            }else if node.name!.containsString("btnCanBack") {
-                //start
-                typeBattleEnd = TypeBattleEnd.CanBack
+            if node.name != nil {
+                if node.name!.containsString("btnContinue") {
+                    //continue
+                    typeBattleEnd = TypeBattleEnd.Continue
+                }else if node.name!.containsString("btnTryAgain") {
+                    //lutar novamente
+                    typeBattleEnd = TypeBattleEnd.TryAgain
+                }else if node.name!.containsString("btnCanBack") {
+                    //start
+                    typeBattleEnd = TypeBattleEnd.CanBack
+                }
             }
         }
     }
@@ -148,19 +150,18 @@ class BattleEnd: HUD {
             }
             
             let p = Player(race: players[i].race, imageNamed: "\(players[i].race.name)\(sufix)-1", viewController: nil)
+            p.zPosition = 25
+            p.xScale = 3
+            p.yScale = 3
             
             if i == 0 {
                 
                 if players.count > 1 {
-                    p.position = CGPointMake(-(p.frame.width + 80), 0)
+                    p.position = CGPointMake(-(p.frame.width), 0)
                 }
             }else {
-                p.position = CGPointMake((p.frame.width + 80), 0)
+                p.position = CGPointMake((p.frame.width), 0)
             }
-            
-            p.zPosition = 25
-            p.xScale = 3
-            p.yScale = 3
             
             self.bg!.addChild(p)
             animationPlayer(p, win: win, sufix: sufix)

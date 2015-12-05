@@ -2,11 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "Switch.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "switch@2x.png",
+      "filename" : "Switch@2x.png",
       "scale" : "2x"
     },
     {

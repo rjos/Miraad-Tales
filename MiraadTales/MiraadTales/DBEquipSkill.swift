@@ -133,7 +133,7 @@ public class DBEquipSkill {
     //MARK: - Join Skills and Equipments
     private static func joinEquipmentsAndSkills(equipments: [Equip], skills: [Skill]) {
         
-        for var i = 0; i < equipments.count; ++i {
+        for var i = 1; i < equipments.count; ++i {
             equipments[i].baseEquip.skill = skills[i]
             skills[i].baseSkill.equip = equipments[i]
         }
@@ -267,7 +267,7 @@ public class DBEquipSkill {
         let statusBardClothes = Status(HP: 0, MP: 0, Speed: 0, pAtk: 0, mAtk: 0, pDef: 169, mDef: 253)
         let bardClothes = BaseEquip(name: "Bard Clothes-5", ownerRace: PlayersRace.Bard, status: statusBardClothes, type: ItemType.Armor, requiredLevel: 8, skill: nil, isEquipped: false)
         
-        let bardEquip = [Equip(imageNamed: "", baseEquip: oldLute), Equip(imageNamed: "", baseEquip: classicGuitar), Equip(imageNamed: "", baseEquip: silverHarp), Equip(imageNamed: "", baseEquip: troubadourClothes), Equip(imageNamed: "", baseEquip: musicianClothes), Equip(imageNamed: "", baseEquip: bardClothes)]
+        let bardEquip = [Equip(imageNamed: "", baseEquip: bardClothes),Equip(imageNamed: "", baseEquip: oldLute), Equip(imageNamed: "", baseEquip: classicGuitar), Equip(imageNamed: "", baseEquip: silverHarp), Equip(imageNamed: "", baseEquip: troubadourClothes), Equip(imageNamed: "", baseEquip: musicianClothes)]
         
         return bardEquip
     }
@@ -295,7 +295,7 @@ public class DBEquipSkill {
         let effectAttackSong = Effect(target: TargetSkill.SinglePlayer, affect: AffectSkill.pAtk, percenteEffects: 20)
         let attackSong = BaseSkill(name: "Attack Song", fantasyName: "Atk. Song", equip: nil, ownerRace: PlayersRace.Bard, status: statusAttackSong, criticalRate: 0, missRate: 0, consumeMana: 100, effect: effectAttackSong, details: "Increase target attack")
         
-        let bardSkills = [Skill(imageNamed: "basichit", baseSkill: instrumentHit), Skill(imageNamed: "powerchord", baseSkill: powerChord), Skill(imageNamed: "haste", baseSkill: darkSonata), Skill(imageNamed: "", baseSkill: speedSong), Skill(imageNamed: "", baseSkill: defenseSong), Skill(imageNamed: "", baseSkill: attackSong)]
+        let bardSkills = [Skill(imageNamed: "basichit", baseSkill: instrumentHit), Skill(imageNamed: "powerchord", baseSkill: powerChord), Skill(imageNamed: "", baseSkill: speedSong), Skill(imageNamed: "haste", baseSkill: darkSonata), Skill(imageNamed: "", baseSkill: defenseSong), Skill(imageNamed: "", baseSkill: attackSong)]
         
         return bardSkills
     }
@@ -320,7 +320,7 @@ public class DBEquipSkill {
         let statusCorruptedArmor = Status(HP: 0, MP: 0, Speed: 0, pAtk: 0, mAtk: 0, pDef: 422, mDef: 253)
         let corruptedArmor = BaseEquip(name: "Corrupted Armor-5", ownerRace: PlayersRace.Paladin, status: statusCorruptedArmor, type: ItemType.Armor, requiredLevel: 8, skill: nil, isEquipped: false)
         
-        let paladinEquip = [Equip(imageNamed: "Sledgehammer", baseEquip: sledgehammer), Equip(imageNamed: "Warhammer", baseEquip: warhammer), Equip(imageNamed: "Punishment", baseEquip: punishment), Equip(imageNamed: "hydoraArmor1", baseEquip: heavyArmor), Equip(imageNamed: "hydoraArmor2", baseEquip: paladinArmor), Equip(imageNamed: "", baseEquip: corruptedArmor)]
+        let paladinEquip = [Equip(imageNamed: "", baseEquip: corruptedArmor),Equip(imageNamed: "Sledgehammer", baseEquip: sledgehammer), Equip(imageNamed: "Warhammer", baseEquip: warhammer), Equip(imageNamed: "hydoraArmor1", baseEquip: heavyArmor), Equip(imageNamed: "Punishment", baseEquip: punishment), Equip(imageNamed: "hydoraArmor2", baseEquip: paladinArmor)]
         
         return paladinEquip
     }

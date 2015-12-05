@@ -67,7 +67,7 @@ public class DBEnemy {
     private static func getAngryChicken() -> Enemy? {
         let status = PlayerStatus(HP: 400, MP: 0, Speed: 0, pAtk: 0, mAtk: 0, pDef: 0, mDef: 0)
         
-        let skills = getSkillChaserWolf()
+        let skills = getSkillAngryChicken()
         
         let base = BaseEnemy(name: "Bones", status: status, equipments: [], skills: skills, isDie: false, typeEnemy: TypeEnemy.AngryChicken)
         
@@ -78,7 +78,11 @@ public class DBEnemy {
     }
     
     private static func getSkillAngryChicken() -> [Skill] {
-        return []
+        
+        let statusOssada = Status(HP: 0, MP: 0, Speed: 0, pAtk: 100, mAtk: 0, pDef: 0, mDef: 0)
+        let ossada = BaseSkill(name: "Ossada", fantasyName: "Ossada", equip: nil, ownerRace: PlayersRace.Bard, status: statusOssada, criticalRate: 0, missRate: 0, consumeMana: 0, effect: nil, details: "")
+        
+        return [Skill(imageNamed: "", baseSkill: ossada)]
     }
     
     private static func getEquipmentAngryChicken() -> [Equip] {
@@ -89,19 +93,26 @@ public class DBEnemy {
     private static func getChickKing() -> Enemy? {
         let status = PlayerStatus(HP: 400, MP: 0, Speed: 0, pAtk: 0, mAtk: 0, pDef: 0, mDef: 0)
         
-        let skills = getSkillChaserWolf()
+        let skills = getSkillChickKing()
         
         let base = BaseEnemy(name: "Buggy", status: status, equipments: [], skills: skills, isDie: false, typeEnemy: TypeEnemy.ChickKing)
         
         let buggy = Enemy(imageNamed: "Buggy-5", race: base)
         buggy.name = "Buggy"
-        buggy.xScale = -1
         
         return buggy
     }
     
     private static func getSkillChickKing() -> [Skill] {
-        return []
+
+        let statusDrenar = Status(HP: 0, MP: 0, Speed: 0, pAtk: 100, mAtk: 0, pDef: 0, mDef: 0)
+        let drenar = BaseSkill(name: "Drenar", fantasyName: "Drenar", equip: nil, ownerRace: PlayersRace.Bard, status: statusDrenar, criticalRate: 0, missRate: 0, consumeMana: 0, effect: nil, details: "")
+        
+        let statusMordida = Status(HP: 0, MP: 0, Speed: 0, pAtk: 100, mAtk: 0, pDef: 0, mDef: 0)
+        let mordida = BaseSkill(name: "Mordida", fantasyName: "Mordida Buggy", equip: nil, ownerRace: PlayersRace.Bard, status: statusMordida, criticalRate: 0, missRate: 0, consumeMana: 0, effect: nil, details: "")
+        
+        return [Skill(imageNamed: "", baseSkill: mordida), Skill(imageNamed: "", baseSkill: drenar)]
+        
     }
     
     private static func getEquipmentChickKing() -> [Equip] {
@@ -164,7 +175,7 @@ public class DBEnemy {
     private static func getBellatrix() -> Enemy? {
         let status = PlayerStatus(HP: 400, MP: 0, Speed: 0, pAtk: 0, mAtk: 0, pDef: 0, mDef: 0)
         
-        let skills = getSkillChaserWolf()
+        let skills = getSkillBellatrix()
         
         let base = BaseEnemy(name: "Bellatrix", status: status, equipments: [], skills: skills, isDie: false, typeEnemy: TypeEnemy.Bellatrix)
         
@@ -176,7 +187,7 @@ public class DBEnemy {
     
     private static func getSkillBellatrix() -> [Skill] {
         let statusFireBall = Status(HP: 0, MP: 0, Speed: 0, pAtk: 100, mAtk: 0, pDef: 0, mDef: 0)
-        let fireBall = BaseSkill(name: "Fire Ball", fantasyName: "Fire Ball", equip: nil, ownerRace: PlayersRace.Bard, status: statusFireBall, criticalRate: 0, missRate: 0, consumeMana: 0, effect: nil, details: "")
+        let fireBall = BaseSkill(name: "Fire Ball", fantasyName: "Fire ball", equip: nil, ownerRace: PlayersRace.Bard, status: statusFireBall, criticalRate: 0, missRate: 0, consumeMana: 0, effect: nil, details: "")
         
         let statusPoisonSmoke = Status(HP: 0, MP: 0, Speed: 0, pAtk: 100, mAtk: 0, pDef: 0, mDef: 0)
         let poisonSmoke = BaseSkill(name: "Poison Smoke", fantasyName: "Poison", equip: nil, ownerRace: PlayersRace.Bard, status: statusPoisonSmoke, criticalRate: 0, missRate: 0, consumeMana: 0, effect: nil, details: "")

@@ -165,7 +165,7 @@ public class MovementManagement: SKNode {
             
             //Obter última posição do players principal
             let newPosition = self.players[i-1].lastedPosition.last!
-            
+            print(newPosition)
             //Incluir atual posição do player no vetor de posições
             self.players[i].lastedPosition.insert(self.players[i].position, atIndex: 0)
             

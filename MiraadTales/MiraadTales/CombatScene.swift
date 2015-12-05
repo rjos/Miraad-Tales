@@ -27,7 +27,7 @@ class CombatScene: SKScene {
     var executeTurn: Bool = false
     
     var otherPlayer: [Player] = []
-    var prepareAtk: [Player: (SKSpriteNode, Skill)] = [:]
+    var prepareAtk: [String: (SKSpriteNode, Skill)] = [:]
     
     var skillCurr: Skill!
     var tempSkill: Skill!
@@ -101,32 +101,31 @@ class CombatScene: SKScene {
         
         if battleEnd != nil {
             battleEnd.touchesBegan(touches, withEvent: event)
-            return
-        }
-        
-        for touch in touches {
-            
-            let location = touch.locationInNode(self)
-            
-            let node = self.nodeAtPoint(location)
-            
-            if (node is Enemy) && self.skillCurr == nil {
-                self.setLifeEnemy((node as! Enemy))
-                showHpEnemy = true
-            }else if (node is Skill) && !executeTurn {
-                tempSkill = (node as! Skill)
+        }else {
+            for touch in touches {
                 
-                if tempSkill != self.skillCurr && self.currentPlayer.race.status.currentMP >= tempSkill.baseSkill.consumeMana {
+                let location = touch.locationInNode(self)
+                
+                let node = self.nodeAtPoint(location)
+                
+                if (node is Enemy) && self.skillCurr == nil {
+                    self.setLifeEnemy((node as! Enemy))
+                    showHpEnemy = true
+                }else if (node is Skill) && !executeTurn {
+                    tempSkill = (node as! Skill)
                     
-                    self.skillCurr = tempSkill
-                    
-                    if self.skillCurr.baseSkill.effect != nil {
-                        self.targetSkill = self.skillCurr.baseSkill.effect!.target
+                    if tempSkill != self.skillCurr && self.currentPlayer.race.status.currentMP >= tempSkill.baseSkill.consumeMana {
+                        
+                        self.skillCurr = tempSkill
+                        
+                        if self.skillCurr.baseSkill.effect != nil {
+                            self.targetSkill = self.skillCurr.baseSkill.effect!.target
+                        }
+                        
+                        applyAnimationSkill(self.skillCurr)
+                    }else {
+                        tempSkill = nil
                     }
-                    
-                    applyAnimationSkill(self.skillCurr)
-                }else {
-                    tempSkill = nil
                 }
             }
         }
@@ -239,7 +238,7 @@ class CombatScene: SKScene {
         //Prepare atks
         if self.skillCurr != nil && self.targetCurr != nil && !executeTurn { /* prepare atk */
             
-            prepareAtk[self.currentPlayer] = (targetCurr, skillCurr)
+            prepareAtk[self.currentPlayer!.race.name] = (targetCurr, skillCurr)
             
             disapplyAnimationSkill(self.skillCurr)
             
@@ -289,13 +288,15 @@ class CombatScene: SKScene {
             var skill: Skill!
             
             if actualPerson is Player {
-                let item = prepareAtk.first!
-                target = item.1.0
-                skill = item.1.1
                 
+                let (t, s) = prepareAtk[(actualPerson as! Player).race.name]!
+                
+                target = t
+                skill = s
+                                
                 print(skill.baseSkill.name)
                 
-                prepareAtk.removeValueForKey((actualPerson as! Player))
+                prepareAtk.removeValueForKey((actualPerson as! Player).race.name)
             }else {
                 //Generate random a atk from enemy
                 let playersInLive = self.players.filter({ (p) -> Bool in
@@ -341,7 +342,13 @@ class CombatScene: SKScene {
             }
             
             spriteSKillToAnimated = SKSpriteNode(texture: textureAnimationSkill[0])
-            spriteSKillToAnimated.position = CGPointMake(target.position.x, target.position.y + (target.frame.height / 2) + 5)
+            
+            if nameSkill == "Heal" {
+                spriteSKillToAnimated.position = CGPointMake(target.position.x, (target.position.y + 30) - (target.frame.height / 2))
+            }else {
+                spriteSKillToAnimated.position = CGPointMake(target.position.x, target.position.y + (target.frame.height / 2) + 5)
+            }
+            
             spriteSKillToAnimated.zPosition = target.zPosition + 1
             spriteSKillToAnimated.xScale = 1.5
             spriteSKillToAnimated.yScale = 1.5
@@ -535,9 +542,9 @@ class CombatScene: SKScene {
                 var name: String = ""
                 
                 if win {
-                    name = "Você venceu"
+                    name = "You won!"
                 }else {
-                    name = "Você perdeu"
+                    name = "You lost!"
                 }
                 
                 battleEnd = BattleEnd(players: self.players!, currentPlayer: self.currentPlayer!, size: self.size, name: name, typeHUD: TypeHUD.BattleEnd)
@@ -934,6 +941,10 @@ class CombatScene: SKScene {
         let number = arc4random()
         
         var skill: Skill
+        
+        if e.race.skills.count == 1 {
+            return e.race.skills[0]
+        }
         
         if number % 2 == 0 {
             skill = e.race.skills[0]

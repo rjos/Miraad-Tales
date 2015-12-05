@@ -72,7 +72,7 @@ class Start: SKScene {
         
         if !openChapters {
             openChapters = true
-            chapters = ChapterMenu(players: [], currentPlayer: DBPlayers.getBard(self.view!), size: self.size, name: "Seleção de Capítulo", typeHUD: TypeHUD.Chapter)
+            chapters = ChapterMenu(players: [], currentPlayer: DBPlayers.getBard(self.view!), size: self.size, name: "Chapter Selection", typeHUD: TypeHUD.Chapter)
             chapters.zPosition = 10
             chapters.xScale = 0.01
             chapters.yScale = 0.01

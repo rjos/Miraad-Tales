@@ -180,7 +180,7 @@ public class Dialog: SKNode {
         let words = message.componentsSeparatedByCharactersInSet(separator)
         
         let len = message.characters.count
-        let width = 34;
+        let width = 30;
         
         let toLine = (len / width) + 1
         var cnt = 0

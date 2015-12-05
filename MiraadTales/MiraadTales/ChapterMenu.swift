@@ -38,7 +38,7 @@ class ChapterMenu: HUD {
         self.bg!.addChild(arrowLeft)
         self.bg!.addChild(arrowRight)
         
-        let skNameSelected = SKLabelNode(text: "Prólogo")
+        let skNameSelected = SKLabelNode(text: "Prologue")
         skNameSelected.zPosition = 5
         skNameSelected.fontColor = UIColor.whiteColor()
         skNameSelected.fontSize = 48
@@ -125,10 +125,10 @@ class ChapterMenu: HUD {
         
         if next {
             nextBook = SKSpriteNode(imageNamed: "booksoon")
-            nextLabel = SKLabelNode(text: "Em breve")
+            nextLabel = SKLabelNode(text: "Chapter 1 (Coming Soon)")
         }else {
             nextBook = SKSpriteNode(imageNamed: "bookprologue")
-            nextLabel = SKLabelNode(text: "Prólogo")
+            nextLabel = SKLabelNode(text: "Prologue")
         }
         
         nextLabel.name = presentLabel.name
