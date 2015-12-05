@@ -123,6 +123,8 @@ class CombatScene: SKScene {
                         
                         if self.skillCurr.baseSkill.effect != nil {
                             self.targetSkill = self.skillCurr.baseSkill.effect!.target
+                        }else {
+                            self.targetSkill = nil
                         }
                         
                         applyAnimationSkill(self.skillCurr)
@@ -326,6 +328,8 @@ class CombatScene: SKScene {
                 target = tempEnemies.first!
             }
             
+            var nameAudio: String = ""
+            
             //Execute Skill animation
             var nameSkill = (skill as! Skill).baseSkill.fantasyName
             nameSkill = nameSkill.stringByReplacingOccurrencesOfString(" ", withString: "")
@@ -335,6 +339,12 @@ class CombatScene: SKScene {
             }
             
             nameSkill = nameSkill.stringByReplacingOccurrencesOfString(".", withString: "")
+            
+            if nameSkill.containsString("Basichit") {
+                nameAudio = "Basichit"
+            }else {
+                nameAudio = nameSkill
+            }
             
             let animationSKill = SKTextureAtlas(named: "\(nameSkill)")
             var textureAnimationSkill = [SKTexture]()
@@ -357,120 +367,133 @@ class CombatScene: SKScene {
             spriteSKillToAnimated.yScale = 1.5
             
             skCombatBg.addChild(spriteSKillToAnimated)
-            
             let animation = SKAction.animateWithTextures(textureAnimationSkill, timePerFrame: 0.2)
+            
+            let effect = SKAction.playSoundFileNamed(nameAudio, waitForCompletion: true)
+            self.runAction(effect, withKey: "effect")
+            
             spriteSKillToAnimated.runAction(animation, completion: { () -> Void in
                 
-                var targetSkill: TargetSkill! = nil
-                var affectSkill: AffectSkill!
-                var percente: Int = 0
-                
-                if skill.baseSkill.effect != nil {
-                    targetSkill = skill.baseSkill.effect!.target
-                    affectSkill = skill.baseSkill.effect!.affect
-                    percente = skill.baseSkill.effect!.percenteEffects
-                }else {
-                    affectSkill = nil
-                }
-                
-                var totalAtkActualPerson: Int = 0
-                var totalDefActualPerson: Int = 0
-                
-                if targetSkill == nil || targetSkill == TargetSkill.SingleEnemy {
-                    
-                    //Calculate Damage
-                    if actualPerson is Player {
-                        totalAtkActualPerson = (actualPerson as! Player).race.calculateAtk() + (skill as! Skill).baseSkill.calculateAtk()
-                        
-                        totalDefActualPerson = (target as! Enemy).race.calculateDef()
-                    }else {
-                        totalAtkActualPerson = (actualPerson as! Enemy).race.calculateAtk() + (skill as! Skill).baseSkill.calculateAtk()
-                        
-                        totalDefActualPerson = (target as! Player).race.calculateDef()
-                    }
-                    
-                    var reduce: Int = 0
-                    
-                    if totalAtkActualPerson > totalDefActualPerson {
-                        reduce = (totalAtkActualPerson - totalDefActualPerson)
-                    }else {
-                        reduce = 1
-                    }
-                    
-                    //Decrease Hp target
-                    var race: BaseRace
-                    
-                    if target is Player {
-                        race = (target as! Player).race
-                    }else {
-                        race = (target as! Enemy).race
-                    }
-                    
-                    let curr = race.status.currentHP
-                    race.status.currentHP = max(race.status.currentHP - reduce, 0)
-                    
-                    //Update bar Hp player
-                    if target is Player {
-                        
-                        self.decreaseHP(target as! Player)
-                    }else { /* Update bar hp enemy */
-                        
-                        self.setLifeEnemy(target as! Enemy)
-                    }
-                    
-                    //Decrease MP
-                    if actualPerson is Player {
-                        
-                        (actualPerson as! Player).race.status.currentMP = max((actualPerson as! Player).race.status.currentMP - skill.baseSkill.consumeMana, 0)
-                        self.decreaseMP(actualPerson as! Player)
-                    }
-                    
-                    // Check if target is die
-                    if race.status.currentHP == 0 {
-                        target.removeFromParent()
-                        race.isDie = true
-                    }
-                    
-                }else if targetSkill == TargetSkill.SinglePlayer {
-                    //Buffer or debuffer
-                }
-                
-                //                //Affects
-                //                if affectSkill == AffectSkill.HP {
-                //                    //increment HP
-                //                }else if affectSkill == AffectSkill.MP {
-                //                    //increment MP
-                //                }else if affectSkill == AffectSkill.mAtk || affectSkill == AffectSkill.pAtk {
-                //                    //incremet Atk
-                //                }else if affectSkill == AffectSkill.mDef || affectSkill == AffectSkill.pDef {
-                //                    //increment Def
-                //                }
-                
-                let isFinish = self.checkIsEndBattle()
-                
-                if !isFinish {
-                    self.executeTurn = false
-                    self.endTurn = true
-                }else {
-                    
-                    if self.countAtks != self.liveIsPerson.count {
-                        self.timeExecute = currentTime
-                        self.velocityAtk = 2.0
-                    }
-                }
-                
-                self.completedAnimation = true
                 self.spriteSKillToAnimated.removeFromParent()
                 
-                self.orderAtksPerson = self.orderAtksPerson.filter({ (p) -> Bool in
-                    if p is Player {
-                        return !(p as! Player).race.isDie
-                    }else {
-                        return !(p as! Enemy).race.isDie
-                    }
-                })
+                let fadeIn = SKAction.fadeInWithDuration(0.1)
+                let fadeOut = SKAction.fadeOutWithDuration(0.1)
                 
-                self.nextPlayerEnemiesFromSpeed()
+                let sequenceFades = SKAction.sequence([fadeIn, fadeOut, fadeIn])
+                
+                target.runAction(SKAction.repeatAction(sequenceFades, count: 3), completion: { () -> Void in
+                    self.removeActionForKey("effect")
+                    var targetSkill: TargetSkill! = nil
+                    var affectSkill: AffectSkill!
+                    var percente: Int = 0
+                    
+                    if skill.baseSkill.effect != nil {
+                        targetSkill = skill.baseSkill.effect!.target
+                        affectSkill = skill.baseSkill.effect!.affect
+                        percente = skill.baseSkill.effect!.percenteEffects
+                    }else {
+                        affectSkill = nil
+                    }
+                    
+                    var totalAtkActualPerson: Int = 0
+                    var totalDefActualPerson: Int = 0
+                    
+                    if targetSkill == nil || targetSkill == TargetSkill.SingleEnemy {
+                        
+                        //Calculate Damage
+                        if actualPerson is Player {
+                            totalAtkActualPerson = (actualPerson as! Player).race.calculateAtk() + (skill as! Skill).baseSkill.calculateAtk()
+                            
+                            totalDefActualPerson = (target as! Enemy).race.calculateDef()
+                        }else {
+                            totalAtkActualPerson = (actualPerson as! Enemy).race.calculateAtk() + (skill as! Skill).baseSkill.calculateAtk()
+                            
+                            totalDefActualPerson = (target as! Player).race.calculateDef()
+                        }
+                        
+                        var reduce: Int = 0
+                        
+                        if totalAtkActualPerson > totalDefActualPerson {
+                            reduce = (totalAtkActualPerson - totalDefActualPerson)
+                        }else {
+                            reduce = 1
+                        }
+                        
+                        //Decrease Hp target
+                        var race: BaseRace
+                        
+                        if target is Player {
+                            race = (target as! Player).race
+                        }else {
+                            race = (target as! Enemy).race
+                        }
+                        
+                        let curr = race.status.currentHP
+                        race.status.currentHP = max(race.status.currentHP - reduce, 0)
+                        
+                        //Update bar Hp player
+                        if target is Player {
+                            
+                            self.decreaseHP(target as! Player)
+                        }else { /* Update bar hp enemy */
+                            
+                            self.setLifeEnemy(target as! Enemy)
+                        }
+                        
+                        //Decrease MP
+                        if actualPerson is Player {
+                            
+                            (actualPerson as! Player).race.status.currentMP = max((actualPerson as! Player).race.status.currentMP - skill.baseSkill.consumeMana, 0)
+                            self.decreaseMP(actualPerson as! Player)
+                        }
+                        
+                        // Check if target is die
+                        if race.status.currentHP == 0 {
+                            target.removeFromParent()
+                            race.isDie = true
+                        }
+                        
+                    }else if targetSkill == TargetSkill.SinglePlayer {
+                        //Buffer or debuffer
+                    }
+                    
+                    //                //Affects
+                    //                if affectSkill == AffectSkill.HP {
+                    //                    //increment HP
+                    //                }else if affectSkill == AffectSkill.MP {
+                    //                    //increment MP
+                    //                }else if affectSkill == AffectSkill.mAtk || affectSkill == AffectSkill.pAtk {
+                    //                    //incremet Atk
+                    //                }else if affectSkill == AffectSkill.mDef || affectSkill == AffectSkill.pDef {
+                    //                    //increment Def
+                    //                }
+                    
+                    let isFinish = self.checkIsEndBattle()
+                    
+                    if !isFinish {
+                        self.executeTurn = false
+                        self.endTurn = true
+                    }else {
+                        
+                        if self.countAtks != self.liveIsPerson.count {
+                            self.timeExecute = currentTime
+                            self.velocityAtk = 2.0
+                        }
+                    }
+                    
+                    self.completedAnimation = true
+                    
+                    self.orderAtksPerson = self.orderAtksPerson.filter({ (p) -> Bool in
+                        if p is Player {
+                            return !(p as! Player).race.isDie
+                        }else {
+                            return !(p as! Enemy).race.isDie
+                        }
+                    })
+                    
+                    self.nextPlayerEnemiesFromSpeed()
+
+                })
             })
             
             //Exit turn

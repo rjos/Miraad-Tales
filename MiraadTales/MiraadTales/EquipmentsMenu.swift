@@ -115,6 +115,7 @@ public class EquipmentsMenu: HUD {
                     }
                     
                     let markAtk = SKSpriteNode(imageNamed: "markAtk")
+                    markAtk.name = "markAttack"
                     node.addChild(markAtk)
                     self.selectedNodeAtk = (node as! Equip)
                     self.selectedNodeAtk!.baseEquip.isEquipped = true
@@ -139,6 +140,7 @@ public class EquipmentsMenu: HUD {
                     }
                     
                     let markDef = SKSpriteNode(imageNamed: "markDef")
+                    markDef.name = "markDefense"
                     node.addChild(markDef)
                     self.selectedNodeDef = (node as! Equip)
                     self.selectedNodeDef!.baseEquip.isEquipped = true
@@ -150,7 +152,34 @@ public class EquipmentsMenu: HUD {
                 
                 self.incrementStatus()
             }else if node.name == "markAttack" || node.name == "markDefense" {
-                print("mark")
+                
+                if node.name == "markAttack" {
+                    if self.selectedNodeAtk!.children.count > 0 {
+                        self.selectedNodeAtk!.removeAllChildren()
+                    }
+                    self.selectedNodeAtk!.baseEquip.isEquipped = false
+                    
+                    let skillForEquip = self.selectedNodeAtk!.baseEquip.skill!
+                    
+                    let indexSkill = self.currentPlayer.race.skills.indexOf(skillForEquip)!
+                    
+                    self.currentPlayer.race.skills.removeAtIndex(indexSkill)
+                    self.selectedNodeAtk = nil
+                }else if node.name == "markDefense" {
+                    if self.selectedNodeDef!.children.count > 0 {
+                        self.selectedNodeDef!.removeAllChildren()
+                    }
+                    self.selectedNodeDef!.baseEquip.isEquipped = false
+                    
+                    let skillForEquip = self.selectedNodeDef!.baseEquip.skill!
+                    
+                    let indexSkill = self.currentPlayer.race.skills.indexOf(skillForEquip)!
+                    
+                    self.currentPlayer.race.skills.removeAtIndex(indexSkill)
+                    self.selectedNodeDef = nil
+                }
+                
+                decrementStatus()
             }
         }
     }
@@ -564,6 +593,30 @@ public class EquipmentsMenu: HUD {
             defSkill.position = CGPointMake(0, -defSkill.frame.size.height * 0.5)
             
             bgSkillDef.addChild(defSkill)
+        }
+    }
+    
+    private func decrementStatus() {
+        
+        let bgStatus = self.bg.childNodeWithName("bgStatus")!
+        
+        let labelAtk = bgStatus.childNodeWithName("labelAtk")!
+        let labelDef = bgStatus.childNodeWithName("labelDef")!
+        
+        let bgSkillAtk = bgStatus.childNodeWithName("bgSkillAtk")!
+        let increaseAtk = bgStatus.childNodeWithName("increaseAtk") as! SKLabelNode
+        
+        if self.selectedNodeAtk == nil {
+            bgSkillAtk.removeAllChildren()
+            increaseAtk.text = ""
+        }
+        
+        let bgSkillDef = bgStatus.childNodeWithName("bgSkillDef")!
+        let increaseDef = bgStatus.childNodeWithName("increaseDef") as! SKLabelNode
+
+        if self.selectedNodeDef == nil {
+            bgSkillDef.removeAllChildren()
+            increaseDef.text = ""
         }
     }
 }

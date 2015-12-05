@@ -38,7 +38,6 @@
 		1B881B851BDFB360000DC648 /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B881B841BDFB360000DC648 /* Enemy.swift */; };
 		1B881B881BDFB5D8000DC648 /* DBEquipSkill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B881B871BDFB5D8000DC648 /* DBEquipSkill.swift */; };
 		1B881B8B1BDFCA48000DC648 /* BaseEquip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B881B8A1BDFCA48000DC648 /* BaseEquip.swift */; };
-		1B8CFBA51C11D4D6008C2D05 /* credits_ptbr.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B8CFBA41C11D4D6008C2D05 /* credits_ptbr.png */; };
 		1B8CFBCB1C11D99A008C2D05 /* Poison.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1B8CFBC91C11D99A008C2D05 /* Poison.atlas */; };
 		1B8CFBCC1C11D99A008C2D05 /* Fireball.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1B8CFBCA1C11D99A008C2D05 /* Fireball.atlas */; };
 		1B8CFBCE1C11E9C8008C2D05 /* Hlight.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1B8CFBCD1C11E9C8008C2D05 /* Hlight.atlas */; };
@@ -165,6 +164,10 @@
 		1BE3DA901C133D04005496C7 /* Prologue.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1BE3DA8F1C133D04005496C7 /* Prologue.mp3 */; };
 		1BE3DA931C133DBC005496C7 /* Surreptitious.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1BE3DA921C133DBC005496C7 /* Surreptitious.mp3 */; };
 		1BE3DA971C133DFF005496C7 /* Come and Find Me - B mix.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1BE3DA961C133DFF005496C7 /* Come and Find Me - B mix.mp3 */; };
+		1BE3DA9A1C134A59005496C7 /* credits.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BE3DA991C134A59005496C7 /* credits.png */; };
+		1BE3DA9E1C135A60005496C7 /* Basichit.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1BE3DA9D1C135A60005496C7 /* Basichit.wav */; };
+		1BE3DAA11C135E07005496C7 /* Hlight.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1BE3DAA01C135E07005496C7 /* Hlight.wav */; };
+		1BE3DAA41C135E2D005496C7 /* Pchord.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1BE3DAA31C135E2D005496C7 /* Pchord.wav */; };
 		1BE64BC11C03EF2F009729ED /* openedDoorUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BE64BBF1C03EF2F009729ED /* openedDoorUp.png */; };
 		1BE64BC21C03EF2F009729ED /* openedDoorDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BE64BC01C03EF2F009729ED /* openedDoorDown.png */; };
 		1BE7D8051BC7FEDA000FA60C /* Ylla.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1BE7D8041BC7FEDA000FA60C /* Ylla.atlas */; };
@@ -198,7 +201,6 @@
 		BC8BBDCA1C106D5B00031EFA /* bookprologue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC8BBDBE1C106D5B00031EFA /* bookprologue@2x.png */; };
 		BC8BBDCB1C106D5B00031EFA /* booksoon.png in Resources */ = {isa = PBXBuildFile; fileRef = BC8BBDBF1C106D5B00031EFA /* booksoon.png */; };
 		BC8BBDCC1C106D5B00031EFA /* booksoon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC8BBDC01C106D5B00031EFA /* booksoon@2x.png */; };
-		BC8BBDD21C10713600031EFA /* credits.png in Resources */ = {isa = PBXBuildFile; fileRef = BC8BBDD11C10713600031EFA /* credits.png */; };
 		BC8C61891C0E8668002625F8 /* hydoraArmor1.png in Resources */ = {isa = PBXBuildFile; fileRef = BC8C61871C0E8668002625F8 /* hydoraArmor1.png */; };
 		BC8C618A1C0E8668002625F8 /* hydoraArmor2.png in Resources */ = {isa = PBXBuildFile; fileRef = BC8C61881C0E8668002625F8 /* hydoraArmor2.png */; };
 		BC8C618D1C0E8A58002625F8 /* Bones.atlas in Resources */ = {isa = PBXBuildFile; fileRef = BC8C618C1C0E8A58002625F8 /* Bones.atlas */; };
@@ -260,7 +262,6 @@
 		1B881B841BDFB360000DC648 /* Enemy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
 		1B881B871BDFB5D8000DC648 /* DBEquipSkill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBEquipSkill.swift; sourceTree = "<group>"; };
 		1B881B8A1BDFCA48000DC648 /* BaseEquip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseEquip.swift; sourceTree = "<group>"; };
-		1B8CFBA41C11D4D6008C2D05 /* credits_ptbr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = credits_ptbr.png; sourceTree = "<group>"; };
 		1B8CFBC91C11D99A008C2D05 /* Poison.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Poison.atlas; sourceTree = "<group>"; };
 		1B8CFBCA1C11D99A008C2D05 /* Fireball.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Fireball.atlas; sourceTree = "<group>"; };
 		1B8CFBCD1C11E9C8008C2D05 /* Hlight.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Hlight.atlas; sourceTree = "<group>"; };
@@ -393,6 +394,10 @@
 		1BE3DA8F1C133D04005496C7 /* Prologue.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Prologue.mp3; sourceTree = "<group>"; };
 		1BE3DA921C133DBC005496C7 /* Surreptitious.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Surreptitious.mp3; sourceTree = "<group>"; };
 		1BE3DA961C133DFF005496C7 /* Come and Find Me - B mix.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Come and Find Me - B mix.mp3"; sourceTree = "<group>"; };
+		1BE3DA991C134A59005496C7 /* credits.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = credits.png; sourceTree = "<group>"; };
+		1BE3DA9D1C135A60005496C7 /* Basichit.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Basichit.wav; sourceTree = "<group>"; };
+		1BE3DAA01C135E07005496C7 /* Hlight.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Hlight.wav; sourceTree = "<group>"; };
+		1BE3DAA31C135E2D005496C7 /* Pchord.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Pchord.wav; sourceTree = "<group>"; };
 		1BE64BBF1C03EF2F009729ED /* openedDoorUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = openedDoorUp.png; sourceTree = "<group>"; };
 		1BE64BC01C03EF2F009729ED /* openedDoorDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = openedDoorDown.png; sourceTree = "<group>"; };
 		1BE7D7FE1BC7F854000FA60C /* MiraadTales-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MiraadTales-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -427,7 +432,6 @@
 		BC8BBDBE1C106D5B00031EFA /* bookprologue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bookprologue@2x.png"; sourceTree = "<group>"; };
 		BC8BBDBF1C106D5B00031EFA /* booksoon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = booksoon.png; sourceTree = "<group>"; };
 		BC8BBDC01C106D5B00031EFA /* booksoon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "booksoon@2x.png"; sourceTree = "<group>"; };
-		BC8BBDD11C10713600031EFA /* credits.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = credits.png; sourceTree = "<group>"; };
 		BC8C61871C0E8668002625F8 /* hydoraArmor1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hydoraArmor1.png; sourceTree = "<group>"; };
 		BC8C61881C0E8668002625F8 /* hydoraArmor2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hydoraArmor2.png; sourceTree = "<group>"; };
 		BC8C618C1C0E8A58002625F8 /* Bones.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Bones.atlas; sourceTree = "<group>"; };
@@ -1082,6 +1086,7 @@
 		1BE3DA811C132FBB005496C7 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				1BE3DA9B1C135A3C005496C7 /* Skills */,
 				1BE3DA941C133DC5005496C7 /* Castle */,
 				1BE3DA911C133DAE005496C7 /* Combat */,
 				1BE3DA8E1C133CF7005496C7 /* Intro */,
@@ -1129,6 +1134,40 @@
 				1BE3DA961C133DFF005496C7 /* Come and Find Me - B mix.mp3 */,
 			);
 			name = Castle;
+			sourceTree = "<group>";
+		};
+		1BE3DA9B1C135A3C005496C7 /* Skills */ = {
+			isa = PBXGroup;
+			children = (
+				1BE3DAA21C135E1F005496C7 /* PowerChord */,
+				1BE3DA9F1C135DF5005496C7 /* HolyLight */,
+				1BE3DA9C1C135A42005496C7 /* Basichit */,
+			);
+			name = Skills;
+			sourceTree = "<group>";
+		};
+		1BE3DA9C1C135A42005496C7 /* Basichit */ = {
+			isa = PBXGroup;
+			children = (
+				1BE3DA9D1C135A60005496C7 /* Basichit.wav */,
+			);
+			name = Basichit;
+			sourceTree = "<group>";
+		};
+		1BE3DA9F1C135DF5005496C7 /* HolyLight */ = {
+			isa = PBXGroup;
+			children = (
+				1BE3DAA01C135E07005496C7 /* Hlight.wav */,
+			);
+			name = HolyLight;
+			sourceTree = "<group>";
+		};
+		1BE3DAA21C135E1F005496C7 /* PowerChord */ = {
+			isa = PBXGroup;
+			children = (
+				1BE3DAA31C135E2D005496C7 /* Pchord.wav */,
+			);
+			name = PowerChord;
 			sourceTree = "<group>";
 		};
 		1BE7D7E31BC7E2EB000FA60C /* Assets */ = {
@@ -1240,8 +1279,7 @@
 		BC8E985C1C0FE7CF005E48B5 /* Credits */ = {
 			isa = PBXGroup;
 			children = (
-				1B8CFBA41C11D4D6008C2D05 /* credits_ptbr.png */,
-				BC8BBDD11C10713600031EFA /* credits.png */,
+				1BE3DA991C134A59005496C7 /* credits.png */,
 			);
 			name = Credits;
 			sourceTree = "<group>";
@@ -1360,7 +1398,6 @@
 				1BB27CC91BFA391E00A5736E /* turnfriend-0.png in Resources */,
 				1B5B6A4F1C10E20A0053006D /* GameOverScene.sks in Resources */,
 				1B9CD2DA1BE8F7EE003C1834 /* prospero_nbp.ttf in Resources */,
-				BC8BBDD21C10713600031EFA /* credits.png in Resources */,
 				1BA3ED6C1BEA2C7A00F9E3E3 /* nextPlayer.png in Resources */,
 				1B8CFBE61C11F5E1008C2D05 /* Drenar.atlas in Resources */,
 				1B8418E21C01354B003F0130 /* haste.png in Resources */,
@@ -1382,6 +1419,7 @@
 				1BB27CD31BFA391E00A5736E /* sceneNormalCombat.png in Resources */,
 				1BE3DA801C132C91005496C7 /* lockBlue@2x.png in Resources */,
 				1BA3ED701BEA3BD500F9E3E3 /* bgDefenseSkill.png in Resources */,
+				1BE3DA9E1C135A60005496C7 /* Basichit.wav in Resources */,
 				1BE3DA861C133170005496C7 /* Come and Find Me-2.mp3 in Resources */,
 				1BB27CC31BFA391E00A5736E /* bgbar.png in Resources */,
 				1B8418DE1C0133BB003F0130 /* heal.png in Resources */,
@@ -1404,8 +1442,10 @@
 				1BB80C581C0E3FA6001D3C89 /* BasichitRohan.atlas in Resources */,
 				1BE8CC9F1C10983400813019 /* buttonBattleEnd@2x.png in Resources */,
 				1BD7C5911C0C87FD00F7D6BC /* Punishment@2x.png in Resources */,
+				1BE3DA9A1C134A59005496C7 /* credits.png in Resources */,
 				1BE8CCDF1C10A0A600813019 /* HydoraJump.atlas in Resources */,
 				1B861F671C04918400E0C555 /* Hydora.atlas in Resources */,
+				1BE3DAA11C135E07005496C7 /* Hlight.wav in Resources */,
 				1B5B6A461C10D0460053006D /* cauldronCombat.atlas in Resources */,
 				1B9CD2DE1BE8FB05003C1834 /* bgTitle.png in Resources */,
 				BC8BBDCC1C106D5B00031EFA /* booksoon@2x.png in Resources */,
@@ -1457,7 +1497,6 @@
 				BC8C618D1C0E8A58002625F8 /* Bones.atlas in Resources */,
 				1B8EDC101BC2B074009603B6 /* Assets.xcassets in Resources */,
 				1BD7C5981C0CA2F000F7D6BC /* CreditsScene.sks in Resources */,
-				1B8CFBA51C11D4D6008C2D05 /* credits_ptbr.png in Resources */,
 				1BB27CC41BFA391E00A5736E /* hpbar.png in Resources */,
 				1BE8CCE01C10A0A600813019 /* RohanCry.atlas in Resources */,
 				BC8BBDC11C106D5B00031EFA /* bgChapter.png in Resources */,
@@ -1476,6 +1515,7 @@
 				1B5B6A421C10CC580053006D /* combatscenarioBellatrix.png in Resources */,
 				1BE3DA971C133DFF005496C7 /* Come and Find Me - B mix.mp3 in Resources */,
 				1BA3ED741BEA3CC000F9E3E3 /* markDef.png in Resources */,
+				1BE3DAA41C135E2D005496C7 /* Pchord.wav in Resources */,
 				BC8BBDC91C106D5B00031EFA /* bookprologue.png in Resources */,
 				1B38006B1C034BB400D10E42 /* Start.sks in Resources */,
 				1BD0C56D1BECE26D006F4220 /* casas.png in Resources */,

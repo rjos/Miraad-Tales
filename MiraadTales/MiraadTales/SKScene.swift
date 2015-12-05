@@ -29,4 +29,18 @@ extension SKScene {
         let audio = self.childNodeWithName("audio")!
         audio.runAction(SKAction.changeVolumeTo(volume, duration: 0.1))
     }
+    
+    func addEffect(name: String) {
+        
+        let effect = SKAudioNode(fileNamed: name)
+        effect.name = "effect"
+        
+        self.addChild(effect)
+    }
+    
+    func removeEffect() {
+        
+        let effect = self.childNodeWithName("effect")!
+        effect.removeFromParent()
+    }
 }
