@@ -62,6 +62,9 @@ class CombatScene: SKScene {
         skCombatBg = self.childNodeWithName("SKCombatBg")!
         var bgCombat: SKSpriteNode
         
+        self.playAudio("Surreptitious")
+        self.changeVolume(100)
+        
         if typeCombat == "Bellatrix" {
             bgCombat = SKSpriteNode(imageNamed: "combatscenarioBellatrix")
             
@@ -197,9 +200,9 @@ class CombatScene: SKScene {
                 
                 let node = self.nodeAtPoint(location)
                 
-                if (node is Enemy) && (node as! Enemy) == tempTarget {
+                if (node is Enemy) && tempTarget != nil && (node as! Enemy) == tempTarget {
                     self.targetCurr = tempTarget
-                }else if (node is Player) && (node as! Player) == tempTarget {
+                }else if (node is Player) && tempTarget != nil && (node as! Player) == tempTarget {
                     self.targetCurr = tempTarget
                 }
                 

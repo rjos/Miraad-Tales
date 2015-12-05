@@ -31,6 +31,8 @@ class Start: SKScene {
     
     override func didMoveToView(view: SKView) {
         
+        self.playAudio("A Night Of Dizzy Spells")
+        
         bgNode = self.childNodeWithName("SKStartBg") as! SKSpriteNode
         labelButton = bgNode.childNodeWithName("SKTapStart") as! SKLabelNode
         logo = bgNode.childNodeWithName("SKLogo") as! SKSpriteNode
@@ -145,6 +147,9 @@ class Start: SKScene {
             openChapters = false
             chapters = nil
         }else if chapters != nil && chapters.isOpenPage {
+            
+            self.stopAudio()
+            
             let introScene = Intro(fileNamed: "Intro")
             let transition = SKTransition.fadeWithDuration(1)
             

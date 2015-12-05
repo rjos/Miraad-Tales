@@ -155,6 +155,16 @@
 		1BE2E96E1C0D616400215177 /* basichit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BE2E96C1C0D616400215177 /* basichit@2x.png */; };
 		1BE2E9771C0D6A8E00215177 /* Arranhao.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1BE2E9751C0D6A8E00215177 /* Arranhao.atlas */; };
 		1BE2E9781C0D6A8E00215177 /* Mordida.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1BE2E9761C0D6A8E00215177 /* Mordida.atlas */; };
+		1BE3DA7D1C132C91005496C7 /* lockBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BE3DA791C132C91005496C7 /* lockBlue.png */; };
+		1BE3DA7E1C132C91005496C7 /* lockRed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BE3DA7A1C132C91005496C7 /* lockRed@2x.png */; };
+		1BE3DA7F1C132C91005496C7 /* lockRed.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BE3DA7B1C132C91005496C7 /* lockRed.png */; };
+		1BE3DA801C132C91005496C7 /* lockBlue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BE3DA7C1C132C91005496C7 /* lockBlue@2x.png */; };
+		1BE3DA861C133170005496C7 /* Come and Find Me-2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1BE3DA851C133170005496C7 /* Come and Find Me-2.mp3 */; };
+		1BE3DA8A1C1339E7005496C7 /* SKScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE3DA891C1339E7005496C7 /* SKScene.swift */; };
+		1BE3DA8D1C133B26005496C7 /* A Night Of Dizzy Spells.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1BE3DA8C1C133B26005496C7 /* A Night Of Dizzy Spells.mp3 */; };
+		1BE3DA901C133D04005496C7 /* Prologue.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1BE3DA8F1C133D04005496C7 /* Prologue.mp3 */; };
+		1BE3DA931C133DBC005496C7 /* Surreptitious.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1BE3DA921C133DBC005496C7 /* Surreptitious.mp3 */; };
+		1BE3DA971C133DFF005496C7 /* Come and Find Me - B mix.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1BE3DA961C133DFF005496C7 /* Come and Find Me - B mix.mp3 */; };
 		1BE64BC11C03EF2F009729ED /* openedDoorUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BE64BBF1C03EF2F009729ED /* openedDoorUp.png */; };
 		1BE64BC21C03EF2F009729ED /* openedDoorDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BE64BC01C03EF2F009729ED /* openedDoorDown.png */; };
 		1BE7D8051BC7FEDA000FA60C /* Ylla.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1BE7D8041BC7FEDA000FA60C /* Ylla.atlas */; };
@@ -373,6 +383,16 @@
 		1BE2E96C1C0D616400215177 /* basichit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "basichit@2x.png"; sourceTree = "<group>"; };
 		1BE2E9751C0D6A8E00215177 /* Arranhao.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Arranhao.atlas; sourceTree = "<group>"; };
 		1BE2E9761C0D6A8E00215177 /* Mordida.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Mordida.atlas; sourceTree = "<group>"; };
+		1BE3DA791C132C91005496C7 /* lockBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lockBlue.png; sourceTree = "<group>"; };
+		1BE3DA7A1C132C91005496C7 /* lockRed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lockRed@2x.png"; sourceTree = "<group>"; };
+		1BE3DA7B1C132C91005496C7 /* lockRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lockRed.png; sourceTree = "<group>"; };
+		1BE3DA7C1C132C91005496C7 /* lockBlue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lockBlue@2x.png"; sourceTree = "<group>"; };
+		1BE3DA851C133170005496C7 /* Come and Find Me-2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Come and Find Me-2.mp3"; sourceTree = "<group>"; };
+		1BE3DA891C1339E7005496C7 /* SKScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKScene.swift; sourceTree = "<group>"; };
+		1BE3DA8C1C133B26005496C7 /* A Night Of Dizzy Spells.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "A Night Of Dizzy Spells.mp3"; sourceTree = "<group>"; };
+		1BE3DA8F1C133D04005496C7 /* Prologue.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Prologue.mp3; sourceTree = "<group>"; };
+		1BE3DA921C133DBC005496C7 /* Surreptitious.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Surreptitious.mp3; sourceTree = "<group>"; };
+		1BE3DA961C133DFF005496C7 /* Come and Find Me - B mix.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Come and Find Me - B mix.mp3"; sourceTree = "<group>"; };
 		1BE64BBF1C03EF2F009729ED /* openedDoorUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = openedDoorUp.png; sourceTree = "<group>"; };
 		1BE64BC01C03EF2F009729ED /* openedDoorDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = openedDoorDown.png; sourceTree = "<group>"; };
 		1BE7D7FE1BC7F854000FA60C /* MiraadTales-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MiraadTales-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -643,6 +663,7 @@
 		1B8EDC031BC2B074009603B6 /* MiraadTales */ = {
 			isa = PBXGroup;
 			children = (
+				1BE3DA811C132FBB005496C7 /* Sounds */,
 				1B90C99C1BFCB83500B198FB /* Pages */,
 				1B9CD2D51BE8F717003C1834 /* Font */,
 				1BE7D7E31BC7E2EB000FA60C /* Assets */,
@@ -760,6 +781,10 @@
 		1B9CD2D41BE8F229003C1834 /* Equipment */ = {
 			isa = PBXGroup;
 			children = (
+				1BE3DA791C132C91005496C7 /* lockBlue.png */,
+				1BE3DA7A1C132C91005496C7 /* lockRed@2x.png */,
+				1BE3DA7B1C132C91005496C7 /* lockRed.png */,
+				1BE3DA7C1C132C91005496C7 /* lockBlue@2x.png */,
 				1BA3ED731BEA3CC000F9E3E3 /* markDef.png */,
 				1BA3ED711BEA3CB700F9E3E3 /* markAtk.png */,
 				1BA3ED6F1BEA3BD500F9E3E3 /* bgDefenseSkill.png */,
@@ -904,6 +929,7 @@
 			isa = PBXGroup;
 			children = (
 				1BB27CD51BFA615E00A5736E /* String.swift */,
+				1BE3DA891C1339E7005496C7 /* SKScene.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -1051,6 +1077,58 @@
 				1BE2E9761C0D6A8E00215177 /* Mordida.atlas */,
 			);
 			name = Zumbi;
+			sourceTree = "<group>";
+		};
+		1BE3DA811C132FBB005496C7 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				1BE3DA941C133DC5005496C7 /* Castle */,
+				1BE3DA911C133DAE005496C7 /* Combat */,
+				1BE3DA8E1C133CF7005496C7 /* Intro */,
+				1BE3DA8B1C133B1B005496C7 /* Start */,
+				1BE3DA821C132FC0005496C7 /* Exploration */,
+			);
+			name = Sounds;
+			sourceTree = "<group>";
+		};
+		1BE3DA821C132FC0005496C7 /* Exploration */ = {
+			isa = PBXGroup;
+			children = (
+				1BE3DA851C133170005496C7 /* Come and Find Me-2.mp3 */,
+			);
+			name = Exploration;
+			sourceTree = "<group>";
+		};
+		1BE3DA8B1C133B1B005496C7 /* Start */ = {
+			isa = PBXGroup;
+			children = (
+				1BE3DA8C1C133B26005496C7 /* A Night Of Dizzy Spells.mp3 */,
+			);
+			name = Start;
+			sourceTree = "<group>";
+		};
+		1BE3DA8E1C133CF7005496C7 /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				1BE3DA8F1C133D04005496C7 /* Prologue.mp3 */,
+			);
+			name = Intro;
+			sourceTree = "<group>";
+		};
+		1BE3DA911C133DAE005496C7 /* Combat */ = {
+			isa = PBXGroup;
+			children = (
+				1BE3DA921C133DBC005496C7 /* Surreptitious.mp3 */,
+			);
+			name = Combat;
+			sourceTree = "<group>";
+		};
+		1BE3DA941C133DC5005496C7 /* Castle */ = {
+			isa = PBXGroup;
+			children = (
+				1BE3DA961C133DFF005496C7 /* Come and Find Me - B mix.mp3 */,
+			);
+			name = Castle;
 			sourceTree = "<group>";
 		};
 		1BE7D7E31BC7E2EB000FA60C /* Assets */ = {
@@ -1302,7 +1380,9 @@
 				1BD0C5721BECE26D006F4220 /* house1.png in Resources */,
 				1B8CFBE21C11F405008C2D05 /* Ossada.atlas in Resources */,
 				1BB27CD31BFA391E00A5736E /* sceneNormalCombat.png in Resources */,
+				1BE3DA801C132C91005496C7 /* lockBlue@2x.png in Resources */,
 				1BA3ED701BEA3BD500F9E3E3 /* bgDefenseSkill.png in Resources */,
+				1BE3DA861C133170005496C7 /* Come and Find Me-2.mp3 in Resources */,
 				1BB27CC31BFA391E00A5736E /* bgbar.png in Resources */,
 				1B8418DE1C0133BB003F0130 /* heal.png in Resources */,
 				1B4780331BD9298E007E03B5 /* CombatScene.sks in Resources */,
@@ -1313,6 +1393,8 @@
 				1BB27CCA1BFA391E00A5736E /* turnenemy-0.png in Resources */,
 				1BB27CCE1BFA391E00A5736E /* 12 sound.png in Resources */,
 				1BB80C631C0E4361001D3C89 /* Haste.atlas in Resources */,
+				1BE3DA7D1C132C91005496C7 /* lockBlue.png in Resources */,
+				1BE3DA901C133D04005496C7 /* Prologue.mp3 in Resources */,
 				BC8BBDC51C106D5B00031EFA /* arrowleftChapter@2x.png in Resources */,
 				1BE8DF8B1C050BD300BCBE1C /* rocksCastle.png in Resources */,
 				BC8BBDCA1C106D5B00031EFA /* bookprologue@2x.png in Resources */,
@@ -1334,6 +1416,7 @@
 				1BE2E96E1C0D616400215177 /* basichit@2x.png in Resources */,
 				1B9CD2E41BE8FECF003C1834 /* bgEquips.png in Resources */,
 				1B90C9A41BFCB8CC00B198FB /* Intro.sks in Resources */,
+				1BE3DA931C133DBC005496C7 /* Surreptitious.mp3 in Resources */,
 				1B5B6A481C10D0A40053006D /* cauldronCastle.atlas in Resources */,
 				BC8C618F1C0E8B30002625F8 /* Buggy.atlas in Resources */,
 				1BB6D31A1BEBAD7D007229DA /* stones.png in Resources */,
@@ -1344,6 +1427,7 @@
 				1BB27CCF1BFA391E00A5736E /* 13 enemybgbar.png in Resources */,
 				1BB6D3161BEB89E1007229DA /* rocks.png in Resources */,
 				1BB27CC71BFA391E00A5736E /* 05 skillholylight.png in Resources */,
+				1BE3DA8D1C133B26005496C7 /* A Night Of Dizzy Spells.mp3 in Resources */,
 				1B8418E11C01354B003F0130 /* powerchord.png in Resources */,
 				BC8BBDC31C106D5B00031EFA /* headerChapter.png in Resources */,
 				1BD0C54E1BECDCD0006F4220 /* Herb.atlas in Resources */,
@@ -1385,10 +1469,12 @@
 				1B8EDC0E1BC2B074009603B6 /* Main.storyboard in Resources */,
 				1B38007F1C03651C00D10E42 /* campfire.atlas in Resources */,
 				1BD0C5781BECE5E0006F4220 /* closeddoor.png in Resources */,
+				1BE3DA7E1C132C91005496C7 /* lockRed@2x.png in Resources */,
 				1BB27CC51BFA391E00A5736E /* mpbar.png in Resources */,
 				1BB27CD11BFA391E00A5736E /* 15 screen.png in Resources */,
 				1BD0C5741BECE26D006F4220 /* mato.png in Resources */,
 				1B5B6A421C10CC580053006D /* combatscenarioBellatrix.png in Resources */,
+				1BE3DA971C133DFF005496C7 /* Come and Find Me - B mix.mp3 in Resources */,
 				1BA3ED741BEA3CC000F9E3E3 /* markDef.png in Resources */,
 				BC8BBDC91C106D5B00031EFA /* bookprologue.png in Resources */,
 				1B38006B1C034BB400D10E42 /* Start.sks in Resources */,
@@ -1396,6 +1482,7 @@
 				1B38007B1C0360F800D10E42 /* Rohan.atlas in Resources */,
 				1B5B6A4A1C10D70D0053006D /* Bellatrix.atlas in Resources */,
 				1BB27CCB1BFA391E00A5736E /* turnfriend-1.png in Resources */,
+				1BE3DA7F1C132C91005496C7 /* lockRed.png in Resources */,
 				1BE2E9781C0D6A8E00215177 /* Mordida.atlas in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1458,6 +1545,7 @@
 				1BECB4D31BC55F2600EDBB8F /* Paladin.swift in Sources */,
 				1B8EDC0B1BC2B074009603B6 /* GameViewController.swift in Sources */,
 				1B90C9A61BFCBCC300B198FB /* ActionDialog.swift in Sources */,
+				1BE3DA8A1C1339E7005496C7 /* SKScene.swift in Sources */,
 				1BD7C5961C0CA2D500F7D6BC /* CreditsScene.swift in Sources */,
 				1BECB4CD1BC55E2200EDBB8F /* Swordsman.swift in Sources */,
 				1B4F29861BCFE2EB00612BF8 /* LFCGzipUtility.m in Sources */,

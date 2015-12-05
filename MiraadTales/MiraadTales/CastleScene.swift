@@ -26,6 +26,8 @@ class CastleScene: SKScene, InteractionDelegate, SKPhysicsContactDelegate {
         
         self.physicsWorld.contactDelegate = self
         
+        self.playAudio("Come and Find Me - B mix")
+        
         map = self.childNodeWithName("SKBg")!
         
         let skJoystick = self.camera!.childNodeWithName("SKJoystick")!
@@ -155,6 +157,8 @@ class CastleScene: SKScene, InteractionDelegate, SKPhysicsContactDelegate {
         
         if (posPlayer.x <= -150 && (posPlayer.y <= 32 && posPlayer.y >= -96)) && self.joystick!.direction == DirectionPlayer.Left {
             
+            self.stopAudio()
+            
             let transition = SKTransition.fadeWithDuration(0.5)
             
             (self.view as! NavigationController).GoBack(transition)
@@ -168,6 +172,8 @@ class CastleScene: SKScene, InteractionDelegate, SKPhysicsContactDelegate {
                 
                 if self.currentDialog!.action == ActionDialog.OpenPage {
                     //Open Page
+                    self.stopAudio()
+                    
                     let combatScene = CombatScene(fileNamed: "CombatScene")!
                     
                     let bellatrix = DBEnemy.getEnemy("Bellatrix", qtdade: 1)

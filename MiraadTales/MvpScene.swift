@@ -7,8 +7,9 @@
 //
 
 import SpriteKit
+import AVFoundation
 
-class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
+class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate, AVAudioPlayerDelegate {
     var joystick: Joystick? = nil
     var actionManagement: ActionManagement? = nil
     var movementManagement: MovementManagement? = nil
@@ -32,6 +33,9 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
         self.physicsWorld.contactDelegate = self
         
         self.map = self.childNodeWithName("SKBg")!
+        
+        //Sound
+        self.playAudio("Come and Find Me-2")
         
         if self.userData != nil && (self.userData!["GoBack"] as! Bool) {
             self.loadData()
@@ -180,6 +184,7 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
         
         if (posPlayer.x >= (736.222 + (framePlayer.width / 2) + 10)  && (posPlayer.y <= -200 && posPlayer.y >= -287.98)) && self.joystick!.direction == DirectionPlayer.Right{
             
+            self.stopAudio()
             self.saveData()
             
             let castleScene = CastleScene(fileNamed: "CastleScene")!
@@ -257,6 +262,8 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
     
     func interaction() {
         
+        self.joystick!.reset()
+        
         if self.bodyPlayer == nil || self.bodyEnemy == nil {
             return
         }
@@ -314,35 +321,22 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
             showDialog(self.currentDialog!)
         }else if name == "armor1" || name == "hammer1" || name == "armor2" {
             
-            var equip: Equip!
+            var baseItem: BaseItem!
             
             if name == "armor1" {
-                equip = DBEquipSkill.getEquip("Heavy Armor-3")
+                baseItem = BaseItem(name: name!, type: ItemType.Armor)
             }else if name == "hammer1" {
-                equip = DBEquipSkill.getEquip("Sledgehammer-0")
-                equip.baseEquip.isEquipped = true
+                baseItem = BaseItem(name: name!, type: ItemType.Weapon)
             }else if name == "armor2" {
-                equip = DBEquipSkill.getEquip("Paladin Armor-4")
+                baseItem = BaseItem(name: name!, type: ItemType.Armor)
             }
             
-            if self.currentPlayer!.race.name == "Hydora" {
-                
-                if equip!.baseEquip.isEquipped {
-                    self.players[0].race.skills.append(equip!.baseEquip.skill!)
-                }
-                
-                self.players[0].race.equipments.append(equip!)
-            }else {
-                
-                if equip!.baseEquip.isEquipped {
-                    self.players[1].race.skills.append(equip!.baseEquip.skill!)
-                }
-                
-                self.players[1].race.equipments.append(equip!)
-            }
+            let item = Item(item: baseItem, imageNamed: "")
+            item.name = "Item"
             
-            self.bodyEnemy!.node!.removeFromParent()
-            self.bodyEnemy = nil
+            self.currentDialog = DBInteraction.getInteraction(item, player: self.movementManagement!.player, size: CGSizeMake(500,200))
+            self.setupDialog()
+            showDialog(self.currentDialog!)
             
         }else if name!.containsString("Zumbi") || name!.containsString("Bones") || name!.containsString("Buggy") {
             /*Combat scene*/
@@ -354,6 +348,8 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
             let enemies = DBEnemy.getEnemy(name![0...(range - 2)], qtdade: qtdade!)
             
             self.currentPlayer!.removePhysicsBodyPlayer()
+            
+            self.stopAudio()
             saveData()
             openCombatScene(enemies)
         }
@@ -398,10 +394,12 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
             
             if self.bodyEnemy != nil {
                 
-                if self.bodyEnemy!.node!.name == "SKKey" {
+                let name = self.bodyEnemy!.node!.name
+                
+                if name == "SKKey" {
                     self.bodyEnemy!.node!.removeFromParent()
                     
-                }else if self.bodyEnemy!.node!.name == "SKDoor" && Backpack.hasItem("Key") {
+                }else if name == "SKDoor" && Backpack.hasItem("Key") {
                     let skDoor = self.bodyEnemy!.node!
                     
                     let doorUp = SKSpriteNode(imageNamed: "openedDoorUp")
@@ -417,7 +415,7 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
                     
                     map!.addChild(doorUp)
                     map!.addChild(doorDown)
-                }else if self.bodyEnemy!.node!.name == "SKRohan" {
+                }else if name == "SKRohan" {
                     let rohan = DBPlayers.getBard(self.view!)
                     let equips = DBEquipSkill.getEquips(PlayersRace.Bard)
                     let skills = [DBEquipSkill.getSkill("Instrument Hit"), DBEquipSkill.getSkill("Power Chord"), DBEquipSkill.getSkill("Dark Sonata")]
@@ -431,6 +429,36 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate {
                     map!.addChild(rohan)
                     
                     self.movementManagement!.addNewPlayer(rohan)
+                    
+                    self.bodyEnemy!.node!.removeFromParent()
+                }else if name == "armor1" || name == "hammer1" || name == "armor2" {
+                    
+                    var equip: Equip!
+                    
+                    if name == "armor1" {
+                        equip = DBEquipSkill.getEquip("Heavy Armor-3")
+                    }else if name == "hammer1" {
+                        equip = DBEquipSkill.getEquip("Sledgehammer-0")
+                        equip.baseEquip.isEquipped = true
+                    }else if name == "armor2" {
+                        equip = DBEquipSkill.getEquip("Paladin Armor-4")
+                    }
+                    
+                    if self.currentPlayer!.race.name == "Hydora" {
+                    
+                        if equip!.baseEquip.isEquipped {
+                            self.players[0].race.skills.append(equip!.baseEquip.skill!)
+                        }
+                    
+                        self.players[0].race.equipments.append(equip!)
+                    }else {
+                    
+                        if equip!.baseEquip.isEquipped {
+                            self.players[1].race.skills.append(equip!.baseEquip.skill!)
+                        }
+                        
+                        self.players[1].race.equipments.append(equip!)
+                    }
                     
                     self.bodyEnemy!.node!.removeFromParent()
                 }

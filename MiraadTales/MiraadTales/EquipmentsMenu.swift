@@ -149,6 +149,8 @@ public class EquipmentsMenu: HUD {
                 }
                 
                 self.incrementStatus()
+            }else if node.name == "markAttack" || node.name == "markDefense" {
+                print("mark")
             }
         }
     }
@@ -246,6 +248,8 @@ public class EquipmentsMenu: HUD {
             let item = SKSpriteNode(imageNamed: "equipBox")
             item.zPosition = 4
             
+            var isAdd = false
+            
             let pos = gridPosition.removeFirst()
             
             for equip in player.race.equipments {
@@ -268,101 +272,38 @@ public class EquipmentsMenu: HUD {
                     
                     if equip.baseEquip.isEquipped  &&  (!name.containsString("Armor") && !name.containsString("Clothes")){
                         let markAttack = SKSpriteNode(imageNamed: "markAtk")
+                        markAttack.name = "markAttack"
                         equip.addChild(markAttack)
                         self.selectedNodeAtk = equip
                     }else if equip.baseEquip.isEquipped {
                         let markDefense = SKSpriteNode(imageNamed: "markDef")
+                        markDefense.name = "markDefense"
                         equip.addChild(markDefense)
                         self.selectedNodeDef = equip
                     }
-                    
+                    isAdd = true
                     break
-                }else {
-                    item.position = pos
                 }
+            }
+            
+            if !isAdd {
+                item.position = pos
+                
+                var lockItem: SKSpriteNode!
+                
+                if i < 3 {
+                    lockItem = SKSpriteNode(imageNamed: "lockRed")
+                }else {
+                    lockItem = SKSpriteNode(imageNamed: "lockBlue")
+                }
+                
+                lockItem.zPosition = 4
+                item.addChild(lockItem)
             }
             
             ++i
             grid.addChild(item)
-            
-//            if i < player.race.equipments.count {
-//                let name = player.race.equipments[i].baseEquip.name
-//                
-//                let lengthName = name.characters.count
-//                
-//                let index = Int(name[(lengthName - 1)...(lengthName - 1)])
-//                
-//                let posGrid = gridPosition[index!]
-//                item.position = posGrid
-//                
-//                player.race.equipments[i].name = "item-\(index!)"
-//                
-//                if player.race.equipments[i].zPosition < 5 {
-//                    player.race.equipments[i].zPosition = 5
-//                }
-//                
-//                item.addChild(player.race.equipments[i])
-//                
-//                if player.race.equipments[i].baseEquip.isEquipped  &&  (!name.containsString("Armor") && !name.containsString("Clothes")){
-//                    let markAttack = SKSpriteNode(imageNamed: "markAtk")
-//                    player.race.equipments[i].addChild(markAttack)
-//                    self.selectedNodeAtk = player.race.equipments[i]
-//                }else if player.race.equipments[i].baseEquip.isEquipped {
-//                    let markDefense = SKSpriteNode(imageNamed: "markDef")
-//                    player.race.equipments[i].addChild(markDefense)
-//                    self.selectedNodeDef = player.race.equipments[i]
-//                }
-//                
-//                ++i
-//            }else {
-//                //Set shadow
-//                let posGrid = gridPosition[slots + i]
-//                item.position = posGrid
-//            }
-//            
-//            ++slots
-//            grid.addChild(item)
         }
-        
-//        for var i = 0; i < player.race.equipments.count; ++i {
-//            
-//            let item = SKSpriteNode(imageNamed: "equipBox")
-//            item.zPosition = 4
-//            
-//            if hasItems {
-//                //set items
-//                let name = player.race.equipments[i].baseEquip.name
-//                
-//                let lengthName = name.characters.count
-//                
-//                let index = Int(name[(lengthName - 1)...(lengthName - 1)])
-//                
-//                item.position = gridPosition[index!]
-//                
-//                player.race.equipments[i].name = "item-\(index!)"
-//                
-//                if player.race.equipments[i].zPosition < 5 {
-//                    player.race.equipments[i].zPosition = 5
-//                }
-//                
-//                item.addChild(player.race.equipments[i])
-//                
-//                if player.race.equipments[i].baseEquip.isEquipped  &&  (!name.containsString("Armor") && !name.containsString("Clothes")){
-//                    let markAttack = SKSpriteNode(imageNamed: "markAtk")
-//                    player.race.equipments[i].addChild(markAttack)
-//                    self.selectedNodeAtk = player.race.equipments[i]
-//                }else if player.race.equipments[i].baseEquip.isEquipped {
-//                    let markDefense = SKSpriteNode(imageNamed: "markDef")
-//                    player.race.equipments[i].addChild(markDefense)
-//                    self.selectedNodeDef = player.race.equipments[i]
-//                }
-//                
-//            }else {
-//                //Set shadow
-//            }
-//            
-//            grid.addChild(item)
-//        }
     }
     
     //MARK: Set status player

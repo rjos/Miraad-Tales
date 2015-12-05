@@ -42,7 +42,7 @@ public class DBInteraction {
             }else if namePerson == "OpenDoor" {
                 currentDialog = setConversationOpenDoor(size)
             }else if namePerson == "Item" {
-                currentDialog = setConversationGetItem(size)
+                currentDialog = setConversationGetItem((person as! Item),size: size)
             }
         }
         
@@ -200,12 +200,13 @@ public class DBInteraction {
         return dialog
     }
     
-    private static func setConversationGetItem(size: CGSize) -> Dialog {
+    private static func setConversationGetItem(item: Item,size: CGSize) -> Dialog {
         let messages = [
-            Message(id: 1, text: "Hydora got the item.", owner: nil, shown: false, item: nil)
+            Message(id: 1, text: "Hydora got the item.", owner: nil, shown: false, item: nil),
+            Message(id: 2, text: "ITEM ADDED TO INVENTORY", owner: nil, shown: true, item: nil)
         ]
 
-        let dialog = Dialog(messages: messages, action: nil, size: size)
+        let dialog = Dialog(messages: messages, action: ActionDialog.ShowMessage, size: size)
         
         return dialog
     }
