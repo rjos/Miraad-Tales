@@ -261,7 +261,7 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate, AVAudioP
         
         let node = bodyPlayer.node!
         
-        if !node.name!.containsString("ydora") && bodyPlayer.contactTestBitMask != 0 {
+        if (!node.name!.containsString("ydora") && node.name != "Rohan") && bodyPlayer.contactTestBitMask != 0 {
             let temp = bodyEnemy
             bodyEnemy = bodyPlayer
             bodyPlayer = temp
@@ -402,8 +402,6 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate, AVAudioP
             self.currentDialog!.changeMessage = true
         }else if dialog.ended {
             self.movementManagement!.player.inDialog = false
-            self.currentDialog!.removeFromParent()
-            self.currentDialog = nil
             
             if self.bodyEnemy != nil {
                 
@@ -431,7 +429,7 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate, AVAudioP
                 }else if name == "SKRohan" {
                     let rohan = DBPlayers.getBard(self.view!)
                     let equips = [DBEquipSkill.getEquip("Old lute-0"), DBEquipSkill.getEquip("Troubadour Clothes-3")]
-                    let skills = [DBEquipSkill.getSkill("Instrument Hit"), DBEquipSkill.getSkill("Power Chord"), DBEquipSkill.getSkill("Dark Sonata")]
+                    let skills = [DBEquipSkill.getSkill("Instrument Hit"), DBEquipSkill.getSkill("Power Chord")]
                     rohan.alpha = 0.7
                     rohan.race.equipments = equips
                     rohan.race.skills = skills
@@ -473,11 +471,19 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate, AVAudioP
                         self.players[1].race.equipments.append(equip!)
                     }
                     
+                    //Reset messages
+                    for m in self.currentDialog!.messages {
+                        m.shown = false
+                    }
+                    
                     self.bodyEnemy!.node!.removeFromParent()
                 }
                 
                 self.bodyEnemy = nil
             }
+            
+            self.currentDialog!.removeFromParent()
+            self.currentDialog = nil
         }
     }
     

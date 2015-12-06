@@ -36,13 +36,13 @@ public class DBInteraction {
             namePerson = (person as! SKSpriteNode).name!
             
             if namePerson == "SKKey" {
-                currentDialog = setConversationKey(size)
+                currentDialog = setConversationKey(player,size: size)
             }else if namePerson == "SKDoor" {
                 currentDialog = setConversationCloseDoor(size)
             }else if namePerson == "OpenDoor" {
-                currentDialog = setConversationOpenDoor(size)
+                currentDialog = setConversationOpenDoor(player,size: size)
             }else if namePerson == "Item" {
-                currentDialog = setConversationGetItem((person as! Item),size: size)
+                currentDialog = setConversationGetItem(player,size: size)
             }
         }
         
@@ -52,6 +52,10 @@ public class DBInteraction {
         
         if !conversation.keys.contains(namePerson){
             conversation[namePerson] = currentDialog
+            return currentDialog
+        }
+        
+        if namePerson == "Item" {
             return currentDialog
         }
         
@@ -128,7 +132,7 @@ public class DBInteraction {
     
     private static func setConversationBellatrix(bellatrix: Enemy, hydora:Player, rohan:Player, size:CGSize) -> Dialog{
         let messages = [
-            Message(id: 1, text: "Hydora, be careful! This is Belatriz, the witch who's behind the attacks in Miraad.", owner: rohan, shown: false, item: nil),
+            Message(id: 1, text: "Hydora, be careful! This is Belatrix, the witch who's behind the attacks in Miraad.", owner: rohan, shown: false, item: nil),
             Message(id: 2, text: "Who are you to break into my house and even attack me?! This isn't going to be that way.", owner: bellatrix, shown: false, item: nil),
             Message(id: 3, text: "Rohan, be careful!", owner: hydora, shown: false, item: nil)]
         let dialog = Dialog(messages: messages, action: ActionDialog.OpenPage, size: size)
@@ -163,9 +167,9 @@ public class DBInteraction {
         return dialog
     }
     
-    private static func setConversationKey(size: CGSize) -> Dialog {
+    private static func setConversationKey(player: Player, size: CGSize) -> Dialog {
         let messages = [
-            Message(id: 1, text: "Hydora got the key.", owner: nil, shown: false, item: nil)]
+            Message(id: 1, text: "\(player.race.name) got the key.", owner: nil, shown: false, item: nil)]
 
         let dialog = Dialog(messages: messages, action: nil, size: size)
         
@@ -181,9 +185,9 @@ public class DBInteraction {
         return dialog
     }
     
-    private static func setConversationOpenDoor(size: CGSize) -> Dialog {
+    private static func setConversationOpenDoor(player: Player,size: CGSize) -> Dialog {
         let messages = [
-            Message(id: 1, text: "Hydora opened the door.", owner: nil, shown: false, item: nil)]
+            Message(id: 1, text: "\(player.race.name) opened the door.", owner: nil, shown: false, item: nil)]
         
         let dialog = Dialog(messages: messages, action: nil, size: size)
         
@@ -200,9 +204,9 @@ public class DBInteraction {
         return dialog
     }
     
-    private static func setConversationGetItem(item: Item,size: CGSize) -> Dialog {
+    private static func setConversationGetItem(player: Player,size: CGSize) -> Dialog {
         let messages = [
-            Message(id: 1, text: "Hydora got the item.", owner: nil, shown: false, item: nil),
+            Message(id: 1, text: "\(player.race.name) got the item.", owner: nil, shown: false, item: nil),
             Message(id: 2, text: "ITEM ADDED TO INVENTORY", owner: nil, shown: true, item: nil)
         ]
 

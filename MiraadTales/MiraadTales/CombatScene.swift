@@ -54,6 +54,11 @@ class CombatScene: SKScene {
     var openBattleEnd: NSTimeInterval = 0.0
     var endBattle: Bool = false
     
+    var endTutorial:Bool = false
+    var repeatTutorialTime: NSTimeInterval = 0.0
+    var repeatTutorial: Bool = true
+    var initialTutorial: Bool = false
+    
     internal var win: Bool = false
     internal var typeCombat: String = ""
     
@@ -170,6 +175,7 @@ class CombatScene: SKScene {
                         
                         tempTarget = (node as! Enemy)
                         applyAnimationTarget(tempTarget)
+                        self.repeatTutorial = false
                         
                     }else {
                         
@@ -188,6 +194,8 @@ class CombatScene: SKScene {
                         
                         tempTarget = (node as! Player)
                         applyAnimationTarget(tempTarget)
+                        self.repeatTutorial = false
+                        
                     }else {
                         
                         if tempTarget != nil {
@@ -611,6 +619,20 @@ class CombatScene: SKScene {
                 (self.view as! NavigationController).Navigate(start, transition: transition)
             }
         }
+        
+        if self.endTutorial && (currentTime - self.repeatTutorialTime) > 0.5 && self.repeatTutorial {
+            self.endTutorial = false
+            tutorial()
+        }else if !self.endTutorial {
+            self.repeatTutorialTime = currentTime
+        }else if !self.repeatTutorial {
+            
+            let hand = skCombatBg.childNodeWithName("hand")
+            
+            if hand != nil {
+                hand!.removeFromParent()
+            }
+        }
     }
     
     //MARK: Set Player Position
@@ -900,6 +922,11 @@ class CombatScene: SKScene {
         }
         
         checkSkills()
+        
+        if !DataController.loadData("tutorial") {
+            tutorial()
+            DataController.savaData(true, key: "tutorial")
+        }
     }
     
     private func removeSkillFromFooter() {
@@ -1168,5 +1195,41 @@ class CombatScene: SKScene {
         skill.addChild(shadow)
         
         //footer.addChild(shadow)
+    }
+    
+    private func tutorial() {
+        
+        var handCurr = skCombatBg.childNodeWithName("hand")
+        
+        if handCurr != nil {
+            handCurr!.removeFromParent()
+            handCurr = nil
+        }
+        
+        var pos = self.players![0].race.skills[0].position
+        pos = CGPointMake(pos.x, -(skCombatBg.frame.height / 2) + (pos.y))
+        
+        let hand = SKSpriteNode(imageNamed: "openHand")
+        hand.position = CGPointMake(pos.x, pos.y + (hand.frame.height / 2) )
+        hand.zPosition = 50
+        hand.name = "hand"
+        hand.alpha = 0.5
+        skCombatBg.addChild(hand)
+        
+        let fadeIn = SKAction.fadeInWithDuration(0.1)
+        let fadeOut = SKAction.fadeOutWithDuration(0.1)
+        
+        let sequence = SKAction.sequence([fadeIn, fadeOut, fadeIn])
+        
+        hand.runAction(SKAction.repeatAction(sequence, count: 3)) { () -> Void in
+            
+            let posEnemy = self.enimies![0].position
+            
+            let moveTo = SKAction.moveTo(posEnemy, duration: 1)
+            
+            hand.runAction(moveTo, completion: { () -> Void in
+                self.endTutorial = true
+            })
+        }
     }
 }

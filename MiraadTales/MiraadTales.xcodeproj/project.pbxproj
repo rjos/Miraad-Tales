@@ -183,6 +183,8 @@
 		1BE64BC11C03EF2F009729ED /* openedDoorUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BE64BBF1C03EF2F009729ED /* openedDoorUp.png */; };
 		1BE64BC21C03EF2F009729ED /* openedDoorDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BE64BC01C03EF2F009729ED /* openedDoorDown.png */; };
 		1BE7D8051BC7FEDA000FA60C /* Ylla.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1BE7D8041BC7FEDA000FA60C /* Ylla.atlas */; };
+		1BE8628E1C14ED390047B9EB /* openHand.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BE8628D1C14ED390047B9EB /* openHand.png */; };
+		1BE862901C14FCF00047B9EB /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE8628F1C14FCF00047B9EB /* DataController.swift */; };
 		1BE8CC9E1C10983400813019 /* buttonBattleEnd.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BE8CC811C10983400813019 /* buttonBattleEnd.png */; };
 		1BE8CC9F1C10983400813019 /* buttonBattleEnd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BE8CC821C10983400813019 /* buttonBattleEnd@2x.png */; };
 		1BE8CCB71C10994E00813019 /* BattleEnd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE8CCB61C10994E00813019 /* BattleEnd.swift */; };
@@ -426,6 +428,8 @@
 		1BE64BC01C03EF2F009729ED /* openedDoorDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = openedDoorDown.png; sourceTree = "<group>"; };
 		1BE7D7FE1BC7F854000FA60C /* MiraadTales-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MiraadTales-Bridging-Header.h"; sourceTree = "<group>"; };
 		1BE7D8041BC7FEDA000FA60C /* Ylla.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Ylla.atlas; sourceTree = "<group>"; };
+		1BE8628D1C14ED390047B9EB /* openHand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = openHand.png; sourceTree = "<group>"; };
+		1BE8628F1C14FCF00047B9EB /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		1BE8CC811C10983400813019 /* buttonBattleEnd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonBattleEnd.png; sourceTree = "<group>"; };
 		1BE8CC821C10983400813019 /* buttonBattleEnd@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buttonBattleEnd@2x.png"; sourceTree = "<group>"; };
 		1BE8CCB61C10994E00813019 /* BattleEnd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleEnd.swift; sourceTree = "<group>"; };
@@ -835,6 +839,7 @@
 				1BA6B9941BF0EB2C00046B7C /* Conversation */,
 				1B9AD03B1BED43AD00FA04C6 /* NavigationController.swift */,
 				1BE8DF8E1C0519A700BCBE1C /* PositionManagement.swift */,
+				1BE8628F1C14FCF00047B9EB /* DataController.swift */,
 			);
 			name = Library;
 			sourceTree = "<group>";
@@ -1023,6 +1028,7 @@
 		1BB27CAF1BFA391E00A5736E /* Combat */ = {
 			isa = PBXGroup;
 			children = (
+				1BE8628C1C14ED2B0047B9EB /* Tutorial */,
 				1B5B6A451C10D0460053006D /* cauldronCombat.atlas */,
 				1B5B6A411C10CC580053006D /* combatscenarioBellatrix.png */,
 				1BB27CB01BFA391E00A5736E /* footer.png */,
@@ -1316,6 +1322,14 @@
 				1B9553751BD52D5C001D1FBD /* Joystick.swift */,
 			);
 			name = Joystick;
+			sourceTree = "<group>";
+		};
+		1BE8628C1C14ED2B0047B9EB /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				1BE8628D1C14ED390047B9EB /* openHand.png */,
+			);
+			name = Tutorial;
 			sourceTree = "<group>";
 		};
 		1BE8CC7C1C10983400813019 /* BattleEnd */ = {
@@ -1645,6 +1659,7 @@
 				1B38007F1C03651C00D10E42 /* campfire.atlas in Resources */,
 				1BD0C5781BECE5E0006F4220 /* closeddoor.png in Resources */,
 				1BE3DA7E1C132C91005496C7 /* lockRed@2x.png in Resources */,
+				1BE8628E1C14ED390047B9EB /* openHand.png in Resources */,
 				1BB27CC51BFA391E00A5736E /* mpbar.png in Resources */,
 				1BB27CD11BFA391E00A5736E /* 15 screen.png in Resources */,
 				1BD0C5741BECE26D006F4220 /* mato.png in Resources */,
@@ -1709,6 +1724,7 @@
 				1BA00EBA1BC6B4AD00B8972A /* ItemQuest.swift in Sources */,
 				1B4F29801BCFD28200612BF8 /* VLDContextSheetItemView.m in Sources */,
 				1BA6B9911BF0DB6600046B7C /* DBInteraction.swift in Sources */,
+				1BE862901C14FCF00047B9EB /* DataController.swift in Sources */,
 				1BA6B9931BF0DBD800046B7C /* DBEnemy.swift in Sources */,
 				1BA6B9981BF0EC4900046B7C /* Message.swift in Sources */,
 				1BE8CCB71C10994E00813019 /* BattleEnd.swift in Sources */,
