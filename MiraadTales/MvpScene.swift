@@ -49,18 +49,23 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate, AVAudioP
             
             self.currentPlayer!.setPhysicsBodyPlayer(self.currentPlayer!.texture!)
             
-            for p in self.players {
-                p.removeFromParent()
-                p.restoreStatus()
-                p.setPlayerForExploration()
-                map!.addChild(p)
-            }
-            
             if (self.userData!["CombatScene"] as! Bool) {
                 if (self.userData!["Win"] as! Bool) {
                     let nodeEnemy = self.bodyEnemy!.node!
                     nodeEnemy.removeFromParent()
                 }
+                
+                for p in self.players {
+                    p.removeFromParent()
+                    p.restoreStatus()
+                    p.setPlayerForExploration()
+                    map!.addChild(p)
+                }
+            }else {
+                self.currentPlayer!.removeFromParent()
+                self.currentPlayer!.restoreStatus()
+                self.currentPlayer!.setPlayerForExploration()
+                map!.addChild(self.currentPlayer!)
             }
             
             let openDoorDown = map!.childNodeWithName("openedDoorDown")
@@ -181,6 +186,14 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate, AVAudioP
         
         let posPlayer = self.movementManagement!.player.position
         let framePlayer = self.movementManagement!.player.frame
+        
+        if self.players.count > 1 {
+            
+            if self.players[1].position.x > 700 && self.players[1].parent!.parent is CastleScene {
+                self.players[1].removeFromParent()
+                map!.addChild(self.players[1])
+            }
+        }
         
         if (posPlayer.x >= (736.222 + (framePlayer.width / 2) + 10)  && (posPlayer.y <= -200 && posPlayer.y >= -287.98)) && self.joystick!.direction == DirectionPlayer.Right{
             
@@ -417,7 +430,7 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate, AVAudioP
                     map!.addChild(doorDown)
                 }else if name == "SKRohan" {
                     let rohan = DBPlayers.getBard(self.view!)
-                    let equips = DBEquipSkill.getEquips(PlayersRace.Bard)
+                    let equips = [DBEquipSkill.getEquip("Old lute-0"), DBEquipSkill.getEquip("Troubadour Clothes-3")]
                     let skills = [DBEquipSkill.getSkill("Instrument Hit"), DBEquipSkill.getSkill("Power Chord"), DBEquipSkill.getSkill("Dark Sonata")]
                     rohan.alpha = 0.7
                     rohan.race.equipments = equips

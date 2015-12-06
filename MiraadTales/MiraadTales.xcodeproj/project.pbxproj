@@ -33,6 +33,18 @@
 		1B8418E11C01354B003F0130 /* powerchord.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B8418DF1C01354B003F0130 /* powerchord.png */; };
 		1B8418E21C01354B003F0130 /* haste.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B8418E01C01354B003F0130 /* haste.png */; };
 		1B861F671C04918400E0C555 /* Hydora.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 1B861F661C04918400E0C555 /* Hydora.atlas */; };
+		1B8735761C14AF1F00B34537 /* Heal.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1B8735751C14AF1F00B34537 /* Heal.wav */; };
+		1B8735791C14AF4C00B34537 /* Haste.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1B8735781C14AF4C00B34537 /* Haste.wav */; };
+		1B87357C1C14B1A900B34537 /* Mordida.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1B87357B1C14B1A900B34537 /* Mordida.wav */; };
+		1B87357F1C14B29400B34537 /* Arranhao.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1B87357E1C14B29400B34537 /* Arranhao.wav */; };
+		1B8735821C14B2EF00B34537 /* Fireball.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1B8735811C14B2EF00B34537 /* Fireball.wav */; };
+		1B8735851C14B31200B34537 /* Poison.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1B8735841C14B31200B34537 /* Poison.wav */; };
+		1B8735881C14B35400B34537 /* Ossada.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1B8735871C14B35400B34537 /* Ossada.wav */; };
+		1B87358B1C14B50600B34537 /* Drenar.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1B87358A1C14B50600B34537 /* Drenar.wav */; };
+		1B8735911C14B63E00B34537 /* rohanArmor1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B87358F1C14B63E00B34537 /* rohanArmor1.png */; };
+		1B8735921C14B63E00B34537 /* rohanArmor1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B8735901C14B63E00B34537 /* rohanArmor1@2x.png */; };
+		1B8735951C14B64900B34537 /* lute.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B8735931C14B64900B34537 /* lute.png */; };
+		1B8735961C14B64900B34537 /* lute@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B8735941C14B64900B34537 /* lute@2x.png */; };
 		1B881B811BDFB074000DC648 /* BaseEnemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B881B801BDFB074000DC648 /* BaseEnemy.swift */; };
 		1B881B831BDFB0AD000DC648 /* TypeEnemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B881B821BDFB0AD000DC648 /* TypeEnemy.swift */; };
 		1B881B851BDFB360000DC648 /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B881B841BDFB360000DC648 /* Enemy.swift */; };
@@ -257,6 +269,18 @@
 		1B8418DF1C01354B003F0130 /* powerchord.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = powerchord.png; sourceTree = "<group>"; };
 		1B8418E01C01354B003F0130 /* haste.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = haste.png; sourceTree = "<group>"; };
 		1B861F661C04918400E0C555 /* Hydora.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Hydora.atlas; sourceTree = "<group>"; };
+		1B8735751C14AF1F00B34537 /* Heal.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Heal.wav; sourceTree = "<group>"; };
+		1B8735781C14AF4C00B34537 /* Haste.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Haste.wav; sourceTree = "<group>"; };
+		1B87357B1C14B1A900B34537 /* Mordida.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Mordida.wav; sourceTree = "<group>"; };
+		1B87357E1C14B29400B34537 /* Arranhao.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Arranhao.wav; sourceTree = "<group>"; };
+		1B8735811C14B2EF00B34537 /* Fireball.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Fireball.wav; sourceTree = "<group>"; };
+		1B8735841C14B31200B34537 /* Poison.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Poison.wav; sourceTree = "<group>"; };
+		1B8735871C14B35400B34537 /* Ossada.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Ossada.wav; sourceTree = "<group>"; };
+		1B87358A1C14B50600B34537 /* Drenar.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Drenar.wav; sourceTree = "<group>"; };
+		1B87358F1C14B63E00B34537 /* rohanArmor1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rohanArmor1.png; sourceTree = "<group>"; };
+		1B8735901C14B63E00B34537 /* rohanArmor1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rohanArmor1@2x.png"; sourceTree = "<group>"; };
+		1B8735931C14B64900B34537 /* lute.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lute.png; sourceTree = "<group>"; };
+		1B8735941C14B64900B34537 /* lute@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lute@2x.png"; sourceTree = "<group>"; };
 		1B881B801BDFB074000DC648 /* BaseEnemy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseEnemy.swift; sourceTree = "<group>"; };
 		1B881B821BDFB0AD000DC648 /* TypeEnemy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeEnemy.swift; sourceTree = "<group>"; };
 		1B881B841BDFB360000DC648 /* Enemy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
@@ -596,6 +620,97 @@
 			name = Swordsman;
 			sourceTree = "<group>";
 		};
+		1B8735741C14AF0F00B34537 /* Heal */ = {
+			isa = PBXGroup;
+			children = (
+				1B8735751C14AF1F00B34537 /* Heal.wav */,
+			);
+			name = Heal;
+			sourceTree = "<group>";
+		};
+		1B8735771C14AF4200B34537 /* Haste */ = {
+			isa = PBXGroup;
+			children = (
+				1B8735781C14AF4C00B34537 /* Haste.wav */,
+			);
+			name = Haste;
+			sourceTree = "<group>";
+		};
+		1B87357A1C14B17D00B34537 /* Mordida */ = {
+			isa = PBXGroup;
+			children = (
+				1B87357B1C14B1A900B34537 /* Mordida.wav */,
+			);
+			name = Mordida;
+			sourceTree = "<group>";
+		};
+		1B87357D1C14B25500B34537 /* Arranhao */ = {
+			isa = PBXGroup;
+			children = (
+				1B87357E1C14B29400B34537 /* Arranhao.wav */,
+			);
+			name = Arranhao;
+			sourceTree = "<group>";
+		};
+		1B8735801C14B2E100B34537 /* Fireball */ = {
+			isa = PBXGroup;
+			children = (
+				1B8735811C14B2EF00B34537 /* Fireball.wav */,
+			);
+			name = Fireball;
+			sourceTree = "<group>";
+		};
+		1B8735831C14B2FD00B34537 /* Poison */ = {
+			isa = PBXGroup;
+			children = (
+				1B8735841C14B31200B34537 /* Poison.wav */,
+			);
+			name = Poison;
+			sourceTree = "<group>";
+		};
+		1B8735861C14B32000B34537 /* Ossada */ = {
+			isa = PBXGroup;
+			children = (
+				1B8735871C14B35400B34537 /* Ossada.wav */,
+			);
+			name = Ossada;
+			sourceTree = "<group>";
+		};
+		1B8735891C14B4FD00B34537 /* Drenar */ = {
+			isa = PBXGroup;
+			children = (
+				1B87358A1C14B50600B34537 /* Drenar.wav */,
+			);
+			name = Drenar;
+			sourceTree = "<group>";
+		};
+		1B87358C1C14B61C00B34537 /* Rohan */ = {
+			isa = PBXGroup;
+			children = (
+				1B87358E1C14B62600B34537 /* Def */,
+				1B87358D1C14B62200B34537 /* Atk */,
+			);
+			name = Rohan;
+			sourceTree = "<group>";
+		};
+		1B87358D1C14B62200B34537 /* Atk */ = {
+			isa = PBXGroup;
+			children = (
+				1B8735931C14B64900B34537 /* lute.png */,
+				1B8735941C14B64900B34537 /* lute@2x.png */,
+			);
+			name = Atk;
+			sourceTree = "<group>";
+		};
+		1B87358E1C14B62600B34537 /* Def */ = {
+			isa = PBXGroup;
+			children = (
+				1B87358F1C14B63E00B34537 /* rohanArmor1.png */,
+				1B8735901C14B63E00B34537 /* rohanArmor1@2x.png */,
+			);
+			name = Def;
+			sourceTree = "<group>";
+		};
 		1B881B7F1BDFB051000DC648 /* Enimies */ = {
 			isa = PBXGroup;
 			children = (
@@ -825,6 +940,7 @@
 		1BA3ED751BEA4A6A00F9E3E3 /* Equipments */ = {
 			isa = PBXGroup;
 			children = (
+				1B87358C1C14B61C00B34537 /* Rohan */,
 				1BA3ED761BEA4A9F00F9E3E3 /* Paladin */,
 			);
 			name = Equipments;
@@ -1139,6 +1255,14 @@
 		1BE3DA9B1C135A3C005496C7 /* Skills */ = {
 			isa = PBXGroup;
 			children = (
+				1B8735891C14B4FD00B34537 /* Drenar */,
+				1B8735861C14B32000B34537 /* Ossada */,
+				1B8735831C14B2FD00B34537 /* Poison */,
+				1B8735801C14B2E100B34537 /* Fireball */,
+				1B87357D1C14B25500B34537 /* Arranhao */,
+				1B87357A1C14B17D00B34537 /* Mordida */,
+				1B8735771C14AF4200B34537 /* Haste */,
+				1B8735741C14AF0F00B34537 /* Heal */,
 				1BE3DAA21C135E1F005496C7 /* PowerChord */,
 				1BE3DA9F1C135DF5005496C7 /* HolyLight */,
 				1BE3DA9C1C135A42005496C7 /* Basichit */,
@@ -1402,11 +1526,13 @@
 				1B8CFBE61C11F5E1008C2D05 /* Drenar.atlas in Resources */,
 				1B8418E21C01354B003F0130 /* haste.png in Resources */,
 				1BE8DF861C050B6A00BCBE1C /* CastleScene.sks in Resources */,
+				1B8735951C14B64900B34537 /* lute.png in Resources */,
 				BC8BBDC41C106D5B00031EFA /* headerChapter@2x.png in Resources */,
 				1BD0C56F1BECE26D006F4220 /* flores.png in Resources */,
 				1BD0C55D1BECDCD0006F4220 /* Ramdall.atlas in Resources */,
 				1BB80C5F1C0E4183001D3C89 /* Heal.atlas in Resources */,
 				1BB27CC21BFA391E00A5736E /* footer.png in Resources */,
+				1B8735791C14AF4C00B34537 /* Haste.wav in Resources */,
 				BC8BBDC71C106D5B00031EFA /* arrowrightChapter@2x.png in Resources */,
 				BC8BBDCB1C106D5B00031EFA /* booksoon.png in Resources */,
 				BC8BBDC61C106D5B00031EFA /* arrowleftChapter.png in Resources */,
@@ -1418,18 +1544,23 @@
 				1B8CFBE21C11F405008C2D05 /* Ossada.atlas in Resources */,
 				1BB27CD31BFA391E00A5736E /* sceneNormalCombat.png in Resources */,
 				1BE3DA801C132C91005496C7 /* lockBlue@2x.png in Resources */,
+				1B8735961C14B64900B34537 /* lute@2x.png in Resources */,
 				1BA3ED701BEA3BD500F9E3E3 /* bgDefenseSkill.png in Resources */,
 				1BE3DA9E1C135A60005496C7 /* Basichit.wav in Resources */,
 				1BE3DA861C133170005496C7 /* Come and Find Me-2.mp3 in Resources */,
+				1B87357F1C14B29400B34537 /* Arranhao.wav in Resources */,
 				1BB27CC31BFA391E00A5736E /* bgbar.png in Resources */,
+				1B8735881C14B35400B34537 /* Ossada.wav in Resources */,
 				1B8418DE1C0133BB003F0130 /* heal.png in Resources */,
 				1B4780331BD9298E007E03B5 /* CombatScene.sks in Resources */,
 				1B3800701C0355D300D10E42 /* logo.png in Resources */,
 				1B8CFBE71C11F5E1008C2D05 /* MordidaBuggy.atlas in Resources */,
+				1B8735921C14B63E00B34537 /* rohanArmor1@2x.png in Resources */,
 				1B8EDC071BC2B074009603B6 /* GameScene.sks in Resources */,
 				1BD0C5711BECE26D006F4220 /* grass.png in Resources */,
 				1BB27CCA1BFA391E00A5736E /* turnenemy-0.png in Resources */,
 				1BB27CCE1BFA391E00A5736E /* 12 sound.png in Resources */,
+				1B8735911C14B63E00B34537 /* rohanArmor1.png in Resources */,
 				1BB80C631C0E4361001D3C89 /* Haste.atlas in Resources */,
 				1BE3DA7D1C132C91005496C7 /* lockBlue.png in Resources */,
 				1BE3DA901C133D04005496C7 /* Prologue.mp3 in Resources */,
@@ -1451,7 +1582,9 @@
 				BC8BBDCC1C106D5B00031EFA /* booksoon@2x.png in Resources */,
 				1BE64BC11C03EF2F009729ED /* openedDoorUp.png in Resources */,
 				BC8BBDC21C106D5B00031EFA /* bgChapter@2x.png in Resources */,
+				1B8735851C14B31200B34537 /* Poison.wav in Resources */,
 				1BD0C5601BECDCF6006F4220 /* Marge.atlas in Resources */,
+				1B8735821C14B2EF00B34537 /* Fireball.wav in Resources */,
 				1B9CD2E01BE8FB62003C1834 /* closeButton.png in Resources */,
 				1BE2E96E1C0D616400215177 /* basichit@2x.png in Resources */,
 				1B9CD2E41BE8FECF003C1834 /* bgEquips.png in Resources */,
@@ -1468,6 +1601,7 @@
 				1BB6D3161BEB89E1007229DA /* rocks.png in Resources */,
 				1BB27CC71BFA391E00A5736E /* 05 skillholylight.png in Resources */,
 				1BE3DA8D1C133B26005496C7 /* A Night Of Dizzy Spells.mp3 in Resources */,
+				1B87358B1C14B50600B34537 /* Drenar.wav in Resources */,
 				1B8418E11C01354B003F0130 /* powerchord.png in Resources */,
 				BC8BBDC31C106D5B00031EFA /* headerChapter.png in Resources */,
 				1BD0C54E1BECDCD0006F4220 /* Herb.atlas in Resources */,
@@ -1475,6 +1609,7 @@
 				1BB6D3141BEB88BF007229DA /* bgMVP.png in Resources */,
 				1BA3ED721BEA3CB700F9E3E3 /* markAtk.png in Resources */,
 				1BD7C5921C0C87FD00F7D6BC /* Sledgehammer@2x.png in Resources */,
+				1B8735761C14AF1F00B34537 /* Heal.wav in Resources */,
 				1B8CFBCE1C11E9C8008C2D05 /* Hlight.atlas in Resources */,
 				1B8418DD1C0133BB003F0130 /* holylight.png in Resources */,
 				1BE8CCE11C10A0A600813019 /* RohanJump.atlas in Resources */,
@@ -1488,6 +1623,7 @@
 				1BA3ED791BEA4AB600F9E3E3 /* Sledgehammer.png in Resources */,
 				1BB6D3111BEB8867007229DA /* MvpScene.sks in Resources */,
 				1B9CD2DC1BE8FABD003C1834 /* bgMenuEquipment.png in Resources */,
+				1B87357C1C14B1A900B34537 /* Mordida.wav in Resources */,
 				1BB80C651C0E6047001D3C89 /* Pchord.atlas in Resources */,
 				1BD0C55C1BECDCD0006F4220 /* Aemon.atlas in Resources */,
 				1BD0C5731BECE26D006F4220 /* house2.png in Resources */,

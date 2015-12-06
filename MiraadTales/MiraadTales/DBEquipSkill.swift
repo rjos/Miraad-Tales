@@ -267,7 +267,7 @@ public class DBEquipSkill {
         let statusBardClothes = Status(HP: 0, MP: 0, Speed: 0, pAtk: 0, mAtk: 0, pDef: 169, mDef: 253)
         let bardClothes = BaseEquip(name: "Bard Clothes-5", ownerRace: PlayersRace.Bard, status: statusBardClothes, type: ItemType.Armor, requiredLevel: 8, skill: nil, isEquipped: false)
         
-        let bardEquip = [Equip(imageNamed: "", baseEquip: bardClothes),Equip(imageNamed: "", baseEquip: oldLute), Equip(imageNamed: "", baseEquip: classicGuitar), Equip(imageNamed: "", baseEquip: silverHarp), Equip(imageNamed: "", baseEquip: troubadourClothes), Equip(imageNamed: "", baseEquip: musicianClothes)]
+        let bardEquip = [Equip(imageNamed: "", baseEquip: bardClothes),Equip(imageNamed: "lute", baseEquip: oldLute), Equip(imageNamed: "", baseEquip: classicGuitar), Equip(imageNamed: "", baseEquip: silverHarp), Equip(imageNamed: "rohanArmor1", baseEquip: troubadourClothes), Equip(imageNamed: "", baseEquip: musicianClothes)]
         
         return bardEquip
     }

@@ -14,21 +14,26 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let scene = CombatScene(fileNamed: "CombatScene") {
+        if let scene = MvpScene(fileNamed: "MvpScene") {
             // Configure the view.
             let skView = self.view as! NavigationController
             
             skView.showsFPS = true
             skView.showsNodeCount = true
             
-            scene.typeCombat = "Normal"
-            let bard = DBPlayers.getBard(skView)
-            let equips = DBEquipSkill.getEquips(PlayersRace.Bard)
-            let skills = [DBEquipSkill.getSkill("Instrument Hit"), DBEquipSkill.getSkill("Power Chord"), DBEquipSkill.getSkill("Dark Sonata")]
-            bard.race.skills = skills
-            bard.race.equipments = equips
-            scene.players = [bard]
-            scene.enimies = DBEnemy.getEnemy("Zumbi", qtdade: 2)
+//            scene.typeCombat = "Normal"
+//            let bard = DBPlayers.getBard(skView)
+//            let equips = DBEquipSkill.getEquips(PlayersRace.Bard)
+//            let skills = [DBEquipSkill.getSkill("Instrument Hit"), DBEquipSkill.getSkill("Power Chord"), DBEquipSkill.getSkill("Dark Sonata")]
+//            bard.race.skills = skills
+//            bard.race.equipments = equips
+//            let paladin = DBPlayers.getPaladin(skView)
+//            let equips = DBEquipSkill.getEquip("Sledgehammer-0")
+//            let skills = [DBEquipSkill.getSkill("Hammer Hit"), DBEquipSkill.getSkill("Holy Light"), DBEquipSkill.getSkill("Heal")]
+//            paladin.race.equipments.append(equips)
+//            paladin.race.skills = skills
+//            scene.players = [paladin]
+//            scene.enimies = DBEnemy.getEnemy("Zumbi", qtdade: 2)
             
             skView.showsPhysics = false
             

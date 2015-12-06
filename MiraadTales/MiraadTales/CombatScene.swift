@@ -153,6 +153,13 @@ class CombatScene: SKScene {
                     self.skillCurr = tempSkill
                     
                     applyAnimationSkill(self.skillCurr)
+                    
+                    if self.skillCurr.baseSkill.effect != nil {
+                        self.targetSkill = self.skillCurr.baseSkill.effect!.target
+                    }else {
+                        self.targetSkill = nil
+                    }
+                    
                 }else if targetSkill == nil || targetSkill == TargetSkill.SingleEnemy {
                     
                     if (node is Enemy) {
@@ -342,6 +349,8 @@ class CombatScene: SKScene {
             
             if nameSkill.containsString("Basichit") {
                 nameAudio = "Basichit"
+            }else if nameSkill.containsString("Mordida") {
+                nameAudio = "Mordida"
             }else {
                 nameAudio = nameSkill
             }
@@ -877,6 +886,7 @@ class CombatScene: SKScene {
         for var i = 0; i < skills.count; ++i {
             
             skills[i].name = "skill-\(i)"
+            skills[i].removeFromParent()
             skills[i].xScale = 1.5
             skills[i].yScale = 1.5
             
