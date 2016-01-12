@@ -20,7 +20,7 @@ class GameOverScene: SKScene, InteractionDelegate {
     
     override func didMoveToView(view: SKView) {
         
-        self.playAudio("Prologue")
+        //self.playAudio("Prologue")
         
         self.joystick = Joystick()
         

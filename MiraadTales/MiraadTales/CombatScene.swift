@@ -67,8 +67,8 @@ class CombatScene: SKScene {
         skCombatBg = self.childNodeWithName("SKCombatBg")!
         var bgCombat: SKSpriteNode
         
-        self.playAudio("Surreptitious")
-        self.changeVolume(100)
+        //self.playAudio("Surreptitious")
+        //self.changeVolume(100)
         
         if typeCombat == "Bellatrix" {
             bgCombat = SKSpriteNode(imageNamed: "combatscenarioBellatrix")
@@ -346,7 +346,7 @@ class CombatScene: SKScene {
             var nameAudio: String = ""
             
             //Execute Skill animation
-            var nameSkill = (skill as! Skill).baseSkill.fantasyName
+            var nameSkill = (skill as Skill).baseSkill.fantasyName
             nameSkill = nameSkill.stringByReplacingOccurrencesOfString(" ", withString: "")
             
             if actualPerson is Player && skill.baseSkill.fantasyName == "Basic hit" {
@@ -401,7 +401,7 @@ class CombatScene: SKScene {
                 target.runAction(SKAction.repeatAction(sequenceFades, count: 3), completion: { () -> Void in
                     self.removeActionForKey("effect")
                     var targetSkill: TargetSkill! = nil
-                    var affectSkill: AffectSkill!
+                    var affectSkill: AffectSkill! = nil
                     var percente: Int = 0
                     
                     if skill.baseSkill.effect != nil {
@@ -419,11 +419,11 @@ class CombatScene: SKScene {
                         
                         //Calculate Damage
                         if actualPerson is Player {
-                            totalAtkActualPerson = (actualPerson as! Player).race.calculateAtk() + (skill as! Skill).baseSkill.calculateAtk()
+                            totalAtkActualPerson = (actualPerson as! Player).race.calculateAtk() + (skill as Skill).baseSkill.calculateAtk()
                             
                             totalDefActualPerson = (target as! Enemy).race.calculateDef()
                         }else {
-                            totalAtkActualPerson = (actualPerson as! Enemy).race.calculateAtk() + (skill as! Skill).baseSkill.calculateAtk()
+                            totalAtkActualPerson = (actualPerson as! Enemy).race.calculateAtk() + (skill as Skill).baseSkill.calculateAtk()
                             
                             totalDefActualPerson = (target as! Player).race.calculateDef()
                         }
@@ -445,7 +445,7 @@ class CombatScene: SKScene {
                             race = (target as! Enemy).race
                         }
                         
-                        let curr = race.status.currentHP
+                        //let curr = race.status.currentHP
                         race.status.currentHP = max(race.status.currentHP - reduce, 0)
                         
                         //Update bar Hp player
@@ -472,6 +472,14 @@ class CombatScene: SKScene {
                         
                     }else if targetSkill == TargetSkill.SinglePlayer {
                         //Buffer or debuffer
+                        
+                        let newHP = Int(Double((target as! Player).race.status.currentHP) * (Double(percente) / 100.0))
+                        (target as! Player).race.status.currentHP = min((target as! Player).race.status.currentHP + newHP, (target as! Player).race.status.HP)
+                        
+                        if affectSkill == AffectSkill.HP {
+                            
+                            self.increaseHP((target as! Player))
+                        }
                     }
                     
                     //                //Affects
@@ -527,11 +535,11 @@ class CombatScene: SKScene {
             endTurn = false
             startTurn = true
             
-            var enemiesLive = self.enimies.filter { (e) -> Bool in
+            let enemiesLive = self.enimies.filter { (e) -> Bool in
                 return !e.race.isDie
             }
             
-            var playersLive = self.players.filter { (p) -> Bool in
+            let playersLive = self.players.filter { (p) -> Bool in
                 return !p.race.isDie
             }
             
@@ -686,11 +694,11 @@ class CombatScene: SKScene {
     //MARK: - Ordenation player and enimy for speed
     private func orderPlayerAndEnimies(players: [Player], enemies: [Enemy]) {
         
-        var orderPlayers = players.sort { (a, b) -> Bool in
+        let orderPlayers = players.sort { (a, b) -> Bool in
             return a.race.status.Speed > b.race.status.Speed
         }
         
-        var orderEnemies = enemies.sort { (a, b) -> Bool in
+        let orderEnemies = enemies.sort { (a, b) -> Bool in
             return a.race.status.Speed > b.race.status.Speed
         }
         
@@ -716,7 +724,7 @@ class CombatScene: SKScene {
             }
         }
         
-        var p = self.orderPerson.first!
+        let p = self.orderPerson.first!
         
         if p is Player && (p as! Player) != self.currentPlayer {
             self.currentPlayer = (p as! Player)
@@ -739,7 +747,7 @@ class CombatScene: SKScene {
         
         for var i = 0; i < orderPerson.count; ++i {
             
-            var p = orderPerson[i]
+            let p = orderPerson[i]
             var nameFromPerson: String = ""
             var turnPerson: SKSpriteNode!
             
@@ -763,7 +771,7 @@ class CombatScene: SKScene {
             turnPerson.name = "turnAtk-\(i)"
             turnPerson.position = posCurr
             
-            var person = SKSpriteNode(imageNamed: "\(p.name!)-2")
+            let person = SKSpriteNode(imageNamed: "\(p.name!)-2")
             person.zPosition = 1
             
             turnPerson.addChild(person)
@@ -1141,6 +1149,38 @@ class CombatScene: SKScene {
         bgBar.addChild(newLabelHP)
     }
     
+    //MARK: Increase HP from damage
+    private func increaseHP(target: Player) {
+        let footer = self.childNodeWithName("skFooter")!
+        let bgBar = footer.childNodeWithName("bgBarStatusHp-\(target.race.name)")!
+        
+        let hpBar = bgBar.childNodeWithName("hpBar-\(target.race.name)")!
+        hpBar.removeFromParent()
+        
+        let currWidth = CGFloat((target.race.status.currentHP) * Int(bgBar.frame.width - 5) / target.race.status.HP)
+        
+        let newHpBar = SKSpriteNode(color: UIColor.redColor(), size: CGSizeMake(currWidth, hpBar.frame.size.height))
+        newHpBar.zPosition = hpBar.zPosition
+        newHpBar.position = CGPointMake(hpBar.position.x - ((hpBar.frame.size.width - currWidth) / 2), hpBar.position.y)
+        newHpBar.name = hpBar.name
+        
+        bgBar.addChild(newHpBar)
+        
+        let labelHp = bgBar.childNodeWithName("hpLabel-\(target.race.name)") as! SKLabelNode
+        labelHp.removeFromParent()
+        
+        let newLabelHP = SKLabelNode(text: "\(target.race.status.currentHP)/\(target.race.status.HP)")
+        newLabelHP.fontColor = labelHp.fontColor
+        newLabelHP.fontSize = labelHp.fontSize
+        newLabelHP.fontName = labelHp.fontName
+        newLabelHP.name = labelHp.name
+        newLabelHP.zPosition = labelHp.zPosition
+        newLabelHP.position = labelHp.position
+        
+        bgBar.addChild(newLabelHP)
+        
+    }
+    
     //MARK: Disable status player if is die
     private func disableStatusPlayer(target: Player) {
         
@@ -1185,7 +1225,7 @@ class CombatScene: SKScene {
     
     private func disableSkill(skill: Skill) {
         
-        let footer = self.childNodeWithName("skFooter")!
+        //let footer = self.childNodeWithName("skFooter")!
         
         let shadow = SKSpriteNode(color: UIColor.blackColor(), size: skill.size)
         shadow.zPosition = 20

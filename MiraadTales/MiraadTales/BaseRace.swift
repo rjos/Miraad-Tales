@@ -65,5 +65,6 @@ public class BaseRace: StatusList, DamageList{
     public func restoreStatus() {
         self.status.currentHP = self.status.HP
         self.status.currentMP = self.status.MP
+        self.isDie = false
     }
 }

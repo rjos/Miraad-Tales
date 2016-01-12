@@ -26,7 +26,7 @@ class CastleScene: SKScene, InteractionDelegate, SKPhysicsContactDelegate {
         
         self.physicsWorld.contactDelegate = self
         
-        self.playAudio("Come and Find Me - B mix")
+        //self.playAudio("Come and Find Me - B mix")
         
         map = self.childNodeWithName("SKBg")!
         
@@ -153,11 +153,11 @@ class CastleScene: SKScene, InteractionDelegate, SKPhysicsContactDelegate {
         }
         
         let posPlayer = self.movementManagement!.player.position
-        let framePlayer = self.movementManagement!.player.position
+        //let framePlayer = self.movementManagement!.player.position
         
         if (posPlayer.x <= -150 && (posPlayer.y <= 32 && posPlayer.y >= -96)) && self.joystick!.direction == DirectionPlayer.Left {
             
-            self.stopAudio()
+            //self.stopAudio()
             
             let transition = SKTransition.fadeWithDuration(0.5)
             

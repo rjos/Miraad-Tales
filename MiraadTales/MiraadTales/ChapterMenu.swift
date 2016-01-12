@@ -12,7 +12,7 @@ class ChapterMenu: HUD {
 
     var isPrologue: Bool = false
     
-    public var isOpenPage = false
+    internal var isOpenPage = false
     
     override init(players: [Player], currentPlayer: Player, size: CGSize, name: String, typeHUD: TypeHUD) {
         
@@ -35,8 +35,8 @@ class ChapterMenu: HUD {
         arrowRight.name = "arrowRight"
         arrowRight.position = CGPointMake((content.frame.width / 3) - (arrowRight.frame.width / 2), 0)
         
-        self.bg!.addChild(arrowLeft)
-        self.bg!.addChild(arrowRight)
+//        self.bg!.addChild(arrowLeft)
+//        self.bg!.addChild(arrowRight)
         
         let skNameSelected = SKLabelNode(text: "Prologue")
         skNameSelected.zPosition = 5
@@ -59,7 +59,7 @@ class ChapterMenu: HUD {
         isPrologue = true
     }
 
-    required public init?(coder aDecoder: NSCoder) {
+    required internal init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     

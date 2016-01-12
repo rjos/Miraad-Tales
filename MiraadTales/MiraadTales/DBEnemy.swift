@@ -50,11 +50,11 @@ public class DBEnemy {
     
     private static func getSkillChaserWolf() -> [Skill] {
         
-        let statusArranhao = Status(HP: 0, MP: 0, Speed: 0, pAtk: 100, mAtk: 0, pDef: 0, mDef: 0)
+        let statusArranhao = Status(HP: 0, MP: 0, Speed: 0, pAtk: 300, mAtk: 0, pDef: 0, mDef: 0)
         let arranhao = BaseSkill(name: "Arranhão", fantasyName: "Arranhao", equip: nil, ownerRace: PlayersRace.Bard, status: statusArranhao, criticalRate: 0, missRate: 0, consumeMana: 0, effect: nil, details: "")
         
-        let statusMordida = Status(HP: 0, MP: 0, Speed: 0, pAtk: 100, mAtk: 0, pDef: 0, mDef: 0)
-        let mordida = BaseSkill(name: "Mordida", fantasyName: "Mordida", equip: nil, ownerRace: PlayersRace.Bard, status: statusArranhao, criticalRate: 0, missRate: 0, consumeMana: 0, effect: nil, details: "")
+        let statusMordida = Status(HP: 0, MP: 0, Speed: 0, pAtk: 300, mAtk: 0, pDef: 0, mDef: 0)
+        let mordida = BaseSkill(name: "Mordida", fantasyName: "Mordida", equip: nil, ownerRace: PlayersRace.Bard, status: statusMordida, criticalRate: 0, missRate: 0, consumeMana: 0, effect: nil, details: "")
         
         return [Skill(imageNamed: "", baseSkill: arranhao), Skill(imageNamed: "", baseSkill: mordida)]
     }

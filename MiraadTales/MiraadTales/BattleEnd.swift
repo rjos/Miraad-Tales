@@ -16,7 +16,7 @@ public enum TypeBattleEnd: String {
 
 class BattleEnd: HUD {
     
-    public var typeBattleEnd: TypeBattleEnd!
+    internal var typeBattleEnd: TypeBattleEnd!
     
     override init(players: [Player], currentPlayer: Player, size: CGSize, name: String, typeHUD: TypeHUD) {
         
@@ -110,7 +110,7 @@ class BattleEnd: HUD {
         
     }
 
-    required public init?(coder aDecoder: NSCoder) {
+    required internal init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -170,7 +170,7 @@ class BattleEnd: HUD {
     
     private func animationPlayer(player: Player, win: Bool, sufix: String) {
         
-        var animationAtlas = SKTextureAtlas(named: "\(player.race.name)\(sufix)")
+        let animationAtlas = SKTextureAtlas(named: "\(player.race.name)\(sufix)")
         let countTexture = animationAtlas.textureNames.count
         
         var textures: [SKTexture] = []

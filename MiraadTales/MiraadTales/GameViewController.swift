@@ -18,8 +18,8 @@ class GameViewController: UIViewController {
             // Configure the view.
             let skView = self.view as! NavigationController
             
-            skView.showsFPS = true
-            skView.showsNodeCount = true
+            skView.showsFPS = false
+            skView.showsNodeCount = false
             
 //            scene.typeCombat = "Normal"
 //            let bard = DBPlayers.getBard(skView)

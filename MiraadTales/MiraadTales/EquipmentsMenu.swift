@@ -50,7 +50,7 @@ public class EquipmentsMenu: HUD {
         let bgPlayer = SKSpriteNode(color: UIColor.clearColor(), size: CGSizeMake(xPosition * -1.0, bgEquip.frame.size.height))
         bgPlayer.name = "bgPlayer"
         
-        let tempPosX = (bgPlayer.size.width * 0.5) - ((bgEquip.frame.size.width * 0.5) - bgEquip.position.x)
+        //let tempPosX = (bgPlayer.size.width * 0.5) - ((bgEquip.frame.size.width * 0.5) - bgEquip.position.x)
         
         bgPlayer.position = CGPointMake(xPosition - 1, bgEquip.position.y)
         bgPlayer.zPosition = 2
@@ -262,15 +262,15 @@ public class EquipmentsMenu: HUD {
         
         var gridPosition = self.setCollumsAndRows(grid, margin: CGPointMake(5,5), qtdadeCollums: 3, qtdadeRows: 2)
         
-        var items:[SKSpriteNode] = []
+        //var items:[SKSpriteNode] = []
         
         //        var indexArmor: Int = 3
         //        var indexWeapons: Int = 0
         
-        let hasItems = player.race.equipments.count > 0
+        //let hasItems = player.race.equipments.count > 0
         
         var i:Int = 0
-        var slots = 0
+        //var slots = 0
         
         while !gridPosition.isEmpty {
             
@@ -554,8 +554,8 @@ public class EquipmentsMenu: HUD {
         
         let bgStatus = self.bg.childNodeWithName("bgStatus")!
         
-        let labelAtk = bgStatus.childNodeWithName("labelAtk")!
-        let labelDef = bgStatus.childNodeWithName("labelDef")!
+        //let labelAtk = bgStatus.childNodeWithName("labelAtk")!
+        //let labelDef = bgStatus.childNodeWithName("labelDef")!
         
         let bgSkillAtk = bgStatus.childNodeWithName("bgSkillAtk")!
         bgSkillAtk.removeAllChildren()
@@ -600,8 +600,8 @@ public class EquipmentsMenu: HUD {
         
         let bgStatus = self.bg.childNodeWithName("bgStatus")!
         
-        let labelAtk = bgStatus.childNodeWithName("labelAtk")!
-        let labelDef = bgStatus.childNodeWithName("labelDef")!
+        //let labelAtk = bgStatus.childNodeWithName("labelAtk")!
+        //let labelDef = bgStatus.childNodeWithName("labelDef")!
         
         let bgSkillAtk = bgStatus.childNodeWithName("bgSkillAtk")!
         let increaseAtk = bgStatus.childNodeWithName("increaseAtk") as! SKLabelNode

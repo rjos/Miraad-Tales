@@ -37,9 +37,9 @@ class CreditsScene: SKScene {
         let touch = touches.first!
         let location = touch.locationInNode(self)
         
-        var currentY = location.y
+        let currentY = location.y
         
-        var newY = moveableArea.position.y + ((currentY - lastY))
+        let newY = moveableArea.position.y + ((currentY - lastY))
         
         if newY < -384 {
             moveableArea.position = CGPointMake(0, -384)

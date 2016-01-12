@@ -12,21 +12,18 @@ extension SKScene {
     
     func playAudio(name: String) {
         
-        let audio = SKAudioNode(fileNamed: name)
-        audio.autoplayLooped = true
-        audio.name = "audio"
-        self.addChild(audio)
+        let playback = SKAction.playSoundFileNamed("\(name).mp3", waitForCompletion: false)
     }
     
     func stopAudio() {
         
-        let audio = self.childNodeWithName("audio")!
+        let audio = self.childNodeWithName("audio-\(self.name!)")!
         audio.removeFromParent()
     }
     
     func changeVolume(volume: Float) {
         
-        let audio = self.childNodeWithName("audio")!
+        let audio = self.childNodeWithName("audio-\(self.name)")!
         audio.runAction(SKAction.changeVolumeTo(volume, duration: 0.1))
     }
     

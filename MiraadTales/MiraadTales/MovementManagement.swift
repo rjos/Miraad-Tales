@@ -115,6 +115,9 @@ public class MovementManagement: SKNode {
         //Velocidade para correr
         var velocityRunning = CGPointMake(0, 0)
         
+        //Setar alpha pra 1
+        player.alpha = 1
+        
         lastedPositionPlayer = CGPointMake(lastedPositionPlayer.x + (joystick.velocity.x), lastedPositionPlayer.y + (joystick.velocity.y))
         if lastedPositionPlayer.x >= self.minPositionPlayer.x && lastedPositionPlayer.x <= self.maxPositionPlayer.x {
             
@@ -196,7 +199,7 @@ public class MovementManagement: SKNode {
     public func changePlayer(indexNewPlayer: Int) {
         
         //Trocar valor zPosition do current Player anterior a mudança
-        self.player.zPosition -= 2
+        self.player.zPosition -= 1
         
         //Selectionando novo player principal
         let newPlayer = self.players[indexNewPlayer]
@@ -212,7 +215,7 @@ public class MovementManagement: SKNode {
         self.player = newPlayer
         self.player.setPhysicsBodyPlayer(self.player.texture!)
         self.player.alpha = 1
-        self.player.zPosition += 2
+        self.player.zPosition += 1
         
         //removendo antigas posições para recalcular futuramente
         self.player.lastedPosition.removeAll()

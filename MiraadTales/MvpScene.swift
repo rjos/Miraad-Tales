@@ -35,7 +35,7 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate, AVAudioP
         self.map = self.childNodeWithName("SKBg")!
         
         //Sound
-        self.playAudio("Come and Find Me-2")
+        //self.playAudio("Come and Find Me-2")
         
         if self.userData != nil && (self.userData!["GoBack"] as! Bool) {
             self.loadData()
@@ -56,10 +56,18 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate, AVAudioP
                 }
                 
                 for p in self.players {
-                    p.removeFromParent()
-                    p.restoreStatus()
-                    p.setPlayerForExploration()
-                    map!.addChild(p)
+                    
+                    if p.race.name == self.currentPlayer!.name {
+                        self.currentPlayer!.removeFromParent()
+                        self.currentPlayer!.restoreStatus()
+                        self.currentPlayer!.setPlayerForExploration()
+                        map!.addChild(self.currentPlayer!)
+                    }else {
+                        p.removeFromParent()
+                        p.restoreStatus()
+                        p.setPlayerForExploration()
+                        map!.addChild(p)
+                    }
                 }
             }else {
                 self.currentPlayer!.removeFromParent()
@@ -100,7 +108,9 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate, AVAudioP
             
             let sequence = SKAction.sequence([actionInitial_in, actionInitial_out, actionInitial_in, actionInitial_out, actionInitial_in])
             
-            self.currentPlayer!.runAction(sequence)
+            self.currentPlayer!.runAction(sequence, completion: { () -> Void in
+                self.currentPlayer!.alpha = 1
+            })
             
             let rohan = map!.childNodeWithName("SKRohan") as! SKSpriteNode
             rohan.texture!.filteringMode = .Nearest
@@ -197,7 +207,7 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate, AVAudioP
         
         if (posPlayer.x >= (736.222 + (framePlayer.width / 2) + 10)  && (posPlayer.y <= -200 && posPlayer.y >= -287.98)) && self.joystick!.direction == DirectionPlayer.Right{
             
-            self.stopAudio()
+            //self.stopAudio()
             self.saveData()
             
             let castleScene = CastleScene(fileNamed: "CastleScene")!
@@ -362,7 +372,7 @@ class MvpScene: SKScene, SKPhysicsContactDelegate, InteractionDelegate, AVAudioP
             
             self.currentPlayer!.removePhysicsBodyPlayer()
             
-            self.stopAudio()
+            //self.stopAudio()
             saveData()
             openCombatScene(enemies)
         }

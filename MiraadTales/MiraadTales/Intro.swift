@@ -20,7 +20,7 @@ class Intro: SKScene, InteractionDelegate {
     
     override func didMoveToView(view: SKView) {
         
-        self.playAudio("Prologue")
+        //self.playAudio("Prologue")
         
         self.joystick = Joystick()
         
@@ -72,7 +72,7 @@ class Intro: SKScene, InteractionDelegate {
                 
                 if self.currentDialog!.action == ActionDialog.OpenPage {
                     //Open Page
-                    self.stopAudio()
+                    //self.stopAudio()
                     
                     let mvpScene = MvpScene(fileNamed: "MvpScene")!
                     let transition = SKTransition.fadeWithDuration(1)

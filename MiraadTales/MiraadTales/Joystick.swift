@@ -165,7 +165,7 @@ public class Joystick: SKNode {
     //MARK: Reset Joystick 
     public func reset() {
         if let selectButton = self.selectButton {
-            self.selectButton.alpha = 0.7
+            selectButton.alpha = 0.7
             self.selectButton = nil
         }
     }
